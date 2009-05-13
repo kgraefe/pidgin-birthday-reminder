@@ -1,0 +1,273 @@
+# German translation for Birthday Reminder
+# Copyright (C) 2008 Konrad Gräfe <freakazoid@teamblind.de>
+# This file is distributed under the same license as the birthday_reminder package.
+# Konrad Gräfe <freakazoid@teamblind.de>, 2008
+#
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-09 23:38+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Konrad Gräfe <freakazoid@teamblind.de>\n"
+"Language-Team: de_DE <freakazoid@teamblind.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
+
+#: ../src/birthday_reminder.c:269
+#, c-format
+msgid ""
+"\n"
+"<b>Birthday</b>: %02d/%02d/%04d"
+msgstr ""
+"\n"
+"<b>Geburtstag</b>: %2$02d.%1$02d.%3$04d"
+
+#: ../src/birthday_reminder.c:271
+#, c-format
+msgid ""
+"\n"
+"<b>Birthday</b>: %02d/%02d"
+msgstr ""
+"\n"
+"<b>Geburtstag</b>: %2$02d.%1$02d."
+
+#: ../src/birthday_reminder.c:277
+#, c-format
+msgid " (<b>Today!</b>)"
+msgstr " (<b>Heute!</b>)"
+
+#: ../src/birthday_reminder.c:279
+#, c-format
+msgid " (<b>Tomorrow!</b>)"
+msgstr " (<b>Morgen!</b>)"
+
+#: ../src/birthday_reminder.c:281
+#, c-format
+msgid " (in %d days)"
+msgstr " (in %d Tagen)"
+
+#: ../src/birthday_reminder.c:288
+#, c-format
+msgid ""
+"\n"
+"<b>Age</b>: %d years"
+msgstr ""
+"\n"
+"<b>Alter</b>: %d Jahre"
+
+#: ../src/birthday_reminder.c:478
+#, c-format
+msgid "sound file (%s) does not exist.\n"
+msgstr "Sound-Datei (%s) existiert nicht.\n"
+
+#: ../src/birthday_reminder.c:495
+#, c-format
+msgid "%s will be %d years old today! Hooray!"
+msgstr "%s wird heute %d Jahre alt! Hurra!"
+
+#: ../src/birthday_reminder.c:497
+#, c-format
+msgid "It's %s's birthday today! Hooray!"
+msgstr "%s hat heute Geburtstag! Hurra!"
+
+#: ../src/birthday_reminder.c:501
+#, c-format
+msgid "%s will be %d years old tomorrow!"
+msgstr "%s wird morgen %d Jahre alt!"
+
+#: ../src/birthday_reminder.c:503
+#, c-format
+msgid "%s's birthday is tomorrow!"
+msgstr "%s hat morgen Geburtstag!"
+
+#: ../src/birthday_reminder.c:507
+#, c-format
+msgid "%s will be %d years old in %d days!"
+msgstr "%1$s wird in %3$d Tagen %2$d Jahre alt!"
+
+#: ../src/birthday_reminder.c:509
+#, c-format
+msgid "%s's birthday is in %d days!"
+msgstr "%s hat in %d Tagen Geburtstag!"
+
+#: ../src/birthday_reminder.c:514
+msgid "There are birthdays in the next days! Hooray!"
+msgstr "Es stehen Geburtstage an! Hurra!"
+
+#: ../src/birthday_reminder.c:521 ../src/birthday_reminder.c:523
+#: ../src/birthday_reminder.c:534 ../src/birthday_reminder.c:536
+#: ../src/birthday_reminder.c:766 ../src/birthday_reminder.c:1315
+msgid "Birthday Reminder"
+msgstr "Geburtstags-Erinnerung"
+
+#: ../src/birthday_reminder.c:521 ../src/birthday_reminder.c:523
+#: ../src/birthday_reminder.c:1135
+msgid "Close"
+msgstr "Schließen"
+
+#: ../src/birthday_reminder.c:521 ../src/birthday_reminder.c:1139
+msgid "Write IM"
+msgstr "Anschreiben"
+
+#: ../src/birthday_reminder.c:523
+msgid "Overview"
+msgstr "Übersicht"
+
+#: ../src/birthday_reminder.c:534
+msgid "Write IM?"
+msgstr "Anschreiben?"
+
+#: ../src/birthday_reminder.c:534 ../src/birthday_reminder.c:536
+msgid "Yes"
+msgstr "Ja"
+
+#: ../src/birthday_reminder.c:534 ../src/birthday_reminder.c:536
+msgid "No"
+msgstr "Nein"
+
+#: ../src/birthday_reminder.c:536
+msgid "Show overview?"
+msgstr "Übersicht anzeigen?"
+
+#: ../src/birthday_reminder.c:640
+#, c-format
+msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
+msgstr "Frage Buddy %s (Konto: %s (%s)) ab. Warte auf Antwort...\n"
+
+#: ../src/birthday_reminder.c:642
+msgid "No more buddies to scan.\n"
+msgstr "Keine weiteren Buddies abzufragen.\n"
+
+#: ../src/birthday_reminder.c:670 ../src/birthday_reminder.c:1108
+msgid "Birthday"
+msgstr "Geburtstag"
+
+#: ../src/birthday_reminder.c:697
+#, c-format
+msgid "Buddy %s (Account: %s (%s)) scanned.\n"
+msgstr "Buddy %s (Konto: %s (%s)) wurde abgefragt.\n"
+
+#: ../src/birthday_reminder.c:756
+#, c-format
+msgid ""
+"Use the following format: %s .\n"
+"Blank out the input field to clear the BDay.\n"
+"Use an year before 1900 if you do not know."
+msgstr ""
+"Benutzen Sie folgendes Format: %s\n"
+"Lassen Sie das Feld leer um das Geburtsdatum zu löschen.\n"
+"Benutzen Sie eine Jahreszahl vor 1900, wenn Sie sie nicht genau wissen."
+
+#: ../src/birthday_reminder.c:766
+msgid "Set Birthday:"
+msgstr "Setze Geburtstag:"
+
+#: ../src/birthday_reminder.c:766
+msgid "OK"
+msgstr "OK"
+
+#: ../src/birthday_reminder.c:766
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: ../src/birthday_reminder.c:776
+msgid "Set Birthday"
+msgstr "Geburtstag setzen"
+
+#. Erinnerung
+#: ../src/birthday_reminder.c:820
+msgid "Reminder"
+msgstr "Erinnerung"
+
+#: ../src/birthday_reminder.c:824
+msgid "Show birthday icons in the buddy list"
+msgstr "Geburtstags-Icons in der Buddy-Liste anzeigen"
+
+#: ../src/birthday_reminder.c:842 ../src/birthday_reminder.c:863
+#: ../src/birthday_reminder.c:884 ../src/birthday_reminder.c:905
+msgid "days before birthday"
+msgstr "Tage vor dem Geburtstag"
+
+#: ../src/birthday_reminder.c:845
+msgid "Show mini dialog in the buddy list"
+msgstr "Mini-Dialog in der Buddy-Liste anzeigen"
+
+#: ../src/birthday_reminder.c:866
+msgid "Show notification"
+msgstr "Meldung anzeigen"
+
+#: ../src/birthday_reminder.c:887
+msgid "Play sound"
+msgstr "Melodie abspielen"
+
+#. Tooltip
+#: ../src/birthday_reminder.c:909
+msgid "Tooltip"
+msgstr "Tooltip"
+
+#: ../src/birthday_reminder.c:913
+msgid "Show Birthday"
+msgstr "Geburtstag anzeigen"
+
+#: ../src/birthday_reminder.c:926
+msgid "Show days to birthday"
+msgstr "Tage bis zum Geburtstag anzeigen"
+
+#: ../src/birthday_reminder.c:933
+msgid "Show Age"
+msgstr "Alter anzeigen"
+
+#: ../src/birthday_reminder.c:1050
+#, c-format
+msgid "%02d/%02d/%04d"
+msgstr "%2$02d.%1$02d.%3$04d"
+
+#: ../src/birthday_reminder.c:1052
+#, c-format
+msgid "%02d/%02d"
+msgstr "%2$02d.%1$02d."
+
+#: ../src/birthday_reminder.c:1082
+msgid "Buddy"
+msgstr "Buddy"
+
+#: ../src/birthday_reminder.c:1097
+msgid "Days to birthday"
+msgstr "Tage bis zum Geburtstag"
+
+#: ../src/birthday_reminder.c:1119
+msgid "Age"
+msgstr "Alter"
+
+#: ../src/birthday_reminder.c:1143
+#, c-format
+msgid "Birthday List (%d)"
+msgstr "Geburtstags-Liste (%d)"
+
+#: ../src/birthday_reminder.c:1175
+msgid "Could not load icons!\n"
+msgstr "Konnte Icons nicht laden!\n"
+
+#: ../src/birthday_reminder.c:1215
+msgid "Scan birthdays on this account"
+msgstr "Geburtstage mit diesem Account scannen"
+
+#: ../src/birthday_reminder.c:1246
+msgid "Check Birthdays"
+msgstr "Geburtstage überprüfen"
+
+#: ../src/birthday_reminder.c:1249
+msgid "Show birthday list"
+msgstr "Geburtstags-Liste anzeigen"
+
+#: ../src/birthday_reminder.c:1316
+msgid "Reminds you of the birthday of your buddies. :o)"
+msgstr "Erinnert an die Geburtstage deiner Buddys. :o)"
+
+#: ../src/birthday_reminder.c:1317
+msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
+msgstr ""
+"Dieses Plugin sollte die Geburtstage deiner Buddys aufnehmen und dich an "
+"sie erinnern."

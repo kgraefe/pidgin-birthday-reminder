@@ -1,0 +1,275 @@
+# Russian translation for Birthday Reminder
+# Copyright (C) 2009 Alexander Logvinov <ports@logvinov.com>
+# This file is distributed under the same license as the birthday_reminder package.
+# Konrad Gräfe <freakazoid@teamblind.de>, 2008
+#
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: ports@logvinov.com\n"
+"POT-Creation-Date: 2009-02-09 23:38+0100\n"
+"PO-Revision-Date: 2009-05-09 18:46+1000\n"
+"Last-Translator: Alexander Logvinov <ports@logvinov.com>\n"
+"Language-Team: Russian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../src/birthday_reminder.c:269
+#, c-format
+msgid ""
+"\n"
+"<b>Birthday</b>: %02d/%02d/%04d"
+msgstr ""
+"\n"
+"<b>День рождения</b>: %2$02d.%1$02d.%3$04d"
+
+#: ../src/birthday_reminder.c:271
+#, c-format
+msgid ""
+"\n"
+"<b>Birthday</b>: %02d/%02d"
+msgstr ""
+"\n"
+"<b>День рождения</b>: %2$02d.%1$02d."
+
+#: ../src/birthday_reminder.c:277
+#, c-format
+msgid " (<b>Today!</b>)"
+msgstr " (<b>Сегодня!</b>)"
+
+#: ../src/birthday_reminder.c:279
+#, c-format
+msgid " (<b>Tomorrow!</b>)"
+msgstr " (<b>Завтра!</b>)"
+
+#: ../src/birthday_reminder.c:281
+#, c-format
+msgid " (in %d days)"
+msgstr " (через %d дней)"
+
+#: ../src/birthday_reminder.c:288
+#, c-format
+msgid ""
+"\n"
+"<b>Age</b>: %d years"
+msgstr ""
+"\n"
+"<b>Возраст</b>: %d лет"
+
+#: ../src/birthday_reminder.c:478
+#, c-format
+msgid "sound file (%s) does not exist.\n"
+msgstr "Звуковой файл (%s) не существует.\n"
+
+#: ../src/birthday_reminder.c:495
+#, c-format
+msgid "%s will be %d years old today! Hooray!"
+msgstr "%s исполнится %d лет сегодня! Ура!"
+
+#: ../src/birthday_reminder.c:497
+#, c-format
+msgid "It's %s's birthday today! Hooray!"
+msgstr "Сегодня у %s День рождения! Ура!"
+
+#: ../src/birthday_reminder.c:501
+#, c-format
+msgid "%s will be %d years old tomorrow!"
+msgstr "Завтра %s исполнится %d лет!"
+
+#: ../src/birthday_reminder.c:503
+#, c-format
+msgid "%s's birthday is tomorrow!"
+msgstr "Завтра у %s День рождения!"
+
+#: ../src/birthday_reminder.c:507
+#, c-format
+msgid "%s will be %d years old in %d days!"
+msgstr "%s исполнится %d лет через %d дней!"
+
+#: ../src/birthday_reminder.c:509
+#, c-format
+msgid "%s's birthday is in %d days!"
+msgstr "У %s День рождения через %d дней!"
+
+#: ../src/birthday_reminder.c:514
+msgid "There are birthdays in the next days! Hooray!"
+msgstr "В ближайшие дни будут Дни рождения! Ура!"
+
+#: ../src/birthday_reminder.c:521 ../src/birthday_reminder.c:523
+#: ../src/birthday_reminder.c:534 ../src/birthday_reminder.c:536
+#: ../src/birthday_reminder.c:766 ../src/birthday_reminder.c:1315
+msgid "Birthday Reminder"
+msgstr "Напоминание о Днях рождения"
+
+#: ../src/birthday_reminder.c:521 ../src/birthday_reminder.c:523
+#: ../src/birthday_reminder.c:1135
+msgid "Close"
+msgstr "Закрыть"
+
+#: ../src/birthday_reminder.c:521 ../src/birthday_reminder.c:1139
+msgid "Write IM"
+msgstr "Написать сообщение"
+
+#: ../src/birthday_reminder.c:523
+msgid "Overview"
+msgstr "Подробности"
+
+#: ../src/birthday_reminder.c:534
+msgid "Write IM?"
+msgstr "Написать сообщение?"
+
+#: ../src/birthday_reminder.c:534 ../src/birthday_reminder.c:536
+msgid "Yes"
+msgstr "Да"
+
+#: ../src/birthday_reminder.c:534 ../src/birthday_reminder.c:536
+msgid "No"
+msgstr "Нет"
+
+#: ../src/birthday_reminder.c:536
+msgid "Show overview?"
+msgstr "Показать подробности?"
+
+#: ../src/birthday_reminder.c:640
+#, c-format
+msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
+msgstr "Сканируется собеседник %s (Учетная запись: %s (%s)). Ожидание ответа...\n"
+
+#: ../src/birthday_reminder.c:642
+msgid "No more buddies to scan.\n"
+msgstr "Нет больше собеседников для поиска.\n"
+
+#: ../src/birthday_reminder.c:670 ../src/birthday_reminder.c:1108
+msgid "Birthday"
+msgstr "День рождения"
+
+#: ../src/birthday_reminder.c:697
+#, c-format
+msgid "Buddy %s (Account: %s (%s)) scanned.\n"
+msgstr "Собеседник %s (Учетная запись: %s (%s)) проверен.\n"
+
+#: ../src/birthday_reminder.c:756
+#, c-format
+msgid ""
+"Use the following format: %s .\n"
+"Blank out the input field to clear the BDay.\n"
+"Use an year before 1900 if you do not know."
+msgstr ""
+"Используйте следующий формат: %s\n"
+"Отчистите поле ввода для того, чтобы убрать День рождения.\n"
+"Используйте год до 1900 если вы его не знаете."
+
+#: ../src/birthday_reminder.c:766
+msgid "Set Birthday:"
+msgstr "Установить День рождения:"
+
+#: ../src/birthday_reminder.c:766
+msgid "OK"
+msgstr "OK"
+
+#: ../src/birthday_reminder.c:766
+msgid "Cancel"
+msgstr "Отмена"
+
+#: ../src/birthday_reminder.c:776
+msgid "Set Birthday"
+msgstr "Установить День рождения"
+
+#. Erinnerung
+#: ../src/birthday_reminder.c:820
+msgid "Reminder"
+msgstr "Напоминание"
+
+#: ../src/birthday_reminder.c:824
+msgid "Show birthday icons in the buddy list"
+msgstr "Показывать иконки Дня рождения в списке собеседников"
+
+#: ../src/birthday_reminder.c:842 ../src/birthday_reminder.c:863
+#: ../src/birthday_reminder.c:884 ../src/birthday_reminder.c:905
+msgid "days before birthday"
+msgstr "дней перед Днем рождения"
+
+#: ../src/birthday_reminder.c:845
+msgid "Show mini dialog in the buddy list"
+msgstr "Показывать мини диалог в списке собеседников"
+
+#: ../src/birthday_reminder.c:866
+msgid "Show notification"
+msgstr "Показывать уведомление"
+
+#: ../src/birthday_reminder.c:887
+msgid "Play sound"
+msgstr "Проигрывать мелодию"
+
+#. Tooltip
+#: ../src/birthday_reminder.c:909
+msgid "Tooltip"
+msgstr "Всплывающее окно"
+
+#: ../src/birthday_reminder.c:913
+msgid "Show Birthday"
+msgstr "Показывать День рождения"
+
+#: ../src/birthday_reminder.c:926
+msgid "Show days to birthday"
+msgstr "Показывать дни до Дня рождения"
+
+#: ../src/birthday_reminder.c:933
+msgid "Show Age"
+msgstr "Показывать возраст"
+
+#: ../src/birthday_reminder.c:1050
+#, c-format
+msgid "%02d/%02d/%04d"
+msgstr "%2$02d.%1$02d.%3$04d"
+
+#: ../src/birthday_reminder.c:1052
+#, c-format
+msgid "%02d/%02d"
+msgstr "%2$02d.%1$02d."
+
+#: ../src/birthday_reminder.c:1082
+msgid "Buddy"
+msgstr "Собеседник"
+
+#: ../src/birthday_reminder.c:1097
+msgid "Days to birthday"
+msgstr "Дней до Дня рождения"
+
+#: ../src/birthday_reminder.c:1119
+msgid "Age"
+msgstr "Возраст"
+
+#: ../src/birthday_reminder.c:1143
+#, c-format
+msgid "Birthday List (%d)"
+msgstr "Список Дней рождения (%d)"
+
+#: ../src/birthday_reminder.c:1175
+msgid "Could not load icons!\n"
+msgstr "Не могу загруить иконки!\n"
+
+#: ../src/birthday_reminder.c:1215
+msgid "Scan birthdays on this account"
+msgstr "Найти Дни рождения в этой учетной записи"
+
+#: ../src/birthday_reminder.c:1246
+msgid "Check Birthdays"
+msgstr "Найти Дни рождения"
+
+#: ../src/birthday_reminder.c:1249
+msgid "Show birthday list"
+msgstr "Показать список Дней рождения"
+
+#: ../src/birthday_reminder.c:1316
+msgid "Reminds you of the birthday of your buddies. :o)"
+msgstr "Напоминает Вам о Днях рождения Ваших собеседников. :o)"
+
+#: ../src/birthday_reminder.c:1317
+msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
+msgstr ""
+"Этот плагин будет отслеживать и напоминать Вам о Днях рождения Ваших собеседников."
+""

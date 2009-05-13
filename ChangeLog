@@ -1,0 +1,42 @@
+Version 1.0 (2009/02/13):
+	* (First?) final release
+	* Fixed a crash with gtk_widget_destroy()
+	* Fixed wrong calculation of days before alert
+	* If you switch an account to "online" the plugin will just check those buddies' birthday
+	* Fixed an translation isue in the german version
+
+Version 0.6 (2009/02/10):
+	* Fixed a bug which prevents the plugin from scanning buddies where the birhtday was removed by hand
+	* Contacts will be handled in a better way now
+	* Buddy List will be shown when birthday check was triggert by the tray menu item
+	* Added the ability to disable the scan per account
+	* Birthday List will now be destroyed when unloading the plugin
+	* Added the ability to write an IM out of the birthday list
+	* If there are more then one notification they will be summarized
+	* The plugin can be installed to the .purple directory (which makes it possible to deliver a pre-compiled version for linux)
+	* The age will not longer be shown in the Birthday List if the year of birth is lower then 1900
+	* Code cleaned up
+
+Version 0.5 (2009/02/03):
+	* Added preferences
+	* Added a birthday list
+	* Fixed a bug with duplicate buddies
+
+Version 0.4 (2009/02/02):
+	* Play sound on birthday
+	* Show the age of a buddy
+	* Show the days to the buddies birthday
+	* Don't show the year of birth if it's before 1900
+	* Don't accept birthdays in the future
+	* Added some buddylist icons
+
+Version 0.3 (2009/01/30):
+	* Fixed birthday check on midnight
+	* Fixed birthday scan to only scan buddies on protocols that do support birthdays 
+	* Check birthday on change
+
+Version 0.2 (2009/01/26)
+	* First public version
+
+Version 0.1 (2008/12/24)
+	* Bithday Reminder was born.

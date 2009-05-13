@@ -1,0 +1,1 @@
+PIDGIN_TREE_TOP := $(BIRTHDAY_REMINDER_TOP)/../../pidgin-2.5.5-win32

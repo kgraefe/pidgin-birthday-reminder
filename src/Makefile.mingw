@@ -1,0 +1,123 @@
+#
+# Makefile.mingw
+#
+#
+
+#
+# PATHS
+#
+
+BIRTHDAY_REMINDER_TOP :=		..
+-include $(BIRTHDAY_REMINDER_TOP)/local.mak
+PIDGIN_TREE_TOP ?=		../../../..
+include $(PIDGIN_TREE_TOP)/libpurple/win32/global.mak
+
+BIRTHDAY_REMINDER_VERSION := $(shell cat ${BIRTHDAY_REMINDER_TOP}/VERSION)
+
+##
+## VARIABLE DEFINITIONS
+##
+
+BIRTHDAY_REMINDER = birthday_reminder
+
+# Compiler Options
+
+#CFLAGS = 
+
+DEFINES = -DBIRTHDAY_REMINDER_VERSION=\"$(BIRTHDAY_REMINDER_VERSION)\" -DGETTEXT_PACKAGE=\"$(BIRTHDAY_REMINDER)\" -DHAVE_CONFIG_H
+
+#LDFLAGS = 
+
+#-mwindows
+
+##
+## INCLUDE PATHS
+##
+
+INCLUDE_PATHS +=        -I. \
+			-I ..\
+                        -I$(PIDGIN_TREE_TOP) \
+                        -I$(PURPLE_TOP) \
+                        -I$(PURPLE_TOP)/win32 \
+                        -I$(PIDGIN_TOP) \
+                        -I$(PIDGIN_TOP)/win32 \
+                        -I$(GTK_TOP)/include \
+                        -I$(GTK_TOP)/include/gtk-2.0 \
+                        -I$(GTK_TOP)/include/glib-2.0 \
+                        -I$(GTK_TOP)/include/pango-1.0 \
+                        -I$(GTK_TOP)/include/atk-1.0 \
+                        -I$(GTK_TOP)/include/freetype2 \
+                        -I$(GTK_TOP)/lib/glib-2.0/include \
+                        -I$(GTK_TOP)/lib/gtk-2.0/include \
+                        -I$(PIDGIN_TREE_TOP)
+
+LIB_PATHS =             \
+                        -L$(PURPLE_TOP) \
+                        -L$(PIDGIN_TOP) \
+                        -L$(GTK_TOP)/lib
+
+
+
+##
+##  SOURCES, OBJECTS
+##
+
+BIRTHDAY_REMINDER_SRC =	\
+	birthday_reminder.c
+
+
+BIRTHDAY_REMINDER_OBJ = $(BIRTHDAY_REMINDER_SRC:%.c=%.o)
+
+##
+## LIBRARIES
+##
+
+PLUGIN_LIBS = \
+        -lgtk-win32-2.0 \
+        -lglib-2.0 \
+        -lpango-1.0 \
+        -lpangoft2-1.0 \
+        -lgdk-win32-2.0 \
+        -lgdk_pixbuf-2.0 \
+        -lgobject-2.0 \
+        -lws2_32 \
+        -lintl \
+        -lpurple \
+        -lpidgin
+
+
+include $(PIDGIN_COMMON_RULES)
+
+##
+## TARGET DEFINITIONS
+##
+
+.PHONY: all clean install
+
+all: $(BIRTHDAY_REMINDER).dll
+
+install: all $(PIDGIN_INSTALL_PLUGINS_DIR)
+	cp $(BIRTHDAY_REMINDER).dll $(PIDGIN_INSTALL_PLUGINS_DIR)
+
+$(BIRTHDAY_REMINDER_OBJ): $(BIRTHDAY_REMINDER_TOP)/config.h $(PURPLE_VERSION_H)
+
+$(BIRTHDAY_REMINDER_TOP)/config.h: $(BIRTHDAY_REMINDER_TOP)/config.h.mingw
+	$(MAKE) -C $(BIRTHDAY_REMINDER_TOP) -f Makefile.mingw config.h
+
+##
+## BUILD DLL
+##
+
+$(BIRTHDAY_REMINDER).dll: $(PIDGIN_DLL).a $(BIRTHDAY_REMINDER_OBJ)
+	$(CC) -shared $(BIRTHDAY_REMINDER_OBJ) $(LIB_PATHS) $(PLUGIN_LIBS) $(DLL_LD_FLAGS) -o $(BIRTHDAY_REMINDER).dll
+
+
+##
+## CLEAN RULES
+##
+
+clean:
+	rm -f *.o
+	rm -f $(BIRTHDAY_REMINDER).dll
+
+include $(PIDGIN_COMMON_TARGETS)
