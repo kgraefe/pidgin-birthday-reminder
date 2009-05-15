@@ -19,7 +19,7 @@
 
 GETTEXT_PACKAGE = birthday_reminder
 PACKAGE = birthday_reminder
-VERSION = 1.0
+VERSION = 1.1
 
 SHELL = /bin/sh
 
