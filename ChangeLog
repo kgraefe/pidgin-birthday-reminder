@@ -6,7 +6,7 @@ Version 1.0 (2009/02/13):
 	* Fixed a crash with gtk_widget_destroy()
 	* Fixed wrong calculation of days before alert
 	* If you switch an account to "online" the plugin will just check those buddies' birthday
-	* Fixed an translation isue in the german version
+	* Fixed a translation issue in the german version
 
 Version 0.6 (2009/02/10):
 	* Fixed a bug which prevents the plugin from scanning buddies where the birhtday was removed by hand
@@ -42,4 +42,4 @@ Version 0.2 (2009/01/26)
 	* First public version
 
 Version 0.1 (2008/12/24)
-	* Bithday Reminder was born.
+	* Birthday Reminder was born.

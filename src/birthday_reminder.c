@@ -211,6 +211,42 @@ static void get_birthday_from_node(PurpleBlistNode *node, GDate *date) {
 	}
 }
 
+static gboolean already_notified_today(PurpleBlistNode *node) {
+	guint32 julian;
+	GDate date, today;
+	
+	g_date_set_today(&today);
+	
+	if(!PURPLE_BLIST_NODE_IS_CONTACT(node) &&
+	   !PURPLE_BLIST_NODE_IS_BUDDY(node)) return FALSE;
+	
+	if(PURPLE_BLIST_NODE_IS_CONTACT(node)) {
+		node = purple_blist_node_get_first_child(node);
+		while(node) {
+			julian = purple_blist_node_get_int(node, "last_birthday_notification_julian");
+			if(g_date_valid_julian(julian)) {
+				g_date_set_julian(&date, julian);
+				
+				if(g_date_compare(&date, &today) == 0) {
+					return TRUE;
+				}
+			}
+			
+			node = purple_blist_node_get_sibling_next(node);
+		}
+	} else {
+		julian = purple_blist_node_get_int(node, "last_birthday_notification_julian");
+		if(g_date_valid_julian(julian)) {
+			g_date_set_julian(&date, julian);
+			
+			if(g_date_compare(&date, &today) == 0) {
+				return TRUE;
+			}
+		}
+	}
+	return FALSE;
+}
+
 static gint get_age_from_node(PurpleBlistNode *node) {
 	GDate bday, today;
 	gint age=0;
@@ -438,10 +474,11 @@ static void check_birthdays(PurpleAccount *acc, PurpleBuddy *buddy) {
 	if(buddy) {
 		node = (PurpleBlistNode *)buddy;
 		days_to_birthday = get_days_to_birthday_from_node(node);
-		if(days_to_birthday >= 0 && days_to_birthday <= notify_before_days && node_account_connected(node) && (acc == NULL || buddy->account == acc)) {
+		if(days_to_birthday >= 0 && days_to_birthday <= notify_before_days && node_account_connected(node) && (acc == NULL || buddy->account == acc) && (!already_notified_today(node) || !purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/once_a_day"))) {
 			count_birthdays++;
 			min_days_to_birthday = days_to_birthday;
 			birthday_buddy = buddy;
+			purple_blist_node_set_int(node, "last_birthday_notification_julian", g_date_get_julian(&last_check));
 		}
 	} else {
 		node=purple_blist_get_root();
@@ -450,11 +487,12 @@ static void check_birthdays(PurpleAccount *acc, PurpleBuddy *buddy) {
 				days_to_birthday = get_days_to_birthday_from_node(node);
 				buddy = (PurpleBuddy *)node;
 
-				if(days_to_birthday >= 0 && days_to_birthday <= notify_before_days && node_account_connected(node) && (acc == NULL || buddy->account == acc)) {
+				if(days_to_birthday >= 0 && days_to_birthday <= notify_before_days && node_account_connected(node) && (acc == NULL || buddy->account == acc) && (!already_notified_today(node) || !purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/once_a_day"))) {
 					count_birthdays++;
 					birthday_buddy = buddy;
 
 					if(days_to_birthday < min_days_to_birthday) min_days_to_birthday = days_to_birthday;
+					purple_blist_node_set_int(node, "last_birthday_notification_julian", g_date_get_julian(&last_check));
 				}
 			}
 			node=purple_blist_node_next(node, TRUE);
@@ -822,6 +860,12 @@ static GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	frame = pidgin_make_frame(ret, _("Reminder"));
 	vbox = gtk_vbox_new(FALSE, 5);
 	gtk_container_add(GTK_CONTAINER(frame), vbox);
+	
+	
+	toggle = gtk_check_button_new_with_mnemonic(_("Remind just once a day"));
+	gtk_box_pack_start(GTK_BOX(vbox), toggle, FALSE, FALSE, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(toggle), purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/once_a_day"));
+	g_signal_connect(G_OBJECT(toggle), "toggled", G_CALLBACK(toggle_cb), PLUGIN_PREFS_PREFIX "/reminder/once_a_day");
 
 	toggle = gtk_check_button_new_with_mnemonic(_("Show birthday icons in the buddy list"));
 	gtk_box_pack_start(GTK_BOX(vbox), toggle, FALSE, FALSE, 0);
@@ -1282,28 +1326,28 @@ static PurplePluginInfo info = {
 	PURPLE_PLUGIN_MAGIC,
 	PURPLE_MAJOR_VERSION,
 	PURPLE_MINOR_VERSION,
-	PURPLE_PLUGIN_STANDARD,				/**< type           */
+	PURPLE_PLUGIN_STANDARD,			/**< type           */
 	PIDGIN_PLUGIN_TYPE,				/**< ui_requirement */
-	0,						/**< flags          */
-	NULL,						/**< dependencies   */
-	PURPLE_PRIORITY_DEFAULT,			/**< priority       */
+	0,								/**< flags          */
+	NULL,							/**< dependencies   */
+	PURPLE_PRIORITY_DEFAULT,		/**< priority       */
 
-	PLUGIN_ID,					/**< id             */
-	NULL,						/**< name           */
+	PLUGIN_ID,						/**< id             */
+	NULL,							/**< name           */
 	PLUGIN_VERSION,					/**< version        */
-	NULL,						/**  summary        */
+	NULL,							/**  summary        */
 				
-	NULL,						/**  description    */
+	NULL,							/**  description    */
 	PLUGIN_AUTHOR,					/**< author         */
 	PLUGIN_WEBSITE,					/**< homepage       */
 
 	plugin_load,					/**< load           */
 	plugin_unload,					/**< unload         */
-	NULL,						/**< destroy        */
+	NULL,							/**< destroy        */
 
-	&ui_info,					/**< ui_info        */
-	NULL,						/**< extra_info     */
-	NULL,						/**< prefs_info     */
+	&ui_info,						/**< ui_info        */
+	NULL,							/**< extra_info     */
+	NULL,							/**< prefs_info     */
 	plugin_actions,					/**< actions        */
 	/* padding */
 	NULL,
@@ -1335,6 +1379,8 @@ static void init_plugin(PurplePlugin *plugin) {
 	purple_prefs_add_none(PLUGIN_PREFS_PREFIX);
 
 	purple_prefs_add_none(PLUGIN_PREFS_PREFIX "/reminder");
+	
+	purple_prefs_add_bool(PLUGIN_PREFS_PREFIX "/reminder/once_a_day", TRUE);
 
 	purple_prefs_add_none(PLUGIN_PREFS_PREFIX "/reminder/birthday_icons");
 	purple_prefs_add_bool(PLUGIN_PREFS_PREFIX "/reminder/birthday_icons/show", TRUE);
