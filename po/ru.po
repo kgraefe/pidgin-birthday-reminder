@@ -190,7 +190,7 @@ msgstr "Напоминание"
 
 #: ../src/birthday_reminder.c:865
 msgid "Remind just once a day"
-msgstr ""
+msgstr "Напоминать только один раз в день"
 
 #: ../src/birthday_reminder.c:870
 msgid "Show birthday icons in the buddy list"
