@@ -576,6 +576,8 @@ static void check_birthdays(PurpleAccount *acc, PurpleBuddy *buddy) {
 		}
 		if(msg) g_free(msg);
 	}
+	
+	if(purple_get_blist()) pidgin_blist_refresh(purple_get_blist());
 }
 
 static void check_birthdays_plugin_action_cb(PurplePluginAction *action) {
