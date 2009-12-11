@@ -269,8 +269,10 @@ static gint get_days_to_birthday_from_node(PurpleBlistNode *node) {
 	get_birthday_from_node(node, &bday);
 	if(g_date_valid(&bday)) {
 		g_date_set_today(&today);
+		
+		g_date_add_years(&bday, g_date_get_year(&today) - g_date_get_year(&bday));
 
-		g_date_set_year(&bday, g_date_get_year(&today));
+		/* g_date_set_year(&bday, g_date_get_year(&today)); */
 		if(g_date_compare(&bday, &today) < 0) g_date_add_years(&bday, 1);
 
 		return g_date_days_between(&today, &bday);
@@ -282,6 +284,8 @@ static GdkPixbuf *get_birthday_icon_from_node(PurpleBlistNode *node, gboolean bl
 	gint days_to_birthday;
 
 	days_to_birthday = get_days_to_birthday_from_node(node);
+	
+	purple_debug_info(PLUGIN_STATIC_NAME, "das to birthday: %i\n", days_to_birthday);
 
 	if(!purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/birthday_icons/show") && blist) return NULL;
 
