@@ -63,7 +63,19 @@ LIB_PATHS =             \
 ##
 
 BIRTHDAY_REMINDER_SRC =	\
-	birthday_reminder.c
+	birthday_reminder.c \
+	functions.c \
+	pidgin_internals.c \
+	birthday_access.c \
+	tooltip.c \
+	emblems.c \
+	notification.c \
+	check.c \
+	scan.c \
+	input.c \
+	prefs.c \
+	birthday_list.c \
+	plugin_actions.c
 
 
 BIRTHDAY_REMINDER_OBJ = $(BIRTHDAY_REMINDER_SRC:%.c=%.o)

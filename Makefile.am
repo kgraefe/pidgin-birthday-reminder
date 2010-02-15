@@ -8,3 +8,5 @@ EXTRA_DIST = \
 	src/internal.h
 
 SUBDIRS = src po share
+
+ACLOCAL_AMFLAGS=-I m4
