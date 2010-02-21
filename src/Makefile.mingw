@@ -75,7 +75,9 @@ BIRTHDAY_REMINDER_SRC =	\
 	input.c \
 	prefs.c \
 	birthday_list.c \
-	plugin_actions.c
+	plugin_actions.c \
+	hash.c \
+	icsexport.c
 
 
 BIRTHDAY_REMINDER_OBJ = $(BIRTHDAY_REMINDER_SRC:%.c=%.o)

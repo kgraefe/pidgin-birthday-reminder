@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-21 17:47+0100\n"
+"POT-Creation-Date: 2010-02-21 21:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Konrad Gräfe <freakazoid@teamblind.de>\n"
 "Language-Team: de_DE <freakazoid@teamblind.de>\n"
@@ -75,9 +75,10 @@ msgstr ""
 msgid "Could not load icons!\n"
 msgstr "Konnte Icons nicht laden!\n"
 
-#: ../src/icsexport.c:170
+#. Translators: this is how the birthday appears in an external calendar application
+#: ../src/icsexport.c:172
 #, c-format
-msgid "%s's Birthday"
+msgid "%s's birthday"
 msgstr "Geburtstag %s"
 
 #: ../src/input.c:85
@@ -166,70 +167,78 @@ msgstr "Übersicht anzeigen?"
 msgid "Overview"
 msgstr "Übersicht"
 
-#: ../src/plugin_actions.c:45
-msgid "Check Birthdays"
-msgstr "Geburtstage überprüfen"
-
-#: ../src/plugin_actions.c:48
-msgid "Show birthday list"
-msgstr "Geburtstags-Liste anzeigen"
-
-#: ../src/prefs.c:73
+#: ../src/plugin_actions.c:46 ../src/prefs.c:74
 msgid "Save birthday list as..."
 msgstr "Geburtstags-Liste speichern unter..."
 
+#: ../src/plugin_actions.c:56 ../src/prefs.c:84
+msgid "iCalender files"
+msgstr "iCalender-Dateien"
+
+#: ../src/plugin_actions.c:75
+msgid "Check Birthdays"
+msgstr "Geburtstage überprüfen"
+
+#: ../src/plugin_actions.c:78
+msgid "Show birthday list"
+msgstr "Geburtstags-Liste anzeigen"
+
+#: ../src/plugin_actions.c:81
+msgid "Export birthday list"
+msgstr "Geburtstags-Liste exportieren"
+
 #. Erinnerung
-#: ../src/prefs.c:112
+#: ../src/prefs.c:120
 msgid "Reminder"
 msgstr "Erinnerung"
 
-#: ../src/prefs.c:117
+#: ../src/prefs.c:125
 msgid "Remind just once a day"
 msgstr "Nur einmal am Tag erinnern"
 
-#: ../src/prefs.c:122
+#: ../src/prefs.c:130
 msgid "Show birthday icons in the buddy list"
 msgstr "Geburtstags-Icons in der Buddy-Liste anzeigen"
 
-#: ../src/prefs.c:140 ../src/prefs.c:161 ../src/prefs.c:182 ../src/prefs.c:203
+#: ../src/prefs.c:148 ../src/prefs.c:169 ../src/prefs.c:190 ../src/prefs.c:211
 msgid "days before birthday"
 msgstr "Tage vor dem Geburtstag"
 
-#: ../src/prefs.c:143
+#: ../src/prefs.c:151
 msgid "Show mini dialog in the buddy list"
 msgstr "Mini-Dialog in der Buddy-Liste anzeigen"
 
-#: ../src/prefs.c:164
+#: ../src/prefs.c:172
 msgid "Show notification"
 msgstr "Meldung anzeigen"
 
-#: ../src/prefs.c:185
+#: ../src/prefs.c:193
 msgid "Play sound"
 msgstr "Melodie abspielen"
 
 #. Tooltip
-#: ../src/prefs.c:207
+#: ../src/prefs.c:215
 msgid "Tooltip"
 msgstr "Tooltip"
 
-#: ../src/prefs.c:211
+#: ../src/prefs.c:219
 msgid "Show Birthday"
 msgstr "Geburtstag anzeigen"
 
-#: ../src/prefs.c:224
+#: ../src/prefs.c:232
 msgid "Show days to birthday"
 msgstr "Tage bis zum Geburtstag anzeigen"
 
-#: ../src/prefs.c:231
+#: ../src/prefs.c:239
 msgid "Show Age"
 msgstr "Alter anzeigen"
 
 #. ICS-Export
-#: ../src/prefs.c:237
+#: ../src/prefs.c:245
 msgid "iCalendar Export"
 msgstr "iCalendar-Export"
 
-#: ../src/prefs.c:241
+#: ../src/prefs.c:249
 msgid "Export to file"
 msgstr "Als Datei exportieren"
 

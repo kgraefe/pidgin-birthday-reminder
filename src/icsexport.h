@@ -20,7 +20,9 @@
 #ifndef EXPORT_H
 #define EXPORT_H
 
-void icsexport(void);
+#include "internal.h"
+
+void icsexport(const gchar *path);
 void automatic_export(void);
 
 #endif /* EXPORT_H */

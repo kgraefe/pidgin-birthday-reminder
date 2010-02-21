@@ -66,6 +66,7 @@ static void entry_path_cb(GtkWidget *widget, gpointer data) {
 static void export_filechooser_cb(GtkWidget *widget, gpointer data) {
 	GtkEntry *entry;
 	GtkWidget *dialog;
+	GtkFileFilter *filter;
 	gchar *new_path;
 
 	entry = (GtkEntry *) data;
@@ -78,6 +79,13 @@ static void export_filechooser_cb(GtkWidget *widget, gpointer data) {
 		NULL);
 
 	gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(dialog), purple_prefs_get_path(PLUGIN_PREFS_PREFIX "/export/path"));
+
+	filter = gtk_file_filter_new();
+	gtk_file_filter_set_name(filter, _("iCalender files"));
+	gtk_file_filter_add_pattern(filter, "*.ics");
+	gtk_file_filter_add_pattern(filter, "*.ICS");
+	gtk_file_chooser_add_filter(GTK_FILE_CHOOSER(dialog), filter);
+	gtk_file_chooser_set_filter(GTK_FILE_CHOOSER(dialog), filter);
 
 	if(gtk_dialog_run(GTK_DIALOG(dialog)) == GTK_RESPONSE_ACCEPT) {
 		new_path = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(dialog));

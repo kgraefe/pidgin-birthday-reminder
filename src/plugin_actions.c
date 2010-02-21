@@ -23,9 +23,12 @@
 
 #include <blist.h>
 
+#include <gtk/gtk.h>
+
 #include "birthday_reminder.h"
 #include "check.h"
 #include "birthday_list.h"
+#include "icsexport.h"
 
 static void check_birthdays_plugin_action_cb(PurplePluginAction *action) {
 	check_birthdays(NULL, NULL);
@@ -34,6 +37,33 @@ static void check_birthdays_plugin_action_cb(PurplePluginAction *action) {
 
 static void birthday_list_show_cb(PurplePluginAction *action) {
 	birthday_list_show();
+}
+
+static void export_birthdays_cb(PurplePluginAction *action) {
+	GtkWidget *dialog;
+	GtkFileFilter *filter;
+
+	dialog = gtk_file_chooser_dialog_new(_("Save birthday list as..."),
+		NULL,
+		GTK_FILE_CHOOSER_ACTION_SAVE,
+		GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+		GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
+		NULL);
+
+	gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(dialog), purple_prefs_get_path(PLUGIN_PREFS_PREFIX "/export/path"));
+
+	filter = gtk_file_filter_new();
+	gtk_file_filter_set_name(filter, _("iCalender files"));
+	gtk_file_filter_add_pattern(filter, "*.ics");
+	gtk_file_filter_add_pattern(filter, "*.ICS");
+	gtk_file_chooser_set_filter(GTK_FILE_CHOOSER(dialog), filter);
+	gtk_file_chooser_add_filter(GTK_FILE_CHOOSER(dialog), filter);
+
+	if(gtk_dialog_run(GTK_DIALOG(dialog)) == GTK_RESPONSE_ACCEPT) {
+		icsexport(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(dialog)));
+	}
+
+	gtk_widget_destroy(dialog);
 }
 
 GList *plugin_actions(PurplePlugin *plugin, gpointer context) {
@@ -46,6 +76,9 @@ GList *plugin_actions(PurplePlugin *plugin, gpointer context) {
 	l = g_list_append(l, action);
 
 	action = purple_plugin_action_new(_("Show birthday list"), birthday_list_show_cb);
+	l = g_list_append(l, action);
+
+	action = purple_plugin_action_new(_("Export birthday list"), export_birthdays_cb);
 	l = g_list_append(l, action);
 
 	return l;

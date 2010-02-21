@@ -85,21 +85,24 @@ static void print_ics_birthday(gpointer key, gpointer value, gpointer user_data)
 	fprintf(fd, "SUMMARY:%s\n", bday->summary);
 	fprintf(fd, "UID:%s\n", bday->uid);
 	fprintf(fd, "RRULE:FREQ=YEARLY\n");
-	fprintf(fd, "DESCRIPTION:\n");
+	fprintf(fd, "DESCRIPTION:%s\n", bday->summary);
 	fprintf(fd, "END:VEVENT\n");
 }
 
 void automatic_export(void) {
+	const gchar *path;
+
 	if(purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/export/automatic")) {
-		icsexport();
+		path = purple_prefs_get_path(PLUGIN_PREFS_PREFIX "/export/path");
+
+		icsexport(path);
 	}
 }
 
-void icsexport(void) {
+void icsexport(const gchar *path) {
 	GHashTable *birthdays;
 	ICSBirthday *birthday=NULL;
 
-	const gchar *path;
 	FILE *fd;
 	gchar line[256], buf[256];
 
@@ -109,8 +112,6 @@ void icsexport(void) {
 	guint64 uid;
 	gchar *struid;
 	
-	path = purple_prefs_get_path(PLUGIN_PREFS_PREFIX "/export/path");
-
 	/* key is part of ICSBirthday so it will not be freed two times */
 	birthdays = g_hash_table_new_full(g_str_hash, g_str_equal, NULL, ics_birthday_destroy);
 
@@ -167,8 +168,9 @@ void icsexport(void) {
 					}
 
 					birthday = g_malloc(sizeof(ICSBirthday));
-					birthday->summary = g_strdup_printf(_("%s's Birthday"), purple_contact_get_alias((PurpleContact *)node));
-					birthday->date = g_strdup_printf("%i%i%i", g_date_get_year(&date), g_date_get_month(&date), g_date_get_day(&date));;
+					/* Translators: this is how the birthday appears in an external calendar application */
+					birthday->summary = g_strdup_printf(_("%s's birthday"), purple_contact_get_alias((PurpleContact *)node));
+					birthday->date = g_strdup_printf("%04i%02i%02i", g_date_get_year(&date), g_date_get_month(&date), g_date_get_day(&date));;
 					birthday->uid = struid; /* will be freed later, so... */
 
 					/* if it was in the file before, it will be removed (and destroyed) and replaced here */
