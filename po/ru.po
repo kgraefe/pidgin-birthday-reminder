@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-15 18:10+0100\n"
+"POT-Creation-Date: 2010-02-21 17:47+0100\n"
 "PO-Revision-Date: 2009-05-09 18:46+1000\n"
 "Last-Translator: Alexander Logvinov <ports@logvinov.com>\n"
 "Language-Team: Russian\n"
@@ -17,23 +17,247 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../src/birthday_reminder.c:137 ../src/notification.c:143
-#: ../src/notification.c:145 ../src/notification.c:151
-#: ../src/notification.c:154 ../src/input.c:91
+#: ../src/birthday_list.c:152
+#, c-format
+msgid "%02d/%02d/%04d"
+msgstr "%2$02d.%1$02d.%3$04d"
+
+#: ../src/birthday_list.c:154
+#, c-format
+msgid "%02d/%02d"
+msgstr "%2$02d.%1$02d."
+
+#: ../src/birthday_list.c:183
+msgid "Buddy"
+msgstr "Собеседник"
+
+#: ../src/birthday_list.c:198
+msgid "Days to birthday"
+msgstr "Дней до Дня рождения"
+
+#: ../src/birthday_list.c:209 ../src/scan.c:126
+msgid "Birthday"
+msgstr "День рождения"
+
+#: ../src/birthday_list.c:220
+msgid "Age"
+msgstr "Возраст"
+
+#: ../src/birthday_list.c:237 ../src/notification.c:153
+#: ../src/notification.c:156
+msgid "Close"
+msgstr "Закрыть"
+
+#: ../src/birthday_list.c:242 ../src/notification.c:153
+msgid "Write IM"
+msgstr "Написать сообщение"
+
+#: ../src/birthday_list.c:247
+#, c-format
+msgid "Birthday List (%d)"
+msgstr "Список Дней рождения (%d)"
+
+#: ../src/birthday_reminder.c:139 ../src/input.c:95 ../src/notification.c:145
+#: ../src/notification.c:147 ../src/notification.c:153
+#: ../src/notification.c:156
 msgid "Birthday Reminder"
 msgstr "Напоминание о Днях рождения"
 
-#: ../src/birthday_reminder.c:138
+#: ../src/birthday_reminder.c:140
 msgid "Reminds you of the birthday of your buddies. :o)"
 msgstr "Напоминает Вам о Днях рождения Ваших собеседников. :o)"
 
-#: ../src/birthday_reminder.c:139
+#: ../src/birthday_reminder.c:141
 msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
 msgstr ""
 "Этот плагин будет отслеживать и напоминать Вам о Днях рождения Ваших "
 "собеседников."
 
-#. Translators: to use an other orde of the arguments use %2$02d for day, %1$02d for month and %3$04d for year
+#: ../src/emblems.c:143
+msgid "Could not load icons!\n"
+msgstr "Не могу загруить иконки!\n"
+
+#: ../src/icsexport.c:170
+#, fuzzy, c-format
+msgid "%s's Birthday"
+msgstr "День рождения"
+
+#: ../src/input.c:85
+#, c-format
+msgid ""
+"Use the following format: %s .\n"
+"Blank out the input field to clear the BDay.\n"
+"Use an year before 1900 if you do not know."
+msgstr ""
+"Используйте следующий формат: %s\n"
+"Отчистите поле ввода для того, чтобы убрать День рождения.\n"
+"Используйте год до 1900 если вы его не знаете."
+
+#: ../src/input.c:95
+msgid "Set Birthday:"
+msgstr "Установить День рождения:"
+
+#: ../src/input.c:95
+msgid "OK"
+msgstr "OK"
+
+#: ../src/input.c:95
+msgid "Cancel"
+msgstr "Отмена"
+
+#: ../src/input.c:105
+msgid "Set Birthday"
+msgstr "Установить День рождения"
+
+#: ../src/notification.c:66
+#, c-format
+msgid "sound file (%s) does not exist.\n"
+msgstr "Звуковой файл (%s) не существует.\n"
+
+#: ../src/notification.c:118
+#, c-format
+msgid "%s will be %d years old today! Hooray!"
+msgstr "%s исполнится %d лет сегодня! Ура!"
+
+#: ../src/notification.c:120
+#, c-format
+msgid "It's %s's birthday today! Hooray!"
+msgstr "Сегодня у %s День рождения! Ура!"
+
+#: ../src/notification.c:124
+#, c-format
+msgid "%s will be %d years old tomorrow!"
+msgstr "Завтра %s исполнится %d лет!"
+
+#: ../src/notification.c:126
+#, c-format
+msgid "%s's birthday is tomorrow!"
+msgstr "Завтра у %s День рождения!"
+
+#: ../src/notification.c:130
+#, c-format
+msgid "%s will be %d years old in %d days!"
+msgstr "%s исполнится %d лет через %d дней!"
+
+#: ../src/notification.c:132
+#, c-format
+msgid "%s's birthday is in %d days!"
+msgstr "У %s День рождения через %d дней!"
+
+#: ../src/notification.c:137
+msgid "There are birthdays in the next days! Hooray!"
+msgstr "В ближайшие дни будут Дни рождения! Ура!"
+
+#: ../src/notification.c:145
+msgid "Write IM?"
+msgstr "Написать сообщение?"
+
+#: ../src/notification.c:145 ../src/notification.c:147
+msgid "Yes"
+msgstr "Да"
+
+#: ../src/notification.c:145 ../src/notification.c:147
+msgid "No"
+msgstr "Нет"
+
+#: ../src/notification.c:147
+msgid "Show overview?"
+msgstr "Показать подробности?"
+
+#: ../src/notification.c:156
+msgid "Overview"
+msgstr "Подробности"
+
+#: ../src/plugin_actions.c:45
+msgid "Check Birthdays"
+msgstr "Найти Дни рождения"
+
+#: ../src/plugin_actions.c:48
+msgid "Show birthday list"
+msgstr "Показать список Дней рождения"
+
+#: ../src/prefs.c:73
+#, fuzzy
+msgid "Save birthday list as..."
+msgstr "Показать список Дней рождения"
+
+#. Erinnerung
+#: ../src/prefs.c:112
+msgid "Reminder"
+msgstr "Напоминание"
+
+#: ../src/prefs.c:117
+msgid "Remind just once a day"
+msgstr "Напоминать только один раз в день"
+
+#: ../src/prefs.c:122
+msgid "Show birthday icons in the buddy list"
+msgstr "Показывать иконки Дня рождения в списке собеседников"
+
+#: ../src/prefs.c:140 ../src/prefs.c:161 ../src/prefs.c:182 ../src/prefs.c:203
+msgid "days before birthday"
+msgstr "дней перед Днем рождения"
+
+#: ../src/prefs.c:143
+msgid "Show mini dialog in the buddy list"
+msgstr "Показывать мини диалог в списке собеседников"
+
+#: ../src/prefs.c:164
+msgid "Show notification"
+msgstr "Показывать уведомление"
+
+#: ../src/prefs.c:185
+msgid "Play sound"
+msgstr "Проигрывать мелодию"
+
+#. Tooltip
+#: ../src/prefs.c:207
+msgid "Tooltip"
+msgstr "Всплывающее окно"
+
+#: ../src/prefs.c:211
+msgid "Show Birthday"
+msgstr "Показывать День рождения"
+
+#: ../src/prefs.c:224
+msgid "Show days to birthday"
+msgstr "Показывать дни до Дня рождения"
+
+#: ../src/prefs.c:231
+msgid "Show Age"
+msgstr "Показывать возраст"
+
+#. ICS-Export
+#: ../src/prefs.c:237
+msgid "iCalendar Export"
+msgstr ""
+
+#: ../src/prefs.c:241
+msgid "Export to file"
+msgstr ""
+
+#. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
+#: ../src/scan.c:96
+#, c-format
+msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
+msgstr ""
+"Сканируется собеседник %s (Учетная запись: %s (%s)). Ожидание ответа...\n"
+
+#: ../src/scan.c:98
+msgid "No more buddies to scan.\n"
+msgstr "Нет больше собеседников для поиска.\n"
+
+#. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
+#: ../src/scan.c:155
+#, c-format
+msgid "Buddy %s (Account: %s (%s)) scanned.\n"
+msgstr "Собеседник %s (Учетная запись: %s (%s)) проверен.\n"
+
+#: ../src/scan.c:192
+msgid "Scan birthdays on this account"
+msgstr "Найти Дни рождения в этой учетной записи"
+
+#. Translators: to use an other order of the arguments use %2$02d for day, %1$02d for month and %3$04d for year
 #: ../src/tooltip.c:40
 #, c-format
 msgid ""
@@ -76,208 +300,3 @@ msgid ""
 msgstr ""
 "\n"
 "<b>Возраст</b>: %d лет"
-
-#: ../src/emblems.c:126
-msgid "Could not load icons!\n"
-msgstr "Не могу загруить иконки!\n"
-
-#: ../src/notification.c:64
-#, c-format
-msgid "sound file (%s) does not exist.\n"
-msgstr "Звуковой файл (%s) не существует.\n"
-
-#: ../src/notification.c:116
-#, c-format
-msgid "%s will be %d years old today! Hooray!"
-msgstr "%s исполнится %d лет сегодня! Ура!"
-
-#: ../src/notification.c:118
-#, c-format
-msgid "It's %s's birthday today! Hooray!"
-msgstr "Сегодня у %s День рождения! Ура!"
-
-#: ../src/notification.c:122
-#, c-format
-msgid "%s will be %d years old tomorrow!"
-msgstr "Завтра %s исполнится %d лет!"
-
-#: ../src/notification.c:124
-#, c-format
-msgid "%s's birthday is tomorrow!"
-msgstr "Завтра у %s День рождения!"
-
-#: ../src/notification.c:128
-#, c-format
-msgid "%s will be %d years old in %d days!"
-msgstr "%s исполнится %d лет через %d дней!"
-
-#: ../src/notification.c:130
-#, c-format
-msgid "%s's birthday is in %d days!"
-msgstr "У %s День рождения через %d дней!"
-
-#: ../src/notification.c:135
-msgid "There are birthdays in the next days! Hooray!"
-msgstr "В ближайшие дни будут Дни рождения! Ура!"
-
-#: ../src/notification.c:143
-msgid "Write IM?"
-msgstr "Написать сообщение?"
-
-#: ../src/notification.c:143 ../src/notification.c:145
-msgid "Yes"
-msgstr "Да"
-
-#: ../src/notification.c:143 ../src/notification.c:145
-msgid "No"
-msgstr "Нет"
-
-#: ../src/notification.c:145
-msgid "Show overview?"
-msgstr "Показать подробности?"
-
-#: ../src/notification.c:151 ../src/notification.c:154
-#: ../src/birthday_list.c:234
-msgid "Close"
-msgstr "Закрыть"
-
-#: ../src/notification.c:151 ../src/birthday_list.c:239
-msgid "Write IM"
-msgstr "Написать сообщение"
-
-#: ../src/notification.c:154
-msgid "Overview"
-msgstr "Подробности"
-
-#. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
-#: ../src/scan.c:93
-#, c-format
-msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
-msgstr ""
-"Сканируется собеседник %s (Учетная запись: %s (%s)). Ожидание ответа...\n"
-
-#: ../src/scan.c:95
-msgid "No more buddies to scan.\n"
-msgstr "Нет больше собеседников для поиска.\n"
-
-#: ../src/scan.c:123 ../src/birthday_list.c:206
-msgid "Birthday"
-msgstr "День рождения"
-
-#. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
-#: ../src/scan.c:151
-#, c-format
-msgid "Buddy %s (Account: %s (%s)) scanned.\n"
-msgstr "Собеседник %s (Учетная запись: %s (%s)) проверен.\n"
-
-#: ../src/scan.c:188
-msgid "Scan birthdays on this account"
-msgstr "Найти Дни рождения в этой учетной записи"
-
-#: ../src/input.c:81
-#, c-format
-msgid ""
-"Use the following format: %s .\n"
-"Blank out the input field to clear the BDay.\n"
-"Use an year before 1900 if you do not know."
-msgstr ""
-"Используйте следующий формат: %s\n"
-"Отчистите поле ввода для того, чтобы убрать День рождения.\n"
-"Используйте год до 1900 если вы его не знаете."
-
-#: ../src/input.c:91
-msgid "Set Birthday:"
-msgstr "Установить День рождения:"
-
-#: ../src/input.c:91
-msgid "OK"
-msgstr "OK"
-
-#: ../src/input.c:91
-msgid "Cancel"
-msgstr "Отмена"
-
-#: ../src/input.c:101
-msgid "Set Birthday"
-msgstr "Установить День рождения"
-
-#. Erinnerung
-#: ../src/prefs.c:68
-msgid "Reminder"
-msgstr "Напоминание"
-
-#: ../src/prefs.c:73
-msgid "Remind just once a day"
-msgstr "Напоминать только один раз в день"
-
-#: ../src/prefs.c:78
-msgid "Show birthday icons in the buddy list"
-msgstr "Показывать иконки Дня рождения в списке собеседников"
-
-#: ../src/prefs.c:96 ../src/prefs.c:117 ../src/prefs.c:138 ../src/prefs.c:159
-msgid "days before birthday"
-msgstr "дней перед Днем рождения"
-
-#: ../src/prefs.c:99
-msgid "Show mini dialog in the buddy list"
-msgstr "Показывать мини диалог в списке собеседников"
-
-#: ../src/prefs.c:120
-msgid "Show notification"
-msgstr "Показывать уведомление"
-
-#: ../src/prefs.c:141
-msgid "Play sound"
-msgstr "Проигрывать мелодию"
-
-#. Tooltip
-#: ../src/prefs.c:163
-msgid "Tooltip"
-msgstr "Всплывающее окно"
-
-#: ../src/prefs.c:167
-msgid "Show Birthday"
-msgstr "Показывать День рождения"
-
-#: ../src/prefs.c:180
-msgid "Show days to birthday"
-msgstr "Показывать дни до Дня рождения"
-
-#: ../src/prefs.c:187
-msgid "Show Age"
-msgstr "Показывать возраст"
-
-#: ../src/birthday_list.c:149
-#, c-format
-msgid "%02d/%02d/%04d"
-msgstr "%2$02d.%1$02d.%3$04d"
-
-#: ../src/birthday_list.c:151
-#, c-format
-msgid "%02d/%02d"
-msgstr "%2$02d.%1$02d."
-
-#: ../src/birthday_list.c:180
-msgid "Buddy"
-msgstr "Собеседник"
-
-#: ../src/birthday_list.c:195
-msgid "Days to birthday"
-msgstr "Дней до Дня рождения"
-
-#: ../src/birthday_list.c:217
-msgid "Age"
-msgstr "Возраст"
-
-#: ../src/birthday_list.c:244
-#, c-format
-msgid "Birthday List (%d)"
-msgstr "Список Дней рождения (%d)"
-
-#: ../src/plugin_actions.c:43
-msgid "Check Birthdays"
-msgstr "Найти Дни рождения"
-
-#: ../src/plugin_actions.c:46
-msgid "Show birthday list"
-msgstr "Показать список Дней рождения"

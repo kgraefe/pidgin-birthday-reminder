@@ -29,6 +29,7 @@
 #include "emblems.h"
 #include "check.h"
 #include "birthday_access.h"
+#include "icsexport.h"
 
 extern PurplePlugin *plugin;
 
@@ -62,6 +63,7 @@ static void do_set_bday_cb(PurpleBlistNode *node, const char* bday) {
 	g_date_set_today(&today);
 	if(g_date_valid(&date) && g_date_compare(&date, &today) < 0 && g_date_get_year(&date) > 12) {
 		purple_blist_node_set_int(node, "birthday_julian", g_date_get_julian(&date));
+		automatic_export();
 		check_birthdays(NULL, buddy);
 	}
 

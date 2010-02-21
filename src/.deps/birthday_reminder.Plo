@@ -70,7 +70,7 @@ birthday_reminder.lo: birthday_reminder.c birthday_reminder.h ../config.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
  /usr/include/sys/stat.h /usr/include/bits/stat.h \
- /usr/include/pidgin/gtkplugin.h /usr/include/pidgin/pidgin.h \
+ /usr/local/include/pidgin/gtkplugin.h /usr/local/include/pidgin/pidgin.h \
  /usr/include/gtk-2.0/gtk/gtk.h /usr/include/gtk-2.0/gdk/gdk.h \
  /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h \
  /usr/include/glib-2.0/gio/gio.h /usr/include/glib-2.0/gio/giotypes.h \
@@ -427,29 +427,41 @@ birthday_reminder.lo: birthday_reminder.c birthday_reminder.h ../config.h \
  /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h \
  /usr/include/X11/Xosdefs.h /usr/include/X11/Xutil.h \
  /usr/include/X11/keysym.h /usr/include/X11/keysymdef.h \
- /usr/include/libpurple/plugin.h /usr/include/libpurple/signals.h \
- /usr/include/libpurple/value.h /usr/include/libpurple/pluginpref.h \
- /usr/include/libpurple/prefs.h /usr/include/libpurple/version.h \
- /usr/include/libpurple/core.h /usr/include/pidgin/gtkblist.h \
- /usr/include/libpurple/blist.h /usr/include/libpurple/account.h \
- /usr/include/libpurple/connection.h /usr/include/libpurple/plugin.h \
- /usr/include/libpurple/status.h /usr/include/libpurple/blist.h \
- /usr/include/libpurple/conversation.h /usr/include/libpurple/buddyicon.h \
- /usr/include/libpurple/imgstore.h /usr/include/libpurple/prpl.h \
- /usr/include/unistd.h /usr/include/bits/posix_opt.h \
- /usr/include/bits/confname.h /usr/include/getopt.h \
- /usr/include/bits/unistd.h /usr/include/libpurple/ft.h \
- /usr/include/libpurple/media.h /usr/include/libpurple/util.h \
- /usr/include/libpurple/xmlnode.h /usr/include/libpurple/notify.h \
- /usr/include/alloca.h /usr/include/bits/stdlib.h \
- /usr/include/libpurple/proxy.h /usr/include/libpurple/eventloop.h \
- /usr/include/libpurple/roomlist.h /usr/include/libpurple/whiteboard.h \
- /usr/include/libpurple/log.h /usr/include/libpurple/server.h \
- /usr/include/libpurple/sslconn.h /usr/include/libpurple/certificate.h \
- /usr/include/libpurple/privacy.h /usr/include/pidgin/gtkblist-theme.h \
- /usr/include/libpurple/theme.h check.h /usr/include/libpurple/account.h \
- notification.h emblems.h tooltip.h input.h prefs.h scan.h \
- birthday_list.h plugin_actions.h
+ /usr/local/include/libpurple/plugin.h \
+ /usr/local/include/libpurple/signals.h \
+ /usr/local/include/libpurple/value.h \
+ /usr/local/include/libpurple/pluginpref.h \
+ /usr/local/include/libpurple/prefs.h \
+ /usr/local/include/libpurple/version.h \
+ /usr/local/include/libpurple/core.h /usr/local/include/pidgin/gtkblist.h \
+ /usr/local/include/libpurple/blist.h \
+ /usr/local/include/libpurple/account.h \
+ /usr/local/include/libpurple/connection.h \
+ /usr/local/include/libpurple/plugin.h \
+ /usr/local/include/libpurple/status.h \
+ /usr/local/include/libpurple/blist.h \
+ /usr/local/include/libpurple/conversation.h \
+ /usr/local/include/libpurple/buddyicon.h \
+ /usr/local/include/libpurple/imgstore.h \
+ /usr/local/include/libpurple/prpl.h /usr/include/unistd.h \
+ /usr/include/bits/posix_opt.h /usr/include/bits/confname.h \
+ /usr/include/getopt.h /usr/include/bits/unistd.h \
+ /usr/local/include/libpurple/ft.h /usr/local/include/libpurple/media.h \
+ /usr/local/include/libpurple/util.h \
+ /usr/local/include/libpurple/xmlnode.h \
+ /usr/local/include/libpurple/notify.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib.h /usr/local/include/libpurple/proxy.h \
+ /usr/local/include/libpurple/eventloop.h \
+ /usr/local/include/libpurple/roomlist.h \
+ /usr/local/include/libpurple/whiteboard.h \
+ /usr/local/include/libpurple/log.h /usr/local/include/libpurple/server.h \
+ /usr/local/include/libpurple/sslconn.h \
+ /usr/local/include/libpurple/certificate.h \
+ /usr/local/include/libpurple/privacy.h \
+ /usr/local/include/pidgin/gtkblist-theme.h \
+ /usr/local/include/libpurple/theme.h check.h \
+ /usr/local/include/libpurple/account.h notification.h emblems.h \
+ tooltip.h input.h prefs.h scan.h birthday_list.h plugin_actions.h
 
 birthday_reminder.h:
 
@@ -681,9 +693,9 @@ internal.h:
 
 /usr/include/bits/stat.h:
 
-/usr/include/pidgin/gtkplugin.h:
+/usr/local/include/pidgin/gtkplugin.h:
 
-/usr/include/pidgin/pidgin.h:
+/usr/local/include/pidgin/pidgin.h:
 
 /usr/include/gtk-2.0/gtk/gtk.h:
 
@@ -1477,41 +1489,41 @@ internal.h:
 
 /usr/include/X11/keysymdef.h:
 
-/usr/include/libpurple/plugin.h:
+/usr/local/include/libpurple/plugin.h:
 
-/usr/include/libpurple/signals.h:
+/usr/local/include/libpurple/signals.h:
 
-/usr/include/libpurple/value.h:
+/usr/local/include/libpurple/value.h:
 
-/usr/include/libpurple/pluginpref.h:
+/usr/local/include/libpurple/pluginpref.h:
 
-/usr/include/libpurple/prefs.h:
+/usr/local/include/libpurple/prefs.h:
 
-/usr/include/libpurple/version.h:
+/usr/local/include/libpurple/version.h:
 
-/usr/include/libpurple/core.h:
+/usr/local/include/libpurple/core.h:
 
-/usr/include/pidgin/gtkblist.h:
+/usr/local/include/pidgin/gtkblist.h:
 
-/usr/include/libpurple/blist.h:
+/usr/local/include/libpurple/blist.h:
 
-/usr/include/libpurple/account.h:
+/usr/local/include/libpurple/account.h:
 
-/usr/include/libpurple/connection.h:
+/usr/local/include/libpurple/connection.h:
 
-/usr/include/libpurple/plugin.h:
+/usr/local/include/libpurple/plugin.h:
 
-/usr/include/libpurple/status.h:
+/usr/local/include/libpurple/status.h:
 
-/usr/include/libpurple/blist.h:
+/usr/local/include/libpurple/blist.h:
 
-/usr/include/libpurple/conversation.h:
+/usr/local/include/libpurple/conversation.h:
 
-/usr/include/libpurple/buddyicon.h:
+/usr/local/include/libpurple/buddyicon.h:
 
-/usr/include/libpurple/imgstore.h:
+/usr/local/include/libpurple/imgstore.h:
 
-/usr/include/libpurple/prpl.h:
+/usr/local/include/libpurple/prpl.h:
 
 /usr/include/unistd.h:
 
@@ -1523,45 +1535,45 @@ internal.h:
 
 /usr/include/bits/unistd.h:
 
-/usr/include/libpurple/ft.h:
+/usr/local/include/libpurple/ft.h:
 
-/usr/include/libpurple/media.h:
+/usr/local/include/libpurple/media.h:
 
-/usr/include/libpurple/util.h:
+/usr/local/include/libpurple/util.h:
 
-/usr/include/libpurple/xmlnode.h:
+/usr/local/include/libpurple/xmlnode.h:
 
-/usr/include/libpurple/notify.h:
+/usr/local/include/libpurple/notify.h:
 
 /usr/include/alloca.h:
 
 /usr/include/bits/stdlib.h:
 
-/usr/include/libpurple/proxy.h:
+/usr/local/include/libpurple/proxy.h:
 
-/usr/include/libpurple/eventloop.h:
+/usr/local/include/libpurple/eventloop.h:
 
-/usr/include/libpurple/roomlist.h:
+/usr/local/include/libpurple/roomlist.h:
 
-/usr/include/libpurple/whiteboard.h:
+/usr/local/include/libpurple/whiteboard.h:
 
-/usr/include/libpurple/log.h:
+/usr/local/include/libpurple/log.h:
 
-/usr/include/libpurple/server.h:
+/usr/local/include/libpurple/server.h:
 
-/usr/include/libpurple/sslconn.h:
+/usr/local/include/libpurple/sslconn.h:
 
-/usr/include/libpurple/certificate.h:
+/usr/local/include/libpurple/certificate.h:
 
-/usr/include/libpurple/privacy.h:
+/usr/local/include/libpurple/privacy.h:
 
-/usr/include/pidgin/gtkblist-theme.h:
+/usr/local/include/pidgin/gtkblist-theme.h:
 
-/usr/include/libpurple/theme.h:
+/usr/local/include/libpurple/theme.h:
 
 check.h:
 
-/usr/include/libpurple/account.h:
+/usr/local/include/libpurple/account.h:
 
 notification.h:
 

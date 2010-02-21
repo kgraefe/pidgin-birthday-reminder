@@ -21,10 +21,12 @@
 
 #include "internal.h"
 
+#include <gtk/gtk.h>
 #include <gtkblist.h>
 #include <gtkutils.h>
 
 #include "birthday_reminder.h"
+#include "icsexport.h"
 
 extern PurplePlugin *plugin;
 
@@ -52,6 +54,44 @@ static void spin_cb(GtkWidget *widget, gpointer data) {
 	purple_prefs_set_int(pref, value);
 }
 
+static void entry_path_cb(GtkWidget *widget, gpointer data) {
+	const gchar *value, *pref;
+
+	value = gtk_entry_get_text(GTK_ENTRY(widget));
+	pref = (gchar *) data;
+
+	purple_prefs_set_path(pref, value);
+}
+
+static void export_filechooser_cb(GtkWidget *widget, gpointer data) {
+	GtkEntry *entry;
+	GtkWidget *dialog;
+	gchar *new_path;
+
+	entry = (GtkEntry *) data;
+
+	dialog = gtk_file_chooser_dialog_new(_("Save birthday list as..."),
+		NULL,
+		GTK_FILE_CHOOSER_ACTION_SAVE,
+		GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+		GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
+		NULL);
+
+	gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(dialog), purple_prefs_get_path(PLUGIN_PREFS_PREFIX "/export/path"));
+
+	if(gtk_dialog_run(GTK_DIALOG(dialog)) == GTK_RESPONSE_ACCEPT) {
+		new_path = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(dialog));
+		gtk_entry_set_text(entry, new_path);
+		g_free(new_path);
+	}
+
+	gtk_widget_destroy(dialog);
+}
+
+static void window_destroyed_cb(GtkWidget *widget, gpointer data) {
+	automatic_export();
+}
+
 GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	GtkWidget *ret = NULL;
 	GtkWidget *frame = NULL;
@@ -61,6 +101,8 @@ GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	GtkWidget *spin = NULL;
 	GtkAdjustment *adjustment = NULL;
 	GtkWidget *label = NULL;
+	GtkWidget *entry = NULL;
+	GtkWidget *button = NULL;
 	GtkWidget *ref = NULL;
 
 	ret = gtk_vbox_new(FALSE, 18);
@@ -190,6 +232,37 @@ GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	gtk_box_pack_start(GTK_BOX(vbox), toggle, FALSE, FALSE, 0);
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(toggle), purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/tooltip/show_age"));
 	g_signal_connect(G_OBJECT(toggle), "toggled", G_CALLBACK(toggle_cb), PLUGIN_PREFS_PREFIX "/tooltip/show_age");
+
+	/* ICS-Export */
+	frame = pidgin_make_frame(ret, _("iCalendar Export"));
+	vbox = gtk_vbox_new(FALSE, 5);
+	gtk_container_add(GTK_CONTAINER(frame), vbox);
+
+	toggle = gtk_check_button_new_with_mnemonic(_("Export to file"));
+	gtk_box_pack_start(GTK_BOX(vbox), toggle, FALSE, FALSE, 0);
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(toggle), purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/export/automatic"));
+	g_signal_connect(G_OBJECT(toggle), "toggled", G_CALLBACK(toggle_cb), PLUGIN_PREFS_PREFIX "/export/automatic");
+
+	hbox = gtk_hbox_new(FALSE, 5);
+	gtk_box_pack_start(GTK_BOX(vbox), hbox, TRUE, TRUE, 0);
+
+	label = gtk_label_new("");
+	gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 10);
+
+	entry = gtk_entry_new();
+	gtk_box_pack_start(GTK_BOX(hbox), entry, TRUE, TRUE, 0);
+	gtk_entry_set_text(GTK_ENTRY(entry), purple_prefs_get_path(PLUGIN_PREFS_PREFIX "/export/path"));
+	gtk_widget_set_sensitive(entry, gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(toggle)));
+	g_signal_connect(G_OBJECT(toggle), "toggled", G_CALLBACK(pidgin_toggle_sensitive), entry);
+	g_signal_connect(G_OBJECT(entry), "changed", G_CALLBACK(entry_path_cb), PLUGIN_PREFS_PREFIX "/export/path");
+
+	button = gtk_button_new_with_label("...");
+	gtk_box_pack_start(GTK_BOX(hbox), button, FALSE, FALSE, 0);
+	gtk_widget_set_sensitive(button, gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(toggle)));
+	g_signal_connect(G_OBJECT(toggle), "toggled", G_CALLBACK(pidgin_toggle_sensitive), button);
+	g_signal_connect(G_OBJECT(button), "clicked", G_CALLBACK(export_filechooser_cb), entry);
+
+	g_signal_connect(G_OBJECT(ret), "destroy", G_CALLBACK(window_destroyed_cb), NULL);
 
 	gtk_widget_show_all(ret);
 	return ret;

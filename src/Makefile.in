@@ -71,7 +71,7 @@ birthday_reminder_la_LIBADD =
 am_birthday_reminder_la_OBJECTS = birthday_reminder.lo functions.lo \
 	pidgin_internals.lo birthday_access.lo tooltip.lo emblems.lo \
 	notification.lo check.lo scan.lo input.lo prefs.lo \
-	birthday_list.lo plugin_actions.lo
+	birthday_list.lo plugin_actions.lo icsexport.lo hash.lo
 birthday_reminder_la_OBJECTS = $(am_birthday_reminder_la_OBJECTS)
 birthday_reminder_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
@@ -246,7 +246,9 @@ birthday_reminder_la_SOURCES = \
 	input.c \
 	prefs.c \
 	birthday_list.c \
-	plugin_actions.c
+	plugin_actions.c \
+	icsexport.c \
+	hash.c
 
 birthday_reminder_la_LDFLAGS = -module -avoid-version
 all: all-am
@@ -329,6 +331,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/check.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/emblems.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/functions.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hash.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/icsexport.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/input.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/notification.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pidgin_internals.Plo@am__quote@

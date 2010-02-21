@@ -36,7 +36,7 @@ static void drawing_tooltip_cb(PurpleBlistNode *node, GString *str, gboolean ful
 	if(g_date_valid(&date)) {
 		if(purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/tooltip/show_birthday")) {
 			if(g_date_get_year(&date) > 1900) {
-				/* Translators: to use an other orde of the arguments use %2$02d for day, %1$02d for month and %3$04d for year */
+				/* Translators: to use an other order of the arguments use %2$02d for day, %1$02d for month and %3$04d for year */
 				g_string_append_printf(str, _("\n<b>Birthday</b>: %02d/%02d/%04d"), g_date_get_month(&date), g_date_get_day(&date), g_date_get_year(&date));
 			} else {
 				/* Translators: use %2$02d for day and %1$02d for month */

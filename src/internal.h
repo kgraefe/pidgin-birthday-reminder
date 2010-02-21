@@ -20,6 +20,8 @@
 #ifndef INTERNAL_H
 #define INTERNAL_H
 
+#include "config.h"
+
 #include <glib.h>
 
 #if GLIB_CHECK_VERSION(2,4,0)

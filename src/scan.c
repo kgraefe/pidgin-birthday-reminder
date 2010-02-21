@@ -28,6 +28,7 @@
 
 #include "birthday_reminder.h"
 #include "check.h"
+#include "icsexport.h"
 
 extern PurplePlugin *plugin;
 
@@ -128,6 +129,7 @@ static void displaying_userinfo_cb(PurpleAccount *account, const char *who, Purp
 
 			if(g_date_valid(date)) {
 				purple_blist_node_set_int(node, "birthday_julian", g_date_get_julian(date));
+				automatic_export();
 				check_birthdays(NULL, buddy);
 			}
 

@@ -1,13 +1,15 @@
-	../src/birthday_reminder.c \
-	../src/functions.c \
-	../src/pidgin_internals.c \
 	../src/birthday_access.c \
-	../src/tooltip.c \
-	../src/emblems.c \
-	../src/notification.c \
-	../src/check.c \
-	../src/scan.c \
-	../src/input.c \
-	../src/prefs.c \
 	../src/birthday_list.c \
-	../src/plugin_actions.c
+	../src/birthday_reminder.c \
+	../src/check.c \
+	../src/emblems.c \
+	../src/functions.c \
+	../src/hash.c \
+	../src/icsexport.c \
+	../src/input.c \
+	../src/notification.c \
+	../src/pidgin_internals.c \
+	../src/plugin_actions.c \
+	../src/prefs.c \
+	../src/scan.c \
+	../src/tooltip.c

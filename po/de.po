@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-15 18:10+0100\n"
+"POT-Creation-Date: 2010-02-21 17:47+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Konrad Gräfe <freakazoid@teamblind.de>\n"
 "Language-Team: de_DE <freakazoid@teamblind.de>\n"
@@ -15,23 +15,245 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/birthday_reminder.c:137 ../src/notification.c:143
-#: ../src/notification.c:145 ../src/notification.c:151
-#: ../src/notification.c:154 ../src/input.c:91
+#: ../src/birthday_list.c:152
+#, c-format
+msgid "%02d/%02d/%04d"
+msgstr "%2$02d.%1$02d.%3$04d"
+
+#: ../src/birthday_list.c:154
+#, c-format
+msgid "%02d/%02d"
+msgstr "%2$02d.%1$02d."
+
+#: ../src/birthday_list.c:183
+msgid "Buddy"
+msgstr "Buddy"
+
+#: ../src/birthday_list.c:198
+msgid "Days to birthday"
+msgstr "Tage bis zum Geburtstag"
+
+#: ../src/birthday_list.c:209 ../src/scan.c:126
+msgid "Birthday"
+msgstr "Geburtstag"
+
+#: ../src/birthday_list.c:220
+msgid "Age"
+msgstr "Alter"
+
+#: ../src/birthday_list.c:237 ../src/notification.c:153
+#: ../src/notification.c:156
+msgid "Close"
+msgstr "Schließen"
+
+#: ../src/birthday_list.c:242 ../src/notification.c:153
+msgid "Write IM"
+msgstr "Anschreiben"
+
+#: ../src/birthday_list.c:247
+#, c-format
+msgid "Birthday List (%d)"
+msgstr "Geburtstags-Liste (%d)"
+
+#: ../src/birthday_reminder.c:139 ../src/input.c:95 ../src/notification.c:145
+#: ../src/notification.c:147 ../src/notification.c:153
+#: ../src/notification.c:156
 msgid "Birthday Reminder"
 msgstr "Geburtstags-Erinnerung"
 
-#: ../src/birthday_reminder.c:138
+#: ../src/birthday_reminder.c:140
 msgid "Reminds you of the birthday of your buddies. :o)"
 msgstr "Erinnert an die Geburtstage deiner Buddys. :o)"
 
-#: ../src/birthday_reminder.c:139
+#: ../src/birthday_reminder.c:141
 msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
 msgstr ""
 "Dieses Plugin sollte die Geburtstage deiner Buddys aufnehmen und dich an sie "
 "erinnern."
 
-#. Translators: to use an other orde of the arguments use %2$02d for day, %1$02d for month and %3$04d for year
+#: ../src/emblems.c:143
+msgid "Could not load icons!\n"
+msgstr "Konnte Icons nicht laden!\n"
+
+#: ../src/icsexport.c:170
+#, c-format
+msgid "%s's Birthday"
+msgstr "Geburtstag %s"
+
+#: ../src/input.c:85
+#, c-format
+msgid ""
+"Use the following format: %s .\n"
+"Blank out the input field to clear the BDay.\n"
+"Use an year before 1900 if you do not know."
+msgstr ""
+"Benutzen Sie folgendes Format: %s\n"
+"Lassen Sie das Feld leer um das Geburtsdatum zu löschen.\n"
+"Benutzen Sie eine Jahreszahl vor 1900, wenn Sie sie nicht genau wissen."
+
+#: ../src/input.c:95
+msgid "Set Birthday:"
+msgstr "Setze Geburtstag:"
+
+#: ../src/input.c:95
+msgid "OK"
+msgstr "OK"
+
+#: ../src/input.c:95
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: ../src/input.c:105
+msgid "Set Birthday"
+msgstr "Geburtstag setzen"
+
+#: ../src/notification.c:66
+#, c-format
+msgid "sound file (%s) does not exist.\n"
+msgstr "Sound-Datei (%s) existiert nicht.\n"
+
+#: ../src/notification.c:118
+#, c-format
+msgid "%s will be %d years old today! Hooray!"
+msgstr "%s wird heute %d Jahre alt! Hurra!"
+
+#: ../src/notification.c:120
+#, c-format
+msgid "It's %s's birthday today! Hooray!"
+msgstr "%s hat heute Geburtstag! Hurra!"
+
+#: ../src/notification.c:124
+#, c-format
+msgid "%s will be %d years old tomorrow!"
+msgstr "%s wird morgen %d Jahre alt!"
+
+#: ../src/notification.c:126
+#, c-format
+msgid "%s's birthday is tomorrow!"
+msgstr "%s hat morgen Geburtstag!"
+
+#: ../src/notification.c:130
+#, c-format
+msgid "%s will be %d years old in %d days!"
+msgstr "%1$s wird in %3$d Tagen %2$d Jahre alt!"
+
+#: ../src/notification.c:132
+#, c-format
+msgid "%s's birthday is in %d days!"
+msgstr "%s hat in %d Tagen Geburtstag!"
+
+#: ../src/notification.c:137
+msgid "There are birthdays in the next days! Hooray!"
+msgstr "Es stehen Geburtstage an! Hurra!"
+
+#: ../src/notification.c:145
+msgid "Write IM?"
+msgstr "Anschreiben?"
+
+#: ../src/notification.c:145 ../src/notification.c:147
+msgid "Yes"
+msgstr "Ja"
+
+#: ../src/notification.c:145 ../src/notification.c:147
+msgid "No"
+msgstr "Nein"
+
+#: ../src/notification.c:147
+msgid "Show overview?"
+msgstr "Übersicht anzeigen?"
+
+#: ../src/notification.c:156
+msgid "Overview"
+msgstr "Übersicht"
+
+#: ../src/plugin_actions.c:45
+msgid "Check Birthdays"
+msgstr "Geburtstage überprüfen"
+
+#: ../src/plugin_actions.c:48
+msgid "Show birthday list"
+msgstr "Geburtstags-Liste anzeigen"
+
+#: ../src/prefs.c:73
+msgid "Save birthday list as..."
+msgstr "Geburtstags-Liste speichern unter..."
+
+#. Erinnerung
+#: ../src/prefs.c:112
+msgid "Reminder"
+msgstr "Erinnerung"
+
+#: ../src/prefs.c:117
+msgid "Remind just once a day"
+msgstr "Nur einmal am Tag erinnern"
+
+#: ../src/prefs.c:122
+msgid "Show birthday icons in the buddy list"
+msgstr "Geburtstags-Icons in der Buddy-Liste anzeigen"
+
+#: ../src/prefs.c:140 ../src/prefs.c:161 ../src/prefs.c:182 ../src/prefs.c:203
+msgid "days before birthday"
+msgstr "Tage vor dem Geburtstag"
+
+#: ../src/prefs.c:143
+msgid "Show mini dialog in the buddy list"
+msgstr "Mini-Dialog in der Buddy-Liste anzeigen"
+
+#: ../src/prefs.c:164
+msgid "Show notification"
+msgstr "Meldung anzeigen"
+
+#: ../src/prefs.c:185
+msgid "Play sound"
+msgstr "Melodie abspielen"
+
+#. Tooltip
+#: ../src/prefs.c:207
+msgid "Tooltip"
+msgstr "Tooltip"
+
+#: ../src/prefs.c:211
+msgid "Show Birthday"
+msgstr "Geburtstag anzeigen"
+
+#: ../src/prefs.c:224
+msgid "Show days to birthday"
+msgstr "Tage bis zum Geburtstag anzeigen"
+
+#: ../src/prefs.c:231
+msgid "Show Age"
+msgstr "Alter anzeigen"
+
+#. ICS-Export
+#: ../src/prefs.c:237
+msgid "iCalendar Export"
+msgstr "iCalendar-Export"
+
+#: ../src/prefs.c:241
+msgid "Export to file"
+msgstr "Als Datei exportieren"
+
+#. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
+#: ../src/scan.c:96
+#, c-format
+msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
+msgstr "Frage Buddy %s (Konto: %s (%s)) ab. Warte auf Antwort...\n"
+
+#: ../src/scan.c:98
+msgid "No more buddies to scan.\n"
+msgstr "Keine weiteren Buddies abzufragen.\n"
+
+#. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
+#: ../src/scan.c:155
+#, c-format
+msgid "Buddy %s (Account: %s (%s)) scanned.\n"
+msgstr "Buddy %s (Konto: %s (%s)) wurde abgefragt.\n"
+
+#: ../src/scan.c:192
+msgid "Scan birthdays on this account"
+msgstr "Geburtstage mit diesem Account scannen"
+
+#. Translators: to use an other order of the arguments use %2$02d for day, %1$02d for month and %3$04d for year
 #: ../src/tooltip.c:40
 #, c-format
 msgid ""
@@ -74,207 +296,3 @@ msgid ""
 msgstr ""
 "\n"
 "<b>Alter</b>: %d Jahre"
-
-#: ../src/emblems.c:126
-msgid "Could not load icons!\n"
-msgstr "Konnte Icons nicht laden!\n"
-
-#: ../src/notification.c:64
-#, c-format
-msgid "sound file (%s) does not exist.\n"
-msgstr "Sound-Datei (%s) existiert nicht.\n"
-
-#: ../src/notification.c:116
-#, c-format
-msgid "%s will be %d years old today! Hooray!"
-msgstr "%s wird heute %d Jahre alt! Hurra!"
-
-#: ../src/notification.c:118
-#, c-format
-msgid "It's %s's birthday today! Hooray!"
-msgstr "%s hat heute Geburtstag! Hurra!"
-
-#: ../src/notification.c:122
-#, c-format
-msgid "%s will be %d years old tomorrow!"
-msgstr "%s wird morgen %d Jahre alt!"
-
-#: ../src/notification.c:124
-#, c-format
-msgid "%s's birthday is tomorrow!"
-msgstr "%s hat morgen Geburtstag!"
-
-#: ../src/notification.c:128
-#, c-format
-msgid "%s will be %d years old in %d days!"
-msgstr "%1$s wird in %3$d Tagen %2$d Jahre alt!"
-
-#: ../src/notification.c:130
-#, c-format
-msgid "%s's birthday is in %d days!"
-msgstr "%s hat in %d Tagen Geburtstag!"
-
-#: ../src/notification.c:135
-msgid "There are birthdays in the next days! Hooray!"
-msgstr "Es stehen Geburtstage an! Hurra!"
-
-#: ../src/notification.c:143
-msgid "Write IM?"
-msgstr "Anschreiben?"
-
-#: ../src/notification.c:143 ../src/notification.c:145
-msgid "Yes"
-msgstr "Ja"
-
-#: ../src/notification.c:143 ../src/notification.c:145
-msgid "No"
-msgstr "Nein"
-
-#: ../src/notification.c:145
-msgid "Show overview?"
-msgstr "Übersicht anzeigen?"
-
-#: ../src/notification.c:151 ../src/notification.c:154
-#: ../src/birthday_list.c:234
-msgid "Close"
-msgstr "Schließen"
-
-#: ../src/notification.c:151 ../src/birthday_list.c:239
-msgid "Write IM"
-msgstr "Anschreiben"
-
-#: ../src/notification.c:154
-msgid "Overview"
-msgstr "Übersicht"
-
-#. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
-#: ../src/scan.c:93
-#, c-format
-msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
-msgstr "Frage Buddy %s (Konto: %s (%s)) ab. Warte auf Antwort...\n"
-
-#: ../src/scan.c:95
-msgid "No more buddies to scan.\n"
-msgstr "Keine weiteren Buddies abzufragen.\n"
-
-#: ../src/scan.c:123 ../src/birthday_list.c:206
-msgid "Birthday"
-msgstr "Geburtstag"
-
-#. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
-#: ../src/scan.c:151
-#, c-format
-msgid "Buddy %s (Account: %s (%s)) scanned.\n"
-msgstr "Buddy %s (Konto: %s (%s)) wurde abgefragt.\n"
-
-#: ../src/scan.c:188
-msgid "Scan birthdays on this account"
-msgstr "Geburtstage mit diesem Account scannen"
-
-#: ../src/input.c:81
-#, c-format
-msgid ""
-"Use the following format: %s .\n"
-"Blank out the input field to clear the BDay.\n"
-"Use an year before 1900 if you do not know."
-msgstr ""
-"Benutzen Sie folgendes Format: %s\n"
-"Lassen Sie das Feld leer um das Geburtsdatum zu löschen.\n"
-"Benutzen Sie eine Jahreszahl vor 1900, wenn Sie sie nicht genau wissen."
-
-#: ../src/input.c:91
-msgid "Set Birthday:"
-msgstr "Setze Geburtstag:"
-
-#: ../src/input.c:91
-msgid "OK"
-msgstr "OK"
-
-#: ../src/input.c:91
-msgid "Cancel"
-msgstr "Abbrechen"
-
-#: ../src/input.c:101
-msgid "Set Birthday"
-msgstr "Geburtstag setzen"
-
-#. Erinnerung
-#: ../src/prefs.c:68
-msgid "Reminder"
-msgstr "Erinnerung"
-
-#: ../src/prefs.c:73
-msgid "Remind just once a day"
-msgstr "Nur einmal am Tag erinnern"
-
-#: ../src/prefs.c:78
-msgid "Show birthday icons in the buddy list"
-msgstr "Geburtstags-Icons in der Buddy-Liste anzeigen"
-
-#: ../src/prefs.c:96 ../src/prefs.c:117 ../src/prefs.c:138 ../src/prefs.c:159
-msgid "days before birthday"
-msgstr "Tage vor dem Geburtstag"
-
-#: ../src/prefs.c:99
-msgid "Show mini dialog in the buddy list"
-msgstr "Mini-Dialog in der Buddy-Liste anzeigen"
-
-#: ../src/prefs.c:120
-msgid "Show notification"
-msgstr "Meldung anzeigen"
-
-#: ../src/prefs.c:141
-msgid "Play sound"
-msgstr "Melodie abspielen"
-
-#. Tooltip
-#: ../src/prefs.c:163
-msgid "Tooltip"
-msgstr "Tooltip"
-
-#: ../src/prefs.c:167
-msgid "Show Birthday"
-msgstr "Geburtstag anzeigen"
-
-#: ../src/prefs.c:180
-msgid "Show days to birthday"
-msgstr "Tage bis zum Geburtstag anzeigen"
-
-#: ../src/prefs.c:187
-msgid "Show Age"
-msgstr "Alter anzeigen"
-
-#: ../src/birthday_list.c:149
-#, c-format
-msgid "%02d/%02d/%04d"
-msgstr "%2$02d.%1$02d.%3$04d"
-
-#: ../src/birthday_list.c:151
-#, c-format
-msgid "%02d/%02d"
-msgstr "%2$02d.%1$02d."
-
-#: ../src/birthday_list.c:180
-msgid "Buddy"
-msgstr "Buddy"
-
-#: ../src/birthday_list.c:195
-msgid "Days to birthday"
-msgstr "Tage bis zum Geburtstag"
-
-#: ../src/birthday_list.c:217
-msgid "Age"
-msgstr "Alter"
-
-#: ../src/birthday_list.c:244
-#, c-format
-msgid "Birthday List (%d)"
-msgstr "Geburtstags-Liste (%d)"
-
-#: ../src/plugin_actions.c:43
-msgid "Check Birthdays"
-msgstr "Geburtstage überprüfen"
-
-#: ../src/plugin_actions.c:46
-msgid "Show birthday list"
-msgstr "Geburtstags-Liste anzeigen"

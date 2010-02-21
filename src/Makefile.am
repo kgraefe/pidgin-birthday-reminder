@@ -15,7 +15,9 @@ birthday_reminder_la_SOURCES = \
 	input.c \
 	prefs.c \
 	birthday_list.c \
-	plugin_actions.c
+	plugin_actions.c \
+	icsexport.c \
+	hash.c
 
 birthday_reminder_la_LDFLAGS = -module -avoid-version
 

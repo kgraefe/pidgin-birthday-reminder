@@ -122,7 +122,7 @@ static PurplePluginInfo info = {
 
 static void init_plugin(PurplePlugin *plugin) {
 	const char *str = "Birthday Reminder";
-	gchar *plugins_locale_dir;
+	gchar *plugins_locale_dir, *export_path;
 
 #ifdef ENABLE_NLS
 	plugins_locale_dir = g_build_filename(purple_user_dir(), "locale", NULL);
@@ -168,6 +168,14 @@ static void init_plugin(PurplePlugin *plugin) {
 	purple_prefs_add_bool(PLUGIN_PREFS_PREFIX "/tooltip/show_days_to_birthday", TRUE);
 
 	purple_prefs_add_bool(PLUGIN_PREFS_PREFIX "/tooltip/show_age", FALSE);
+
+	purple_prefs_add_none(PLUGIN_PREFS_PREFIX "/export");
+
+	purple_prefs_add_bool(PLUGIN_PREFS_PREFIX "/export/automatic", FALSE);
+
+	export_path = g_build_filename(purple_user_dir(), "birthdays.ics", NULL);
+	purple_prefs_add_path(PLUGIN_PREFS_PREFIX "/export/path", export_path);
+	g_free(export_path);
 }
 
 PURPLE_INIT_PLUGIN(PLUGIN_STATIC_NAME, init_plugin, info)
