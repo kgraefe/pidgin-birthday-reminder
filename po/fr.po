@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-21 21:04+0100\n"
+"POT-Creation-Date: 2010-02-22 16:50+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Pierre Etchemaïté <petchema@concept-micro.com>\n"
 "Language-Team: fr_FR <petchema@concept-micro.com>\n"
@@ -75,10 +75,22 @@ msgstr ""
 msgid "Could not load icons!\n"
 msgstr "Impossible de charger les icônes !\n"
 
-#. Translators: this is how the birthday appears in an external calendar application
-#: ../src/icsexport.c:172
+#. Translators: this is how the birthday appears in an external calendar application (summary). Please display the name in front if possible.
+#: ../src/icsexport.c:179
 #, fuzzy, c-format
 msgid "%s's birthday"
+msgstr "Anniversaire"
+
+#. Translators: this is how the birthday appears in an external calendar application (description with year of birth)
+#: ../src/icsexport.c:182
+#, c-format
+msgid "Birthday of %s, born in %04i"
+msgstr ""
+
+#. Translators: this is how the birthday appears in an external calendar application (description without year of birth)
+#: ../src/icsexport.c:185
+#, fuzzy, c-format
+msgid "Birthday of %s"
 msgstr "Anniversaire"
 
 #: ../src/input.c:85

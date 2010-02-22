@@ -33,6 +33,7 @@
 
 typedef struct _ics_birthday {
 	gchar *summary;
+	gchar *description;
 	gchar *date;
 	gchar *uid;
 } ICSBirthday;
@@ -67,6 +68,7 @@ static void ics_birthday_destroy(gpointer data) {
 	bday = (ICSBirthday *) data;
 
 	g_free(bday->summary);
+	g_free(bday->description);
 	g_free(bday->date);
 	g_free(bday->uid);
 
@@ -85,7 +87,7 @@ static void print_ics_birthday(gpointer key, gpointer value, gpointer user_data)
 	fprintf(fd, "SUMMARY:%s\n", bday->summary);
 	fprintf(fd, "UID:%s\n", bday->uid);
 	fprintf(fd, "RRULE:FREQ=YEARLY\n");
-	fprintf(fd, "DESCRIPTION:%s\n", bday->summary);
+	fprintf(fd, "DESCRIPTION:%s\n", bday->description);
 	fprintf(fd, "END:VEVENT\n");
 }
 
@@ -119,10 +121,11 @@ void icsexport(const gchar *path) {
 	if((fd = fopen(path, "r")) != NULL) {
 		while(fgets(line, sizeof(line), fd)) {
 			if(purple_utf8_strcasecmp(line, "END:VEVENT\n") == 0) {
-				if(birthday->summary && birthday->date && birthday->uid) {
+				if(birthday->summary && birthday->description && birthday->date && birthday->uid) {
 					g_hash_table_insert(birthdays, birthday->uid, birthday);
 				} else {
 					if(birthday->summary) g_free(birthday->summary);
+					if(birthday->description) g_free(birthday->description);
 					if(birthday->date) g_free(birthday->date);
 					if(birthday->uid) g_free(birthday->uid);
 					g_free(birthday);
@@ -131,6 +134,7 @@ void icsexport(const gchar *path) {
 			if(purple_utf8_strcasecmp(line, "BEGIN:VEVENT\n") == 0) {
 				birthday = g_malloc(sizeof(ICSBirthday));
 				birthday->summary = NULL;
+				birthday->description = NULL;
 				birthday->date = NULL;
 				birthday->uid = NULL;
 			}
@@ -140,6 +144,9 @@ void icsexport(const gchar *path) {
 			}
 			if(sscanf(line, "SUMMARY:%256[^\n]\n", buf)==1) {
 				birthday->summary = g_strdup(buf);
+			}
+			if(sscanf(line, "DESCRIPTION:%256[^\n]\n", buf)==1) {
+				birthday->description = g_strdup(buf);
 			}
 			if(sscanf(line, "UID:%256[^\n]\n", buf)==1) {
 				birthday->uid = g_strdup(buf);
@@ -168,8 +175,16 @@ void icsexport(const gchar *path) {
 					}
 
 					birthday = g_malloc(sizeof(ICSBirthday));
-					/* Translators: this is how the birthday appears in an external calendar application */
+					/* Translators: this is how the birthday appears in an external calendar application (summary). Please display the name in front if possible. */
 					birthday->summary = g_strdup_printf(_("%s's birthday"), purple_contact_get_alias((PurpleContact *)node));
+					if(g_date_get_year(&date) > 1900) {
+						/* Translators: this is how the birthday appears in an external calendar application (description with year of birth) */
+						birthday->description = g_strdup_printf(_("Birthday of %s, born in %04i"), purple_contact_get_alias((PurpleContact *)node), g_date_get_year(&date));
+					} else {
+						/* Translators: this is how the birthday appears in an external calendar application (description without year of birth) */
+						birthday->description = g_strdup_printf(_("Birthday of %s"), purple_contact_get_alias((PurpleContact *)node));
+					}
+
 					birthday->date = g_strdup_printf("%04i%02i%02i", g_date_get_year(&date), g_date_get_month(&date), g_date_get_day(&date));;
 					birthday->uid = struid; /* will be freed later, so... */
 
