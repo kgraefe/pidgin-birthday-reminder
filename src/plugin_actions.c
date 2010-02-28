@@ -53,7 +53,7 @@ static void export_birthdays_cb(PurplePluginAction *action) {
 	gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(dialog), purple_prefs_get_path(PLUGIN_PREFS_PREFIX "/export/path"));
 
 	filter = gtk_file_filter_new();
-	gtk_file_filter_set_name(filter, _("iCalender files"));
+	gtk_file_filter_set_name(filter, _("iCalendar files"));
 	gtk_file_filter_add_pattern(filter, "*.ics");
 	gtk_file_filter_add_pattern(filter, "*.ICS");
 	gtk_file_chooser_set_filter(GTK_FILE_CHOOSER(dialog), filter);

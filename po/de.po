@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-22 16:50+0100\n"
+"POT-Creation-Date: 2010-02-28 22:33+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Konrad Gräfe <freakazoid@teamblind.de>\n"
 "Language-Team: de_DE <freakazoid@teamblind.de>\n"
@@ -184,8 +184,8 @@ msgid "Save birthday list as..."
 msgstr "Geburtstags-Liste speichern unter..."
 
 #: ../src/plugin_actions.c:56 ../src/prefs.c:84
-msgid "iCalender files"
-msgstr "iCalender-Dateien"
+msgid "iCalendar files"
+msgstr "iCalendar-Dateien"
 
 #: ../src/plugin_actions.c:75
 msgid "Check Birthdays"
