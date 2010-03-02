@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-28 22:33+0100\n"
-"PO-Revision-Date: 2009-05-09 18:46+1000\n"
+"POT-Creation-Date: 2010-03-02 11:12+0100\n"
+"PO-Revision-Date: 2010-02-26 18:10+0800\n"
 "Last-Translator: Alexander Logvinov <ports@logvinov.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -79,21 +79,21 @@ msgstr "Не могу загруить иконки!\n"
 
 #. Translators: this is how the birthday appears in an external calendar application (summary). Please display the name in front if possible.
 #: ../src/icsexport.c:179
-#, fuzzy, c-format
+#, c-format
 msgid "%s's birthday"
-msgstr "День рождения"
+msgstr "День рождения у %s"
 
 #. Translators: this is how the birthday appears in an external calendar application (description with year of birth)
 #: ../src/icsexport.c:182
 #, c-format
 msgid "Birthday of %s, born in %04i"
-msgstr ""
+msgstr "День рождения у %s, родился в %04i"
 
 #. Translators: this is how the birthday appears in an external calendar application (description without year of birth)
 #: ../src/icsexport.c:185
-#, fuzzy, c-format
+#, c-format
 msgid "Birthday of %s"
-msgstr "День рождения"
+msgstr "День рождения у %s"
 
 #: ../src/input.c:85
 #, c-format
@@ -182,13 +182,12 @@ msgid "Overview"
 msgstr "Подробности"
 
 #: ../src/plugin_actions.c:46 ../src/prefs.c:74
-#, fuzzy
 msgid "Save birthday list as..."
-msgstr "Показать список Дней рождения"
+msgstr "Сохранить список Дней рождения как..."
 
 #: ../src/plugin_actions.c:56 ../src/prefs.c:84
 msgid "iCalendar files"
-msgstr ""
+msgstr "Файлы iCalendar"
 
 #: ../src/plugin_actions.c:75
 msgid "Check Birthdays"
@@ -199,9 +198,8 @@ msgid "Show birthday list"
 msgstr "Показать список Дней рождения"
 
 #: ../src/plugin_actions.c:81
-#, fuzzy
 msgid "Export birthday list"
-msgstr "Показать список Дней рождения"
+msgstr "Экспорт списка Дней рождения"
 
 #. Erinnerung
 #: ../src/prefs.c:120
@@ -252,11 +250,11 @@ msgstr "Показывать возраст"
 #. ICS-Export
 #: ../src/prefs.c:245
 msgid "iCalendar Export"
-msgstr ""
+msgstr "Экспорт в iCalendar"
 
 #: ../src/prefs.c:249
 msgid "Export to file"
-msgstr ""
+msgstr "Экспорт в файл"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
 #: ../src/scan.c:96
