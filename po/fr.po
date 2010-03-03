@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-02 11:12+0100\n"
+"POT-Creation-Date: 2010-03-03 15:28+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Pierre Etchemaïté <petchema@concept-micro.com>\n"
 "Language-Team: fr_FR <petchema@concept-micro.com>\n"
@@ -68,7 +68,7 @@ msgstr "Vous rappelle les anniversaires de vos ami(e)s. :o)"
 #: ../src/birthday_reminder.c:141
 msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
 msgstr ""
-"Ce greffon tient à jour les anniversaires de vos ami(e) et vous rappelle "
+"Ce greffon tient à jour les anniversaires de vos ami(e)s et vous rappelle "
 "quand une date approche."
 
 #: ../src/emblems.c:143
@@ -85,7 +85,7 @@ msgstr "Anniversaire de %s"
 #: ../src/icsexport.c:182
 #, c-format
 msgid "Birthday of %s, born in %04i"
-msgstr ""
+msgstr "Anniversaire de %s, né(e) en %04i"
 
 #. Translators: this is how the birthday appears in an external calendar application (description without year of birth)
 #: ../src/icsexport.c:185

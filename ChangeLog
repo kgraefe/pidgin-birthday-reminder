@@ -1,3 +1,7 @@
+Version 1.4 (2010/03/03):
+	* Added iCalendar export
+	* Added french translation (many thanks to Pierre Etchemaïté)
+
 Version 1.3 (2009/12/14):
 	* Fixed IM to wrong contact when using notifications
 	* Fixed dealing with February 29 (#2909655)
