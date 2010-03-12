@@ -1,0 +1,318 @@
+# German translation for Birthday Reminder
+# Copyright (C) 2008 Konrad Gräfe <freakazoid@teamblind.de>
+# This file is distributed under the same license as the birthday_reminder package.
+# Konrad Gräfe <freakazoid@teamblind.de>, 2008
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-10 13:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Konrad Gräfe <freakazoid@teamblind.de>\n"
+"Language-Team: de_DE <freakazoid@teamblind.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/birthday_list.c:152
+#, c-format
+msgid "%02d/%02d/%04d"
+msgstr "%2$02d.%1$02d.%3$04d"
+
+#: ../src/birthday_list.c:154
+#, c-format
+msgid "%02d/%02d"
+msgstr "%2$02d.%1$02d."
+
+#: ../src/birthday_list.c:183
+msgid "Buddy"
+msgstr "Amigo"
+
+#: ../src/birthday_list.c:198
+msgid "Days to birthday"
+msgstr "Días hasta el cumpleaños"
+
+#: ../src/birthday_list.c:209 ../src/scan.c:126
+msgid "Birthday"
+msgstr "Cumpleaños"
+
+#: ../src/birthday_list.c:220
+msgid "Age"
+msgstr "Edad"
+
+#: ../src/birthday_list.c:237 ../src/notification.c:153
+#: ../src/notification.c:156
+msgid "Close"
+msgstr "Cerrar"
+
+#: ../src/birthday_list.c:242 ../src/notification.c:153
+msgid "Write IM"
+msgstr "Contactar"
+
+#: ../src/birthday_list.c:247
+#, c-format
+msgid "Birthday List (%d)"
+msgstr "Lista de cumpleañoses (%d)"
+
+#: ../src/birthday_reminder.c:139 ../src/input.c:95 ../src/notification.c:145
+#: ../src/notification.c:147 ../src/notification.c:153
+#: ../src/notification.c:156
+msgid "Birthday Reminder"
+msgstr "Recordatorio de cumpleaños"
+
+#: ../src/birthday_reminder.c:140
+msgid "Reminds you of the birthday of your buddies. :o)"
+msgstr "Recorda a los cumpleañoses de tus amigos. :o)"
+
+#: ../src/birthday_reminder.c:141
+msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
+msgstr ""
+"Este complemento debe memorizar los cumpleañoses de tus amigos y recordartelo."
+
+#: ../src/emblems.c:143
+msgid "Could not load icons!\n"
+msgstr "¡No podía abrir los íconos!\n"
+
+#. Translators: this is how the birthday appears in an external calendar application (summary). Please display the name in front if possible.
+#: ../src/icsexport.c:179
+#, c-format
+msgid "%s's birthday"
+msgstr "%ss cumpleaños"
+
+#. Translators: this is how the birthday appears in an external calendar application (description with year of birth)
+#: ../src/icsexport.c:182
+#, c-format
+msgid "Birthday of %s, born in %04i"
+msgstr "Cumpleaños de %s, nacido en %04i"
+
+#. Translators: this is how the birthday appears in an external calendar application (description without year of birth)
+#: ../src/icsexport.c:185
+#, c-format
+msgid "Birthday of %s"
+msgstr "Cumpleaños de %s"
+
+#: ../src/input.c:85
+#, c-format
+msgid ""
+"Use the following format: %s .\n"
+"Blank out the input field to clear the BDay.\n"
+"Use an year before 1900 if you do not know."
+msgstr ""
+"Usa este formato: %s\n"
+"Casilla vacía para borrar el cumpleaños.\n"
+"Años antes de 1900, cuando no sepas."
+
+#: ../src/input.c:95
+msgid "Set Birthday:"
+msgstr "Establecer cumpleaños:"
+
+#: ../src/input.c:95
+msgid "OK"
+msgstr "Aceptar"
+
+#: ../src/input.c:95
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: ../src/input.c:105
+msgid "Set Birthday"
+msgstr "Establecer cumpleaños"
+
+#: ../src/notification.c:66
+#, c-format
+msgid "sound file (%s) does not exist.\n"
+msgstr "Archivo de sonido (%s) no existe.\n"
+
+#: ../src/notification.c:118
+#, c-format
+msgid "%s will be %d years old today! Hooray!"
+msgstr "%s cumple %d años hoy. ¡Hurra!"
+
+#: ../src/notification.c:120
+#, c-format
+msgid "It's %s's birthday today! Hooray!"
+msgstr "%s cumple años hoy. ¡Hurra!"
+
+#: ../src/notification.c:124
+#, c-format
+msgid "%s will be %d years old tomorrow!"
+msgstr "%s cumple %d años mañana."
+
+#: ../src/notification.c:126
+#, c-format
+msgid "%s's birthday is tomorrow!"
+msgstr "%s tiene cumpleaños mañana."
+
+#: ../src/notification.c:130
+#, c-format
+msgid "%s will be %d years old in %d days!"
+msgstr "%s cumple %d años en %d días."
+
+#: ../src/notification.c:132
+#, c-format
+msgid "%s's birthday is in %d days!"
+msgstr "%s cumple años en %d días."
+
+#: ../src/notification.c:137
+msgid "There are birthdays in the next days! Hooray!"
+msgstr "Hay cumpleañoses próximamente."
+
+#: ../src/notification.c:145
+msgid "Write IM?"
+msgstr "¿Contactar?"
+
+#: ../src/notification.c:145 ../src/notification.c:147
+msgid "Yes"
+msgstr "Si"
+
+#: ../src/notification.c:145 ../src/notification.c:147
+msgid "No"
+msgstr "No"
+
+#: ../src/notification.c:147
+msgid "Show overview?"
+msgstr "¿Mostrar visión conjunta?"
+
+#: ../src/notification.c:156
+msgid "Overview"
+msgstr "Visión conjunta"
+
+#: ../src/plugin_actions.c:46 ../src/prefs.c:74
+msgid "Save birthday list as..."
+msgstr "Lista de los cumpleañoses guardar como..."
+
+#: ../src/plugin_actions.c:56 ../src/prefs.c:84
+msgid "iCalendar files"
+msgstr "Archivos iCalendar"
+
+#: ../src/plugin_actions.c:75
+msgid "Check Birthdays"
+msgstr "Comprobar cumpleañoses"
+
+#: ../src/plugin_actions.c:78
+msgid "Show birthday list"
+msgstr "Mostrar lista de los cumpleañoses"
+
+#: ../src/plugin_actions.c:81
+msgid "Export birthday list"
+msgstr "Exportar lista de los cumpleañoses"
+
+#. Erinnerung
+#: ../src/prefs.c:120
+msgid "Reminder"
+msgstr "Recuerdo"
+
+#: ../src/prefs.c:125
+msgid "Remind just once a day"
+msgstr "Recordar solamente una vez al día"
+
+#: ../src/prefs.c:130
+msgid "Show birthday icons in the buddy list"
+msgstr "Mostrar íconos del cumpleaño en la lista de amigos"
+
+#: ../src/prefs.c:148 ../src/prefs.c:169 ../src/prefs.c:190 ../src/prefs.c:211
+msgid "days before birthday"
+msgstr "días antes el cumpleaños"
+
+#: ../src/prefs.c:151
+msgid "Show mini dialog in the buddy list"
+msgstr "Mostrar notificación en la lista de amigos"
+
+#: ../src/prefs.c:172
+msgid "Show notification"
+msgstr "Mostrar notificación"
+
+#: ../src/prefs.c:193
+msgid "Play sound"
+msgstr "Reproducir un sonido"
+
+#. Tooltip
+#: ../src/prefs.c:215
+msgid "Tooltip"
+msgstr "Descripción emergente"
+
+#: ../src/prefs.c:219
+msgid "Show Birthday"
+msgstr "Mostrar cumpleaños"
+
+#: ../src/prefs.c:232
+msgid "Show days to birthday"
+msgstr "Mostrar días hasta el cumpleaños"
+
+#: ../src/prefs.c:239
+msgid "Show Age"
+msgstr "Mostrar edad"
+
+#. ICS-Export
+#: ../src/prefs.c:245
+msgid "iCalendar Export"
+msgstr "Exportar como iCalendar"
+
+#: ../src/prefs.c:249
+msgid "Export to file"
+msgstr "Exportar en fichero"
+
+#. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
+#: ../src/scan.c:96
+#, c-format
+msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
+msgstr "Comproba amigo %s (cuenta: %s (%s)). Espera respuesta...\n"
+
+#: ../src/scan.c:98
+msgid "No more buddies to scan.\n"
+msgstr "Busca de cumpleañoses acabado.\n"
+
+#. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
+#: ../src/scan.c:155
+#, c-format
+msgid "Buddy %s (Account: %s (%s)) scanned.\n"
+msgstr "Amigo %s (cuenta: %s (%s)) acabado.\n"
+
+#: ../src/scan.c:192
+msgid "Scan birthdays on this account"
+msgstr "Incluir esta cuenta para obtener cumpleañoses"
+
+#. Translators: to use an other order of the arguments use %2$02d for day, %1$02d for month and %3$04d for year
+#: ../src/tooltip.c:40
+#, c-format
+msgid ""
+"\n"
+"<b>Birthday</b>: %02d/%02d/%04d"
+msgstr ""
+"\n"
+"<b>Cumpleaños</b>: %2$02d.%1$02d.%3$04d"
+
+#. Translators: use %2$02d for day and %1$02d for month
+#: ../src/tooltip.c:43
+#, c-format
+msgid ""
+"\n"
+"<b>Birthday</b>: %02d/%02d"
+msgstr ""
+"\n"
+"<b>Cumpleaños</b>: %2$02d.%1$02d."
+
+#: ../src/tooltip.c:49
+#, c-format
+msgid " (<b>Today!</b>)"
+msgstr " (<b>¡Hoy!</b>)"
+
+#: ../src/tooltip.c:51
+#, c-format
+msgid " (<b>Tomorrow!</b>)"
+msgstr " (<b>¡Mañana!</b>)"
+
+#: ../src/tooltip.c:53
+#, c-format
+msgid " (in %d days)"
+msgstr " (en %d días)"
+
+#: ../src/tooltip.c:60
+#, c-format
+msgid ""
+"\n"
+"<b>Age</b>: %d years"
+msgstr ""
+"\n"
+"<b>Edad</b>: %d años"
