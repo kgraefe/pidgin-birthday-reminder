@@ -1,0 +1,13 @@
+Source: pidgin-birthday-reminder
+Section: net
+Priority: extra
+Maintainer: Konrad Gräfe <konradgraefe@aol.com>
+Build-Depends: debhelper (>= 7), autotools-dev, pidgin-dev (>= 2.6.0), intltool
+Standards-Version: 3.8.1
+Homepage: http://freakazoid.teamblind.de/2009/02/14/pidgin-birthday-reminder/
+
+Package: pidgin-birthday-reminder
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Pidgin Birthday Reminder
+ Pidgin Birthday Reminder reminds you of your buddies birthdays. Birthdays can be set by hand or be automatically filled-in for ICQ, MSN and XMPP protocols.

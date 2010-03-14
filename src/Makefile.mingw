@@ -18,7 +18,7 @@ BIRTHDAY_REMINDER_VERSION := $(shell cat ${BIRTHDAY_REMINDER_TOP}/VERSION)
 ## VARIABLE DEFINITIONS
 ##
 
-BIRTHDAY_REMINDER = birthday_reminder
+BIRTHDAY_REMINDER = pidgin-birthday-reminder
 
 # Compiler Options
 
