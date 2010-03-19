@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-12 13:10+0100\n"
+"POT-Creation-Date: 2010-03-19 22:56+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Christoph Miebach <christoph.miebach@web.de>\n"
 "Language-Team: es_ES <christoph.miebach@web.de>\n"
@@ -53,7 +53,7 @@ msgstr "Contactar"
 #: ../src/birthday_list.c:247
 #, c-format
 msgid "Birthday List (%d)"
-msgstr "Lista de cumpleañoses (%d)"
+msgstr "Lista de cumpleaños (%d)"
 
 #: ../src/birthday_reminder.c:139 ../src/input.c:95 ../src/notification.c:145
 #: ../src/notification.c:147 ../src/notification.c:153
@@ -63,22 +63,23 @@ msgstr "Recordatorio de cumpleaños"
 
 #: ../src/birthday_reminder.c:140
 msgid "Reminds you of the birthday of your buddies. :o)"
-msgstr "Recorda a los cumpleañoses de tus amigos. :o)"
+msgstr "Recuerda a los cumpleaños de tus amigos. :o)"
 
 #: ../src/birthday_reminder.c:141
 msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
 msgstr ""
-"Este complemento debe memorizar los cumpleañoses de tus amigos y recordartelo."
+"Este complemento debe memorizar los cumpleañoses de tus amigos y "
+"recordártelo."
 
 #: ../src/emblems.c:143
 msgid "Could not load icons!\n"
-msgstr "¡No podía abrir los íconos!\n"
+msgstr "¡No puede abrir los íconos!\n"
 
 #. Translators: this is how the birthday appears in an external calendar application (summary). Please display the name in front if possible.
 #: ../src/icsexport.c:179
 #, c-format
 msgid "%s's birthday"
-msgstr "%ss cumpleaños"
+msgstr "Cumpleaños de %s"
 
 #. Translators: this is how the birthday appears in an external calendar application (description with year of birth)
 #: ../src/icsexport.c:182
@@ -97,11 +98,11 @@ msgstr "Cumpleaños de %s"
 msgid ""
 "Use the following format: %s .\n"
 "Blank out the input field to clear the BDay.\n"
-"Use an year before 1900 if you do not know."
+"Use a year before 1900 if you do not know."
 msgstr ""
 "Usa este formato: %s\n"
 "Casilla vacía para borrar el cumpleaños.\n"
-"Años antes de 1900, cuando no sepas."
+"Usa años anteriores a 1900, cuando no lo sepas."
 
 #: ../src/input.c:95
 msgid "Set Birthday:"
@@ -122,7 +123,7 @@ msgstr "Establecer cumpleaños"
 #: ../src/notification.c:66
 #, c-format
 msgid "sound file (%s) does not exist.\n"
-msgstr "Archivo de sonido (%s) no existe.\n"
+msgstr "El archivo de sonido (%s) no existe.\n"
 
 #: ../src/notification.c:118
 #, c-format
@@ -142,7 +143,7 @@ msgstr "%s cumple %d años mañana."
 #: ../src/notification.c:126
 #, c-format
 msgid "%s's birthday is tomorrow!"
-msgstr "%s tiene cumpleaños mañana."
+msgstr "%s cumple años mañana."
 
 #: ../src/notification.c:130
 #, c-format
@@ -156,7 +157,7 @@ msgstr "%s cumple años en %d días."
 
 #: ../src/notification.c:137
 msgid "There are birthdays in the next days! Hooray!"
-msgstr "Hay cumpleañoses próximamente."
+msgstr "Hay cumpleaños próximamente."
 
 #: ../src/notification.c:145
 msgid "Write IM?"
@@ -164,7 +165,7 @@ msgstr "¿Contactar?"
 
 #: ../src/notification.c:145 ../src/notification.c:147
 msgid "Yes"
-msgstr "Si"
+msgstr "Sí"
 
 #: ../src/notification.c:145 ../src/notification.c:147
 msgid "No"
@@ -172,15 +173,15 @@ msgstr "No"
 
 #: ../src/notification.c:147
 msgid "Show overview?"
-msgstr "¿Mostrar visión conjunta?"
+msgstr "¿Mostrar visión general?"
 
 #: ../src/notification.c:156
 msgid "Overview"
-msgstr "Visión conjunta"
+msgstr "Visión general"
 
 #: ../src/plugin_actions.c:46 ../src/prefs.c:74
 msgid "Save birthday list as..."
-msgstr "Lista de los cumpleañoses guardar como..."
+msgstr "Guardar lista de cumpleaños como..."
 
 #: ../src/plugin_actions.c:56 ../src/prefs.c:84
 msgid "iCalendar files"
@@ -188,68 +189,65 @@ msgstr "Archivos iCalendar"
 
 #: ../src/plugin_actions.c:75
 msgid "Check Birthdays"
-msgstr "Comprobar cumpleañoses"
+msgstr "Comprobar cumpleaños"
 
 #: ../src/plugin_actions.c:78
 msgid "Show birthday list"
-msgstr "Mostrar lista de los cumpleañoses"
+msgstr "Mostrar lista de cumpleaños"
 
 #: ../src/plugin_actions.c:81
 msgid "Export birthday list"
-msgstr "Exportar lista de los cumpleañoses"
+msgstr "Exportar lista de cumpleaños"
 
-#. Erinnerung
-#: ../src/prefs.c:120
+#: ../src/prefs.c:121
 msgid "Reminder"
-msgstr "Recuerdo"
+msgstr "Recordatorio"
 
-#: ../src/prefs.c:125
+#: ../src/prefs.c:127
 msgid "Remind just once a day"
 msgstr "Recordar solamente una vez al día"
 
-#: ../src/prefs.c:130
+#: ../src/prefs.c:132
 msgid "Show birthday icons in the buddy list"
-msgstr "Mostrar íconos del cumpleaño en la lista de amigos"
+msgstr "Mostrar íconos del cumpleaños en la lista de amigos"
 
-#: ../src/prefs.c:148 ../src/prefs.c:169 ../src/prefs.c:190 ../src/prefs.c:211
+#: ../src/prefs.c:150 ../src/prefs.c:171 ../src/prefs.c:192 ../src/prefs.c:213
 msgid "days before birthday"
-msgstr "días antes el cumpleaños"
+msgstr "días antes del cumpleaños"
 
-#: ../src/prefs.c:151
+#: ../src/prefs.c:153
 msgid "Show mini dialog in the buddy list"
 msgstr "Mostrar notificación en la lista de amigos"
 
-#: ../src/prefs.c:172
+#: ../src/prefs.c:174
 msgid "Show notification"
 msgstr "Mostrar notificación"
 
-#: ../src/prefs.c:193
+#: ../src/prefs.c:195
 msgid "Play sound"
-msgstr "Reproducir un sonido"
+msgstr "Reproducir sonido"
 
-#. Tooltip
-#: ../src/prefs.c:215
+#: ../src/prefs.c:219
 msgid "Tooltip"
 msgstr "Descripción emergente"
 
-#: ../src/prefs.c:219
+#: ../src/prefs.c:224
 msgid "Show Birthday"
 msgstr "Mostrar cumpleaños"
 
-#: ../src/prefs.c:232
+#: ../src/prefs.c:237
 msgid "Show days to birthday"
 msgstr "Mostrar días hasta el cumpleaños"
 
-#: ../src/prefs.c:239
+#: ../src/prefs.c:244
 msgid "Show Age"
 msgstr "Mostrar edad"
 
-#. ICS-Export
-#: ../src/prefs.c:245
+#: ../src/prefs.c:252
 msgid "iCalendar Export"
 msgstr "Exportar como iCalendar"
 
-#: ../src/prefs.c:249
+#: ../src/prefs.c:257
 msgid "Export to file"
 msgstr "Exportar en fichero"
 
@@ -257,11 +255,11 @@ msgstr "Exportar en fichero"
 #: ../src/scan.c:96
 #, c-format
 msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
-msgstr "Comproba amigo %s (cuenta: %s (%s)). Espera respuesta...\n"
+msgstr "Escaneando amigo %s (cuenta: %s (%s)). Esperando respuesta...\n"
 
 #: ../src/scan.c:98
 msgid "No more buddies to scan.\n"
-msgstr "Busca de cumpleañoses terminada.\n"
+msgstr "Busca de cumpleaños terminada.\n"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
 #: ../src/scan.c:155
@@ -271,7 +269,7 @@ msgstr "Amigo %s (cuenta: %s (%s)) acabado.\n"
 
 #: ../src/scan.c:192
 msgid "Scan birthdays on this account"
-msgstr "Incluir esta cuenta para obtener cumpleañoses"
+msgstr "Incluir esta cuenta para obtener cumpleaños"
 
 #. Translators: to use an other order of the arguments use %2$02d for day, %1$02d for month and %3$04d for year
 #: ../src/tooltip.c:40

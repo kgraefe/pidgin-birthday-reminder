@@ -82,7 +82,7 @@ static void set_bday_cb(PurpleBlistNode *node, gpointer data) {
 	
 	g_date_set_dmy(&date, 24, 12, 1986);
 	g_date_to_struct_tm(&date, &tm);
-	helptext = g_strdup_printf(_("Use the following format: %s .\nBlank out the input field to clear the BDay.\nUse an year before 1900 if you do not know."), purple_date_format_short(&tm));
+	helptext = g_strdup_printf(_("Use the following format: %s .\nBlank out the input field to clear the BDay.\nUse a year before 1900 if you do not know."), purple_date_format_short(&tm));
 
 
 	get_birthday_from_node(node, &date);

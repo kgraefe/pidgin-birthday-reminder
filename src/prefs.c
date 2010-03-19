@@ -113,11 +113,13 @@ GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	GtkWidget *button = NULL;
 	GtkWidget *ref = NULL;
 
-	ret = gtk_vbox_new(FALSE, 18);
-	gtk_container_set_border_width(GTK_CONTAINER(ret), 12);
+	ret = gtk_notebook_new();
 
 	/* Erinnerung */
-	frame = pidgin_make_frame(ret, _("Reminder"));
+	frame = gtk_vbox_new(FALSE, 18);
+        gtk_container_set_border_width(GTK_CONTAINER(frame), 12);
+        gtk_notebook_append_page(GTK_NOTEBOOK(ret), frame, gtk_label_new(_("Reminder")));
+
 	vbox = gtk_vbox_new(FALSE, 5);
 	gtk_container_add(GTK_CONTAINER(frame), vbox);
 	
@@ -138,7 +140,7 @@ GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	label = gtk_label_new("");
 	gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 10);
 
-	adjustment = (GtkAdjustment *) gtk_adjustment_new(1.0 * purple_prefs_get_int(PLUGIN_PREFS_PREFIX "/reminder/birthday_icons/before_days"), 0.0, 9.0, 1.0, 1.0, 1.0);
+	adjustment = (GtkAdjustment *) gtk_adjustment_new(1.0 * purple_prefs_get_int(PLUGIN_PREFS_PREFIX "/reminder/birthday_icons/before_days"), 0.0, 9.0, 1.0, 1.0, 0.0);
 	spin = gtk_spin_button_new(adjustment, 1.0, 0);
 	gtk_box_pack_start(GTK_BOX(hbox), spin, FALSE, FALSE, 0);
 	gtk_widget_set_sensitive(spin, gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(toggle)));
@@ -159,7 +161,7 @@ GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	label = gtk_label_new("");
 	gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 10);
 
-	adjustment = (GtkAdjustment *) gtk_adjustment_new(1.0 * purple_prefs_get_int(PLUGIN_PREFS_PREFIX "/reminder/mini_dialog/before_days"), 0.0, 9.0, 1.0, 1.0, 1.0);
+	adjustment = (GtkAdjustment *) gtk_adjustment_new(1.0 * purple_prefs_get_int(PLUGIN_PREFS_PREFIX "/reminder/mini_dialog/before_days"), 0.0, 9.0, 1.0, 1.0, 0.0);
 	spin = gtk_spin_button_new(adjustment, 1.0, 0);
 	gtk_box_pack_start(GTK_BOX(hbox), spin, FALSE, FALSE, 0);
 	gtk_widget_set_sensitive(spin, gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(toggle)));
@@ -180,7 +182,7 @@ GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	label = gtk_label_new("");
 	gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 10);
 
-	adjustment = (GtkAdjustment *) gtk_adjustment_new(1.0 * purple_prefs_get_int(PLUGIN_PREFS_PREFIX "/reminder/notification/before_days"), 0.0, 9.0, 1.0, 1.0, 1.0);
+	adjustment = (GtkAdjustment *) gtk_adjustment_new(1.0 * purple_prefs_get_int(PLUGIN_PREFS_PREFIX "/reminder/notification/before_days"), 0.0, 9.0, 1.0, 1.0, 0.0);
 	spin = gtk_spin_button_new(adjustment, 1.0, 0);
 	gtk_box_pack_start(GTK_BOX(hbox), spin, FALSE, FALSE, 0);
 	gtk_widget_set_sensitive(spin, gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(toggle)));
@@ -201,7 +203,7 @@ GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	label = gtk_label_new("");
 	gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 10);
 
-	adjustment = (GtkAdjustment *) gtk_adjustment_new(1.0 * purple_prefs_get_int(PLUGIN_PREFS_PREFIX "/reminder/sound/before_days"), 0.0, 9.0, 1.0, 1.0, 1.0);
+	adjustment = (GtkAdjustment *) gtk_adjustment_new(1.0 * purple_prefs_get_int(PLUGIN_PREFS_PREFIX "/reminder/sound/before_days"), 0.0, 9.0, 1.0, 1.0, 0.0);
 	spin = gtk_spin_button_new(adjustment, 1.0, 0);
 	gtk_box_pack_start(GTK_BOX(hbox), spin, FALSE, FALSE, 0);
 	gtk_widget_set_sensitive(spin, gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(toggle)));
@@ -212,7 +214,10 @@ GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
 
 	/* Tooltip */
-	frame = pidgin_make_frame(ret, _("Tooltip"));
+	frame = gtk_vbox_new(FALSE, 18);
+        gtk_container_set_border_width(GTK_CONTAINER(frame), 12);
+        gtk_notebook_append_page(GTK_NOTEBOOK(ret), frame, gtk_label_new(_("Tooltip")));
+
 	vbox = gtk_vbox_new(FALSE, 5);
 	gtk_container_add(GTK_CONTAINER(frame), vbox);
 
@@ -242,7 +247,10 @@ GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	g_signal_connect(G_OBJECT(toggle), "toggled", G_CALLBACK(toggle_cb), PLUGIN_PREFS_PREFIX "/tooltip/show_age");
 
 	/* ICS-Export */
-	frame = pidgin_make_frame(ret, _("iCalendar Export"));
+	frame = gtk_vbox_new(FALSE, 18);
+        gtk_container_set_border_width(GTK_CONTAINER(frame), 12);
+        gtk_notebook_append_page(GTK_NOTEBOOK(ret), frame, gtk_label_new(_("iCalendar Export")));
+
 	vbox = gtk_vbox_new(FALSE, 5);
 	gtk_container_add(GTK_CONTAINER(frame), vbox);
 
@@ -252,7 +260,7 @@ GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	g_signal_connect(G_OBJECT(toggle), "toggled", G_CALLBACK(toggle_cb), PLUGIN_PREFS_PREFIX "/export/automatic");
 
 	hbox = gtk_hbox_new(FALSE, 5);
-	gtk_box_pack_start(GTK_BOX(vbox), hbox, TRUE, TRUE, 0);
+	gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
 
 	label = gtk_label_new("");
 	gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 10);
@@ -280,3 +288,4 @@ void init_prefs(void) {
 	purple_prefs_connect_callback(plugin, PLUGIN_PREFS_PREFIX "/reminder/birthday_icons/show", birthday_icon_pref_changed_cb, NULL);
 	purple_prefs_connect_callback(plugin, PLUGIN_PREFS_PREFIX "/reminder/birthday_icons/before_days", birthday_icon_pref_changed_cb, NULL);
 }
+
