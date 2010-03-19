@@ -29,6 +29,7 @@
 #include "check.h"
 #include "birthday_list.h"
 #include "icsexport.h"
+#include "functions.h"
 
 static void check_birthdays_plugin_action_cb(PurplePluginAction *action) {
 	check_birthdays(NULL, NULL);
@@ -42,6 +43,7 @@ static void birthday_list_show_cb(PurplePluginAction *action) {
 static void export_birthdays_cb(PurplePluginAction *action) {
 	GtkWidget *dialog;
 	GtkFileFilter *filter;
+	gchar *path, *tmp;
 
 	dialog = gtk_file_chooser_dialog_new(_("Save birthday list as..."),
 		NULL,
@@ -60,7 +62,15 @@ static void export_birthdays_cb(PurplePluginAction *action) {
 	gtk_file_chooser_add_filter(GTK_FILE_CHOOSER(dialog), filter);
 
 	if(gtk_dialog_run(GTK_DIALOG(dialog)) == GTK_RESPONSE_ACCEPT) {
-		icsexport(gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(dialog)));
+		path = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(dialog));
+		if(!has_file_extension(path, "ics")) {
+			tmp = path;
+			path = g_strdup_printf("%s.ics", tmp);
+			g_free(tmp);
+		}
+
+		icsexport(path);
+		g_free(path);
 	}
 
 	gtk_widget_destroy(dialog);

@@ -31,4 +31,6 @@ void write_im(PurpleBlistNode *node);
 
 gboolean node_account_connected(PurpleBlistNode *node);
 
+gboolean has_file_extension(const char *filename, const char *ext);
+
 #endif

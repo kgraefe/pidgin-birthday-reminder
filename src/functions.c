@@ -21,6 +21,8 @@
 
 #include "internal.h"
 
+#include <string.h>
+
 
 void g_date_set_today(GDate *date) {
 	#if !GLIB_CHECK_VERSION(2,10,0)
@@ -77,3 +79,19 @@ gboolean node_account_connected(PurpleBlistNode *node) {
 	
 	return purple_account_is_connected(acc);
 }
+
+gboolean has_file_extension(const char *filename, const char *ext) {
+        int len, extlen;
+
+        if (filename == NULL || *filename == '\0' || ext == NULL)
+                return 0;
+
+        extlen = strlen(ext);
+        len = strlen(filename) - extlen;
+
+        if (len < 0)
+                return 0;
+
+        return (strncasecmp(filename + len, ext, extlen) == 0);
+}
+

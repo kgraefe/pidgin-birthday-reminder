@@ -27,6 +27,7 @@
 
 #include "birthday_reminder.h"
 #include "icsexport.h"
+#include "functions.h"
 
 extern PurplePlugin *plugin;
 
@@ -67,7 +68,7 @@ static void export_filechooser_cb(GtkWidget *widget, gpointer data) {
 	GtkEntry *entry;
 	GtkWidget *dialog;
 	GtkFileFilter *filter;
-	gchar *new_path;
+	gchar *new_path, *tmp;
 
 	entry = (GtkEntry *) data;
 
@@ -89,6 +90,11 @@ static void export_filechooser_cb(GtkWidget *widget, gpointer data) {
 
 	if(gtk_dialog_run(GTK_DIALOG(dialog)) == GTK_RESPONSE_ACCEPT) {
 		new_path = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(dialog));
+		if(!has_file_extension(new_path, "ics")) {
+			tmp = new_path;
+			new_path = g_strdup_printf("%s.ics", tmp);
+			g_free(tmp);
+		}
 		gtk_entry_set_text(entry, new_path);
 		g_free(new_path);
 	}

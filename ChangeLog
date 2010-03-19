@@ -1,3 +1,9 @@
+Version 1.5 (2010/03/20):
+	* Renamed project to pidgin-birthday-reminder
+	* Added tabs in the preferences window
+	* iCalendar files are forced to have the .ics extension now
+	* Added spanish translation (many thanks to Christoph Miebach)
+
 Version 1.4 (2010/03/03):
 	* Added iCalendar export
 	* Added french translation (many thanks to Pierre Etchemaïté)
