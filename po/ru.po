@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-19 22:56+0100\n"
+"POT-Creation-Date: 2010-04-08 11:02+0200\n"
 "PO-Revision-Date: 2010-02-26 18:10+0800\n"
 "Last-Translator: Alexander Logvinov <ports@logvinov.com>\n"
 "Language-Team: Russian\n"
@@ -181,75 +181,75 @@ msgstr "Показать подробности?"
 msgid "Overview"
 msgstr "Подробности"
 
-#: ../src/plugin_actions.c:46 ../src/prefs.c:74
+#: ../src/plugin_actions.c:48 ../src/prefs.c:75
 msgid "Save birthday list as..."
 msgstr "Сохранить список Дней рождения как..."
 
-#: ../src/plugin_actions.c:56 ../src/prefs.c:84
+#: ../src/plugin_actions.c:58 ../src/prefs.c:85
 msgid "iCalendar files"
 msgstr "Файлы iCalendar"
 
-#: ../src/plugin_actions.c:75
+#: ../src/plugin_actions.c:85
 msgid "Check Birthdays"
 msgstr "Найти Дни рождения"
 
-#: ../src/plugin_actions.c:78
+#: ../src/plugin_actions.c:88
 msgid "Show birthday list"
 msgstr "Показать список Дней рождения"
 
-#: ../src/plugin_actions.c:81
+#: ../src/plugin_actions.c:91
 msgid "Export birthday list"
 msgstr "Экспорт списка Дней рождения"
 
-#: ../src/prefs.c:121
+#: ../src/prefs.c:127
 msgid "Reminder"
 msgstr "Напоминание"
 
-#: ../src/prefs.c:127
+#: ../src/prefs.c:133
 msgid "Remind just once a day"
 msgstr "Напоминать только один раз в день"
 
-#: ../src/prefs.c:132
+#: ../src/prefs.c:138
 msgid "Show birthday icons in the buddy list"
 msgstr "Показывать иконки Дня рождения в списке собеседников"
 
-#: ../src/prefs.c:150 ../src/prefs.c:171 ../src/prefs.c:192 ../src/prefs.c:213
+#: ../src/prefs.c:156 ../src/prefs.c:177 ../src/prefs.c:198 ../src/prefs.c:219
 msgid "days before birthday"
 msgstr "дней перед Днем рождения"
 
-#: ../src/prefs.c:153
+#: ../src/prefs.c:159
 msgid "Show mini dialog in the buddy list"
 msgstr "Показывать мини диалог в списке собеседников"
 
-#: ../src/prefs.c:174
+#: ../src/prefs.c:180
 msgid "Show notification"
 msgstr "Показывать уведомление"
 
-#: ../src/prefs.c:195
+#: ../src/prefs.c:201
 msgid "Play sound"
 msgstr "Проигрывать мелодию"
 
-#: ../src/prefs.c:219
+#: ../src/prefs.c:225
 msgid "Tooltip"
 msgstr "Всплывающее окно"
 
-#: ../src/prefs.c:224
+#: ../src/prefs.c:230
 msgid "Show Birthday"
 msgstr "Показывать День рождения"
 
-#: ../src/prefs.c:237
+#: ../src/prefs.c:243
 msgid "Show days to birthday"
 msgstr "Показывать дни до Дня рождения"
 
-#: ../src/prefs.c:244
+#: ../src/prefs.c:250
 msgid "Show Age"
 msgstr "Показывать возраст"
 
-#: ../src/prefs.c:252
+#: ../src/prefs.c:258
 msgid "iCalendar Export"
 msgstr "Экспорт в iCalendar"
 
-#: ../src/prefs.c:257
+#: ../src/prefs.c:263
 msgid "Export to file"
 msgstr "Экспорт в файл"
 

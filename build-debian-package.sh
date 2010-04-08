@@ -3,7 +3,7 @@
 PROJECT=pidgin-birthday-reminder
 VERSION=$(cat VERSION)
 REPOSITORY=ppa:konradgraefe/pidgin-plugins
-DEB_REVISION=2
+DEB_REVISION=1
 
 src_dir=$(pwd)
 

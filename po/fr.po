@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-19 22:56+0100\n"
+"POT-Creation-Date: 2010-04-08 11:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Pierre Etchemaïté <petchema@concept-micro.com>\n"
 "Language-Team: fr_FR <petchema@concept-micro.com>\n"
@@ -179,75 +179,75 @@ msgstr "Montrer les infos ?"
 msgid "Overview"
 msgstr "Infos"
 
-#: ../src/plugin_actions.c:46 ../src/prefs.c:74
+#: ../src/plugin_actions.c:48 ../src/prefs.c:75
 msgid "Save birthday list as..."
 msgstr "Enregistrer la liste des anniversaires sous..."
 
-#: ../src/plugin_actions.c:56 ../src/prefs.c:84
+#: ../src/plugin_actions.c:58 ../src/prefs.c:85
 msgid "iCalendar files"
 msgstr "Fichiers iCalendar"
 
-#: ../src/plugin_actions.c:75
+#: ../src/plugin_actions.c:85
 msgid "Check Birthdays"
 msgstr "Vérification des anniversaires"
 
-#: ../src/plugin_actions.c:78
+#: ../src/plugin_actions.c:88
 msgid "Show birthday list"
 msgstr "Afficher la liste des anniversaires"
 
-#: ../src/plugin_actions.c:81
+#: ../src/plugin_actions.c:91
 msgid "Export birthday list"
 msgstr "Exporter la liste des anniversaires"
 
-#: ../src/prefs.c:121
+#: ../src/prefs.c:127
 msgid "Reminder"
 msgstr "Rappel"
 
-#: ../src/prefs.c:127
+#: ../src/prefs.c:133
 msgid "Remind just once a day"
 msgstr "Ne rappeler qu'une fois par jour"
 
-#: ../src/prefs.c:132
+#: ../src/prefs.c:138
 msgid "Show birthday icons in the buddy list"
 msgstr "Afficher les icônes d'anniversaire dans la liste de contacts"
 
-#: ../src/prefs.c:150 ../src/prefs.c:171 ../src/prefs.c:192 ../src/prefs.c:213
+#: ../src/prefs.c:156 ../src/prefs.c:177 ../src/prefs.c:198 ../src/prefs.c:219
 msgid "days before birthday"
 msgstr "jours avant l'anniversaire"
 
-#: ../src/prefs.c:153
+#: ../src/prefs.c:159
 msgid "Show mini dialog in the buddy list"
 msgstr "Afficher un petit dialogue dans la liste de contacts"
 
-#: ../src/prefs.c:174
+#: ../src/prefs.c:180
 msgid "Show notification"
 msgstr "Afficher un rappel"
 
-#: ../src/prefs.c:195
+#: ../src/prefs.c:201
 msgid "Play sound"
 msgstr "Jouer un son"
 
-#: ../src/prefs.c:219
+#: ../src/prefs.c:225
 msgid "Tooltip"
 msgstr "Infobulle"
 
-#: ../src/prefs.c:224
+#: ../src/prefs.c:230
 msgid "Show Birthday"
 msgstr "Afficher l'anniversaire"
 
-#: ../src/prefs.c:237
+#: ../src/prefs.c:243
 msgid "Show days to birthday"
 msgstr "Afficher le nombre de jours avant l'anniversaire"
 
-#: ../src/prefs.c:244
+#: ../src/prefs.c:250
 msgid "Show Age"
 msgstr "Afficher l'âge"
 
-#: ../src/prefs.c:252
+#: ../src/prefs.c:258
 msgid "iCalendar Export"
 msgstr "Export au format iCalendar"
 
-#: ../src/prefs.c:257
+#: ../src/prefs.c:263
 msgid "Export to file"
 msgstr "Exporter dans un fichier"
 
