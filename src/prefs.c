@@ -17,9 +17,12 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02111-1301, USA.
  */
 
+#include "config.h"
+#include "internal.h"
+
 #include "prefs.h"
 
-#include "internal.h"
+#include <debug.h>
 
 #include <gtk/gtk.h>
 #include <gtkblist.h>
@@ -64,6 +67,31 @@ static void entry_path_cb(GtkWidget *widget, gpointer data) {
 	purple_prefs_set_path(pref, value);
 }
 
+static void update_muted_sound_hint(GtkWidget *hint) {
+
+	if(!hint) return;
+
+	if(purple_prefs_get_bool(PIDGIN_PREFS_ROOT "/sound/mute") && purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/sound/play")) {
+		gtk_widget_show(hint);
+	} else {
+		gtk_widget_hide(hint);
+	}
+}
+
+static void update_muted_sound_hint_pidgin_pref_cb(const gchar *prefname, PurplePrefType type, gconstpointer value, gpointer data) {
+	update_muted_sound_hint((GtkWidget *)data);
+}
+
+static void update_muted_sound_hint_show_cb(GtkWidget *widget, GdkEventFocus *event, gpointer data) {
+	static gboolean inuse = FALSE;
+
+	if(inuse) return;
+
+	inuse = TRUE;
+	update_muted_sound_hint(widget);
+	inuse = FALSE;
+}
+
 static void export_filechooser_cb(GtkWidget *widget, gpointer data) {
 	GtkEntry *entry;
 	GtkWidget *dialog;
@@ -102,22 +130,21 @@ static void export_filechooser_cb(GtkWidget *widget, gpointer data) {
 	gtk_widget_destroy(dialog);
 }
 
+static guint callback1 = 0;
+static guint callback2 = 0;
+static guint callback3 = 0;
+
 static void window_destroyed_cb(GtkWidget *widget, gpointer data) {
 	automatic_export();
+
+	if(callback1) purple_prefs_disconnect_callback(callback1);
+	if(callback2) purple_prefs_disconnect_callback(callback2);
+	
 }
 
 GtkWidget *get_config_frame(PurplePlugin *plugin) {
-	GtkWidget *ret = NULL;
-	GtkWidget *frame = NULL;
-	GtkWidget *vbox = NULL;
-	GtkWidget *hbox = NULL;
-	GtkWidget *toggle = NULL;
-	GtkWidget *spin = NULL;
-	GtkAdjustment *adjustment = NULL;
-	GtkWidget *label = NULL;
-	GtkWidget *entry = NULL;
-	GtkWidget *button = NULL;
-	GtkWidget *ref = NULL;
+	GtkWidget *ret, *frame, *vbox, *hbox, *toggle, *spin, *label, *entry, *button, *ref, *infobox, *img;
+	GtkAdjustment *adjustment;
 
 	ret = gtk_notebook_new();
 
@@ -219,6 +246,23 @@ GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	label = gtk_label_new(_("days before birthday"));
 	gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
 
+	infobox = gtk_hbox_new(FALSE, 5);
+	gtk_box_pack_start(GTK_BOX(vbox), infobox, FALSE, FALSE, 0);
+
+	label = gtk_label_new("");
+	gtk_box_pack_start(GTK_BOX(infobox), label, FALSE, FALSE, 10);
+
+	img = gtk_image_new_from_stock(GTK_STOCK_DIALOG_WARNING, GTK_ICON_SIZE_MENU);
+	gtk_box_pack_start(GTK_BOX(infobox), img, FALSE, FALSE, 0);
+
+	label = gtk_label_new(_("You have muted sounds in Pidgin!"));
+	gtk_box_pack_start(GTK_BOX(infobox), label, FALSE, FALSE, 0);
+
+	callback1 = purple_prefs_connect_callback(plugin, PLUGIN_PREFS_PREFIX "/reminder/sound/play", update_muted_sound_hint_pidgin_pref_cb, infobox);
+	callback2 = purple_prefs_connect_callback(pidgin_blist_get_handle(), PIDGIN_PREFS_ROOT "/sound/mute", update_muted_sound_hint_pidgin_pref_cb, infobox);
+	g_signal_connect(G_OBJECT(infobox), "show", G_CALLBACK(update_muted_sound_hint_show_cb), NULL);
+	
+
 	/* Tooltip */
 	frame = gtk_vbox_new(FALSE, 18);
         gtk_container_set_border_width(GTK_CONTAINER(frame), 12);
@@ -287,6 +331,7 @@ GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	g_signal_connect(G_OBJECT(ret), "destroy", G_CALLBACK(window_destroyed_cb), NULL);
 
 	gtk_widget_show_all(ret);
+
 	return ret;
 }
 
