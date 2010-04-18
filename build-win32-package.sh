@@ -13,7 +13,7 @@ cp src/${PROJECT}.dll ${WIN32DIR}/pidgin/plugins && \
 cp share/pixmaps/*.png ${WIN32DIR}/pidgin/pixmaps/pidgin/${OLDPROJECTNAME} && \
 cp share/sounds/*.wav ${WIN32DIR}/pidgin/sounds/pidgin/${OLDPROJECTNAME} && \
 i586-mingw32msvc-strip --strip-unneeded ${WIN32DIR}/pidgin/plugins/${PROJECT}.dll && \
-for lang in de ru fr es; do
+for lang in de ru fr es tr he; do
 	mkdir -p ${WIN32DIR}/pidgin/locale/${lang}/LC_MESSAGES && \
 	cp po/${lang}.gmo ${WIN32DIR}/pidgin/locale/${lang}/LC_MESSAGES/${PROJECT}.mo
 done && \

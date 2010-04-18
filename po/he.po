@@ -1,16 +1,16 @@
-# German translation for Birthday Reminder
-# Copyright (C) 2008 Konrad Gräfe <freakazoid@teamblind.de>
-# This file is distributed under the same license as the birthday_reminder package.
-# Konrad Gräfe <freakazoid@teamblind.de>, 2008
+# Hebrew translation for pidgin-birthday-reminder
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the pidgin-birthday-reminder package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
+"Project-Id-Version: pidgin-birthday-reminder\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-18 12:57+0200\n"
-"PO-Revision-Date: 2010-04-18 09:09+0000\n"
-"Last-Translator: kgraefe <Unknown>\n"
-"Language-Team: de_DE <freakazoid@teamblind.de>\n"
+"PO-Revision-Date: 2010-04-12 16:08+0000\n"
+"Last-Translator: Yaron <sh.yaron@gmail.com>\n"
+"Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,80 +20,78 @@ msgstr ""
 #: ../src/birthday_list.c:152
 #, c-format
 msgid "%02d/%02d/%04d"
-msgstr "%2$02d.%1$02d.%3$04d"
+msgstr "%02d/%02d/%04d"
 
 #: ../src/birthday_list.c:154
 #, c-format
 msgid "%02d/%02d"
-msgstr "%2$02d.%1$02d."
+msgstr "%02d/%02d"
 
 #: ../src/birthday_list.c:183
 msgid "Buddy"
-msgstr "Buddy"
+msgstr "חבר"
 
 #: ../src/birthday_list.c:198
 msgid "Days to birthday"
-msgstr "Tage bis zum Geburtstag"
+msgstr "ימים עד ליום ההולדת"
 
 #: ../src/birthday_list.c:209 ../src/scan.c:126
 msgid "Birthday"
-msgstr "Geburtstag"
+msgstr "תאריך הלידה"
 
 #: ../src/birthday_list.c:220
 msgid "Age"
-msgstr "Alter"
+msgstr "גיל"
 
 #: ../src/birthday_list.c:237 ../src/notification.c:153
 #: ../src/notification.c:156
 msgid "Close"
-msgstr "Schließen"
+msgstr "סגירה"
 
 #: ../src/birthday_list.c:242 ../src/notification.c:153
 msgid "Write IM"
-msgstr "Anschreiben"
+msgstr "שליחת הודעה"
 
 #: ../src/birthday_list.c:247
 #, c-format
 msgid "Birthday List (%d)"
-msgstr "Geburtstags-Liste (%d)"
+msgstr "רשימת ימי הולדת (%d)"
 
 #: ../src/birthday_reminder.c:139 ../src/input.c:95 ../src/notification.c:145
 #: ../src/notification.c:147 ../src/notification.c:153
 #: ../src/notification.c:156
 msgid "Birthday Reminder"
-msgstr "Geburtstags-Erinnerung"
+msgstr "מזכיר ימי ההולדת"
 
 #: ../src/birthday_reminder.c:140
 msgid "Reminds you of the birthday of your buddies. :o)"
-msgstr "Erinnert an die Geburtstage deiner Buddys. :o)"
+msgstr "התוסף יזכיר לך את ימי ההולדת של החברים שלך. :o)"
 
 #: ../src/birthday_reminder.c:141
 msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
-msgstr ""
-"Dieses Plugin sollte die Geburtstage deiner Buddys aufnehmen und dich an sie "
-"erinnern."
+msgstr "תוסף זה ינהל מעקב ויזכיר לך בסמוך למועדי ימי ההולדת של החברים שלך."
 
 #: ../src/emblems.c:143
 msgid "Could not load icons!\n"
-msgstr "Konnte Icons nicht laden!\n"
+msgstr "לא ניתן לטעון את הסמלים!\n"
 
 #. Translators: this is how the birthday appears in an external calendar application (summary). Please display the name in front if possible.
 #: ../src/icsexport.c:179
 #, c-format
 msgid "%s's birthday"
-msgstr "%s's Geburtstag"
+msgstr "יום ההולדת של %s"
 
 #. Translators: this is how the birthday appears in an external calendar application (description with year of birth)
 #: ../src/icsexport.c:182
 #, c-format
 msgid "Birthday of %s, born in %04i"
-msgstr "Geburtstag von %s, geboren %04i"
+msgstr "יום ההולדת של %s, נולד/ה בתאריך %04i"
 
 #. Translators: this is how the birthday appears in an external calendar application (description without year of birth)
 #: ../src/icsexport.c:185
 #, c-format
 msgid "Birthday of %s"
-msgstr "Geburtstag von %s"
+msgstr "יום ההולדת של %s"
 
 #: ../src/input.c:85
 #, c-format
@@ -101,181 +99,178 @@ msgid ""
 "Use the following format: %s .\n"
 "Blank out the input field to clear the BDay.\n"
 "Use a year before 1900 if you do not know."
-msgstr ""
-"Benutzen Sie folgendes Format: %s\n"
-"Lassen Sie das Feld leer um das Geburtsdatum zu löschen.\n"
-"Benutzen Sie eine Jahreszahl vor 1900, wenn Sie sie nicht genau wissen."
+msgstr "יש להשתמש במבנה הבא: %s"
 
 #: ../src/input.c:95
 msgid "Set Birthday:"
-msgstr "Setze Geburtstag:"
+msgstr "הגדרת תאריך הלידה:"
 
 #: ../src/input.c:95
 msgid "OK"
-msgstr "OK"
+msgstr "אישור"
 
 #: ../src/input.c:95
 msgid "Cancel"
-msgstr "Abbrechen"
+msgstr "ביטול"
 
 #: ../src/input.c:105
 msgid "Set Birthday"
-msgstr "Geburtstag setzen"
+msgstr "הגדרות יום ההולדת"
 
 #: ../src/notification.c:66
 #, c-format
 msgid "sound file (%s) does not exist.\n"
-msgstr "Sound-Datei (%s) existiert nicht.\n"
+msgstr "קובץ השמע (%s) אינו קיים.\n"
 
 #: ../src/notification.c:118
 #, c-format
 msgid "%s will be %d years old today! Hooray!"
-msgstr "%s wird heute %d Jahre alt! Hurra!"
+msgstr "%s יהיה בן/תהיה בת %d היום! מזל טוב!"
 
 #: ../src/notification.c:120
 #, c-format
 msgid "It's %s's birthday today! Hooray!"
-msgstr "%s hat heute Geburtstag! Hurra!"
+msgstr "זהו יום ההולדת של %s היום! מזל טוב!"
 
 #: ../src/notification.c:124
 #, c-format
 msgid "%s will be %d years old tomorrow!"
-msgstr "%s wird morgen %d Jahre alt!"
+msgstr "%s יהיה בן/תהיה בת %d מחר!"
 
 #: ../src/notification.c:126
 #, c-format
 msgid "%s's birthday is tomorrow!"
-msgstr "%s hat morgen Geburtstag!"
+msgstr "יום ההולדת של %s חל מחר!"
 
 #: ../src/notification.c:130
 #, c-format
 msgid "%s will be %d years old in %d days!"
-msgstr "%1$s wird in %3$d Tagen %2$d Jahre alt!"
+msgstr ""
 
 #: ../src/notification.c:132
 #, c-format
 msgid "%s's birthday is in %d days!"
-msgstr "%s hat in %d Tagen Geburtstag!"
+msgstr "יום ההולדת של %s יחול בעוד %d ימים!"
 
 #: ../src/notification.c:137
 msgid "There are birthdays in the next days! Hooray!"
-msgstr "Es stehen Geburtstage an! Hurra!"
+msgstr "ישנם ימי הולדת בימי הקרובים! יש!"
 
 #: ../src/notification.c:145
 msgid "Write IM?"
-msgstr "Anschreiben?"
+msgstr "לשלוח הודעה?"
 
 #: ../src/notification.c:145 ../src/notification.c:147
 msgid "Yes"
-msgstr "Ja"
+msgstr "כן"
 
 #: ../src/notification.c:145 ../src/notification.c:147
 msgid "No"
-msgstr "Nein"
+msgstr "לא"
 
 #: ../src/notification.c:147
 msgid "Show overview?"
-msgstr "Übersicht anzeigen?"
+msgstr "להציג סקירה?"
 
 #: ../src/notification.c:156
 msgid "Overview"
-msgstr "Übersicht"
+msgstr "סקירה"
 
 #: ../src/plugin_actions.c:48 ../src/prefs.c:103
 msgid "Save birthday list as..."
-msgstr "Geburtstags-Liste speichern unter..."
+msgstr "לשמור את רשימת ימי ההולדת בתור..."
 
 #: ../src/plugin_actions.c:58 ../src/prefs.c:113
 msgid "iCalendar files"
-msgstr "iCalendar-Dateien"
+msgstr "קובצי iCalendar"
 
 #: ../src/plugin_actions.c:85
 msgid "Check Birthdays"
-msgstr "Geburtstage überprüfen"
+msgstr "בדיקת ימי הולדת"
 
 #: ../src/plugin_actions.c:88
 msgid "Show birthday list"
-msgstr "Geburtstags-Liste anzeigen"
+msgstr "הצגת רשימת ימי ההולדת"
 
 #: ../src/plugin_actions.c:91
 msgid "Export birthday list"
-msgstr "Geburtstags-Liste exportieren"
+msgstr "ייצוא רשימת ימי ההולדת"
 
 #: ../src/prefs.c:154
 msgid "Reminder"
-msgstr "Erinnerung"
+msgstr "תזכורת"
 
 #: ../src/prefs.c:160
 msgid "Remind just once a day"
-msgstr "Nur einmal am Tag erinnern"
+msgstr "הצגת תזכורת פעם ביום"
 
 #: ../src/prefs.c:165
 msgid "Show birthday icons in the buddy list"
-msgstr "Geburtstags-Icons in der Buddy-Liste anzeigen"
+msgstr "הצגת סמלי ימי הולדת ברשימת אנשי הקשר"
 
 #: ../src/prefs.c:183 ../src/prefs.c:204 ../src/prefs.c:225 ../src/prefs.c:246
 msgid "days before birthday"
-msgstr "Tage vor dem Geburtstag"
+msgstr "ימים בטרם יום ההולדת"
 
 #: ../src/prefs.c:186
 msgid "Show mini dialog in the buddy list"
-msgstr "Mini-Dialog in der Buddy-Liste anzeigen"
+msgstr "הצגת דיאלוג מוקטן ברשימת החברים"
 
 #: ../src/prefs.c:207
 msgid "Show notification"
-msgstr "Meldung anzeigen"
+msgstr "הצגת התרעה"
 
 #: ../src/prefs.c:228
 msgid "Play sound"
-msgstr "Melodie abspielen"
+msgstr "השמעת צליל"
 
 #: ../src/prefs.c:258
 msgid "You have muted sounds in Pidgin!"
-msgstr "Du hast Pidgin stummgeschaltet!"
+msgstr ""
 
 #: ../src/prefs.c:269
 msgid "Tooltip"
-msgstr "Tooltip"
+msgstr "חלונית עצה"
 
 #: ../src/prefs.c:274
 msgid "Show Birthday"
-msgstr "Geburtstag anzeigen"
+msgstr "הצגת יום־הולדת"
 
 #: ../src/prefs.c:287
 msgid "Show days to birthday"
-msgstr "Tage bis zum Geburtstag anzeigen"
+msgstr "הצגת ימים עד ליום ההולדת"
 
 #: ../src/prefs.c:294
 msgid "Show Age"
-msgstr "Alter anzeigen"
+msgstr "הצגת גיל"
 
 #: ../src/prefs.c:302
 msgid "iCalendar Export"
-msgstr "iCalendar-Export"
+msgstr "ייצוא iCalendar"
 
 #: ../src/prefs.c:307
 msgid "Export to file"
-msgstr "Als Datei exportieren"
+msgstr "ייצוא לקובץ"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
 #: ../src/scan.c:96
 #, c-format
 msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
-msgstr "Frage Buddy %s (Konto: %s (%s)) ab. Warte auf Antwort...\n"
+msgstr ""
 
 #: ../src/scan.c:98
 msgid "No more buddies to scan.\n"
-msgstr "Keine weiteren Buddies abzufragen.\n"
+msgstr "אין עוד חברים לסריקה.\n"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
 #: ../src/scan.c:155
 #, c-format
 msgid "Buddy %s (Account: %s (%s)) scanned.\n"
-msgstr "Buddy %s (Konto: %s (%s)) wurde abgefragt.\n"
+msgstr ""
 
 #: ../src/scan.c:192
 msgid "Scan birthdays on this account"
-msgstr "Geburtstage mit diesem Account scannen"
+msgstr "סריקת ימי ההולדת בחשבון זה"
 
 #. Translators: to use an other order of the arguments use %2$02d for day, %1$02d for month and %3$04d for year
 #: ../src/tooltip.c:40
@@ -285,7 +280,7 @@ msgid ""
 "<b>Birthday</b>: %02d/%02d/%04d"
 msgstr ""
 "\n"
-"<b>Geburtstag</b>: %2$02d.%1$02d.%3$04d"
+"<b>יום הולדת</b>: %02d/%02d/%04d"
 
 #. Translators: use %2$02d for day and %1$02d for month
 #: ../src/tooltip.c:43
@@ -295,22 +290,22 @@ msgid ""
 "<b>Birthday</b>: %02d/%02d"
 msgstr ""
 "\n"
-"<b>Geburtstag</b>: %2$02d.%1$02d."
+"<b>יום הולדת</b>: %02d/%02d"
 
 #: ../src/tooltip.c:49
 #, c-format
 msgid " (<b>Today!</b>)"
-msgstr " (<b>Heute!</b>)"
+msgstr " (<b>היום!</b>)"
 
 #: ../src/tooltip.c:51
 #, c-format
 msgid " (<b>Tomorrow!</b>)"
-msgstr " (<b>Morgen!</b>)"
+msgstr " (<b>מחר!</b>)"
 
 #: ../src/tooltip.c:53
 #, c-format
 msgid " (in %d days)"
-msgstr " (in %d Tagen)"
+msgstr " (בעוד %d ימים)"
 
 #: ../src/tooltip.c:60
 #, c-format
@@ -319,4 +314,4 @@ msgid ""
 "<b>Age</b>: %d years"
 msgstr ""
 "\n"
-"<b>Alter</b>: %d Jahre"
+"<b>גיל</b>: %d שנים"
