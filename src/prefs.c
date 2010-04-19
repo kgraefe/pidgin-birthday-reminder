@@ -132,7 +132,6 @@ static void export_filechooser_cb(GtkWidget *widget, gpointer data) {
 
 static guint callback1 = 0;
 static guint callback2 = 0;
-static guint callback3 = 0;
 
 static void window_destroyed_cb(GtkWidget *widget, gpointer data) {
 	automatic_export();
@@ -143,7 +142,7 @@ static void window_destroyed_cb(GtkWidget *widget, gpointer data) {
 }
 
 GtkWidget *get_config_frame(PurplePlugin *plugin) {
-	GtkWidget *ret, *frame, *vbox, *hbox, *toggle, *spin, *label, *entry, *button, *ref, *infobox, *img;
+	GtkWidget *ret, *frame, *vbox, *hbox, *toggle, *spin, *label, *entry, *button, *ref, *infobox;
 	GtkAdjustment *adjustment;
 
 	ret = gtk_notebook_new();
@@ -246,17 +245,8 @@ GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	label = gtk_label_new(_("days before birthday"));
 	gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
 
-	infobox = gtk_hbox_new(FALSE, 5);
+	infobox = make_info_widget(_("You have muted sounds in Pidgin!"), GTK_STOCK_DIALOG_WARNING, TRUE);
 	gtk_box_pack_start(GTK_BOX(vbox), infobox, FALSE, FALSE, 0);
-
-	label = gtk_label_new("");
-	gtk_box_pack_start(GTK_BOX(infobox), label, FALSE, FALSE, 10);
-
-	img = gtk_image_new_from_stock(GTK_STOCK_DIALOG_WARNING, GTK_ICON_SIZE_MENU);
-	gtk_box_pack_start(GTK_BOX(infobox), img, FALSE, FALSE, 0);
-
-	label = gtk_label_new(_("You have muted sounds in Pidgin!"));
-	gtk_box_pack_start(GTK_BOX(infobox), label, FALSE, FALSE, 0);
 
 	callback1 = purple_prefs_connect_callback(plugin, PLUGIN_PREFS_PREFIX "/reminder/sound/play", update_muted_sound_hint_pidgin_pref_cb, infobox);
 	callback2 = purple_prefs_connect_callback(pidgin_blist_get_handle(), PIDGIN_PREFS_ROOT "/sound/mute", update_muted_sound_hint_pidgin_pref_cb, infobox);

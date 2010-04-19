@@ -24,6 +24,7 @@
 
 #include <glib.h>
 #include <blist.h>
+#include <gtk/gtk.h>
 
 void g_date_set_today(GDate *date);
 
@@ -32,5 +33,7 @@ void write_im(PurpleBlistNode *node);
 gboolean node_account_connected(PurpleBlistNode *node);
 
 gboolean has_file_extension(const char *filename, const char *ext);
+
+GtkWidget *make_info_widget(gchar *markup, gchar *stock_id, gboolean indent);
 
 #endif
