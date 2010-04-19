@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: pidgin-birthday-reminder\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-18 12:57+0200\n"
-"PO-Revision-Date: 2010-04-12 16:08+0000\n"
+"PO-Revision-Date: 2010-04-18 11:36+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-18 10:52+0000\n"
+"X-Launchpad-Export-Date: 2010-04-19 03:54+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/birthday_list.c:152
@@ -68,7 +68,8 @@ msgid "Reminds you of the birthday of your buddies. :o)"
 msgstr "התוסף יזכיר לך את ימי ההולדת של החברים שלך. :o)"
 
 #: ../src/birthday_reminder.c:141
-msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
+msgid ""
+"This Plugin shall keep track and remind you of your buddies' birthdays."
 msgstr "תוסף זה ינהל מעקב ויזכיר לך בסמוך למועדי ימי ההולדת של החברים שלך."
 
 #: ../src/emblems.c:143
