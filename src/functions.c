@@ -122,3 +122,4 @@ GtkWidget *make_info_widget(gchar *markup, gchar *stock_id, gboolean indent) {
 
 	return infobox;
 }
+
