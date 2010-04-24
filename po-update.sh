@@ -2,15 +2,19 @@
 cd po
 echo "Updating POT template..."
 intltool-update -po
-echo "Checking german language file..."
+echo "Checking German language file..."
 intltool-update de
-echo "Checking russian language file..."
+echo "Checking Russian language file..."
 intltool-update ru 
-echo "Checking french language file..."
+echo "Checking French language file..."
 intltool-update fr
-echo "Checking spanish language file..."
+echo "Checking Spanish language file..."
 intltool-update es
-echo "Checking turkish language file..."
+echo "Checking Turkish language file..."
 intltool-update tr
-echo "Checking hebrew language file..."
+echo "Checking Hebrew language file..."
 intltool-update he
+echo "Checking Portuguese language file..."
+intltool-update pt
+echo "Checking Galician language file..."
+intltool-update gl

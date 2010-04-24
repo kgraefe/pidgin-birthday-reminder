@@ -3,16 +3,26 @@
 PROJECT=pidgin-birthday-reminder
 VERSION=$(cat VERSION)
 REPOSITORY=ppa:konradgraefe/pidgin-plugins
-DEB_REVISION=1
+if [ -f DEB_REVISION ]; then
+	DEB_REVISION=$(cat DEB_REVISION)
+else
+	DEB_REVISION=1
+fi
 
 src_dir=$(pwd)
 
 echo -n "make dist? (y/N) "
 read -n 1 in
 echo ""
-
 if [ "$in" == "y" ]; then
 	make dist
+fi
+
+echo -n "Debian package revision? ($DEB_REVISION) "
+read in
+if [ "$in" != "" ]; then
+	DEB_REVISION=$in
+	echo $DEB_REVISION >DEB_REVISION
 fi
 
 rm -rf deb-pkg
