@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-18 12:57+0200\n"
+"POT-Creation-Date: 2010-05-07 10:17+0200\n"
 "PO-Revision-Date: 2010-04-19 04:28+0000\n"
 "Last-Translator: DiegoJ <diegojromerolopez@gmail.com>\n"
 "Language-Team: es_ES <christoph.miebach@web.de>\n"
@@ -68,8 +68,7 @@ msgid "Reminds you of the birthday of your buddies. :o)"
 msgstr "Recuerda a los cumpleaños de tus amigos. :o)"
 
 #: ../src/birthday_reminder.c:141
-msgid ""
-"This Plugin shall keep track and remind you of your buddies' birthdays."
+msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
 msgstr ""
 "Este complemento debe memorizar los cumpleañoses de tus amigos y "
 "recordártelo."
@@ -202,59 +201,59 @@ msgstr "Mostrar lista de cumpleaños"
 msgid "Export birthday list"
 msgstr "Exportar lista de cumpleaños"
 
-#: ../src/prefs.c:154
+#: ../src/prefs.c:153
 msgid "Reminder"
 msgstr "Recordatorio"
 
-#: ../src/prefs.c:160
+#: ../src/prefs.c:159
 msgid "Remind just once a day"
 msgstr "Recordar solamente una vez al día"
 
-#: ../src/prefs.c:165
+#: ../src/prefs.c:164
 msgid "Show birthday icons in the buddy list"
 msgstr "Mostrar íconos del cumpleaños en la lista de amigos"
 
-#: ../src/prefs.c:183 ../src/prefs.c:204 ../src/prefs.c:225 ../src/prefs.c:246
+#: ../src/prefs.c:182 ../src/prefs.c:203 ../src/prefs.c:224 ../src/prefs.c:245
 msgid "days before birthday"
 msgstr "días antes del cumpleaños"
 
-#: ../src/prefs.c:186
+#: ../src/prefs.c:185
 msgid "Show mini dialog in the buddy list"
 msgstr "Mostrar notificación en la lista de amigos"
 
-#: ../src/prefs.c:207
+#: ../src/prefs.c:206
 msgid "Show notification"
 msgstr "Mostrar notificación"
 
-#: ../src/prefs.c:228
+#: ../src/prefs.c:227
 msgid "Play sound"
 msgstr "Reproducir sonido"
 
-#: ../src/prefs.c:258
+#: ../src/prefs.c:248
 msgid "You have muted sounds in Pidgin!"
 msgstr "Ha desactivado los sonidos en Pidgin."
 
-#: ../src/prefs.c:269
+#: ../src/prefs.c:259
 msgid "Tooltip"
 msgstr "Descripción emergente"
 
-#: ../src/prefs.c:274
+#: ../src/prefs.c:264
 msgid "Show Birthday"
 msgstr "Mostrar cumpleaños"
 
-#: ../src/prefs.c:287
+#: ../src/prefs.c:277
 msgid "Show days to birthday"
 msgstr "Mostrar días hasta el cumpleaños"
 
-#: ../src/prefs.c:294
+#: ../src/prefs.c:284
 msgid "Show Age"
 msgstr "Mostrar edad"
 
-#: ../src/prefs.c:302
+#: ../src/prefs.c:292
 msgid "iCalendar Export"
 msgstr "Exportar como iCalendar"
 
-#: ../src/prefs.c:307
+#: ../src/prefs.c:297
 msgid "Export to file"
 msgstr "Exportar en fichero"
 
