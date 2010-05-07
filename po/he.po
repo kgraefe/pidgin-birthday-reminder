@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pidgin-birthday-reminder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-18 12:57+0200\n"
-"PO-Revision-Date: 2010-04-18 11:36+0000\n"
+"POT-Creation-Date: 2010-05-07 10:17+0200\n"
+"PO-Revision-Date: 2010-05-04 11:46+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-19 03:54+0000\n"
+"X-Launchpad-Export-Date: 2010-05-05 03:58+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/birthday_list.c:152
@@ -68,8 +68,7 @@ msgid "Reminds you of the birthday of your buddies. :o)"
 msgstr "התוסף יזכיר לך את ימי ההולדת של החברים שלך. :o)"
 
 #: ../src/birthday_reminder.c:141
-msgid ""
-"This Plugin shall keep track and remind you of your buddies' birthdays."
+msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
 msgstr "תוסף זה ינהל מעקב ויזכיר לך בסמוך למועדי ימי ההולדת של החברים שלך."
 
 #: ../src/emblems.c:143
@@ -146,7 +145,7 @@ msgstr "יום ההולדת של %s חל מחר!"
 #: ../src/notification.c:130
 #, c-format
 msgid "%s will be %d years old in %d days!"
-msgstr ""
+msgstr "הגיל של %s יהיה %d שנים בעוד %d ימים!"
 
 #: ../src/notification.c:132
 #, c-format
@@ -197,59 +196,59 @@ msgstr "הצגת רשימת ימי ההולדת"
 msgid "Export birthday list"
 msgstr "ייצוא רשימת ימי ההולדת"
 
-#: ../src/prefs.c:154
+#: ../src/prefs.c:153
 msgid "Reminder"
 msgstr "תזכורת"
 
-#: ../src/prefs.c:160
+#: ../src/prefs.c:159
 msgid "Remind just once a day"
 msgstr "הצגת תזכורת פעם ביום"
 
-#: ../src/prefs.c:165
+#: ../src/prefs.c:164
 msgid "Show birthday icons in the buddy list"
 msgstr "הצגת סמלי ימי הולדת ברשימת אנשי הקשר"
 
-#: ../src/prefs.c:183 ../src/prefs.c:204 ../src/prefs.c:225 ../src/prefs.c:246
+#: ../src/prefs.c:182 ../src/prefs.c:203 ../src/prefs.c:224 ../src/prefs.c:245
 msgid "days before birthday"
 msgstr "ימים בטרם יום ההולדת"
 
-#: ../src/prefs.c:186
+#: ../src/prefs.c:185
 msgid "Show mini dialog in the buddy list"
 msgstr "הצגת דיאלוג מוקטן ברשימת החברים"
 
-#: ../src/prefs.c:207
+#: ../src/prefs.c:206
 msgid "Show notification"
 msgstr "הצגת התרעה"
 
-#: ../src/prefs.c:228
+#: ../src/prefs.c:227
 msgid "Play sound"
 msgstr "השמעת צליל"
 
-#: ../src/prefs.c:258
+#: ../src/prefs.c:248
 msgid "You have muted sounds in Pidgin!"
-msgstr ""
+msgstr "הצלילים בפידג'ין הושתקו!"
 
-#: ../src/prefs.c:269
+#: ../src/prefs.c:259
 msgid "Tooltip"
 msgstr "חלונית עצה"
 
-#: ../src/prefs.c:274
+#: ../src/prefs.c:264
 msgid "Show Birthday"
 msgstr "הצגת יום־הולדת"
 
-#: ../src/prefs.c:287
+#: ../src/prefs.c:277
 msgid "Show days to birthday"
 msgstr "הצגת ימים עד ליום ההולדת"
 
-#: ../src/prefs.c:294
+#: ../src/prefs.c:284
 msgid "Show Age"
 msgstr "הצגת גיל"
 
-#: ../src/prefs.c:302
+#: ../src/prefs.c:292
 msgid "iCalendar Export"
 msgstr "ייצוא iCalendar"
 
-#: ../src/prefs.c:307
+#: ../src/prefs.c:297
 msgid "Export to file"
 msgstr "ייצוא לקובץ"
 
@@ -257,7 +256,7 @@ msgstr "ייצוא לקובץ"
 #: ../src/scan.c:96
 #, c-format
 msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
-msgstr ""
+msgstr "איש הקשר %s (חשבון: %s (%s)) נסרק. בהמתנה לתגובה...\n"
 
 #: ../src/scan.c:98
 msgid "No more buddies to scan.\n"
@@ -267,7 +266,7 @@ msgstr "אין עוד חברים לסריקה.\n"
 #: ../src/scan.c:155
 #, c-format
 msgid "Buddy %s (Account: %s (%s)) scanned.\n"
-msgstr ""
+msgstr "איש הקשר %s (חשבון: %s (%s)) נסרק.\n"
 
 #: ../src/scan.c:192
 msgid "Scan birthdays on this account"
