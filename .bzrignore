@@ -41,3 +41,15 @@ po/Makefile.in
 share/Makefile
 share/pixmaps/Makefile
 share/sounds/Makefile
+deb-pkg
+local.mak
+out
+po/gl.gmo
+po/he.gmo
+po/pt.gmo
+po/tr.gmo
+src/pidgin-birthday-reminder.dll
+po/es.gmo
+po/fr.gmo
+po/es.gmo
+po/fr.gmo
