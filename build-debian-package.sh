@@ -27,8 +27,10 @@ if [ "$in" != "" ]; then
 	echo $DEB_REVISION >DEB_REVISION
 fi
 
+
 for dist in $DISTRIBUTIONS
 do
+	revision=$dist$DEB_REVISION
 
 	rm -rf deb-pkg
 	mkdir deb-pkg
@@ -42,7 +44,7 @@ do
 	sed \
 		-e "s/@@VERSION@@/${VERSION}/" \
 		-e "s/@@DATE@@/$(date -R)/" \
-		-e "s/@@DEB_REVISION@@/${DEB_REVISION}/" \
+		-e "s/@@DEB_REVISION@@/${revision}/" \
 		-e "s/@@DISTRIBUTION@@/${dist}/" \
 		debian/changelog.in >debian/changelog
 
@@ -56,12 +58,12 @@ do
 	lintian -i *.dsc
 
 	echo ""
-	echo -n "Upload ${PROJECT}_${VERSION}-${DEB_REVISION} to $dist repository (y/N) "
+	echo -n "Upload ${PROJECT}_${VERSION}-${revision} to repository (y/N) "
 	read -n 1 in
 	echo ""
 
 	if [ "$in" == "y" ]; then
-		dput ${REPOSITORY} ${PROJECT}_${VERSION}-${DEB_REVISION}_source.changes
+		dput ${REPOSITORY} ${PROJECT}_${VERSION}-${revision}_source.changes
 	fi
 
 	cd ${src_dir}
