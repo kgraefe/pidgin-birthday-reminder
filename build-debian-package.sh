@@ -63,4 +63,6 @@ do
 	if [ "$in" == "y" ]; then
 		dput ${REPOSITORY} ${PROJECT}_${VERSION}-${DEB_REVISION}_source.changes
 	fi
+
+	cd ${src_dir}
 done

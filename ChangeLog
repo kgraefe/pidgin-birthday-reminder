@@ -1,12 +1,16 @@
+Version 1.6 (2010/05/08):
+	* Added hint in preferences menu when sounds are muted
+	* Added Turkish, Hebrew, Portuguese and Galician language (see credits on https://translations.launchpad.net/pidgin-birthday-reminder)
+
 Version 1.5 (2010/03/20):
 	* Renamed project to pidgin-birthday-reminder
 	* Added tabs in the preferences window
 	* iCalendar files are forced to have the .ics extension now
-	* Added spanish translation (many thanks to Christoph Miebach)
+	* Added Spanish translation (many thanks to Christoph Miebach)
 
 Version 1.4 (2010/03/03):
 	* Added iCalendar export
-	* Added french translation (many thanks to Pierre Etchemaïté)
+	* Added French translation (many thanks to Pierre Etchemaïté)
 
 Version 1.3 (2009/12/14):
 	* Fixed IM to wrong contact when using notifications
@@ -21,17 +25,17 @@ Version 1.2 (2009/07/05):
 	* Added ReadMe-Files
 
 Version 1.1 (2009/05/15):
-	* Added russian translation (many thanks to Alexander Logvinov)
+	* Added Russian translation (many thanks to Alexander Logvinov)
 
 Version 1.0 (2009/02/13):
 	* (First?) final release
 	* Fixed a crash with gtk_widget_destroy()
 	* Fixed wrong calculation of days before alert
 	* If you switch an account to "online" the plugin will just check those buddies' birthday
-	* Fixed a translation issue in the german version
+	* Fixed a translation issue in the German version
 
 Version 0.6 (2009/02/10):
-	* Fixed a bug which prevents the plugin from scanning buddies where the birhtday was removed by hand
+	* Fixed a bug which prevents the plugin from scanning buddies where the birthday was removed by hand
 	* Contacts will be handled in a better way now
 	* Buddy List will be shown when birthday check was triggert by the tray menu item
 	* Added the ability to disable the scan per account

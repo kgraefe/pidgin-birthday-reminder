@@ -7,24 +7,24 @@
 # PATHS
 #
 
-BIRTHDAY_REMINDER_TOP :=		..
--include $(BIRTHDAY_REMINDER_TOP)/local.mak
+PLUGIN_TOP :=		..
+-include $(PLUGIN_TOP)/local.mak
 PIDGIN_TREE_TOP ?=		../../../..
 include $(PIDGIN_TREE_TOP)/libpurple/win32/global.mak
 
-BIRTHDAY_REMINDER_VERSION := $(shell cat ${BIRTHDAY_REMINDER_TOP}/VERSION)
+PLUGIN_VERSION := $(shell cat ${PLUGIN_TOP}/VERSION)
 
 ##
 ## VARIABLE DEFINITIONS
 ##
 
-BIRTHDAY_REMINDER = pidgin-birthday-reminder
+PLUGIN = pidgin-birthday-reminder
 
 # Compiler Options
 
 #CFLAGS = 
 
-DEFINES = -DBIRTHDAY_REMINDER_VERSION=\"$(BIRTHDAY_REMINDER_VERSION)\" -DGETTEXT_PACKAGE=\"$(BIRTHDAY_REMINDER)\" -DHAVE_CONFIG_H
+DEFINES = -DBIRTHDAY_REMINDER_VERSION=\"$(PLUGIN_VERSION)\" -DGETTEXT_PACKAGE=\"$(PLUGIN)\" -DHAVE_CONFIG_H
 
 #LDFLAGS = 
 
@@ -62,7 +62,7 @@ LIB_PATHS =             \
 ##  SOURCES, OBJECTS
 ##
 
-BIRTHDAY_REMINDER_SRC =	\
+PLUGIN_SRC =	\
 	birthday_reminder.c \
 	functions.c \
 	pidgin_internals.c \
@@ -80,7 +80,7 @@ BIRTHDAY_REMINDER_SRC =	\
 	icsexport.c
 
 
-BIRTHDAY_REMINDER_OBJ = $(BIRTHDAY_REMINDER_SRC:%.c=%.o)
+PLUGIN_OBJ = $(PLUGIN_SRC:%.c=%.o)
 
 ##
 ## LIBRARIES
@@ -108,22 +108,22 @@ include $(PIDGIN_COMMON_RULES)
 
 .PHONY: all clean install
 
-all: $(BIRTHDAY_REMINDER).dll
+all: $(PLUGIN).dll
 
 install: all $(PIDGIN_INSTALL_PLUGINS_DIR)
-	cp $(BIRTHDAY_REMINDER).dll $(PIDGIN_INSTALL_PLUGINS_DIR)
+	cp $(PLUGIN).dll $(PIDGIN_INSTALL_PLUGINS_DIR)
 
-$(BIRTHDAY_REMINDER_OBJ): $(BIRTHDAY_REMINDER_TOP)/config.h $(PURPLE_VERSION_H)
+$(PLUGIN_OBJ): $(PLUGIN_TOP)/config.h $(PURPLE_VERSION_H)
 
-$(BIRTHDAY_REMINDER_TOP)/config.h: $(BIRTHDAY_REMINDER_TOP)/config.h.mingw
-	$(MAKE) -C $(BIRTHDAY_REMINDER_TOP) -f Makefile.mingw config.h
+$(PLUGIN_TOP)/config.h: $(PLUGIN_TOP)/config.h.mingw
+	$(MAKE) -C $(PLUGIN_TOP) -f Makefile.mingw config.h
 
 ##
 ## BUILD DLL
 ##
 
-$(BIRTHDAY_REMINDER).dll: $(PIDGIN_DLL).a $(BIRTHDAY_REMINDER_OBJ)
-	$(CC) -shared $(BIRTHDAY_REMINDER_OBJ) $(LIB_PATHS) $(PLUGIN_LIBS) $(DLL_LD_FLAGS) -o $(BIRTHDAY_REMINDER).dll
+$(PLUGIN).dll: $(PIDGIN_DLL).a $(PLUGIN_OBJ)
+	$(CC) -shared $(PLUGIN_OBJ) $(LIB_PATHS) $(PLUGIN_LIBS) $(DLL_LD_FLAGS) -o $(PLUGIN).dll
 
 
 ##
@@ -132,6 +132,6 @@ $(BIRTHDAY_REMINDER).dll: $(PIDGIN_DLL).a $(BIRTHDAY_REMINDER_OBJ)
 
 clean:
 	rm -f *.o
-	rm -f $(BIRTHDAY_REMINDER).dll
+	rm -f $(PLUGIN).dll
 
 include $(PIDGIN_COMMON_TARGETS)

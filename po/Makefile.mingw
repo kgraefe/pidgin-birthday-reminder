@@ -3,8 +3,8 @@
 # Description: Makefile to generate mo files
 #
 
-BIRTHDAY_REMINDER_TOP :=           ..
--include $(BIRTHDAY_REMINDER_TOP)/local.mak
+PLUGIN_TOP :=           ..
+-include $(PLUGIN_TOP)/local.mak
 
 PIDGIN_TREE_TOP ?= ../../../..
 include $(PIDGIN_TREE_TOP)/libpurple/win32/global.mak
