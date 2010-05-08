@@ -3,6 +3,8 @@
 PROJECT=pidgin-birthday-reminder
 VERSION=$(cat VERSION)
 REPOSITORY=ppa:konradgraefe/pidgin-plugins
+DISTRIBUTIONS="karmic lucid"
+
 if [ -f DEB_REVISION ]; then
 	DEB_REVISION=$(cat DEB_REVISION)
 else
@@ -25,36 +27,40 @@ if [ "$in" != "" ]; then
 	echo $DEB_REVISION >DEB_REVISION
 fi
 
-rm -rf deb-pkg
-mkdir deb-pkg
-cd deb-pkg
+for dist in $DISTRIBUTIONS
+do
 
-tar xzvf ../${PROJECT}-${VERSION}.tar.gz
+	rm -rf deb-pkg
+	mkdir deb-pkg
+	cd deb-pkg
 
-cd ${PROJECT}-${VERSION}
+	tar xzvf ../${PROJECT}-${VERSION}.tar.gz
 
-cp -r ${src_dir}/debian .
-sed \
-	-e "s/@@VERSION@@/${VERSION}/" \
-	-e "s/@@DATE@@/$(date -R)/" \
-	-e "s/@@DEB_REVISION@@/${DEB_REVISION}/" \
-	debian/changelog.in >debian/changelog
+	cd ${PROJECT}-${VERSION}
 
-sed \
-	-e "s/@@DATE@@/$(date -R)/" \
-	debian/copyright.in >debian/copyright
+	cp -r ${src_dir}/debian .
+	sed \
+		-e "s/@@VERSION@@/${VERSION}/" \
+		-e "s/@@DATE@@/$(date -R)/" \
+		-e "s/@@DEB_REVISION@@/${DEB_REVISION}/" \
+		-e "s/@@DISTRIBUTION@@/${dist}/" \
+		debian/changelog.in >debian/changelog
 
-dpkg-buildpackage -S -rfakeroot
+	sed \
+		-e "s/@@DATE@@/$(date -R)/" \
+		debian/copyright.in >debian/copyright
 
-cd ..
-lintian -i *.dsc
+	dpkg-buildpackage -S -rfakeroot
 
-echo ""
-echo -n "Upload ${PROJECT}_${VERSION}-${DEB_REVISION} to repository (y/N) "
-read -n 1 in
-echo ""
+	cd ..
+	lintian -i *.dsc
 
-if [ "$in" == "y" ]; then
-	dput ${REPOSITORY} ${PROJECT}_${VERSION}-${DEB_REVISION}_source.changes
-fi
+	echo ""
+	echo -n "Upload ${PROJECT}_${VERSION}-${DEB_REVISION} to $dist repository (y/N) "
+	read -n 1 in
+	echo ""
 
+	if [ "$in" == "y" ]; then
+		dput ${REPOSITORY} ${PROJECT}_${VERSION}-${DEB_REVISION}_source.changes
+	fi
+done
