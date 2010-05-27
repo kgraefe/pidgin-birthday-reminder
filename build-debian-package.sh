@@ -24,7 +24,6 @@ echo -n "Debian package revision? ($DEB_REVISION) "
 read in
 if [ "$in" != "" ]; then
 	DEB_REVISION=$in
-	echo $DEB_REVISION >DEB_REVISION
 fi
 
 
@@ -64,6 +63,7 @@ do
 
 	if [ "$in" == "y" ]; then
 		dput ${REPOSITORY} ${PROJECT}_${VERSION}-${revision}_source.changes
+		echo $DEB_REVISION >DEB_REVISION
 	fi
 
 	cd ${src_dir}
