@@ -1,100 +1,99 @@
-# French translation for Birthday Reminder
-# Copyright (C) 2010 Pierre Etchemaïté <petchema@concept-micro.com>
-# This file is distributed under the same license as the birthday_reminder package.
-# Konrad Gräfe <freakazoid@teamblind.de>, 2008
+# Slovak translation for pidgin-birthday-reminder
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the pidgin-birthday-reminder package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: pidgin-birthday-reminder\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-05-07 10:17+0200\n"
-"PO-Revision-Date: 2010-04-20 04:13+0000\n"
+"PO-Revision-Date: 2010-05-20 06:28+0000\n"
 "Last-Translator: kgraefe <Unknown>\n"
-"Language-Team: fr_FR <petchema@concept-micro.com>\n"
+"Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-05-09 04:25+0000\n"
+"X-Launchpad-Export-Date: 2010-05-21 03:52+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/birthday_list.c:152
 #, c-format
 msgid "%02d/%02d/%04d"
-msgstr "%2$02d/%1$02d/%3$04d"
+msgstr "%02d. %02d. %04d"
 
 #: ../src/birthday_list.c:154
 #, c-format
 msgid "%02d/%02d"
-msgstr "%2$02d/%1$02d"
+msgstr "%02d. %02d"
 
 #: ../src/birthday_list.c:183
 msgid "Buddy"
-msgstr "Contact"
+msgstr "Priateľ"
 
 #: ../src/birthday_list.c:198
 msgid "Days to birthday"
-msgstr "Jours avant l'anniversaire"
+msgstr "Dní do narodenín"
 
 #: ../src/birthday_list.c:209 ../src/scan.c:126
 msgid "Birthday"
-msgstr "Anniversaire"
+msgstr "Narodeniny"
 
 #: ../src/birthday_list.c:220
 msgid "Age"
-msgstr "Age"
+msgstr "Vek"
 
 #: ../src/birthday_list.c:237 ../src/notification.c:153
 #: ../src/notification.c:156
 msgid "Close"
-msgstr "Fermer"
+msgstr "Zatvoriť"
 
 #: ../src/birthday_list.c:242 ../src/notification.c:153
 msgid "Write IM"
-msgstr "Ecrire un message"
+msgstr "Napísať správu"
 
 #: ../src/birthday_list.c:247
 #, c-format
 msgid "Birthday List (%d)"
-msgstr "Liste d'anniversaires (%d)"
+msgstr "Zozanam narodenín (%d)"
 
 #: ../src/birthday_reminder.c:139 ../src/input.c:95 ../src/notification.c:145
 #: ../src/notification.c:147 ../src/notification.c:153
 #: ../src/notification.c:156
 msgid "Birthday Reminder"
-msgstr "Rappel d'Anniversaires"
+msgstr "Pripomínač narodebín"
 
 #: ../src/birthday_reminder.c:140
 msgid "Reminds you of the birthday of your buddies. :o)"
-msgstr "Vous rappelle les anniversaires de vos ami(e)s. :o)"
+msgstr "Pripomenie Vám narodeniny vašich priateľov"
 
 #: ../src/birthday_reminder.c:141
 msgid ""
 "This Plugin shall keep track and remind you of your buddies' birthdays."
 msgstr ""
-"Ce greffon tient à jour les anniversaires de vos ami(e)s et vous rappelle "
-"quand une date approche."
+"Tento plugin Vás má informovať a pripomenúť narodeniny vašich priateľov."
 
 #: ../src/emblems.c:143
 msgid "Could not load icons!\n"
-msgstr "Impossible de charger les icônes !\n"
+msgstr "Nedali sa načítať ikonky!\n"
 
 #. Translators: this is how the birthday appears in an external calendar application (summary). Please display the name in front if possible.
 #: ../src/icsexport.c:179
 #, c-format
 msgid "%s's birthday"
-msgstr "Anniversaire de %s"
+msgstr "%s narodeniny"
 
 #. Translators: this is how the birthday appears in an external calendar application (description with year of birth)
 #: ../src/icsexport.c:182
 #, c-format
 msgid "Birthday of %s, born in %04i"
-msgstr "Anniversaire de %s, né(e) en %04i"
+msgstr "Narodeniny %s, narodený v %04i"
 
 #. Translators: this is how the birthday appears in an external calendar application (description without year of birth)
 #: ../src/icsexport.c:185
 #, c-format
 msgid "Birthday of %s"
-msgstr "Anniversaire de %s"
+msgstr "Narodeniny %s"
 
 #: ../src/input.c:85
 #, c-format
@@ -103,13 +102,13 @@ msgid ""
 "Blank out the input field to clear the BDay.\n"
 "Use a year before 1900 if you do not know."
 msgstr ""
-"Utilisez le format suivant : %s\n"
-"Laissez vide pour effacer l'anniversaire.\n"
-"Utilisez un nombre inférieur à 1900 comme année si vous ne la connaissez pas."
+"Použi tento formát: %s .\n"
+"Nechaj prázdne políčko ny vamazanie narodenín.\n"
+"Použi rok pred 1900 ak nevieš."
 
 #: ../src/input.c:95
 msgid "Set Birthday:"
-msgstr "Changer l'anniversaire :"
+msgstr "Nastaviť narodeniny:"
 
 #: ../src/input.c:95
 msgid "OK"
@@ -117,166 +116,167 @@ msgstr "OK"
 
 #: ../src/input.c:95
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "Zrušiť"
 
 #: ../src/input.c:105
 msgid "Set Birthday"
-msgstr "Changer l'anniversaire"
+msgstr "Nastaviť narodeniny"
 
 #: ../src/notification.c:66
 #, c-format
 msgid "sound file (%s) does not exist.\n"
-msgstr "Le fichier son (%s) est manquant.\n"
+msgstr "zvukový súbor (%s) neexistuje.\n"
 
 #: ../src/notification.c:118
 #, c-format
 msgid "%s will be %d years old today! Hooray!"
-msgstr "%s va avoir %d ans aujourd'hui ! Youpi !"
+msgstr "%s má dnes %d rokov. Hurá"
 
 #: ../src/notification.c:120
 #, c-format
 msgid "It's %s's birthday today! Hooray!"
-msgstr "C'est l'anniversaire de %s aujourd'hui ! Youpi !"
+msgstr "Dnes má %s narodeniny! Hurá!"
 
 #: ../src/notification.c:124
 #, c-format
 msgid "%s will be %d years old tomorrow!"
-msgstr "%s aura %d ans demain !"
+msgstr "%s bude mať zajtra %d rokov!"
 
 #: ../src/notification.c:126
 #, c-format
 msgid "%s's birthday is tomorrow!"
-msgstr "L'anniversaire de %s aura lieu demain !"
+msgstr "Zajtra bude mať %s narodeniny!"
 
 #: ../src/notification.c:130
 #, c-format
 msgid "%s will be %d years old in %d days!"
-msgstr "%s aura %d ans dans %d jours !"
+msgstr "%s bude mať %d rokov za %d dní!"
 
 #: ../src/notification.c:132
 #, c-format
 msgid "%s's birthday is in %d days!"
-msgstr "L'anniversaire de %s aura lieu dans %d jours !"
+msgstr "%s bude mať za %d dní narodeniny!"
 
 #: ../src/notification.c:137
 msgid "There are birthdays in the next days! Hooray!"
-msgstr "Il va y avoir des anniversaires dans les prochains jours ! Youpi !"
+msgstr "V nasledujúcich dóch budú narodeniny! Hurá!"
 
 #: ../src/notification.c:145
 msgid "Write IM?"
-msgstr "Ecrire un message ?"
+msgstr "Napísať správu?"
 
 #: ../src/notification.c:145 ../src/notification.c:147
 msgid "Yes"
-msgstr "Oui"
+msgstr "Áno"
 
 #: ../src/notification.c:145 ../src/notification.c:147
 msgid "No"
-msgstr "Non"
+msgstr "Nie"
 
 #: ../src/notification.c:147
 msgid "Show overview?"
-msgstr "Montrer les infos ?"
+msgstr "Ukázať prehľad?"
 
 #: ../src/notification.c:156
 msgid "Overview"
-msgstr "Infos"
+msgstr "Prehľad"
 
 #: ../src/plugin_actions.c:48 ../src/prefs.c:103
 msgid "Save birthday list as..."
-msgstr "Enregistrer la liste des anniversaires sous..."
+msgstr "Uložiť zoznam narodenín ako..."
 
 #: ../src/plugin_actions.c:58 ../src/prefs.c:113
 msgid "iCalendar files"
-msgstr "Fichiers iCalendar"
+msgstr "iCalendar súbory"
 
 #: ../src/plugin_actions.c:85
 msgid "Check Birthdays"
-msgstr "Vérification des anniversaires"
+msgstr "Skontrolovať narodeniny"
 
 #: ../src/plugin_actions.c:88
 msgid "Show birthday list"
-msgstr "Afficher la liste des anniversaires"
+msgstr "Zobraziť zoznam narodenín"
 
 #: ../src/plugin_actions.c:91
 msgid "Export birthday list"
-msgstr "Exporter la liste des anniversaires"
+msgstr "Exportovať zoznam narodenín"
 
 #: ../src/prefs.c:153
 msgid "Reminder"
-msgstr "Rappel"
+msgstr "Pripomínač"
 
 #: ../src/prefs.c:159
 msgid "Remind just once a day"
-msgstr "Ne rappeler qu'une fois par jour"
+msgstr "Pripomenúť len raz denne"
 
 #: ../src/prefs.c:164
 msgid "Show birthday icons in the buddy list"
-msgstr "Afficher les icônes d'anniversaire dans la liste de contacts"
+msgstr "Zobraziť ikonku narodenín v zozname kontaktov"
 
 #: ../src/prefs.c:182 ../src/prefs.c:203 ../src/prefs.c:224 ../src/prefs.c:245
 msgid "days before birthday"
-msgstr "jours avant l'anniversaire"
+msgstr "dní pred narodeninami"
 
 #: ../src/prefs.c:185
 msgid "Show mini dialog in the buddy list"
-msgstr "Afficher un petit dialogue dans la liste de contacts"
+msgstr "Ukázať minidialóg v zozname kontaktov"
 
 #: ../src/prefs.c:206
 msgid "Show notification"
-msgstr "Afficher un rappel"
+msgstr "Zobraziť notifikáciu"
 
 #: ../src/prefs.c:227
 msgid "Play sound"
-msgstr "Jouer un son"
+msgstr "Prehrať zvuk"
 
 #: ../src/prefs.c:248
 msgid "You have muted sounds in Pidgin!"
-msgstr "Vous avez désactivé les sons dans Pidgin !"
+msgstr "Vypli ste zvuky v Pidgine!"
 
 #: ../src/prefs.c:259
 msgid "Tooltip"
-msgstr "Infobulle"
+msgstr "Rady"
 
 #: ../src/prefs.c:264
 msgid "Show Birthday"
-msgstr "Afficher l'anniversaire"
+msgstr "Zobraziť narodeniny"
 
 #: ../src/prefs.c:277
 msgid "Show days to birthday"
-msgstr "Afficher le nombre de jours avant l'anniversaire"
+msgstr "Zobraziť počet dní do narodenín"
 
 #: ../src/prefs.c:284
 msgid "Show Age"
-msgstr "Afficher l'âge"
+msgstr "Zobraziť vek"
 
 #: ../src/prefs.c:292
 msgid "iCalendar Export"
-msgstr "Export au format iCalendar"
+msgstr "iCalendar export"
 
 #: ../src/prefs.c:297
 msgid "Export to file"
-msgstr "Exporter dans un fichier"
+msgstr "export do súboru"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
 #: ../src/scan.c:96
 #, c-format
 msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
-msgstr "Parcours du contact %s (Compte: %s (%s)). En attente de réponse...\n"
+msgstr ""
+"Skenovanie priateľov %1$s (Účet: %2$s (%3$s)). Čakajte na odozvu...\n"
 
 #: ../src/scan.c:98
 msgid "No more buddies to scan.\n"
-msgstr "Plus de contact à parcourir.\n"
+msgstr "Už niesu ďalší priatelia na skenovanie.\n"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
 #: ../src/scan.c:155
 #, c-format
 msgid "Buddy %s (Account: %s (%s)) scanned.\n"
-msgstr "Contact %s (Compte: %s (%s)) parcouru.\n"
+msgstr "Priateľ %1$s (Účet: %2$s (%3$s)) oskenovaný.\n"
 
 #: ../src/scan.c:192
 msgid "Scan birthdays on this account"
-msgstr "Parcours des anniversaires de ce compte"
+msgstr "Oskenovať narodeniny v tomto účte"
 
 #. Translators: to use an other order of the arguments use %2$02d for day, %1$02d for month and %3$04d for year
 #: ../src/tooltip.c:40
@@ -286,7 +286,7 @@ msgid ""
 "<b>Birthday</b>: %02d/%02d/%04d"
 msgstr ""
 "\n"
-"<b>Anniversaire</b> : %2$02d/%1$02d/%3$04d"
+"<b>Narodeniny</b>: %2$02d. %1$02d. %3$04d"
 
 #. Translators: use %2$02d for day and %1$02d for month
 #: ../src/tooltip.c:43
@@ -296,22 +296,22 @@ msgid ""
 "<b>Birthday</b>: %02d/%02d"
 msgstr ""
 "\n"
-"<b>Anniversaire</b> : %2$02d.%1$02d."
+"<b>Narodeniny</b>: %2$02d. %1$02d"
 
 #: ../src/tooltip.c:49
 #, c-format
 msgid " (<b>Today!</b>)"
-msgstr " (<b>Aujourd'hui !</b>)"
+msgstr " (<b>Narodeniny!</b>)"
 
 #: ../src/tooltip.c:51
 #, c-format
 msgid " (<b>Tomorrow!</b>)"
-msgstr " (<b>Demain !</b>)"
+msgstr " (<b>Zajtra!</b>)"
 
 #: ../src/tooltip.c:53
 #, c-format
 msgid " (in %d days)"
-msgstr " (dans %d jours)"
+msgstr " (za %d dní)"
 
 #: ../src/tooltip.c:60
 #, c-format
@@ -320,4 +320,4 @@ msgid ""
 "<b>Age</b>: %d years"
 msgstr ""
 "\n"
-"<b>Age</b>: %d ans"
+"<b>Vek</b>: %d rokov"

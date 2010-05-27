@@ -1,4 +1,4 @@
-pidgin-birthday-reminder (@@VERSION@@-@@DEB_REVISION@@) karmic; urgency=low
+pidgin-birthday-reminder (@@VERSION@@-@@DEB_REVISION@@) @@DISTRIBUTION@@; urgency=low
 
   * release version @@VERSION@@
 
