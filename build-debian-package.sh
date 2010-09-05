@@ -3,7 +3,7 @@
 PROJECT=pidgin-birthday-reminder
 VERSION=$(cat VERSION)
 REPOSITORY=ppa:konradgraefe/pidgin-plugins
-DISTRIBUTIONS="karmic lucid"
+DISTRIBUTIONS="karmic lucid maverick"
 
 if [ -f DEB_REVISION ]; then
 	DEB_REVISION=$(cat DEB_REVISION)
@@ -24,7 +24,6 @@ echo -n "Debian package revision? ($DEB_REVISION) "
 read in
 if [ "$in" != "" ]; then
 	DEB_REVISION=$in
-	echo $DEB_REVISION >DEB_REVISION
 fi
 
 
@@ -64,6 +63,7 @@ do
 
 	if [ "$in" == "y" ]; then
 		dput ${REPOSITORY} ${PROJECT}_${VERSION}-${revision}_source.changes
+		echo $DEB_REVISION >DEB_REVISION
 	fi
 
 	cd ${src_dir}
