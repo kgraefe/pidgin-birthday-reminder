@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-06-07 03:56+0000\n"
+"X-Launchpad-Export-Date: 2010-09-07 05:11+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/birthday_list.c:152
@@ -68,8 +68,10 @@ msgid "Reminds you of the birthday of your buddies. :o)"
 msgstr "Lembra a você do aniversário de seus amigos. :o)"
 
 #: ../src/birthday_reminder.c:141
-msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
-msgstr "Este plugin deve registrar e lembrar dos aniversários de seus amigos."
+msgid ""
+"This Plugin shall keep track and remind you of your buddies' birthdays."
+msgstr ""
+"Este plugin deve registrar e lembrar dos aniversários de seus amigos."
 
 #: ../src/emblems.c:143
 msgid "Could not load icons!\n"
@@ -259,7 +261,8 @@ msgstr "Exportar para arquivo"
 #: ../src/scan.c:96
 #, c-format
 msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
-msgstr "Rastreando amigos %1$s (Conta: %2$s (%3$s)). Aguardando resposta...\n"
+msgstr ""
+"Rastreando amigos %1$s (Conta: %2$s (%3$s)). Aguardando resposta...\n"
 
 #: ../src/scan.c:98
 msgid "No more buddies to scan.\n"

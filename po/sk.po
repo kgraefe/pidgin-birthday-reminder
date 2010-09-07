@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-05-28 03:49+0000\n"
+"X-Launchpad-Export-Date: 2010-09-07 05:11+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/birthday_list.c:152
@@ -68,7 +68,8 @@ msgid "Reminds you of the birthday of your buddies. :o)"
 msgstr "Pripomenie Vám narodeniny vašich priateľov"
 
 #: ../src/birthday_reminder.c:141
-msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
+msgid ""
+"This Plugin shall keep track and remind you of your buddies' birthdays."
 msgstr ""
 "Tento plugin Vás má informovať a pripomenúť narodeniny vašich priateľov."
 
@@ -260,7 +261,8 @@ msgstr "export do súboru"
 #: ../src/scan.c:96
 #, c-format
 msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
-msgstr "Skenovanie priateľov %1$s (Účet: %2$s (%3$s)). Čakajte na odozvu...\n"
+msgstr ""
+"Skenovanie priateľov %1$s (Účet: %2$s (%3$s)). Čakajte na odozvu...\n"
 
 #: ../src/scan.c:98
 msgid "No more buddies to scan.\n"
