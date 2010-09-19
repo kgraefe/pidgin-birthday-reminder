@@ -117,10 +117,10 @@ void icsexport(const gchar *path) {
 	/* key is part of ICSBirthday so it will not be freed two times */
 	birthdays = g_hash_table_new_full(g_str_hash, g_str_equal, NULL, ics_birthday_destroy);
 
-	/* TODO: this hopes the .ics to be well-formed */
 	if((fd = fopen(path, "r")) != NULL) {
+		birthday = NULL;
 		while(fgets(line, sizeof(line), fd)) {
-			if(purple_utf8_strcasecmp(line, "END:VEVENT\n") == 0) {
+			if(birthday && purple_utf8_strcasecmp(line, "END:VEVENT\n") == 0) {
 				if(birthday->summary && birthday->description && birthday->date && birthday->uid) {
 					g_hash_table_insert(birthdays, birthday->uid, birthday);
 				} else {
@@ -130,8 +130,16 @@ void icsexport(const gchar *path) {
 					if(birthday->uid) g_free(birthday->uid);
 					g_free(birthday);
 				}
+				birthday = NULL;
 			}
 			if(purple_utf8_strcasecmp(line, "BEGIN:VEVENT\n") == 0) {
+				if(birthday) {
+					if(birthday->summary) g_free(birthday->summary);
+					if(birthday->description) g_free(birthday->description);
+					if(birthday->date) g_free(birthday->date);
+					if(birthday->uid) g_free(birthday->uid);
+					g_free(birthday);
+				}
 				birthday = g_malloc(sizeof(ICSBirthday));
 				birthday->summary = NULL;
 				birthday->description = NULL;
@@ -139,16 +147,16 @@ void icsexport(const gchar *path) {
 				birthday->uid = NULL;
 			}
 
-			if(sscanf(line, "DTSTART;VALUE=DATE:%256[^\n]\n", buf)==1) {
+			if(birthday && sscanf(line, "DTSTART;VALUE=DATE:%256[^\n]\n", buf)==1) {
 				birthday->date = g_strdup(buf);
 			}
-			if(sscanf(line, "SUMMARY:%256[^\n]\n", buf)==1) {
+			if(birthday && sscanf(line, "SUMMARY:%256[^\n]\n", buf)==1) {
 				birthday->summary = g_strdup(buf);
 			}
-			if(sscanf(line, "DESCRIPTION:%256[^\n]\n", buf)==1) {
+			if(birthday && sscanf(line, "DESCRIPTION:%256[^\n]\n", buf)==1) {
 				birthday->description = g_strdup(buf);
 			}
-			if(sscanf(line, "UID:%256[^\n]\n", buf)==1) {
+			if(birthday && sscanf(line, "UID:%256[^\n]\n", buf)==1) {
 				birthday->uid = g_strdup(buf);
 			}
 		}
