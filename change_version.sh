@@ -1,13 +1,11 @@
 #!/bin/bash
-vim ChangeLog &&
-vim VERSION &&
+set -x
 
-languages=""
-for f in po/*.po
-do languages="$languages $(basename $f .po)"
-done
+vim ChangeLog || exit
+vim VERSION || exit
 
-sed -e "s/@@VERSION@@/$(cat VERSION)/" -e "s/@@LANGUAGES@@/$(echo $languages)/" configure.in.in >configure.in &&
-./autogen.sh &&
-./configure &&
+echo 1 >DEB_REVISION
+
+./autogen.sh || exit
+./configure || exit
 cp config.h config.h.mingw

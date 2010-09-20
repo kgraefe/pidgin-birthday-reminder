@@ -1,6 +1,10 @@
+Version 1.7 (2010/09/20):
+	* Do not longer expect ICS file to be well-formed (Bug #614244)
+	* Added Brazilian Portuguese, Czech, Dutch, Slovak and Tamil language files (credits on https://translations.launchpad.net/pidgin-birthday-reminder)
+
 Version 1.6 (2010/05/08):
 	* Added hint in preferences menu when sounds are muted
-	* Added Turkish, Hebrew, Portuguese and Galician language (see credits on https://translations.launchpad.net/pidgin-birthday-reminder)
+	* Added Turkish, Hebrew, Portuguese and Galician language files (see credits on https://translations.launchpad.net/pidgin-birthday-reminder)
 
 Version 1.5 (2010/03/20):
 	* Renamed project to pidgin-birthday-reminder
