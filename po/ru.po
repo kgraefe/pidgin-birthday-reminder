@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-05 18:28+0200\n"
+"POT-Creation-Date: 2010-09-20 15:06+0000\n"
 "PO-Revision-Date: 2010-04-27 04:28+0000\n"
 "Last-Translator: kgraefe <Unknown>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-09-07 05:11+0000\n"
+"X-Launchpad-Export-Date: 2010-09-27 05:32+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: ../src/birthday_list.c:152
@@ -79,19 +79,19 @@ msgid "Could not load icons!\n"
 msgstr "Не могу загруить иконки!\n"
 
 #. Translators: this is how the birthday appears in an external calendar application (summary). Please display the name in front if possible.
-#: ../src/icsexport.c:179
+#: ../src/icsexport.c:187
 #, c-format
 msgid "%s's birthday"
 msgstr "День рождения у %s"
 
 #. Translators: this is how the birthday appears in an external calendar application (description with year of birth)
-#: ../src/icsexport.c:182
+#: ../src/icsexport.c:190
 #, c-format
 msgid "Birthday of %s, born in %04i"
 msgstr "День рождения у %s, родился в %04i"
 
 #. Translators: this is how the birthday appears in an external calendar application (description without year of birth)
-#: ../src/icsexport.c:185
+#: ../src/icsexport.c:193
 #, c-format
 msgid "Birthday of %s"
 msgstr "День рождения у %s"
