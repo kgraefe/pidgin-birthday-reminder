@@ -170,7 +170,7 @@ GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
 
 	label = gtk_label_new("");
-	gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 10);
+	gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
 
 	adjustment = (GtkAdjustment *) gtk_adjustment_new(1.0 * purple_prefs_get_int(PLUGIN_PREFS_PREFIX "/reminder/birthday_icons/before_days"), 0.0, 9.0, 1.0, 1.0, 0.0);
 	spin = gtk_spin_button_new(adjustment, 1.0, 0);
