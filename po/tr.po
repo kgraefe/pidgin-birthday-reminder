@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pidgin-birthday-reminder\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-02 05:11+0000\n"
-"PO-Revision-Date: 2010-04-18 11:36+0000\n"
-"Last-Translator: kgraefe <Unknown>\n"
+"PO-Revision-Date: 2012-04-07 13:23+0000\n"
+"Last-Translator: kulkke <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-05-15 04:52+0000\n"
-"X-Generator: Launchpad (build 12959)\n"
+"X-Launchpad-Export-Date: 2012-04-08 05:00+0000\n"
+"X-Generator: Launchpad (build 15060)\n"
 
 #: ../src/birthday_list.c:152
 #, c-format
@@ -55,7 +55,7 @@ msgstr ""
 #: ../src/birthday_list.c:247
 #, c-format
 msgid "Birthday List (%d)"
-msgstr ""
+msgstr "Doğumgünü Listesi (%d)"
 
 #: ../src/birthday_reminder.c:139 ../src/input.c:95 ../src/notification.c:145
 #: ../src/notification.c:147 ../src/notification.c:153
@@ -74,13 +74,13 @@ msgstr ""
 
 #: ../src/emblems.c:143
 msgid "Could not load icons!\n"
-msgstr ""
+msgstr "Simgeler yüklenemedi!\n"
 
 #. Translators: this is how the birthday appears in an external calendar application (summary). Please display the name in front if possible.
 #: ../src/icsexport.c:187
 #, c-format
 msgid "%s's birthday"
-msgstr ""
+msgstr "%s kişisinin doğumgünü"
 
 #. Translators: this is how the birthday appears in an external calendar application (description with year of birth)
 #: ../src/icsexport.c:190
