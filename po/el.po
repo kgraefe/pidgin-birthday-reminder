@@ -1,0 +1,323 @@
+# Greek translation for pidgin-birthday-reminder
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the pidgin-birthday-reminder package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pidgin-birthday-reminder\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-12-02 05:11+0000\n"
+"PO-Revision-Date: 2012-09-02 18:29+0000\n"
+"Last-Translator: Panos Bouklis <panos@echidna-band.com>\n"
+"Language-Team: Greek <el@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2012-09-03 05:29+0000\n"
+"X-Generator: Launchpad (build 15890)\n"
+
+#: ../src/birthday_list.c:152
+#, c-format
+msgid "%02d/%02d/%04d"
+msgstr "%02d/%02d/%04d"
+
+#: ../src/birthday_list.c:154
+#, c-format
+msgid "%02d/%02d"
+msgstr "%02d/%02d"
+
+#: ../src/birthday_list.c:183
+msgid "Buddy"
+msgstr "Φίλος"
+
+#: ../src/birthday_list.c:198
+msgid "Days to birthday"
+msgstr "Ημέρες για τα γενέθλια"
+
+#: ../src/birthday_list.c:209 ../src/scan.c:126
+msgid "Birthday"
+msgstr "Γενέθλια"
+
+#: ../src/birthday_list.c:220
+msgid "Age"
+msgstr "Ηλικία"
+
+#: ../src/birthday_list.c:237 ../src/notification.c:153
+#: ../src/notification.c:156
+msgid "Close"
+msgstr "Κλείσιμο"
+
+#: ../src/birthday_list.c:242 ../src/notification.c:153
+msgid "Write IM"
+msgstr "Συγγραφή άμεσου μηνύματος"
+
+#: ../src/birthday_list.c:247
+#, c-format
+msgid "Birthday List (%d)"
+msgstr "Λίστα γενεθλίων (%d)"
+
+#: ../src/birthday_reminder.c:139 ../src/input.c:95 ../src/notification.c:145
+#: ../src/notification.c:147 ../src/notification.c:153
+#: ../src/notification.c:156
+msgid "Birthday Reminder"
+msgstr "Υπενθήμιση γενεθλίων"
+
+#: ../src/birthday_reminder.c:140
+msgid "Reminds you of the birthday of your buddies. :o)"
+msgstr "Σας υπενθυμίζει τα γενέθλια των φίλων σας. :o)"
+
+#: ../src/birthday_reminder.c:141
+msgid ""
+"This Plugin shall keep track and remind you of your buddies' birthdays."
+msgstr ""
+"Αυτό το πρόσθετο θα ελέγχει την κατάσταση και θα σας υπενθυμίζει τα γενέθλια "
+"των φίλων σας"
+
+#: ../src/emblems.c:143
+msgid "Could not load icons!\n"
+msgstr "Αδυναμία φορτώματος εικονιδίων!\n"
+
+#. Translators: this is how the birthday appears in an external calendar application (summary). Please display the name in front if possible.
+#: ../src/icsexport.c:187
+#, c-format
+msgid "%s's birthday"
+msgstr "%s έχει γενέθλια"
+
+#. Translators: this is how the birthday appears in an external calendar application (description with year of birth)
+#: ../src/icsexport.c:190
+#, c-format
+msgid "Birthday of %s, born in %04i"
+msgstr "Γενέθλια του/της %s, γεννήθηκε στις %04i"
+
+#. Translators: this is how the birthday appears in an external calendar application (description without year of birth)
+#: ../src/icsexport.c:193
+#, c-format
+msgid "Birthday of %s"
+msgstr "Γενέθλια του/της %s"
+
+#: ../src/input.c:85
+#, c-format
+msgid ""
+"Use the following format: %s .\n"
+"Blank out the input field to clear the BDay.\n"
+"Use a year before 1900 if you do not know."
+msgstr ""
+"Χρησιμοποιήστε την ακόλουθη μορφή: %s .\n"
+"Αφήστε κενό το πεδίο εισαγωγής για να καθαριστεί η ημερομηνία.\n"
+"Στο έτος χρησιμοποιήστε κάποιο πριν το 1900 αν δε γνωρίζετε."
+
+#: ../src/input.c:95
+msgid "Set Birthday:"
+msgstr "Ορισμός γενεθλίων:"
+
+#: ../src/input.c:95
+msgid "OK"
+msgstr "OK"
+
+#: ../src/input.c:95
+msgid "Cancel"
+msgstr "Άκυρο"
+
+#: ../src/input.c:105
+msgid "Set Birthday"
+msgstr "Ορισμός γενεθλίων"
+
+#: ../src/notification.c:66
+#, c-format
+msgid "sound file (%s) does not exist.\n"
+msgstr "Το αρχείο ήχου (%s) δεν υπάρχει.\n"
+
+#: ../src/notification.c:118
+#, c-format
+msgid "%s will be %d years old today! Hooray!"
+msgstr "%s θα γίνει %d χρονών σήμερα! Ζήτω!"
+
+#: ../src/notification.c:120
+#, c-format
+msgid "It's %s's birthday today! Hooray!"
+msgstr "%s έχει γενέθλια σήμερα! Ζήτω!"
+
+#: ../src/notification.c:124
+#, c-format
+msgid "%s will be %d years old tomorrow!"
+msgstr "%s θα γίνει %d χρονών αύριο!"
+
+#: ../src/notification.c:126
+#, c-format
+msgid "%s's birthday is tomorrow!"
+msgstr "%s έχει γενέθλια αύριο!"
+
+#: ../src/notification.c:130
+#, c-format
+msgid "%s will be %d years old in %d days!"
+msgstr "%s θα γίνει %d χρονών σε %d μέρες!"
+
+#: ../src/notification.c:132
+#, c-format
+msgid "%s's birthday is in %d days!"
+msgstr "%s έχει γενέθλια σε %d μέρες!"
+
+#: ../src/notification.c:137
+msgid "There are birthdays in the next days! Hooray!"
+msgstr "Δεν έχει κανείς γενέθλια τις επόμενες μέρες! Ζήτω!"
+
+#: ../src/notification.c:145
+msgid "Write IM?"
+msgstr "Άμεσο μήνυμα;"
+
+#: ../src/notification.c:145 ../src/notification.c:147
+msgid "Yes"
+msgstr "Ναι"
+
+#: ../src/notification.c:145 ../src/notification.c:147
+msgid "No"
+msgstr "Όχι"
+
+#: ../src/notification.c:147
+msgid "Show overview?"
+msgstr "Εμφάνιση επισκόπησης;"
+
+#: ../src/notification.c:156
+msgid "Overview"
+msgstr "Επισκόπηση"
+
+#: ../src/plugin_actions.c:48 ../src/prefs.c:103
+msgid "Save birthday list as..."
+msgstr "Αποθήκευση λίστας γενεθλίων ως..."
+
+#: ../src/plugin_actions.c:58 ../src/prefs.c:113
+msgid "iCalendar files"
+msgstr "Αρχεία iCalendar"
+
+#: ../src/plugin_actions.c:85
+msgid "Check Birthdays"
+msgstr "Έλεγχος γενεθλίων"
+
+#: ../src/plugin_actions.c:88
+msgid "Show birthday list"
+msgstr "Εμφάνιση λίστας γενεθλίων"
+
+#: ../src/plugin_actions.c:91
+msgid "Export birthday list"
+msgstr "Εξαγωγή λίστας γενεθλίων"
+
+#: ../src/prefs.c:153
+msgid "Reminder"
+msgstr "Υπενθύμιση"
+
+#: ../src/prefs.c:159
+msgid "Remind just once a day"
+msgstr "Υπενθύμιση μια φορά τη μέρα μόνο"
+
+#: ../src/prefs.c:164
+msgid "Show birthday icons in the buddy list"
+msgstr "Εμφάνιση εικονιδίων γενεθλίων στη λίστα φίλων"
+
+#: ../src/prefs.c:182 ../src/prefs.c:203 ../src/prefs.c:224 ../src/prefs.c:245
+msgid "days before birthday"
+msgstr "μέρες πριν τα γενέθλια"
+
+#: ../src/prefs.c:185
+msgid "Show mini dialog in the buddy list"
+msgstr "Εμφάνιση μικρού διαλόγου στη λίστα φίλων"
+
+#: ../src/prefs.c:206
+msgid "Show notification"
+msgstr "Εμφάνιση ειδοποίησης"
+
+#: ../src/prefs.c:227
+msgid "Play sound"
+msgstr "Αναπαραγωγή ήχου"
+
+#: ../src/prefs.c:248
+msgid "You have muted sounds in Pidgin!"
+msgstr "Αποσιωπήσατε τους ήχους στο Pidgin!"
+
+#: ../src/prefs.c:259
+msgid "Tooltip"
+msgstr "Συμβουλή εργαλείου"
+
+#: ../src/prefs.c:264
+msgid "Show Birthday"
+msgstr "Εμφάνιση γενεθλίων"
+
+#: ../src/prefs.c:277
+msgid "Show days to birthday"
+msgstr "Εμφάνιση ημερών μέχρι τα γενέθλια"
+
+#: ../src/prefs.c:284
+msgid "Show Age"
+msgstr "Εμφάνιση ηλικίας"
+
+#: ../src/prefs.c:292
+msgid "iCalendar Export"
+msgstr "Εξαγωγή iCalendar"
+
+#: ../src/prefs.c:297
+msgid "Export to file"
+msgstr "Εξαγωγή σε αρχείο"
+
+#. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
+#: ../src/scan.c:96
+#, c-format
+msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
+msgstr "Σάρωση φίλου %s (λογαριασμός: %s (%s)). Αναμονή ανταπόκρισης...\n"
+
+#: ../src/scan.c:98
+msgid "No more buddies to scan.\n"
+msgstr "Δεν υπάρχουν άλλοι φίλοι για σάρωση.\n"
+
+#. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
+#: ../src/scan.c:155
+#, c-format
+msgid "Buddy %s (Account: %s (%s)) scanned.\n"
+msgstr "Ο φίλος %s (λογαριασμός: %s (%s)) σαρώθηκε.\n"
+
+#: ../src/scan.c:192
+msgid "Scan birthdays on this account"
+msgstr "Σάρωση γενεθλίων σε αυτό το λογαριασμό"
+
+#. Translators: to use an other order of the arguments use %2$02d for day, %1$02d for month and %3$04d for year
+#: ../src/tooltip.c:40
+#, c-format
+msgid ""
+"\n"
+"<b>Birthday</b>: %02d/%02d/%04d"
+msgstr ""
+"\n"
+"<b>Γενέθλια</b>: %02d/%02d/%04d"
+
+#. Translators: use %2$02d for day and %1$02d for month
+#: ../src/tooltip.c:43
+#, c-format
+msgid ""
+"\n"
+"<b>Birthday</b>: %02d/%02d"
+msgstr ""
+"\n"
+"<b>Γενέθλια</b>: %02d/%02d"
+
+#: ../src/tooltip.c:49
+#, c-format
+msgid " (<b>Today!</b>)"
+msgstr " (<b>Σήμερα!</b>)"
+
+#: ../src/tooltip.c:51
+#, c-format
+msgid " (<b>Tomorrow!</b>)"
+msgstr " (<b>Αύριο!</b>)"
+
+#: ../src/tooltip.c:53
+#, c-format
+msgid " (in %d days)"
+msgstr " (σε %d μέρες)"
+
+#: ../src/tooltip.c:60
+#, c-format
+msgid ""
+"\n"
+"<b>Age</b>: %d years"
+msgstr ""
+"\n"
+"<b>Ηλικία</b>: %d years"
