@@ -9,8 +9,12 @@
 /config.status
 /src/.deps/
 /libtool
+/src/.libs
 
 Makefile
+*.gmo
+*.o
+*.l[oa]
 
 # http://www.gnu.org/software/automake
 
