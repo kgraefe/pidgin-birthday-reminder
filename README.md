@@ -10,6 +10,9 @@ Building on Linux
     make
     sudo make install
 
+**NOTE:** In order to use a self-compiled plugin with a Pidgin installed through
+your package manager, you need to install it into `/usr` in most cases (default
+is `/usr/local`). Use `./configure --prefix=/usr` in this case.
 
 Building on Windows
 -------------------
