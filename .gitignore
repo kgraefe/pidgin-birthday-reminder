@@ -3,7 +3,14 @@
 /po/POTFILES
 /po/pidgin-birthday-reminder.pot
 /po/stamp-it
+/config.h
 /config.h.in~
+/config.log
+/config.status
+/src/.deps/
+/libtool
+
+Makefile
 
 # http://www.gnu.org/software/automake
 
