@@ -15,11 +15,6 @@ sed \
     -e "s/@@LANGUAGES@@/$(echo $languages)/" \
 configure.ac.in >configure.ac || exit
 
-aclocal || exit
-autoheader || exit
-libtoolize --copy || exit
-automake --add-missing --copy --no-force || exit
-autoconf || exit
-libtoolize --copy --install || exit
-intltoolize --copy --force  || exit
-aclocal || exit
+autoreconf --force --install --verbose || exit 1
+intltoolize --force --copy --automake || exit 1
+
