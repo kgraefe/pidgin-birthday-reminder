@@ -15,6 +15,7 @@ sed \
     -e "s/@@LANGUAGES@@/$(echo $languages)/" \
 configure.ac.in >configure.ac || exit
 
-autoreconf --force --install --verbose || exit 1
+mkdir m4
 intltoolize --force --copy --automake || exit 1
+autoreconf --force --install --verbose || exit 1
 
