@@ -36,6 +36,23 @@ static guint scan_buddies_timeout_handle;
 static void *(*notify_userinfo_ori)(PurpleConnection *gc, const char *who, PurpleNotifyUserInfo *user_info);
 static PurpleBuddy *current_scanned_buddy;
 
+static const char *get_textdomain_by_protocol_id(const char *protocol_id) {
+	if(
+		purple_utf8_strcasecmp(protocol_id, "prpl-icq") == 0 ||
+		purple_utf8_strcasecmp(protocol_id, "prpl-aim") == 0 ||
+		purple_utf8_strcasecmp(protocol_id, "prpl-msn") == 0 ||
+		purple_utf8_strcasecmp(protocol_id, "prpl-jabber") == 0
+	) {
+		return "pidgin";
+	}
+
+	if(purple_utf8_strcasecmp(protocol_id, "prpl-skypeweb") == 0) {
+		return "skype4pidgin";
+	}
+
+	return NULL;
+}
+
 static void scan_buddy(PurpleBuddy *buddy) {
 	PurpleAccount *acc = NULL;
 	PurpleConnection *gc = NULL;
@@ -48,10 +65,7 @@ static void scan_buddy(PurpleBuddy *buddy) {
 	acc = buddy->account;
 	if(!acc) return;
 
-	if(purple_utf8_strcasecmp(purple_account_get_protocol_id(acc), "prpl-icq")!=0 &&
-	   purple_utf8_strcasecmp(purple_account_get_protocol_id(acc), "prpl-aim")!=0 &&
-	   purple_utf8_strcasecmp(purple_account_get_protocol_id(acc), "prpl-msn")!=0 &&
-	   purple_utf8_strcasecmp(purple_account_get_protocol_id(acc), "prpl-jabber")!=0) {
+	if(!get_textdomain_by_protocol_id(purple_account_get_protocol_id(acc))) {
 		return;
 	}
 
@@ -106,12 +120,21 @@ static void displaying_userinfo_cb(PurpleAccount *account, const char *who, Purp
 	PurpleNotifyUserInfoEntry *e;
 	PurpleBlistNode *node;
 	PurpleBuddy *buddy;
+	const char *textdomain;
+	const char *needle;
 
 	GList *l;
 	GDate *date;
 
 	if(!account) return;
 	if(!who) return;
+
+	textdomain = get_textdomain_by_protocol_id(purple_account_get_protocol_id(account));
+	if(!textdomain) {
+		return;
+	}
+	needle = dgettext(textdomain, "Birthday");
+
 
 	buddy = purple_find_buddy(account, who);
 	if(!buddy) return;
@@ -123,7 +146,7 @@ static void displaying_userinfo_cb(PurpleAccount *account, const char *who, Purp
 	while(l) {
 		e = l->data;
 
-		if(purple_utf8_strcasecmp(purple_notify_user_info_entry_get_label(e), dgettext("pidgin", "Birthday"))==0) {
+		if(purple_utf8_strcasecmp(purple_notify_user_info_entry_get_label(e), needle)==0) {
 			date = g_date_new();
 			g_date_set_parse(date, purple_notify_user_info_entry_get_value(e));
 
@@ -185,10 +208,8 @@ void init_scan(void) {
 		if(prpl && prpl->info) {
 			prpl_info = PURPLE_PLUGIN_PROTOCOL_INFO(prpl);
 			if(prpl_info && prpl->info->id && 
-			   (purple_utf8_strcasecmp(prpl->info->id, "prpl-icq")==0 ||
-			    purple_utf8_strcasecmp(prpl->info->id, "prpl-aim")==0 ||
-			    purple_utf8_strcasecmp(prpl->info->id, "prpl-msn")==0 ||
-			    purple_utf8_strcasecmp(prpl->info->id, "prpl-jabber")==0)) {
+				get_textdomain_by_protocol_id(prpl->info->id) != NULL
+			) {
 				option = purple_account_option_bool_new(_("Scan birthdays on this account"), "birthday_scan_enabled", TRUE);
 				prpl_info->protocol_options = g_list_append(prpl_info->protocol_options, option);
 			}
