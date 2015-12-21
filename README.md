@@ -1,5 +1,15 @@
-Pidgin Burthday Reminder
+Pidgin Birthday Reminder
 ========================
+
+Installation on Windows
+-----------------------
+
+For the binary version, extract the all contents of the ZIP file either to the
+installation directory of Pidgin (typically `C:\Program Files\Pidgin`) or to
+your .purple user directory (typically `%APPDATA%\Roaming\.purple`).
+
+See below for how to compile the source code version into a binary ZIP file.
+
 
 Building on Linux
 -----------------
@@ -27,4 +37,4 @@ After that you need to create a file named `local.mak` that points to the Pidgin
 
 Now you can build the plugin:
 
-    make -f Makefile.mingw
+    make -f Makefile.mingw dist

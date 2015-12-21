@@ -6,8 +6,10 @@
 /config.sub
 /configure.ac
 /ltmain.sh
+/local.mak
 /INSTALL
 /libtool
+/pidgin-birthday-reminder-*
 /po/Makefile.in.in
 /po/POTFILES
 /po/pidgin-birthday-reminder.pot
@@ -15,12 +17,14 @@
 /src/.deps
 /src/.libs
 /m4/
+/win32-install-dir
 
 
 Makefile
 *.gmo
 *.o
 *.l[oa]
+*.dll
 
 # http://www.gnu.org/software/automake
 
