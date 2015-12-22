@@ -1,5 +1,5 @@
 /* config.h.  Generated from config.h.in by configure.  */
-/* config.h.in.  Generated from configure.in by autoheader.  */
+/* config.h.in.  Generated from configure.ac by autoheader.  */
 
 /* always defined to indicate that i18n is enabled */
 #define ENABLE_NLS 1
@@ -52,8 +52,7 @@
 /* Define to 1 if you have the <unistd.h> header file. */
 #define HAVE_UNISTD_H 1
 
-/* Define to the sub-directory in which libtool stores uninstalled libraries.
-   */
+/* Define to the sub-directory where libtool stores uninstalled libraries. */
 #define LT_OBJDIR ".libs/"
 
 /* Name of package */
@@ -78,7 +77,7 @@
 #define PACKAGE_VERSION "1.7"
 
 /* Define the plugin author to be used */
-#define PLUGIN_AUTHOR "Konrad Gräfe <freakazoid@teamblind.de>"
+#define PLUGIN_AUTHOR "Konrad Gräfe <konradgraefe@aol.com>"
 
 /* Define the plugin website to be used */
 #define PLUGIN_ID "gtk-freakazoid-birthday_reminder"
@@ -90,7 +89,7 @@
 #define PLUGIN_VERSION "1.7"
 
 /* Define the plugin website to be used */
-#define PLUGIN_WEBSITE "http://freakazoid.teamblind.de/2009/02/14/pidgin-birthday-reminder/"
+#define PLUGIN_WEBSITE "https://github.com/kgraefe/pidgin-birthday-reminder"
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
