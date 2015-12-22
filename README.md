@@ -10,6 +10,21 @@ your .purple user directory (typically `%APPDATA%\Roaming\.purple`).
 
 See below for how to compile the source code version into a binary ZIP file.
 
+Installation on Linux
+---------------------
+
+To install the plugin extract the binary tar archive and copy all directories
+into your .purple user directory (usually `~/.purple`), e.g.:
+
+    tar xzvf pidgin-birthday-reminder-1.7-linux-x86_64.tar.gz
+    cd pidgin-birthday-reminder-1.7-linux-x86_64
+    cp -r * ~/.purple/
+
+**Note:** Your hardware platform has to match the archive's. Check with `uname --hardware-platform`.
+
+**Note:** For a system-wide installation the plugin needs to be built from
+source (see below).
+
 Building on Windows
 -------------------
 
