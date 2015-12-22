@@ -10,20 +10,6 @@ your .purple user directory (typically `%APPDATA%\Roaming\.purple`).
 
 See below for how to compile the source code version into a binary ZIP file.
 
-
-Building on Linux
------------------
-
-    sudo apt-get install pidgin-dev
-    ./autogen.sh
-    ./configure
-    make
-    sudo make install
-
-**NOTE:** In order to use a self-compiled plugin with a Pidgin installed through
-your package manager, you need to install it into `/usr` in most cases (default
-is `/usr/local`). Use `./configure --prefix=/usr` in this case.
-
 Building on Windows
 -------------------
 
@@ -38,3 +24,16 @@ After that you need to create a file named `local.mak` that points to the Pidgin
 Now you can build the plugin:
 
     make -f Makefile.mingw dist
+
+Building on Linux
+-----------------
+
+    sudo apt-get install pidgin-dev
+    ./autogen.sh
+    ./configure
+    make
+    sudo make install
+
+**Note:** In order to use a self-compiled plugin with a Pidgin installed through
+your package manager, you need to install it into `/usr` in most cases (default
+is `/usr/local`). Use `./configure --prefix=/usr` in this case.
