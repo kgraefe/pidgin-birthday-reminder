@@ -1,6 +1,11 @@
 Pidgin Birthday Reminder
 ========================
 
+[![Screenshot 1](https://cloud.githubusercontent.com/assets/3797324/11967672/16ac8a7c-a905-11e5-9e58-7b3bc856330a.png)](https://cloud.githubusercontent.com/assets/3797324/11967670/16aaf504-a905-11e5-9fca-3764fed95c39.png)
+[![Screenshot 2](https://cloud.githubusercontent.com/assets/3797324/11967671/16abaf94-a905-11e5-8330-cad1e7118979.png)](https://cloud.githubusercontent.com/assets/3797324/11967669/16aa9014-a905-11e5-8a78-7fb248e1c0ea.png)
+[![Screenshot 3](https://cloud.githubusercontent.com/assets/3797324/11967673/16b0aa30-a905-11e5-934a-5e0b02d5e51b.png)](https://cloud.githubusercontent.com/assets/3797324/11967674/16b12988-a905-11e5-98e7-37540049b24b.png)
+
+
 Installation on Windows
 -----------------------
 
