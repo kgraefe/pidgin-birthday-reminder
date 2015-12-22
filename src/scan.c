@@ -143,11 +143,11 @@ static void displaying_userinfo_cb(PurpleAccount *account, const char *who, Purp
 }
 
 static void *birthday_reminder_notify_userinfo(PurpleConnection *gc, const char *who, PurpleNotifyUserInfo *user_info) {
-	PurpleBuddy *buddy;
-	
-	if(current_scanned_buddy && (current_scanned_buddy->account == gc->account && purple_utf8_strcasecmp(current_scanned_buddy->name, who)==0)) {
-		buddy = current_scanned_buddy;
-	} else {
+	if(
+		!current_scanned_buddy ||
+		current_scanned_buddy->account != gc->account ||
+		purple_utf8_strcasecmp(current_scanned_buddy->name, who) != 0
+	) {
 		return notify_userinfo_ori(gc, who, user_info);
 	}
 
