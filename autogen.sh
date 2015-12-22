@@ -1,5 +1,5 @@
 #! /bin/sh
-set -x
+set +x
 
 test -f VERSION || exit
 test -f configure.ac.in || exit
