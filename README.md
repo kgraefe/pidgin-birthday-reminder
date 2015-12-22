@@ -15,7 +15,7 @@ Building on Linux
 -----------------
 
     sudo apt-get install pidgin-dev
-    autoreconf -i
+    ./autogen.sh
     ./configure
     make
     sudo make install
