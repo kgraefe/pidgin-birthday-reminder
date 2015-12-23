@@ -45,7 +45,7 @@ Now you can build the plugin:
 
 ### Translate the plugin
 Translations are managed at Transifex, please contribute there at
-https://www.transifex.com/projects/p/open-keychain/
+https://www.transifex.com/projects/p/pidgin-birthday-reminder/
 
 ### Contribute code
 Please fork the project, do your changes and make pull request.
