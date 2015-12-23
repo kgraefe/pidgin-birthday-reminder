@@ -23,7 +23,7 @@ To install the plugin on Linux you need to compile it from source:
     make
     sudo make install
 
-**Note:** If you installed Pidgin through your network manager, you need to
+**Note:** If you installed Pidgin through your package manager, you need to
 install it into `/usr` in most cases (default is `/usr/local`). Use
 `./configure --prefix=/usr` in this case.
 
