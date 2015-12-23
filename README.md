@@ -18,17 +18,17 @@ See below for how to compile the source code version into a binary ZIP file.
 Installation on Linux
 ---------------------
 
-To install the plugin extract the binary tar archive and copy all directories
-into your .purple user directory (usually `~/.purple`), e.g.:
+To install the plugin on Linux you need to compile it from source:
 
-    tar xzvf pidgin-birthday-reminder-1.7-linux-x86_64.tar.gz
-    cd pidgin-birthday-reminder-1.7-linux-x86_64
-    cp -r * ~/.purple/
+    sudo apt-get install pidgin-dev
+    ./autogen.sh
+    ./configure
+    make
+    sudo make install
 
-**Note:** Your hardware platform has to match the archive's. Check with `uname --hardware-platform`.
-
-**Note:** For a system-wide installation the plugin needs to be built from
-source (see below).
+**Note:** If you installed Pidgin through your network manager, you need to
+install it into `/usr` in most cases (default is `/usr/local`). Use
+`./configure --prefix=/usr` in this case.
 
 Building on Windows
 -------------------
@@ -45,15 +45,3 @@ Now you can build the plugin:
 
     make -f Makefile.mingw dist
 
-Building on Linux
------------------
-
-    sudo apt-get install pidgin-dev
-    ./autogen.sh
-    ./configure
-    make
-    sudo make install
-
-**Note:** In order to use a self-compiled plugin with a Pidgin installed through
-your package manager, you need to install it into `/usr` in most cases (default
-is `/usr/local`). Use `./configure --prefix=/usr` in this case.
