@@ -1,3 +1,7 @@
+Version 1.8 (????/??/??):
+	* Add support for SkypeWeb accounts
+	* Update plugin author and website
+
 Version 1.7 (2010/09/20):
 	* Do not longer expect ICS file to be well-formed (Bug #614244)
 	* Added Brazilian Portuguese, Czech, Dutch, Slovak and Tamil language files (credits on https://translations.launchpad.net/pidgin-birthday-reminder)
