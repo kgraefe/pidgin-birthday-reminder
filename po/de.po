@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtk-freakazoid-birthday_reminder 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-18 04:51+0000\n"
+"POT-Creation-Date: 2015-12-23 13:44+0100\n"
 "PO-Revision-Date: 2010-04-18 11:37+0000\n"
 "Last-Translator: kgraefe <Unknown>\n"
 "Language-Team: de_DE <freakazoid@teamblind.de>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,7 +36,7 @@ msgstr "Buddy"
 msgid "Days to birthday"
 msgstr "Tage bis zum Geburtstag"
 
-#: ../src/birthday_list.c:209 ../src/scan.c:126
+#: ../src/birthday_list.c:209 ../src/scan.c:136
 msgid "Birthday"
 msgstr "Geburtstag"
 
@@ -68,8 +69,7 @@ msgid "Reminds you of the birthday of your buddies. :o)"
 msgstr "Erinnert an die Geburtstage deiner Buddys. :o)"
 
 #: ../src/birthday_reminder.c:141
-msgid ""
-"This Plugin shall keep track and remind you of your buddies' birthdays."
+msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
 msgstr ""
 "Dieses Plugin sollte die Geburtstage deiner Buddys aufnehmen und dich an sie "
 "erinnern."
@@ -259,22 +259,22 @@ msgid "Export to file"
 msgstr "Als Datei exportieren"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
-#: ../src/scan.c:96
+#: ../src/scan.c:110
 #, c-format
 msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
 msgstr "Frage Buddy %s (Konto: %s (%s)) ab. Warte auf Antwort...\n"
 
-#: ../src/scan.c:98
+#: ../src/scan.c:112
 msgid "No more buddies to scan.\n"
 msgstr "Keine weiteren Buddies abzufragen.\n"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
-#: ../src/scan.c:155
+#: ../src/scan.c:178
 #, c-format
 msgid "Buddy %s (Account: %s (%s)) scanned.\n"
 msgstr "Buddy %s (Konto: %s (%s)) wurde abgefragt.\n"
 
-#: ../src/scan.c:192
+#: ../src/scan.c:213
 msgid "Scan birthdays on this account"
 msgstr "Geburtstage mit diesem Account scannen"
 

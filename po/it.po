@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pidgin-birthday-reminder\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-10-18 04:51+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-23 13:44+0100\n"
 "PO-Revision-Date: 2010-12-01 07:08+0000\n"
 "Last-Translator: kgraefe <Unknown>\n"
 "Language-Team: Italian <it@li.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,7 +36,7 @@ msgstr "Contatto"
 msgid "Days to birthday"
 msgstr "Giorni al compleanno"
 
-#: ../src/birthday_list.c:209 ../src/scan.c:126
+#: ../src/birthday_list.c:209 ../src/scan.c:136
 msgid "Birthday"
 msgstr "Compleanno"
 
@@ -68,8 +69,7 @@ msgid "Reminds you of the birthday of your buddies. :o)"
 msgstr "Ti ricorda i compleanni dei tuoi amici. :o)"
 
 #: ../src/birthday_reminder.c:141
-msgid ""
-"This Plugin shall keep track and remind you of your buddies' birthdays."
+msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
 msgstr ""
 "Questo Plugin tiene traccia dei compleanni dei tuoi amici e teli ricorda."
 
@@ -258,24 +258,24 @@ msgid "Export to file"
 msgstr "Esporta al file"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
-#: ../src/scan.c:96
+#: ../src/scan.c:110
 #, c-format
 msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
 msgstr ""
 "Sto controllando il contatto %1$s (Account:%2$s (%3$s)). Aspetta per il "
 "responso...\n"
 
-#: ../src/scan.c:98
+#: ../src/scan.c:112
 msgid "No more buddies to scan.\n"
 msgstr "Nessun altro contatto da controllare.\n"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
-#: ../src/scan.c:155
+#: ../src/scan.c:178
 #, c-format
 msgid "Buddy %s (Account: %s (%s)) scanned.\n"
 msgstr "Il contatto %1$s (Account: %2$s (%3$s)) è stato controllato.\n"
 
-#: ../src/scan.c:192
+#: ../src/scan.c:213
 msgid "Scan birthdays on this account"
 msgstr "Controlla se ci sono compleanni su questo account"
 

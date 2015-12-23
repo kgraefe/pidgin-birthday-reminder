@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pidgin-birthday-reminder\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2012-10-18 04:51+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-23 13:44+0100\n"
 "PO-Revision-Date: 2012-09-05 10:41+0000\n"
 "Last-Translator: Panos Bouklis <panos@echidna-band.com>\n"
 "Language-Team: Greek <el@li.org>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,7 +36,7 @@ msgstr "Φίλος"
 msgid "Days to birthday"
 msgstr "Ημέρες για τα γενέθλια"
 
-#: ../src/birthday_list.c:209 ../src/scan.c:126
+#: ../src/birthday_list.c:209 ../src/scan.c:136
 msgid "Birthday"
 msgstr "Γενέθλια"
 
@@ -68,8 +69,7 @@ msgid "Reminds you of the birthday of your buddies. :o)"
 msgstr "Σας υπενθυμίζει τα γενέθλια των φίλων σας. :o)"
 
 #: ../src/birthday_reminder.c:141
-msgid ""
-"This Plugin shall keep track and remind you of your buddies' birthdays."
+msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
 msgstr ""
 "Αυτό το πρόσθετο θα ελέγχει την κατάσταση και θα σας υπενθυμίζει τα γενέθλια "
 "των φίλων σας"
@@ -259,22 +259,22 @@ msgid "Export to file"
 msgstr "Εξαγωγή σε αρχείο"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
-#: ../src/scan.c:96
+#: ../src/scan.c:110
 #, c-format
 msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
 msgstr "Σάρωση φίλου %s (λογαριασμός: %s (%s)). Αναμονή ανταπόκρισης...\n"
 
-#: ../src/scan.c:98
+#: ../src/scan.c:112
 msgid "No more buddies to scan.\n"
 msgstr "Δεν υπάρχουν άλλοι φίλοι για σάρωση.\n"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
-#: ../src/scan.c:155
+#: ../src/scan.c:178
 #, c-format
 msgid "Buddy %s (Account: %s (%s)) scanned.\n"
 msgstr "Ο φίλος %s (λογαριασμός: %s (%s)) σαρώθηκε.\n"
 
-#: ../src/scan.c:192
+#: ../src/scan.c:213
 msgid "Scan birthdays on this account"
 msgstr "Σάρωση γενεθλίων σε αυτό το λογαριασμό"
 
