@@ -7,7 +7,7 @@
 
 ## Installation on Windows
 
-For the binary version, extract the all contents of the ZIP file either to the
+For the binary version, extract all the contents of the ZIP file either to the
 installation directory of Pidgin (typically `C:\Program Files\Pidgin`) or to
 your .purple user directory (typically `%APPDATA%\Roaming\.purple`).
 
@@ -23,9 +23,11 @@ To install the plugin on Linux you need to compile it from source:
     make
     sudo make install
 
-**Note:** If you installed Pidgin through your package manager, you need to
-install it into `/usr` in most cases (default is `/usr/local`). Use
+**Note:** By default the plugin will be installed to `/usr/local`.  If you
+installed Pidgin through your package manager, it is most likely installed into
+`/usr` (i.e. `which pidgin` returns `/usr/bin/pidgin`). Use
 `./configure --prefix=/usr` in this case.
+
 
 ## Building on Windows
 
