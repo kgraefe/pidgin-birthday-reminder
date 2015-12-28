@@ -1,6 +1,6 @@
 /*
- * Birthday Reminder
- * Copyright (C) 2008 Konrad Gräfe
+ * Pidgin Birthday Reminder
+ * Copyright (C) 2008-2015 Konrad Gräfe
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -45,14 +45,19 @@ static void export_birthdays_cb(PurplePluginAction *action) {
 	GtkFileFilter *filter;
 	gchar *path, *tmp;
 
-	dialog = gtk_file_chooser_dialog_new(_("Save birthday list as..."),
+	dialog = gtk_file_chooser_dialog_new(
+		_("Save birthday list as..."),
 		NULL,
 		GTK_FILE_CHOOSER_ACTION_SAVE,
 		GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 		GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
-		NULL);
+		NULL
+	);
 
-	gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(dialog), purple_prefs_get_path(PLUGIN_PREFS_PREFIX "/export/path"));
+	gtk_file_chooser_set_filename(
+		GTK_FILE_CHOOSER(dialog),
+		purple_prefs_get_path(PLUGIN_PREFS_PREFIX "/export/path")
+	);
 
 	filter = gtk_file_filter_new();
 	gtk_file_filter_set_name(filter, _("iCalendar files"));
@@ -82,15 +87,25 @@ GList *plugin_actions(PurplePlugin *plugin, gpointer context) {
 
 	l = NULL;
 
-	action = purple_plugin_action_new(_("Check Birthdays"), check_birthdays_plugin_action_cb);
+	action = purple_plugin_action_new(	
+		_("Check Birthdays"),
+		check_birthdays_plugin_action_cb
+	);
 	l = g_list_append(l, action);
 
-	action = purple_plugin_action_new(_("Show birthday list"), birthday_list_show_cb);
+	action = purple_plugin_action_new(
+		_("Show birthday list"),
+		birthday_list_show_cb
+	);
 	l = g_list_append(l, action);
 
-	action = purple_plugin_action_new(_("Export birthday list"), export_birthdays_cb);
+	action = purple_plugin_action_new(
+		_("Export birthday list"),
+		export_birthdays_cb
+	);
 	l = g_list_append(l, action);
 
 	return l;
 }
 
+/* ex: set noexpandtab: */

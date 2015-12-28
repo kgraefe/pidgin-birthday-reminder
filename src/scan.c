@@ -1,6 +1,6 @@
 /*
- * Birthday Reminder
- * Copyright (C) 2008 Konrad Gräfe
+ * Pidgin Birthday Reminder
+ * Copyright (C) 2008-2015 Konrad Gräfe
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -33,7 +33,10 @@
 extern PurplePlugin *plugin;
 
 static guint scan_buddies_timeout_handle;
-static void *(*notify_userinfo_ori)(PurpleConnection *gc, const char *who, PurpleNotifyUserInfo *user_info);
+static void *(*notify_userinfo_ori)(
+	PurpleConnection *gc,
+	const char *who, PurpleNotifyUserInfo *user_info
+);
 static PurpleBuddy *current_scanned_buddy;
 
 static const char *get_textdomain_by_protocol_id(const char *protocol_id) {
@@ -60,28 +63,42 @@ static void scan_buddy(PurpleBuddy *buddy) {
 	PurplePluginProtocolInfo *prpl_info = NULL;
 	const char *name = NULL;
 
-	if(!buddy) return;
+	if(!buddy) {
+		return;
+	}
 	
 	acc = buddy->account;
-	if(!acc) return;
+	if(!acc) {
+		return;
+	}
 
 	if(!get_textdomain_by_protocol_id(purple_account_get_protocol_id(acc))) {
 		return;
 	}
 
-	if(!purple_account_get_bool(acc, "birthday_scan_enabled", TRUE)) return;
+	if(!purple_account_get_bool(acc, "birthday_scan_enabled", TRUE)) {
+		return;
+	}
 
 	gc = acc->gc;
-	if(!gc) return;
+	if(!gc) {
+		return;
+	}
 	
 	prpl = purple_connection_get_prpl(gc);
-	if(!prpl) return;
+	if(!prpl) {
+		return;
+	}
 	
 	prpl_info = PURPLE_PLUGIN_PROTOCOL_INFO(prpl);
-	if(!prpl_info || !prpl_info->get_info) return;
+	if(!prpl_info || !prpl_info->get_info) {
+		return;
+	}
 	
 	name = buddy->name;
-	if(!name) return;
+	if(!name) {
+		return;
+	}
 
 	current_scanned_buddy = buddy;
 	prpl_info->get_info(gc, name);
@@ -96,27 +113,39 @@ static gboolean scan_next_buddy(gpointer data) {
 	current_scanned_buddy = NULL;
 	node = purple_blist_get_root();
 	while(node && !current_scanned_buddy) {
-		if(PURPLE_BLIST_NODE_IS_BUDDY(node) &&
-		   !purple_blist_node_get_int(node, "birthday_julian") &&
-		   !purple_blist_node_get_bool(node, "birthday_scanned") &&
-		   purple_account_is_connected(((PurpleBuddy *)node)->account)) {
-		 	scan_buddy((PurpleBuddy *)node);
+		if(
+			PURPLE_BLIST_NODE_IS_BUDDY(node) &&
+			!purple_blist_node_get_int(node, "birthday_julian") &&
+			!purple_blist_node_get_bool(node, "birthday_scanned") &&
+			purple_account_is_connected(((PurpleBuddy *)node)->account)
+		) {
+			scan_buddy((PurpleBuddy *)node);
 		}
 		node = purple_blist_node_next(node, TRUE);
 	}
 
 	if(current_scanned_buddy) {
-		/* Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name. */
-		purple_debug_info(PLUGIN_STATIC_NAME, _("Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"), purple_buddy_get_name(current_scanned_buddy), purple_account_get_username(current_scanned_buddy->account), purple_account_get_protocol_name(current_scanned_buddy->account));
+		purple_debug_info(PLUGIN_STATIC_NAME,
+			/* Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name. */
+			_("Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"),
+			purple_buddy_get_name(current_scanned_buddy),
+			purple_account_get_username(current_scanned_buddy->account),
+			purple_account_get_protocol_name(current_scanned_buddy->account)
+		);
 	} else {
 		purple_debug_info(PLUGIN_STATIC_NAME, _("No more buddies to scan.\n"));
-		scan_buddies_timeout_handle = purple_timeout_add_seconds(SCAN_BUDDIES_TIMEOUT_SECONDS, scan_next_buddy, NULL);
+		scan_buddies_timeout_handle = purple_timeout_add_seconds(
+			SCAN_BUDDIES_TIMEOUT_SECONDS, scan_next_buddy, NULL
+		);
 	}
 
 	return FALSE;
 }
 
-static void displaying_userinfo_cb(PurpleAccount *account, const char *who, PurpleNotifyUserInfo *user_info, PurpleBuddy *_buddy){
+static void displaying_userinfo_cb(
+	PurpleAccount *account, const char *who,
+	PurpleNotifyUserInfo *user_info, PurpleBuddy *_buddy
+) {
 	PurpleNotifyUserInfoEntry *e;
 	PurpleBlistNode *node;
 	PurpleBuddy *buddy;
@@ -126,18 +155,22 @@ static void displaying_userinfo_cb(PurpleAccount *account, const char *who, Purp
 	GList *l;
 	GDate *date;
 
-	if(!account) return;
-	if(!who) return;
+	if(!account || !who) {
+		return;
+	}
 
-	textdomain = get_textdomain_by_protocol_id(purple_account_get_protocol_id(account));
+	textdomain = get_textdomain_by_protocol_id(
+		purple_account_get_protocol_id(account)
+	);
 	if(!textdomain) {
 		return;
 	}
 	needle = dgettext(textdomain, "Birthday");
 
-
 	buddy = purple_find_buddy(account, who);
-	if(!buddy) return;
+	if(!buddy) {
+		return;
+	}
 	node = (PurpleBlistNode *)buddy;
 
 	purple_blist_node_set_bool(node, "birthday_scanned", TRUE);
@@ -146,12 +179,19 @@ static void displaying_userinfo_cb(PurpleAccount *account, const char *who, Purp
 	while(l) {
 		e = l->data;
 
-		if(purple_utf8_strcasecmp(purple_notify_user_info_entry_get_label(e), needle)==0) {
+		if(purple_utf8_strcasecmp(
+			purple_notify_user_info_entry_get_label(e),
+			needle
+		) == 0) {
 			date = g_date_new();
 			g_date_set_parse(date, purple_notify_user_info_entry_get_value(e));
 
 			if(g_date_valid(date)) {
-				purple_blist_node_set_int(node, "birthday_julian", g_date_get_julian(date));
+				purple_blist_node_set_int(
+					node,
+					"birthday_julian",
+					g_date_get_julian(date)
+				);
 				automatic_export();
 				check_birthdays(NULL, buddy);
 			}
@@ -165,7 +205,10 @@ static void displaying_userinfo_cb(PurpleAccount *account, const char *who, Purp
 	}
 }
 
-static void *birthday_reminder_notify_userinfo(PurpleConnection *gc, const char *who, PurpleNotifyUserInfo *user_info) {
+static void *birthday_reminder_notify_userinfo(
+	PurpleConnection *gc,
+	const char *who, PurpleNotifyUserInfo *user_info
+) {
 	if(
 		!current_scanned_buddy ||
 		current_scanned_buddy->account != gc->account ||
@@ -174,13 +217,22 @@ static void *birthday_reminder_notify_userinfo(PurpleConnection *gc, const char 
 		return notify_userinfo_ori(gc, who, user_info);
 	}
 
-	/* Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name. */
-	purple_debug_info(PLUGIN_STATIC_NAME, _("Buddy %s (Account: %s (%s)) scanned.\n"), purple_buddy_get_name(current_scanned_buddy), purple_account_get_username(current_scanned_buddy->account), purple_account_get_protocol_name(current_scanned_buddy->account));
+	purple_debug_info(PLUGIN_STATIC_NAME,
+		/* Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name. */
+		_("Buddy %s (Account: %s (%s)) scanned.\n"),
+		purple_buddy_get_name(current_scanned_buddy),
+		purple_account_get_username(current_scanned_buddy->account),
+		purple_account_get_protocol_name(current_scanned_buddy->account)
+	);
 	
 	current_scanned_buddy = NULL;
-	scan_buddies_timeout_handle = purple_timeout_add_seconds(SCAN_BUDDIES_TIMEOUT_SECONDS, scan_next_buddy, NULL);
+	scan_buddies_timeout_handle = purple_timeout_add_seconds(
+		SCAN_BUDDIES_TIMEOUT_SECONDS,
+		scan_next_buddy,
+		NULL
+	);
 
-	/* Info-Fenster unterdrücken */
+	/* Suppress user info window */
 	return NULL;
 }
 
@@ -193,30 +245,48 @@ void init_scan(void) {
 
 	scan_buddies_timeout_handle=0;
 	
-	purple_signal_connect(purple_notify_get_handle(), "displaying-userinfo", plugin, PURPLE_CALLBACK(displaying_userinfo_cb), NULL);
+	purple_signal_connect(
+		purple_notify_get_handle(), "displaying-userinfo",
+		plugin, PURPLE_CALLBACK(displaying_userinfo_cb),
+		NULL
+	);
 
 	ops = purple_notify_get_ui_ops();
 	notify_userinfo_ori = ops->notify_userinfo;
 	ops->notify_userinfo = birthday_reminder_notify_userinfo;
 
-	scan_buddies_timeout_handle = purple_timeout_add_seconds(SCAN_BUDDIES_TIMEOUT_SECONDS, scan_next_buddy, NULL);
+	scan_buddies_timeout_handle = purple_timeout_add_seconds(
+		SCAN_BUDDIES_TIMEOUT_SECONDS, scan_next_buddy,
+		NULL
+	);
 
-	/* Allen Accounts die Birthday-Scan-Option anhängen*/
+	/* Add option to scan birthdays to all supported accounts */
 	for (iter = purple_plugins_get_protocols(); iter; iter = iter->next) {
 		prpl = iter->data;
 		
 		if(prpl && prpl->info) {
 			prpl_info = PURPLE_PLUGIN_PROTOCOL_INFO(prpl);
-			if(prpl_info && prpl->info->id && 
+			if(
+				prpl_info && prpl->info->id && 
 				get_textdomain_by_protocol_id(prpl->info->id) != NULL
 			) {
-				option = purple_account_option_bool_new(_("Scan birthdays on this account"), "birthday_scan_enabled", TRUE);
-				prpl_info->protocol_options = g_list_append(prpl_info->protocol_options, option);
+				option = purple_account_option_bool_new(
+					_("Scan birthdays on this account"),
+					"birthday_scan_enabled",
+					TRUE
+				);
+				prpl_info->protocol_options = g_list_append(
+					prpl_info->protocol_options, option
+				);
 			}
 		}
 	}
 }
 
 void uninit_scan(void) {
-	if(scan_buddies_timeout_handle > 0) purple_timeout_remove(scan_buddies_timeout_handle);
+	if(scan_buddies_timeout_handle > 0) {
+		purple_timeout_remove(scan_buddies_timeout_handle);
+	}
 }
+
+/* ex: set noexpandtab: */

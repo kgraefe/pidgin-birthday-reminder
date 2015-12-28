@@ -1,6 +1,6 @@
 /*
- * Birthday Reminder
- * Copyright (C) 2008 Konrad Gräfe
+ * Pidgin Birthday Reminder
+ * Copyright (C) 2008-2015 Konrad Gräfe
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -53,7 +53,13 @@ static guint64 generate_uid(const gchar* name, const GDate *date) {
 	guint64 ret;
 	gchar *str;
 
-	str = g_strdup_printf("%s%i%i%i", name, g_date_get_year(date), g_date_get_month(date), g_date_get_day(date));
+	str = g_strdup_printf(
+		"%s%i%i%i",
+		name,
+		g_date_get_year(date),
+		g_date_get_month(date),
+		g_date_get_day(date)
+	);
 
 	ret = hash(str);
 
@@ -114,31 +120,33 @@ void icsexport(const gchar *path) {
 	guint64 uid;
 	gchar *struid;
 	
-	/* key is part of ICSBirthday so it will not be freed two times */
-	birthdays = g_hash_table_new_full(g_str_hash, g_str_equal, NULL, ics_birthday_destroy);
+	birthdays = g_hash_table_new_full(
+		g_str_hash, g_str_equal, NULL, ics_birthday_destroy
+	);
+
+
+	/* We load the file of our last export first, so that birthdays
+	 * of offline or deleted accounts are not lost.
+	 */
 
 	if((fd = fopen(path, "r")) != NULL) {
 		birthday = NULL;
 		while(fgets(line, sizeof(line), fd)) {
 			if(birthday && purple_utf8_strcasecmp(line, "END:VEVENT\n") == 0) {
-				if(birthday->summary && birthday->description && birthday->date && birthday->uid) {
+				if(
+					birthday->summary &&
+					birthday->description &&
+					birthday->date && birthday->uid
+				) {
 					g_hash_table_insert(birthdays, birthday->uid, birthday);
 				} else {
-					if(birthday->summary) g_free(birthday->summary);
-					if(birthday->description) g_free(birthday->description);
-					if(birthday->date) g_free(birthday->date);
-					if(birthday->uid) g_free(birthday->uid);
-					g_free(birthday);
+					ics_birthday_destroy(birthday);
 				}
 				birthday = NULL;
 			}
 			if(purple_utf8_strcasecmp(line, "BEGIN:VEVENT\n") == 0) {
 				if(birthday) {
-					if(birthday->summary) g_free(birthday->summary);
-					if(birthday->description) g_free(birthday->description);
-					if(birthday->date) g_free(birthday->date);
-					if(birthday->uid) g_free(birthday->uid);
-					g_free(birthday);
+					ics_birthday_destroy(birthday);
 				}
 				birthday = g_malloc(sizeof(ICSBirthday));
 				birthday->summary = NULL;
@@ -147,15 +155,27 @@ void icsexport(const gchar *path) {
 				birthday->uid = NULL;
 			}
 
-			if(birthday && sscanf(line, "DTSTART;VALUE=DATE:%256[^\n]\n", buf)==1) {
+			if(
+				birthday &&
+				sscanf(line, "DTSTART;VALUE=DATE:%256[^\n]\n", buf) == 1
+			) {
 				birthday->date = g_strdup(buf);
 			}
-			if(birthday && sscanf(line, "SUMMARY:%256[^\n]\n", buf)==1) {
+
+			if(
+				birthday &&
+				sscanf(line, "SUMMARY:%256[^\n]\n", buf) == 1
+			) {
 				birthday->summary = g_strdup(buf);
 			}
-			if(birthday && sscanf(line, "DESCRIPTION:%256[^\n]\n", buf)==1) {
+
+			if(
+				birthday &&
+				sscanf(line, "DESCRIPTION:%256[^\n]\n", buf) == 1
+			) {
 				birthday->description = g_strdup(buf);
 			}
+
 			if(birthday && sscanf(line, "UID:%256[^\n]\n", buf)==1) {
 				birthday->uid = g_strdup(buf);
 			}
@@ -166,37 +186,68 @@ void icsexport(const gchar *path) {
 
 	node = purple_blist_get_root();
 	while(node) {
-		if(PURPLE_BLIST_NODE_IS_CONTACT(node) || PURPLE_BLIST_NODE_IS_BUDDY(node)) {
+		if(
+			PURPLE_BLIST_NODE_IS_CONTACT(node) ||
+			PURPLE_BLIST_NODE_IS_BUDDY(node)
+		) {
 			if(PURPLE_BLIST_NODE_IS_CONTACT(node)) {
 				buddy = purple_contact_get_priority_buddy((PurpleContact *)node);
 			} else {
 				buddy = (PurpleBuddy *)node;
 			}
+
 			if(!PURPLE_BLIST_NODE_IS_CONTACT(node->parent)) {
 				get_birthday_from_node(node, &date);
 				if(g_date_valid(&date)) {
-					struid = g_strdup(purple_blist_node_get_string(node, "birthday_id"));
+					struid = g_strdup(
+						purple_blist_node_get_string(node, "birthday_id")
+					);
 					if(struid == NULL) {
-						uid = generate_uid(purple_buddy_get_name(buddy), &date);
+						uid = generate_uid(
+							purple_buddy_get_name(buddy), &date
+						);
 						struid = g_strdup_printf("%" G_GUINT64_FORMAT, uid);
-						purple_blist_node_set_string(node, "birthday_id", struid);
+						purple_blist_node_set_string(node,
+							"birthday_id", struid
+						);
 					}
 
 					birthday = g_malloc(sizeof(ICSBirthday));
-					/* Translators: this is how the birthday appears in an external calendar application (summary). Please display the name in front if possible. */
-					birthday->summary = g_strdup_printf(_("%s's birthday"), purple_contact_get_alias((PurpleContact *)node));
+
+					birthday->summary = g_strdup_printf(
+						/* Translators: this is how the birthday appears in an external calendar application (summary). Please display the name in front if possible. */
+						_("%s's birthday"),
+						purple_contact_get_alias((PurpleContact *)node)
+					);
+
 					if(g_date_get_year(&date) > 1900) {
-						/* Translators: this is how the birthday appears in an external calendar application (description with year of birth) */
-						birthday->description = g_strdup_printf(_("Birthday of %s, born in %04i"), purple_contact_get_alias((PurpleContact *)node), g_date_get_year(&date));
+						birthday->description = g_strdup_printf(
+							/* Translators: this is how the birthday appears in an external calendar application (description with year of birth) */
+							_("Birthday of %s, born in %04i"),
+							purple_contact_get_alias(
+								(PurpleContact *)node),
+								g_date_get_year(&date)
+							);
 					} else {
-						/* Translators: this is how the birthday appears in an external calendar application (description without year of birth) */
-						birthday->description = g_strdup_printf(_("Birthday of %s"), purple_contact_get_alias((PurpleContact *)node));
+						birthday->description = g_strdup_printf(
+							/* Translators: this is how the birthday appears in an external calendar application (description without year of birth) */
+							_("Birthday of %s"),
+							purple_contact_get_alias((PurpleContact *)node)
+						);
 					}
 
-					birthday->date = g_strdup_printf("%04i%02i%02i", g_date_get_year(&date), g_date_get_month(&date), g_date_get_day(&date));;
-					birthday->uid = struid; /* will be freed later, so... */
+					birthday->date = g_strdup_printf(
+						"%04i%02i%02i",
+						g_date_get_year(&date),
+						g_date_get_month(&date),
+						g_date_get_day(&date)
+					);
+					/* struid will be free'd within ics_birthday_destroy() */
+					birthday->uid = struid;
 
-					/* if it was in the file before, it will be removed (and destroyed) and replaced here */
+					/* This replaces (and properly destroys) duplicate
+					 * birthdays that might have been loaded from the file.
+					 */
 					g_hash_table_insert(birthdays, birthday->uid, birthday);
 				}
 			}
@@ -216,3 +267,4 @@ void icsexport(const gchar *path) {
 	fclose(fd);
 }
 
+/* ex: set noexpandtab: */

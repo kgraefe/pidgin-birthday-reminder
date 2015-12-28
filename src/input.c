@@ -1,6 +1,6 @@
 /*
- * Birthday Reminder
- * Copyright (C) 2008 Konrad Gräfe
+ * Pidgin Birthday Reminder
+ * Copyright (C) 2008-2015 Konrad Gräfe
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -39,7 +39,7 @@ static void do_set_bday_cb(PurpleBlistNode *node, const char* bday) {
 	GDate date, today;
 
 	if(PURPLE_BLIST_NODE_IS_CONTACT(node)) {
-		/* Geburtstag für alle Buddies setzen */
+		/* Set birthday to all buddies. */
 		child = purple_blist_node_get_first_child(node);
 		while(child) {
 			do_set_bday_cb(child, bday);
@@ -47,7 +47,9 @@ static void do_set_bday_cb(PurpleBlistNode *node, const char* bday) {
 		}
 	}
 
-	if(!PURPLE_BLIST_NODE_IS_BUDDY(node)) return;
+	if(!PURPLE_BLIST_NODE_IS_BUDDY(node)) {
+		return;
+	}
 	buddy = (PurpleBuddy *) node;
 
 	if(purple_utf8_strcasecmp(bday, "")==0) {
@@ -61,8 +63,15 @@ static void do_set_bday_cb(PurpleBlistNode *node, const char* bday) {
 	g_date_set_parse(&date, bday);
 
 	g_date_set_today(&today);
-	if(g_date_valid(&date) && g_date_compare(&date, &today) < 0 && g_date_get_year(&date) > 12) {
-		purple_blist_node_set_int(node, "birthday_julian", g_date_get_julian(&date));
+	if(
+		g_date_valid(&date) &&
+		g_date_compare(&date, &today) < 0 &&
+		g_date_get_year(&date) > 12
+	) {
+		purple_blist_node_set_int(node,
+			"birthday_julian",
+			g_date_get_julian(&date)
+		);
 		automatic_export();
 		check_birthdays(NULL, buddy);
 	}
@@ -77,13 +86,19 @@ static void set_bday_cb(PurpleBlistNode *node, gpointer data) {
 	GDate date;
 	struct tm tm;
 
-	if(!PURPLE_BLIST_NODE_IS_CONTACT(node) &&
-	   !PURPLE_BLIST_NODE_IS_BUDDY(node)) return;
+	if(
+		!PURPLE_BLIST_NODE_IS_CONTACT(node) &&
+		!PURPLE_BLIST_NODE_IS_BUDDY(node)
+	) {
+		return;
+	}
 	
 	g_date_set_dmy(&date, 24, 12, 1986);
 	g_date_to_struct_tm(&date, &tm);
-	helptext = g_strdup_printf(_("Use the following format: %s .\nBlank out the input field to clear the BDay.\nUse a year before 1900 if you do not know."), purple_date_format_short(&tm));
-
+	helptext = g_strdup_printf(
+		_("Use the following format: %s .\nBlank out the input field to clear the BDay.\nUse a year before 1900 if you do not know."),
+		purple_date_format_short(&tm)
+	);
 
 	get_birthday_from_node(node, &date);
 	if(g_date_valid(&date)) {
@@ -92,19 +107,47 @@ static void set_bday_cb(PurpleBlistNode *node, gpointer data) {
 	}
 
 
-	purple_request_input(plugin, _("Birthday Reminder"), _("Set Birthday:"), helptext, old_bday, FALSE, FALSE, NULL, _("OK"), PURPLE_CALLBACK(do_set_bday_cb), _("Cancel"), NULL, NULL, NULL, NULL, node);
+	purple_request_input(plugin,
+		_("Birthday Reminder"),
+		_("Set Birthday:"),
+		helptext,
+		old_bday,
+		FALSE, FALSE, NULL,
+		_("OK"), PURPLE_CALLBACK(do_set_bday_cb),
+		_("Cancel"),
+		NULL, NULL, NULL, NULL,
+		node
+	);
 
 	g_free(helptext);
-	if(old_bday) g_free(old_bday);
+	if(old_bday) {
+		g_free(old_bday);
+	}
 }
 
 static void extended_buddy_menu_cb(PurpleBlistNode *node, GList **menu) {
-	if(!PURPLE_BLIST_NODE_IS_CONTACT(node) &&
-	   !PURPLE_BLIST_NODE_IS_BUDDY(node)) return;
+	if(
+		!PURPLE_BLIST_NODE_IS_CONTACT(node) &&
+		!PURPLE_BLIST_NODE_IS_BUDDY(node)
+	) {
+		return;
+	}
 	
-	*menu = g_list_append(*menu, purple_menu_action_new(_("Set Birthday"), PURPLE_CALLBACK(set_bday_cb), NULL, NULL));
+	*menu = g_list_append(*menu,
+		purple_menu_action_new(
+			_("Set Birthday"),
+			PURPLE_CALLBACK(set_bday_cb),
+			NULL, NULL
+		)
+	);
 }
 
 void init_input(void) {
-	purple_signal_connect(purple_blist_get_handle(), "blist-node-extended-menu", plugin, PURPLE_CALLBACK(extended_buddy_menu_cb), NULL);
+	purple_signal_connect(
+		purple_blist_get_handle(), "blist-node-extended-menu",
+		plugin, PURPLE_CALLBACK(extended_buddy_menu_cb),
+		NULL
+	);
 }
+
+/* ex: set noexpandtab: */

@@ -1,6 +1,6 @@
 /*
- * Birthday Reminder
- * Copyright (C) 2008 Konrad Gräfe
+ * Pidgin Birthday Reminder
+ * Copyright (C) 2008-2015 Konrad Gräfe
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -25,3 +25,5 @@ void birthday_list_show(void);
 void uninit_birthday_list(void);
 
 #endif /* BIRTHDAY_LIST_H */
+
+/* ex: set noexpandtab: */

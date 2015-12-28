@@ -1,6 +1,6 @@
 /*
- * Birthday Reminder
- * Copyright (C) 2008 Konrad Gräfe
+ * Pidgin Birthday Reminder
+ * Copyright (C) 2008-2015 Konrad Gräfe
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -26,7 +26,7 @@
 #include <gtkblist.h>
 
 typedef enum {
-	PIDGIN_BLIST_NODE_HAS_PENDING_MESSAGE    =  1 << 0,  /* Whether there's pending message in a conversation */
+	PIDGIN_BLIST_NODE_HAS_PENDING_MESSAGE	 =	1 << 0,  /* Whether there's pending message in a conversation */
 } PidginBlistNodeFlags;
 
 typedef struct _pidgin_blist_node {
@@ -44,3 +44,4 @@ typedef struct _pidgin_blist_node {
 gboolean get_iter_from_node(PurpleBlistNode *node, GtkTreeIter *iter);
 
 #endif /* PIDGIN_INTERNALS_H */
+/* ex: set noexpandtab: */

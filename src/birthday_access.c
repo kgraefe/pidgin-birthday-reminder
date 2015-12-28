@@ -1,6 +1,6 @@
 /*
- * Birthday Reminder
- * Copyright (C) 2008 Konrad Gräfe
+ * Pidgin Birthday Reminder
+ * Copyright (C) 2008-2015 Konrad Gräfe
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -24,35 +24,50 @@
 #include "birthday_reminder.h"
 #include "functions.h"
 
+
 void get_birthday_from_node(PurpleBlistNode *node, GDate *date) {
 	guint32 julian;
 	gint min_days_to_birthday, days_to_birthday;
 	PurpleBlistNode *n;
 
-	if(!date) return;
+	if(!date) {
+		return;
+	}
 
-	/* Bei Fehler ungültiges Datum zurück geben */
+	/* Return an invalid date on error */
 	g_date_clear(date, 1);
 
-	if(!PURPLE_BLIST_NODE_IS_CONTACT(node) &&
-	   !PURPLE_BLIST_NODE_IS_BUDDY(node)) return;
+	if(
+		!PURPLE_BLIST_NODE_IS_CONTACT(node) &&
+		!PURPLE_BLIST_NODE_IS_BUDDY(node)
+	) {
+		return;
+	}
 	
 	if(PURPLE_BLIST_NODE_IS_CONTACT(node)) {
-		/* Alle Kinder durchgehen, den Buddy dessen Geburtstag als nächster kommt auswählen */
-		/* Nicht sonderlich effizient, aber naja, Kontakte sind meist recht klein. :) */
+		/* If the node is a contact, go through all children and find the buddy
+		 * whos birthday occurs next.
+		 */
 		n = purple_blist_node_get_first_child(node);
 		node = NULL;
 		min_days_to_birthday = -1;
 		while(n) {
 			days_to_birthday = get_days_to_birthday_from_node(n);
-			if(days_to_birthday != -1 && (days_to_birthday < min_days_to_birthday || min_days_to_birthday == -1) && PURPLE_BLIST_NODE_IS_BUDDY(n) && purple_account_is_connected(purple_buddy_get_account((PurpleBuddy *)n))) {
+			if(
+				days_to_birthday != -1 &&
+				(days_to_birthday < min_days_to_birthday || min_days_to_birthday == -1) &&
+				PURPLE_BLIST_NODE_IS_BUDDY(n) &&
+				purple_account_is_connected(purple_buddy_get_account((PurpleBuddy *)n))
+			) {
 				min_days_to_birthday = days_to_birthday;
 				node = n;
 			}
 			n = purple_blist_node_get_sibling_next(n);
 		}
 	}
-	if(!node) return;
+	if(!node) {
+		return;
+	}
 
 	julian=purple_blist_node_get_int(node, "birthday_julian");
 	if(g_date_valid_julian(julian)) {
@@ -66,8 +81,12 @@ gboolean already_notified_today(PurpleBlistNode *node) {
 	
 	g_date_set_today(&today);
 	
-	if(!PURPLE_BLIST_NODE_IS_CONTACT(node) &&
-	   !PURPLE_BLIST_NODE_IS_BUDDY(node)) return FALSE;
+	if(
+		!PURPLE_BLIST_NODE_IS_CONTACT(node) &&
+		!PURPLE_BLIST_NODE_IS_BUDDY(node)
+	) {
+		return FALSE;
+	}
 	
 	if(PURPLE_BLIST_NODE_IS_CONTACT(node)) {
 		node = purple_blist_node_get_first_child(node);
@@ -107,7 +126,9 @@ gint get_age_from_node(PurpleBlistNode *node) {
 		age = g_date_get_year(&today) - g_date_get_year(&bday);
 
 		g_date_set_year(&bday, g_date_get_year(&today));
-		if(g_date_compare(&bday, &today) > 0) age--;
+		if(g_date_compare(&bday, &today) > 0) {
+			age--;
+		}
 	}
 	return age;
 }
@@ -121,10 +142,13 @@ gint get_days_to_birthday_from_node(PurpleBlistNode *node) {
 		
 		g_date_add_years(&bday, g_date_get_year(&today) - g_date_get_year(&bday));
 
-		if(g_date_compare(&bday, &today) < 0) g_date_add_years(&bday, 1);
+		if(g_date_compare(&bday, &today) < 0) {
+			g_date_add_years(&bday, 1);
+		}
 
 		return g_date_days_between(&today, &bday);
 	}
 	return (-1);
 }
 
+/* ex: set noexpandtab: */

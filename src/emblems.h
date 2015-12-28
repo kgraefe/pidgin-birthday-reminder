@@ -1,6 +1,6 @@
 /*
- * Birthday Reminder
- * Copyright (C) 2008 Konrad Gräfe
+ * Pidgin Birthday Reminder
+ * Copyright (C) 2008-2015 Konrad Gräfe
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -35,3 +35,5 @@ void update_birthday_emblem(PurpleBlistNode *node);
 GdkPixbuf *get_birthday_icon_from_node(PurpleBlistNode *node, gboolean blist);
 
 #endif /* EMBLEMS_H */
+
+/* ex: set noexpandtab: */

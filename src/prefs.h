@@ -1,6 +1,6 @@
 /*
- * Birthday Reminder
- * Copyright (C) 2008 Konrad Gräfe
+ * Pidgin Birthday Reminder
+ * Copyright (C) 2008-2015 Konrad Gräfe
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -28,3 +28,5 @@ GtkWidget *get_config_frame(PurplePlugin *plugin);
 void init_prefs(void);
 
 #endif /* PREFS_H */
+
+/* ex: set noexpandtab: */

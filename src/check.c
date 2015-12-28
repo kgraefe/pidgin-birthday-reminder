@@ -1,6 +1,6 @@
 /*
- * Birthday Reminder
- * Copyright (C) 2008 Konrad Gräfe
+ * Pidgin Birthday Reminder
+ * Copyright (C) 2008-2015 Konrad Gräfe
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -47,37 +47,71 @@ void check_birthdays(PurpleAccount *acc, PurpleBuddy *buddy) {
 
 	g_date_set_today(&last_check);
 
-	if(purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/sound/play")) {
-		play_sound_before_days = purple_prefs_get_int(PLUGIN_PREFS_PREFIX "/reminder/sound/before_days");
+	if(
+		purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/sound/play")
+	) {
+		play_sound_before_days = purple_prefs_get_int(
+			PLUGIN_PREFS_PREFIX "/reminder/sound/before_days"
+		);
 	} else {
 		play_sound_before_days = -1;
 	}
-	if(purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/mini_dialog/show")) {
-		show_mini_dialog_before_days = purple_prefs_get_int(PLUGIN_PREFS_PREFIX "/reminder/mini_dialog/before_days");
+
+	if(
+		purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/mini_dialog/show")
+	) {
+		show_mini_dialog_before_days = purple_prefs_get_int(
+			PLUGIN_PREFS_PREFIX "/reminder/mini_dialog/before_days"
+		);
 	} else {
 		show_mini_dialog_before_days = -1;
 	}
-	if(purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/notification/show")) {
-		show_notification_before_days = purple_prefs_get_int(PLUGIN_PREFS_PREFIX "/reminder/notification/before_days");
+
+	if(
+		purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/notification/show")
+	) {
+		show_notification_before_days = purple_prefs_get_int(
+			PLUGIN_PREFS_PREFIX "/reminder/notification/before_days"
+		);
 	} else {
 		show_notification_before_days = -1;
 	}
 
 	notify_before_days = -1;
-	if(play_sound_before_days > notify_before_days) notify_before_days = play_sound_before_days;
-	if(show_mini_dialog_before_days > notify_before_days) notify_before_days = show_mini_dialog_before_days;
-	if(show_notification_before_days > notify_before_days) notify_before_days = show_notification_before_days;
+	if(play_sound_before_days > notify_before_days) {
+		notify_before_days = play_sound_before_days;
+	}
+	if(show_mini_dialog_before_days > notify_before_days) {
+		notify_before_days = show_mini_dialog_before_days;
+	}
+	if(show_notification_before_days > notify_before_days) {
+		notify_before_days = show_notification_before_days;
+	}
 	
-	if(notify_before_days == 10) return;
+	if(notify_before_days == 10) {
+		return;
+	}
 
 	if(buddy) {
 		node = (PurpleBlistNode *)buddy;
 		days_to_birthday = get_days_to_birthday_from_node(node);
-		if(days_to_birthday >= 0 && days_to_birthday <= notify_before_days && node_account_connected(node) && (acc == NULL || buddy->account == acc) && (!already_notified_today(node) || !purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/once_a_day"))) {
+		if(
+			days_to_birthday >= 0 &&
+			days_to_birthday <= notify_before_days &&
+			node_account_connected(node) &&
+			(acc == NULL || buddy->account == acc) &&
+			(
+				!already_notified_today(node) ||
+				!purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/once_a_day")
+			)
+		) {
 			count_birthdays++;
 			min_days_to_birthday = days_to_birthday;
 			birthday_buddy = buddy;
-			purple_blist_node_set_int(node, "last_birthday_notification_julian", g_date_get_julian(&last_check));
+			purple_blist_node_set_int(node,
+				"last_birthday_notification_julian",
+				g_date_get_julian(&last_check)
+			);
 		}
 	} else {
 		node=purple_blist_get_root();
@@ -86,12 +120,27 @@ void check_birthdays(PurpleAccount *acc, PurpleBuddy *buddy) {
 				days_to_birthday = get_days_to_birthday_from_node(node);
 				buddy = (PurpleBuddy *)node;
 
-				if(days_to_birthday >= 0 && days_to_birthday <= notify_before_days && node_account_connected(node) && (acc == NULL || buddy->account == acc) && (!already_notified_today(node) || !purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/once_a_day"))) {
+				if(
+					days_to_birthday >= 0 &&
+					days_to_birthday <= notify_before_days &&
+					node_account_connected(node) &&
+					(acc == NULL || buddy->account == acc) &&
+					(
+						!already_notified_today(node) ||
+						!purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/once_a_day")
+					)
+				) {
 					count_birthdays++;
 					birthday_buddy = buddy;
 
-					if(days_to_birthday < min_days_to_birthday) min_days_to_birthday = days_to_birthday;
-					purple_blist_node_set_int(node, "last_birthday_notification_julian", g_date_get_julian(&last_check));
+					if(days_to_birthday < min_days_to_birthday) {
+						min_days_to_birthday = days_to_birthday;
+					}
+
+					purple_blist_node_set_int(node,
+						"last_birthday_notification_julian",
+						g_date_get_julian(&last_check)
+					);
 				}
 			}
 			node=purple_blist_node_next(node, TRUE);
@@ -104,7 +153,9 @@ void check_birthdays(PurpleAccount *acc, PurpleBuddy *buddy) {
 		notify(min_days_to_birthday, NULL);
 	}
 	
-	if(purple_get_blist()) pidgin_blist_refresh(purple_get_blist());
+	if(purple_get_blist()) {
+		pidgin_blist_refresh(purple_get_blist());
+	}
 }
 
 static gboolean check_birthdays_timer_cb(gpointer data) {
@@ -114,20 +165,35 @@ static gboolean check_birthdays_timer_cb(gpointer data) {
 
 	g_date_set_today(&today);
 
-	if(!g_date_valid(&last_check) || g_date_compare(&last_check, &today) != 0) {
+	if(
+		!g_date_valid(&last_check) ||
+		g_date_compare(&last_check, &today) != 0
+	) {
 		check_birthdays(NULL, NULL);
 	}
 	
 	now = time(NULL);
 	tm_now = localtime(&now);
 	
-	if(check_birthdays_timeout_handle > 0) purple_timeout_remove(check_birthdays_timeout_handle);
+	if(check_birthdays_timeout_handle > 0) {
+		purple_timeout_remove(check_birthdays_timeout_handle);
+	}
 
 	if(tm_now->tm_hour >= 23) {
-		/* Nach 23:00 Uhr? -> Timer um 00:00:05 triggern! */
-		check_birthdays_timeout_handle = purple_timeout_add_seconds((3605 - 60*tm_now->tm_min - tm_now->tm_sec), check_birthdays_timer_cb, NULL);
+		/* If it is later than 11PM we alway want to trigger 5 seconds
+		 * after midnight.
+		 */
+		check_birthdays_timeout_handle = purple_timeout_add_seconds(
+			(3605 - 60*tm_now->tm_min - tm_now->tm_sec),
+			check_birthdays_timer_cb,
+			NULL
+		);
 	} else {
-		check_birthdays_timeout_handle = purple_timeout_add_seconds(3600, check_birthdays_timer_cb, NULL);
+		check_birthdays_timeout_handle = purple_timeout_add_seconds(
+			3600,
+			check_birthdays_timer_cb,
+			NULL
+		);
 	}
 
 	return FALSE;
@@ -141,12 +207,20 @@ void init_check(void) {
 	check_birthdays_timeout_handle=0;
 	g_date_clear(&last_check, 1);
 	
-	purple_signal_connect(purple_connections_get_handle(), "signed-on", plugin, PURPLE_CALLBACK(signed_on_cb), NULL);
+	purple_signal_connect(
+		purple_connections_get_handle(), "signed-on",
+		plugin, PURPLE_CALLBACK(signed_on_cb),
+		NULL
+	);
 
-	/* Geburtstage prüfen, Mitternachtstimer aktivieren */
+	/* Check birthdays and active midnight timer. */
 	check_birthdays_timer_cb(NULL);
 }
 
 void uninit_check(void) {
-	if(check_birthdays_timeout_handle > 0) purple_timeout_remove(check_birthdays_timeout_handle);
+	if(check_birthdays_timeout_handle > 0) {
+		purple_timeout_remove(check_birthdays_timeout_handle);
+	}
 }
+
+/* ex: set noexpandtab: */

@@ -1,6 +1,6 @@
 /*
-* Birthday Reminder
-* Copyright (C) 2008 Konrad Gräfe
+* Pidgin Birthday Reminder
+* Copyright (C) 2008-2015 Konrad Gräfe
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public License
@@ -9,7 +9,7 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
@@ -54,3 +54,5 @@ gboolean get_iter_from_node(PurpleBlistNode *node, GtkTreeIter *iter) {
 	gtk_tree_path_free(path);
 	return TRUE;
 }
+
+/* ex: set noexpandtab: */

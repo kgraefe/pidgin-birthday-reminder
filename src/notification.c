@@ -1,6 +1,6 @@
 /*
- * Birthday Reminder
- * Copyright (C) 2008 Konrad Gräfe
+ * Pidgin Birthday Reminder
+ * Copyright (C) 2008-2015 Konrad Gräfe
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -55,15 +55,35 @@ static void mini_dialog_close_cb(PurpleBlistNode *node) {}
 static void play_sound(void) {
 	gchar *soundfile;
 
-	soundfile = g_build_filename(purple_user_dir(), "sounds", "pidgin", "birthday_reminder", "birthday.wav", NULL);
+	soundfile = g_build_filename(
+		purple_user_dir(),
+		"sounds",
+		"pidgin",
+		"birthday_reminder",
+		"birthday.wav",
+		NULL
+	);
+
 	if(!g_file_test(soundfile, G_FILE_TEST_EXISTS)) {
 		g_free(soundfile);
-		soundfile = g_build_filename(DATADIR, "sounds", "pidgin", "birthday_reminder", "birthday.wav", NULL);
+		soundfile = g_build_filename(
+			DATADIR,
+			"sounds",
+			"pidgin",
+			"birthday_reminder",
+			"birthday.wav",
+			NULL
+		);
 	}
+
 	if(g_file_test(soundfile, G_FILE_TEST_EXISTS)) {
 		purple_sound_play_file(soundfile, NULL);
 	} else {
-		purple_debug_error(PLUGIN_STATIC_NAME, _("sound file (%s) does not exist.\n"), soundfile);
+		purple_debug_error(
+			PLUGIN_STATIC_NAME,
+			_("Sound file (%s) does not exist.\n"),
+			soundfile
+		);
 	}
 	g_free(soundfile);
 }
@@ -80,30 +100,44 @@ void notify(gint days_to_birthday, PurpleBuddy *birthday_buddy) {
 	GDate date;
 
 	if(purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/sound/play")) {
-		play_sound_before_days = purple_prefs_get_int(PLUGIN_PREFS_PREFIX "/reminder/sound/before_days");
+		play_sound_before_days = purple_prefs_get_int(
+			PLUGIN_PREFS_PREFIX "/reminder/sound/before_days"
+		);
 	} else {
 		play_sound_before_days = -1;
 	}
+
 	if(purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/mini_dialog/show")) {
-		show_mini_dialog_before_days = purple_prefs_get_int(PLUGIN_PREFS_PREFIX "/reminder/mini_dialog/before_days");
+		show_mini_dialog_before_days = purple_prefs_get_int(
+			PLUGIN_PREFS_PREFIX "/reminder/mini_dialog/before_days"
+		);
 	} else {
 		show_mini_dialog_before_days = -1;
 	}
+
 	if(purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/notification/show")) {
-		show_notification_before_days = purple_prefs_get_int(PLUGIN_PREFS_PREFIX "/reminder/notification/before_days");
+		show_notification_before_days = purple_prefs_get_int(
+			PLUGIN_PREFS_PREFIX "/reminder/notification/before_days"
+		);
 	} else {
 		show_notification_before_days = -1;
 	}
 
 
-	if(days_to_birthday <= play_sound_before_days) play_sound();
+	if(days_to_birthday <= play_sound_before_days) {
+		play_sound();
+	}
 	
 	msg = NULL;
-	if(days_to_birthday <= show_mini_dialog_before_days || days_to_birthday <= show_notification_before_days) {
-		/* 
-		 * Wenn schon ein Minidialog existiert sollen in dem neuen mehrere Geburtstage angekündigt werden.
-		 * Dann kann es passieren, dass ein Kontakt mit "Es stehen Geburstage an" gemeldet wird - naja.
-		 * (TODO: Kann man testen, ob die notification schon weggeklickt wurde?)
+	if(
+		days_to_birthday <= show_mini_dialog_before_days ||
+		days_to_birthday <= show_notification_before_days
+	) {
+		/* When there is an existing mini dialog, use this to notify all
+		 * birthdays.
+		 *
+		 * TODO: Is there a way to check whether the mini dialog has been
+		 * closed already?
 		 */
 		if(birthday_buddy && mini_dialog == NULL) {
 			node = (PurpleBlistNode *)birthday_buddy;
@@ -115,55 +149,108 @@ void notify(gint days_to_birthday, PurpleBuddy *birthday_buddy) {
 	
 			if(days_to_birthday == 0) {
 				if(g_date_get_year(&date) > 1900) {
-					msg = g_strdup_printf(_("%s will be %d years old today! Hooray!"), alias, age);
+					msg = g_strdup_printf(
+						_("%s will be %d years old today! Hooray!"),
+						alias, age
+					);
 				} else {
-					msg = g_strdup_printf(_("It's %s's birthday today! Hooray!"), alias);
+					msg = g_strdup_printf(
+						_("It's %s's birthday today! Hooray!"),
+						alias
+					);
 				}
 			} else if(days_to_birthday == 1) {
 				if(g_date_get_year(&date) > 1900) {
-					msg = g_strdup_printf(_("%s will be %d years old tomorrow!"), alias, age + 1);
+					msg = g_strdup_printf(
+						_("%s will be %d years old tomorrow!"),
+						alias, age + 1
+					);
 				} else {
-					msg = g_strdup_printf(_("%s's birthday is tomorrow!"), alias);
+					msg = g_strdup_printf(
+						_("%s's birthday is tomorrow!"),
+						alias
+					);
 				}
 			} else {
 				if(g_date_get_year(&date) > 1900) {
-					msg = g_strdup_printf(_("%s will be %d years old in %d days!"), alias, age + 1, days_to_birthday);
+					msg = g_strdup_printf(
+						_("%s will be %d years old in %d days!"),
+						alias, age + 1, days_to_birthday
+					);
 				} else {
-					msg = g_strdup_printf(_("%s's birthday is in %d days!"), alias, days_to_birthday);
+					msg = g_strdup_printf(
+						_("%s's birthday is in %d days!"),
+						alias, days_to_birthday
+					);
 				}
 			}
-			
 		} else {
 			msg = g_strdup(_("There are birthdays in the next days! Hooray!"));
 		}
 	}
 	
 	if(days_to_birthday <= show_notification_before_days) {
-		if(request_ui_handle) purple_request_close(PURPLE_REQUEST_ACTION, request_ui_handle);
+		if(request_ui_handle) {
+			purple_request_close(PURPLE_REQUEST_ACTION, request_ui_handle);
+		}
 
 		if(birthday_buddy && mini_dialog == NULL) {
-			request_ui_handle = purple_request_action(plugin, _("Birthday Reminder"), msg, _("Write IM?"), 0, NULL, NULL, NULL, purple_buddy_get_contact(birthday_buddy), 2, _("Yes"), PURPLE_CALLBACK(mini_dialog_write_im_cb), _("No"), NULL);
+			request_ui_handle = purple_request_action(plugin,
+				_("Birthday Reminder"), msg,
+				_("Write IM?"),
+				0, NULL, NULL, NULL,
+				purple_buddy_get_contact(birthday_buddy), 2,
+				_("Yes"), PURPLE_CALLBACK(mini_dialog_write_im_cb),
+				_("No"), NULL
+			);
 		} else {
-			request_ui_handle = purple_request_action(plugin, _("Birthday Reminder"), msg, _("Show overview?"), 0, NULL, NULL, NULL, NULL, 2, _("Yes"), PURPLE_CALLBACK(mini_dialog_overview_cb), _("No"), NULL);
+			request_ui_handle = purple_request_action(plugin,
+				_("Birthday Reminder"), msg,
+				_("Show overview?"),
+				0, NULL, NULL, NULL, NULL, 2,
+				_("Yes"), PURPLE_CALLBACK(mini_dialog_overview_cb),
+				_("No"), NULL
+			);
 		}
 	}
 
 	if(days_to_birthday <= show_mini_dialog_before_days) {
 		if(birthday_buddy && mini_dialog == NULL) {
-			mini_dialog = pidgin_make_mini_dialog(NULL, PIDGIN_STOCK_DIALOG_INFO, _("Birthday Reminder"), msg, purple_buddy_get_contact(birthday_buddy), _("Close"), PURPLE_CALLBACK(mini_dialog_close_cb), _("Write IM"), PURPLE_CALLBACK(mini_dialog_write_im_cb), NULL);
+			mini_dialog = pidgin_make_mini_dialog(NULL,
+				PIDGIN_STOCK_DIALOG_INFO, _("Birthday Reminder"),
+				msg, purple_buddy_get_contact(birthday_buddy),
+				_("Close"), PURPLE_CALLBACK(mini_dialog_close_cb),
+				_("Write IM"), PURPLE_CALLBACK(mini_dialog_write_im_cb),
+				NULL
+			);
 		} else {
-			if(mini_dialog) gtk_widget_destroy(mini_dialog);
-			mini_dialog = pidgin_make_mini_dialog(NULL, PIDGIN_STOCK_DIALOG_INFO, _("Birthday Reminder"), msg, NULL, _("Close"), PURPLE_CALLBACK(mini_dialog_close_cb), _("Overview"), PURPLE_CALLBACK(mini_dialog_overview_cb), NULL);
+			if(mini_dialog) {
+				gtk_widget_destroy(mini_dialog);
+			}
+			mini_dialog = pidgin_make_mini_dialog(NULL,
+				PIDGIN_STOCK_DIALOG_INFO, _("Birthday Reminder"),
+				msg, NULL,
+				_("Close"), PURPLE_CALLBACK(mini_dialog_close_cb),
+				_("Overview"), PURPLE_CALLBACK(mini_dialog_overview_cb),
+				NULL
+			);
 		}
-		g_signal_connect(G_OBJECT(mini_dialog), "destroy", G_CALLBACK(gtk_widget_destroyed), &mini_dialog);
+		g_signal_connect(
+			G_OBJECT(mini_dialog), "destroy",
+			G_CALLBACK(gtk_widget_destroyed), &mini_dialog
+		);
 		pidgin_blist_add_alert(mini_dialog);
 		purple_blist_set_visible(TRUE);
 	}
 
-	if(msg) g_free(msg);
+	if(msg) {
+		g_free(msg);
+	}
 }
 
 void init_notification(void) {
 	mini_dialog = NULL;
 	request_ui_handle = NULL;
 }
+
+/* ex: set noexpandtab: */

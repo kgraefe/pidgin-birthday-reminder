@@ -1,6 +1,6 @@
 /*
- * Birthday Reminder
- * Copyright (C) 2008 Konrad Gräfe
+ * Pidgin Birthday Reminder
+ * Copyright (C) 2008-2015 Konrad Gräfe
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -45,10 +45,10 @@
 /* This works around the lack of G_GNUC_NULL_TERMINATED in old glib and the
  * lack of the NULL sentinel in GCC older than 4.0.0 and non-GCC compilers */
 #ifndef G_GNUC_NULL_TERMINATED
-#  if     __GNUC__ >= 4
-#    define G_GNUC_NULL_TERMINATED __attribute__((__sentinel__))
+#  if	  __GNUC__ >= 4
+#	 define G_GNUC_NULL_TERMINATED __attribute__((__sentinel__))
 #  else
-#    define G_GNUC_NULL_TERMINATED
+#	 define G_GNUC_NULL_TERMINATED
 #  endif
 #endif
 
@@ -74,3 +74,5 @@
 #endif /* !GLIB_CHECK_VERSION(2,6,0) */
 
 #endif
+
+/* ex: set noexpandtab: */
