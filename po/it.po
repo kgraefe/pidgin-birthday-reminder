@@ -1,30 +1,33 @@
-# Italian translation for pidgin-birthday-reminder
-# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
-# This file is distributed under the same license as the pidgin-birthday-reminder package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010
+# Konrad Gräfe <konradgraefe@aol.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: pidgin-birthday-reminder\n"
+"Project-Id-Version: Pidgin Birthday Reminder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-27 17:55-0800\n"
-"PO-Revision-Date: 2010-12-01 07:08+0000\n"
-"Last-Translator: kgraefe <Unknown>\n"
-"Language-Team: Italian <it@li.org>\n"
-"Language: it\n"
+"POT-Creation-Date: 2015-12-28 16:20+0100\n"
+"PO-Revision-Date: 2015-12-28 15:25+0000\n"
+"Last-Translator: Konrad Gräfe <konradgraefe@aol.com>\n"
+"Language-Team: Italian (http://www.transifex.com/kgraefe/pidgin-birthday-reminder/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-19 05:56+0000\n"
-"X-Generator: Launchpad (build 16165)\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. Translators: This is in the birthday list. Use %2$02d for day, %1$02d for month and %3$04d for year.
+#. Translators: This is in the birthday list. Use %2$02d for day, %1$02d for
+#. month and %3$04d for year.
 #: ../src/birthday_list.c:177
 #, c-format
 msgid "%02d/%02d/%04d"
 msgstr "%02d/%02d/%04d"
 
-#. Translators: This is in the birthday list. Use %2$02d for day and %1$02d for month.
+#. Translators: This is in the birthday list. Use %2$02d for day and %1$02d
+#. for month.
 #: ../src/birthday_list.c:185
 #, c-format
 msgid "%02d/%02d"
@@ -71,27 +74,30 @@ msgid "Reminds you of the birthday of your buddies. :o)"
 msgstr "Ti ricorda i compleanni dei tuoi amici. :o)"
 
 #: ../src/birthday_reminder.c:150
-msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
-msgstr ""
-"Questo Plugin tiene traccia dei compleanni dei tuoi amici e teli ricorda."
+msgid ""
+"This Plugin shall keep track and remind you of your buddies' birthdays."
+msgstr "Questo Plugin tiene traccia dei compleanni dei tuoi amici e teli ricorda."
 
 #: ../src/emblems.c:201
 msgid "Could not load icons!\n"
 msgstr "Non è stato possibile caricare le icone!\n"
 
-#. Translators: this is how the birthday appears in an external calendar application (summary). Please display the name in front if possible.
+#. Translators: this is how the birthday appears in an external calendar
+#. application (summary). Please display the name in front if possible.
 #: ../src/icsexport.c:219
 #, c-format
 msgid "%s's birthday"
 msgstr "Il compleanno di %s"
 
-#. Translators: this is how the birthday appears in an external calendar application (description with year of birth)
+#. Translators: this is how the birthday appears in an external calendar
+#. application (description with year of birth)
 #: ../src/icsexport.c:226
 #, c-format
 msgid "Birthday of %s, born in %04i"
 msgstr "Il compleanno di %s, nato/a il %04i"
 
-#. Translators: this is how the birthday appears in an external calendar application (description without year of birth)
+#. Translators: this is how the birthday appears in an external calendar
+#. application (description without year of birth)
 #: ../src/icsexport.c:234
 #, c-format
 msgid "Birthday of %s"
@@ -103,10 +109,7 @@ msgid ""
 "Use the following format: %s .\n"
 "Blank out the input field to clear the BDay.\n"
 "Use a year before 1900 if you do not know."
-msgstr ""
-"Usa il seguente formato: %s.\n"
-"Lascia lo spazio bianco per cancellare il compleanno.\n"
-"Usa un anno prima del 1900 se non conosci la data."
+msgstr "Usa il seguente formato: %s.\nLascia lo spazio bianco per cancellare il compleanno.\nUsa un anno prima del 1900 se non conosci la data."
 
 #: ../src/input.c:112
 msgid "Set Birthday:"
@@ -125,7 +128,7 @@ msgid "Set Birthday"
 msgstr "Imposta Compleanno"
 
 #: ../src/notification.c:84
-#, fuzzy, c-format
+#, c-format
 msgid "Sound file (%s) does not exist.\n"
 msgstr "Il suono del file (%s) non esiste.\n"
 
@@ -259,37 +262,36 @@ msgstr "Esporta iCalendar"
 msgid "Export to file"
 msgstr "Esporta al file"
 
-#. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
+#. Translators: use %1$s for the buddy's nickname, %2$s for the account name
+#. and %3$s for the protocol name.
 #: ../src/scan.c:130
 #, c-format
 msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
-msgstr ""
-"Sto controllando il contatto %1$s (Account:%2$s (%3$s)). Aspetta per il "
-"responso...\n"
+msgstr "Sto controllando il contatto %1$s (Account:%2$s (%3$s)). Aspetta per il responso...\n"
 
 #: ../src/scan.c:136
 msgid "No more buddies to scan.\n"
 msgstr "Nessun altro contatto da controllare.\n"
 
-#. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
+#. Translators: use %1$s for the buddy's nickname, %2$s for the account name
+#. and %3$s for the protocol name.
 #: ../src/scan.c:222
 #, c-format
 msgid "Buddy %s (Account: %s (%s)) scanned.\n"
 msgstr "Il contatto %1$s (Account: %2$s (%3$s)) è stato controllato.\n"
 
-#: ../src/scan.c:274
+#: ../src/scan.c:264
 msgid "Scan birthdays on this account"
 msgstr "Controlla se ci sono compleanni su questo account"
 
-#. Translators: to use an other order of the arguments use %2$02d for day, %1$02d for month and %3$04d for year
+#. Translators: to use an other order of the arguments use %2$02d for day,
+#. %1$02d for month and %3$04d for year
 #: ../src/tooltip.c:43
 #, c-format
 msgid ""
 "\n"
 "<b>Birthday</b>: %02d/%02d/%04d"
-msgstr ""
-"\n"
-"<b>Compleanno</b>: %2$02d/%1$02d/%3$04d"
+msgstr "\n<b>Compleanno</b>: %2$02d/%1$02d/%3$04d"
 
 #. Translators: use %2$02d for day and %1$02d for month
 #: ../src/tooltip.c:51
@@ -297,9 +299,7 @@ msgstr ""
 msgid ""
 "\n"
 "<b>Birthday</b>: %02d/%02d"
-msgstr ""
-"\n"
-"<b>Compleanno</b>: %2$02d/%1$02d"
+msgstr "\n<b>Compleanno</b>: %2$02d/%1$02d"
 
 #: ../src/tooltip.c:62
 #, c-format
@@ -321,6 +321,4 @@ msgstr " (tra %d giorni)"
 msgid ""
 "\n"
 "<b>Age</b>: %d years"
-msgstr ""
-"\n"
-"<b>Età</b>: %d anni"
+msgstr "\n<b>Età</b>: %d anni"

@@ -1,30 +1,33 @@
-# Slovak translation for pidgin-birthday-reminder
-# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
-# This file is distributed under the same license as the pidgin-birthday-reminder package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010
+# Konrad Gräfe <konradgraefe@aol.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: pidgin-birthday-reminder\n"
+"Project-Id-Version: Pidgin Birthday Reminder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-27 17:55-0800\n"
-"PO-Revision-Date: 2010-10-24 07:55+0000\n"
-"Last-Translator: kgraefe <Unknown>\n"
-"Language-Team: Slovak <sk@li.org>\n"
-"Language: sk\n"
+"POT-Creation-Date: 2015-12-28 16:20+0100\n"
+"PO-Revision-Date: 2015-12-28 15:25+0000\n"
+"Last-Translator: Konrad Gräfe <konradgraefe@aol.com>\n"
+"Language-Team: Slovak (http://www.transifex.com/kgraefe/pidgin-birthday-reminder/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-19 05:56+0000\n"
-"X-Generator: Launchpad (build 16165)\n"
+"Language: sk\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#. Translators: This is in the birthday list. Use %2$02d for day, %1$02d for month and %3$04d for year.
+#. Translators: This is in the birthday list. Use %2$02d for day, %1$02d for
+#. month and %3$04d for year.
 #: ../src/birthday_list.c:177
 #, c-format
 msgid "%02d/%02d/%04d"
 msgstr "%02d. %02d. %04d"
 
-#. Translators: This is in the birthday list. Use %2$02d for day and %1$02d for month.
+#. Translators: This is in the birthday list. Use %2$02d for day and %1$02d
+#. for month.
 #: ../src/birthday_list.c:185
 #, c-format
 msgid "%02d/%02d"
@@ -71,27 +74,30 @@ msgid "Reminds you of the birthday of your buddies. :o)"
 msgstr "Pripomenie Vám narodeniny vašich priateľov."
 
 #: ../src/birthday_reminder.c:150
-msgid "This Plugin shall keep track and remind you of your buddies' birthdays."
-msgstr ""
-"Tento plugin Vás má sledovať a pripomenúť Vám narodeniny vašich priateľov."
+msgid ""
+"This Plugin shall keep track and remind you of your buddies' birthdays."
+msgstr "Tento plugin Vás má sledovať a pripomenúť Vám narodeniny vašich priateľov."
 
 #: ../src/emblems.c:201
 msgid "Could not load icons!\n"
 msgstr "Nedali sa načítať ikonky!\n"
 
-#. Translators: this is how the birthday appears in an external calendar application (summary). Please display the name in front if possible.
+#. Translators: this is how the birthday appears in an external calendar
+#. application (summary). Please display the name in front if possible.
 #: ../src/icsexport.c:219
 #, c-format
 msgid "%s's birthday"
 msgstr "%s - narodeniny"
 
-#. Translators: this is how the birthday appears in an external calendar application (description with year of birth)
+#. Translators: this is how the birthday appears in an external calendar
+#. application (description with year of birth)
 #: ../src/icsexport.c:226
 #, c-format
 msgid "Birthday of %s, born in %04i"
 msgstr "Narodeniny: %s, narodený v %04i"
 
-#. Translators: this is how the birthday appears in an external calendar application (description without year of birth)
+#. Translators: this is how the birthday appears in an external calendar
+#. application (description without year of birth)
 #: ../src/icsexport.c:234
 #, c-format
 msgid "Birthday of %s"
@@ -103,10 +109,7 @@ msgid ""
 "Use the following format: %s .\n"
 "Blank out the input field to clear the BDay.\n"
 "Use a year before 1900 if you do not know."
-msgstr ""
-"Použi tento formát: %s .\n"
-"Nechaj prázdne políčko na vymazanie narodenín.\n"
-"Použi rok pred 1900 ak nevieš."
+msgstr "Použi tento formát: %s .\nNechaj prázdne políčko na vymazanie narodenín.\nPouži rok pred 1900 ak nevieš."
 
 #: ../src/input.c:112
 msgid "Set Birthday:"
@@ -125,7 +128,7 @@ msgid "Set Birthday"
 msgstr "Nastaviť narodeniny"
 
 #: ../src/notification.c:84
-#, fuzzy, c-format
+#, c-format
 msgid "Sound file (%s) does not exist.\n"
 msgstr "zvukový súbor (%s) neexistuje.\n"
 
@@ -259,7 +262,8 @@ msgstr "iCalendar export"
 msgid "Export to file"
 msgstr "Export do súboru"
 
-#. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
+#. Translators: use %1$s for the buddy's nickname, %2$s for the account name
+#. and %3$s for the protocol name.
 #: ../src/scan.c:130
 #, c-format
 msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
@@ -269,25 +273,25 @@ msgstr "Skenovanie priateľov %1$s (Účet: %2$s (%3$s)). Čakajte na odozvu...\
 msgid "No more buddies to scan.\n"
 msgstr "Už niesu ďalší priatelia na skenovanie.\n"
 
-#. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
+#. Translators: use %1$s for the buddy's nickname, %2$s for the account name
+#. and %3$s for the protocol name.
 #: ../src/scan.c:222
 #, c-format
 msgid "Buddy %s (Account: %s (%s)) scanned.\n"
 msgstr "Priateľ %1$s (Účet: %2$s (%3$s)) oskenovaný.\n"
 
-#: ../src/scan.c:274
+#: ../src/scan.c:264
 msgid "Scan birthdays on this account"
 msgstr "Oskenovať narodeniny v tomto účte"
 
-#. Translators: to use an other order of the arguments use %2$02d for day, %1$02d for month and %3$04d for year
+#. Translators: to use an other order of the arguments use %2$02d for day,
+#. %1$02d for month and %3$04d for year
 #: ../src/tooltip.c:43
 #, c-format
 msgid ""
 "\n"
 "<b>Birthday</b>: %02d/%02d/%04d"
-msgstr ""
-"\n"
-"<b>Narodeniny</b>: %2$02d. %1$02d. %3$04d"
+msgstr "\n<b>Narodeniny</b>: %2$02d. %1$02d. %3$04d"
 
 #. Translators: use %2$02d for day and %1$02d for month
 #: ../src/tooltip.c:51
@@ -295,9 +299,7 @@ msgstr ""
 msgid ""
 "\n"
 "<b>Birthday</b>: %02d/%02d"
-msgstr ""
-"\n"
-"<b>Narodeniny</b>: %2$02d. %1$02d."
+msgstr "\n<b>Narodeniny</b>: %2$02d. %1$02d."
 
 #: ../src/tooltip.c:62
 #, c-format
@@ -319,6 +321,4 @@ msgstr " (za %d dní)"
 msgid ""
 "\n"
 "<b>Age</b>: %d years"
-msgstr ""
-"\n"
-"<b>Vek</b>: %d rokov"
+msgstr "\n<b>Vek</b>: %d rokov"

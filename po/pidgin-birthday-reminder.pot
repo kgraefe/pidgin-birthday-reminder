@@ -1,34 +1,33 @@
-# Turkish translation for pidgin-birthday-reminder
-# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
-# This file is distributed under the same license as the pidgin-birthday-reminder package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: pidgin-birthday-reminder\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-28 16:20+0100\n"
-"PO-Revision-Date: 2012-04-07 13:23+0000\n"
-"Last-Translator: kulkke <Unknown>\n"
-"Language-Team: Turkish <tr@li.org>\n"
-"Language: tr\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-10-19 05:56+0000\n"
-"X-Generator: Launchpad (build 16165)\n"
 
 #. Translators: This is in the birthday list. Use %2$02d for day, %1$02d for month and %3$04d for year.
 #: ../src/birthday_list.c:177
 #, c-format
 msgid "%02d/%02d/%04d"
-msgstr "%02d/%02d/%04d"
+msgstr ""
 
 #. Translators: This is in the birthday list. Use %2$02d for day and %1$02d for month.
 #: ../src/birthday_list.c:185
 #, c-format
 msgid "%02d/%02d"
-msgstr "%02d/%02d"
+msgstr ""
 
 #: ../src/birthday_list.c:218
 msgid "Buddy"
@@ -40,16 +39,16 @@ msgstr ""
 
 #: ../src/birthday_list.c:260 ../src/scan.c:168
 msgid "Birthday"
-msgstr "Doğumgünü"
+msgstr ""
 
 #: ../src/birthday_list.c:279
 msgid "Age"
-msgstr "Yaş"
+msgstr ""
 
 #: ../src/birthday_list.c:308 ../src/notification.c:222
 #: ../src/notification.c:233
 msgid "Close"
-msgstr "Kapat"
+msgstr ""
 
 #: ../src/birthday_list.c:319 ../src/notification.c:223
 msgid "Write IM"
@@ -58,7 +57,7 @@ msgstr ""
 #: ../src/birthday_list.c:331
 #, c-format
 msgid "Birthday List (%d)"
-msgstr "Doğumgünü Listesi (%d)"
+msgstr ""
 
 #: ../src/birthday_reminder.c:148 ../src/input.c:111 ../src/notification.c:199
 #: ../src/notification.c:208 ../src/notification.c:220
@@ -76,13 +75,13 @@ msgstr ""
 
 #: ../src/emblems.c:201
 msgid "Could not load icons!\n"
-msgstr "Simgeler yüklenemedi!\n"
+msgstr ""
 
 #. Translators: this is how the birthday appears in an external calendar application (summary). Please display the name in front if possible.
 #: ../src/icsexport.c:219
 #, c-format
 msgid "%s's birthday"
-msgstr "%s kişisinin doğumgünü"
+msgstr ""
 
 #. Translators: this is how the birthday appears in an external calendar application (description with year of birth)
 #: ../src/icsexport.c:226
@@ -110,11 +109,11 @@ msgstr ""
 
 #: ../src/input.c:116
 msgid "OK"
-msgstr "TAMAM"
+msgstr ""
 
 #: ../src/input.c:117
 msgid "Cancel"
-msgstr "İptal"
+msgstr ""
 
 #: ../src/input.c:138
 msgid "Set Birthday"
@@ -165,11 +164,11 @@ msgstr ""
 
 #: ../src/notification.c:203 ../src/notification.c:211
 msgid "Yes"
-msgstr "Evet"
+msgstr ""
 
 #: ../src/notification.c:204 ../src/notification.c:212
 msgid "No"
-msgstr "Hayır"
+msgstr ""
 
 #: ../src/notification.c:209
 msgid "Show overview?"
@@ -237,7 +236,7 @@ msgstr ""
 
 #: ../src/prefs.c:409
 msgid "Show Birthday"
-msgstr "Doğumgününü Göster"
+msgstr ""
 
 #: ../src/prefs.c:429
 msgid "Show days to birthday"
