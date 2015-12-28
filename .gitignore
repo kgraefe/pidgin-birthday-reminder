@@ -12,7 +12,6 @@
 /pidgin-birthday-reminder-*
 /po/Makefile.in.in
 /po/POTFILES
-/po/pidgin-birthday-reminder.pot
 /po/stamp-it
 /src/.deps
 /src/.libs
