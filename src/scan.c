@@ -236,12 +236,62 @@ static void *birthday_reminder_notify_userinfo(
 	return NULL;
 }
 
+#define PROTOCOL_OPTION_ADD 0
+#define PROTOCOL_OPTION_REMOVE 1
+static void protocol_option_helper(gpointer data, gpointer user_data) {
+	GList *e;
+	PurpleAccountOption *option;
+	PurplePlugin *prpl = data;
+	PurplePluginProtocolInfo *prpl_info;
+	int op = GPOINTER_TO_INT(user_data);
+
+	if(!prpl || !prpl->info) {
+		return;
+	}
+
+	prpl_info = PURPLE_PLUGIN_PROTOCOL_INFO(prpl);
+	if(!prpl_info) {
+		return;
+	}
+
+	if(!get_textdomain_by_protocol_id(prpl->info->id)) {
+		return;
+	}
+
+	switch(op) {
+	case PROTOCOL_OPTION_ADD:
+		option = purple_account_option_bool_new(
+			_("Scan birthdays on this account"),
+			"birthday_scan_enabled",
+			TRUE
+		);
+		prpl_info->protocol_options = g_list_append(
+			prpl_info->protocol_options, option
+		);
+		break;
+	
+	case PROTOCOL_OPTION_REMOVE:
+		e = prpl_info->protocol_options;
+		while(e) {
+			option = e->data;
+
+			if(purple_utf8_strcasecmp(
+				option->pref_name, "birthday_scan_enabled"
+			) == 0) {
+				prpl_info->protocol_options = g_list_remove(
+					prpl_info->protocol_options, option
+				);
+				return;
+			}
+
+			e = e->next;
+		}
+		break;
+	}
+}
+
 void init_scan(void) {
 	PurpleNotifyUiOps *ops;
-	GList *iter;
-	PurplePlugin *prpl;
-	PurplePluginProtocolInfo *prpl_info;
-	PurpleAccountOption *option;
 
 	scan_buddies_timeout_handle=0;
 	
@@ -260,33 +310,25 @@ void init_scan(void) {
 		NULL
 	);
 
-	/* Add option to scan birthdays to all supported accounts */
-	for (iter = purple_plugins_get_protocols(); iter; iter = iter->next) {
-		prpl = iter->data;
-		
-		if(prpl && prpl->info) {
-			prpl_info = PURPLE_PLUGIN_PROTOCOL_INFO(prpl);
-			if(
-				prpl_info && prpl->info->id && 
-				get_textdomain_by_protocol_id(prpl->info->id) != NULL
-			) {
-				option = purple_account_option_bool_new(
-					_("Scan birthdays on this account"),
-					"birthday_scan_enabled",
-					TRUE
-				);
-				prpl_info->protocol_options = g_list_append(
-					prpl_info->protocol_options, option
-				);
-			}
-		}
-	}
+	/* Add option to scan birthdays to all supported accounts. */
+	g_list_foreach(
+		purple_plugins_get_protocols(),
+		protocol_option_helper,
+		GINT_TO_POINTER(PROTOCOL_OPTION_ADD)
+	);
 }
 
 void uninit_scan(void) {
 	if(scan_buddies_timeout_handle > 0) {
 		purple_timeout_remove(scan_buddies_timeout_handle);
 	}
+
+	/* Remove option to scan birthdays from all supported accounts. */
+	g_list_foreach(
+		purple_plugins_get_protocols(),
+		protocol_option_helper,
+		GINT_TO_POINTER(PROTOCOL_OPTION_REMOVE)
+	);
 }
 
 /* ex: set noexpandtab: */
