@@ -215,7 +215,7 @@ GtkWidget *get_config_frame(PurplePlugin *plugin) {
 	gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
 
 	label = gtk_label_new("");
-	gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
+	gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 10);
 
 	adjustment = (GtkAdjustment *) gtk_adjustment_new(
 		1.0 * purple_prefs_get_int(
