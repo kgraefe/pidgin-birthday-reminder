@@ -1,6 +1,8 @@
 Version 1.8 (????/??/??):
 	* Add support for SkypeWeb accounts
 	* Update plugin author and website
+	* Add Greek translation
+	* Fix: Remove protocol option when plugin is unloaded
 
 Version 1.7 (2010/09/20):
 	* Do not longer expect ICS file to be well-formed (Bug #614244)
