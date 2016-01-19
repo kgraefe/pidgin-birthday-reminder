@@ -15,10 +15,9 @@ See below for how to compile the source code version into a binary ZIP file.
 
 ## Installation on Linux
 
-To install the plugin on Linux you need to compile it from source:
+To install the plugin on Linux you need to extract a release tarball and compile it from source:
 
     sudo apt-get install pidgin-dev
-    ./autogen.sh
     ./configure
     make
     sudo make install
@@ -27,6 +26,8 @@ To install the plugin on Linux you need to compile it from source:
 installed Pidgin through your package manager, it is most likely installed into
 `/usr` (i.e. `which pidgin` returns `/usr/bin/pidgin`). Use
 `./configure --prefix=/usr` in this case.
+
+**Note:** When you use the repository directly or one of those auto-generated "Source code" archives, you need to run `./autogen.sh` before running `./configure.sh`.
 
 
 ## Building on Windows
