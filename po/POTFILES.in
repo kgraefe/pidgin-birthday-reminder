@@ -13,4 +13,4 @@ src/plugin_actions.c
 src/prefs.c
 src/scan.c
 src/tooltip.c
-
+share/appdata/pidgin-birthday-reminder.metainfo.xml.in

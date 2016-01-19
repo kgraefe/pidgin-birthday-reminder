@@ -1,1 +1,1 @@
-SUBDIRS = sounds pixmaps
+SUBDIRS = sounds pixmaps appdata
