@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-28 16:20+0100\n"
+"POT-Creation-Date: 2016-01-20 00:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -310,4 +310,16 @@ msgstr ""
 msgid ""
 "\n"
 "<b>Age</b>: %d years"
+msgstr ""
+
+#. ex: set noexpandtab:
+#: ../share/appdata/pidgin-birthday-reminder.metainfo.xml.in.h:1
+msgid "Pidgin Birthday Reminder"
+msgstr ""
+
+#: ../share/appdata/pidgin-birthday-reminder.metainfo.xml.in.h:2
+msgid ""
+"Pidgin Birthday Reminder reminds you of your buddies birthdays. Birthdays "
+"can be set by hand or be automatically filled-in for ICQ, MSN and XMPP "
+"protocols."
 msgstr ""
