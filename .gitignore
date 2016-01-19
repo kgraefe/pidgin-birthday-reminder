@@ -44,3 +44,5 @@ Makefile.in
 /missing
 /stamp-h1
 
+/share/appdata/pidgin-birthday-reminder.metainfo.xml
+/po/.intltool-merge-cache
