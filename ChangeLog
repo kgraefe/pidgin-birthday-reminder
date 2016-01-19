@@ -1,3 +1,6 @@
+Version 1.8.1 (????/??/??):
+	* Ship AppStream metainfo file (Bug #3)
+
 Version 1.8 (2015/12/30):
 	* Add support for SkypeWeb accounts
 	* Update plugin author and website
