@@ -47,7 +47,7 @@ Now you can build the plugin:
 ## Contributing
 
 ### Code
-We love patches. :heart: Please fork the project, do your changes and make pull request.
+We love patches. :heart: Please fork the project, do your changes and make a pull request.
 
 ### Translations
 Help translating this project on [Transifex](https://www.transifex.com/projects/p/pidgin-birthday-reminder/).
