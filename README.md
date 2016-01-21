@@ -46,9 +46,10 @@ Now you can build the plugin:
 
 ## Contributing
 
-### Translate the plugin
-Translations are managed at Transifex, please contribute [there](https://www.transifex.com/projects/p/pidgin-birthday-reminder/).
+### Code
+Patches are very welcome. Please fork the project, do your changes and make pull request.
 
-### Contribute code
-Please fork the project, do your changes and make pull request.
+### Translations
+Help translating this project on [Transifex](https://www.transifex.com/projects/p/pidgin-birthday-reminder/).
+
 
