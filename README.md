@@ -44,7 +44,7 @@ Now you can build the plugin:
 
     make -f Makefile.mingw dist
 
-## Contributing
+## Contribution
 
 ### Code
 We love patches. :heart: Please fork the project, do your changes and make a pull request.
