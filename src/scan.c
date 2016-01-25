@@ -159,16 +159,20 @@ static void displaying_userinfo_cb(
 		return;
 	}
 
+	purple_debug_info(PLUGIN_STATIC_NAME, "Scanning %s...\n", who);
+
 	textdomain = get_textdomain_by_protocol_id(
 		purple_account_get_protocol_id(account)
 	);
 	if(!textdomain) {
+		purple_debug_info(PLUGIN_STATIC_NAME, "Aborting: protocol not supported!\n");
 		return;
 	}
 	needle = dgettext(textdomain, "Birthday");
 
 	buddy = purple_find_buddy(account, who);
 	if(!buddy) {
+		purple_debug_info(PLUGIN_STATIC_NAME, "Aborting: Could not find buddy!\n");
 		return;
 	}
 	node = (PurpleBlistNode *)buddy;
@@ -183,10 +187,24 @@ static void displaying_userinfo_cb(
 			purple_notify_user_info_entry_get_label(e),
 			needle
 		) == 0) {
+			purple_debug_info(PLUGIN_STATIC_NAME,
+				"Birthday (string): %s\n",
+				purple_notify_user_info_entry_get_value(e)
+			);
+
 			date = g_date_new();
 			g_date_set_parse(date, purple_notify_user_info_entry_get_value(e));
 
+			purple_debug_info(PLUGIN_STATIC_NAME,
+				"Birthday (GDate): %04d-%02d-%02d\n",
+				g_date_get_month(date),
+				g_date_get_day(date),
+				g_date_get_year(date)
+			);
+
+
 			if(g_date_valid(date)) {
+				purple_debug_info(PLUGIN_STATIC_NAME, "Birthday is valid!\n");
 				purple_blist_node_set_int(
 					node,
 					"birthday_julian",
@@ -194,6 +212,8 @@ static void displaying_userinfo_cb(
 				);
 				automatic_export();
 				check_birthdays(NULL, buddy);
+			} else {
+				purple_debug_info(PLUGIN_STATIC_NAME, "Birthday is not valid!\n");
 			}
 
 			g_date_free(date);
@@ -203,6 +223,8 @@ static void displaying_userinfo_cb(
 
 		l = l->next;
 	}
+
+	purple_debug_info(PLUGIN_STATIC_NAME, "Birthday not found. :~(\n");
 }
 
 static void *birthday_reminder_notify_userinfo(
