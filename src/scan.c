@@ -169,6 +169,7 @@ static void displaying_userinfo_cb(
 		return;
 	}
 	needle = dgettext(textdomain, "Birthday");
+	purple_debug_info(PLUGIN_STATIC_NAME, "needle: %s\n", needle);
 
 	buddy = purple_find_buddy(account, who);
 	if(!buddy) {
@@ -182,6 +183,7 @@ static void displaying_userinfo_cb(
 	l=purple_notify_user_info_get_entries(user_info);
 	while(l) {
 		e = l->data;
+		purple_debug_info(PLUGIN_STATIC_NAME, "hay: %s\n", purple_notify_user_info_entry_get_label(e));
 
 		if(purple_utf8_strcasecmp(
 			purple_notify_user_info_entry_get_label(e),
