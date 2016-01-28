@@ -53,75 +53,66 @@ static const char *get_textdomain_by_protocol_id(const char *protocol_id) {
 	return NULL;
 }
 
-static void scan_buddy(PurpleBuddy *buddy) {
-	PurpleAccount *acc = NULL;
-	PurpleConnection *gc = NULL;
-	PurplePlugin *prpl = NULL;
-	PurplePluginProtocolInfo *prpl_info = NULL;
-	const char *name = NULL;
-
-	if(!buddy) {
-		return;
-	}
-	
-	acc = buddy->account;
-	if(!acc) {
-		return;
-	}
-
-	if(!get_textdomain_by_protocol_id(purple_account_get_protocol_id(acc))) {
-		return;
-	}
-
-	if(!purple_account_get_bool(acc, "birthday_scan_enabled", TRUE)) {
-		return;
-	}
-
-	gc = acc->gc;
-	if(!gc) {
-		return;
-	}
-	
-	prpl = purple_connection_get_prpl(gc);
-	if(!prpl) {
-		return;
-	}
-	
-	prpl_info = PURPLE_PLUGIN_PROTOCOL_INFO(prpl);
-	if(!prpl_info || !prpl_info->get_info) {
-		return;
-	}
-	
-	name = buddy->name;
-	if(!name) {
-		return;
-	}
-
-	current_scanned_buddy = buddy;
-	prpl_info->get_info(gc, name);
-}
-
 static gboolean scan_next_buddy(gpointer data) {
 	PurpleBlistNode *node;
+	PurpleBuddy *buddy;
+	PurpleAccount *acc;
+	PurplePlugin *prpl;
+	PurplePluginProtocolInfo *prpl_info;
+	int last_scan_julian, pivot_date_julian;
+	GDate pivot_date;
+
+	/* Let's rescan buddies if the last scan was more than 3 months ago. */
+	g_date_set_time_t(&pivot_date, time(NULL));
+	g_date_subtract_months(&pivot_date, 3);
+	pivot_date_julian = g_date_get_julian(&pivot_date);
 
 	purple_timeout_remove(scan_buddies_timeout_handle);
 	scan_buddies_timeout_handle = 0;
 
 	current_scanned_buddy = NULL;
-	node = purple_blist_get_root();
-	while(node && !current_scanned_buddy) {
-		if(
-			PURPLE_BLIST_NODE_IS_BUDDY(node) &&
-			!purple_blist_node_get_int(node, "birthday_julian") &&
-			!purple_blist_node_get_bool(node, "birthday_scanned") &&
-			purple_account_is_connected(((PurpleBuddy *)node)->account)
-		) {
-			scan_buddy((PurpleBuddy *)node);
+	for(
+		node = purple_blist_get_root();
+		node && !current_scanned_buddy;
+		node = purple_blist_node_next(node, TRUE)
+	) {
+		if(!PURPLE_BLIST_NODE_IS_BUDDY(node)) {
+			continue;
 		}
-		node = purple_blist_node_next(node, TRUE);
-	}
+		buddy = (PurpleBuddy *)node;
 
-	if(current_scanned_buddy) {
+		last_scan_julian = purple_blist_node_get_int(node, "birthday_last_scan");
+		if(last_scan_julian != 0 && last_scan_julian >= pivot_date_julian) {
+			continue;
+		}
+
+		acc = buddy->account;
+		if(
+			!purple_account_is_connected(acc) ||
+			!purple_account_get_bool(acc, "birthday_scan_enabled", TRUE) ||
+			!acc->gc ||
+			!get_textdomain_by_protocol_id(purple_account_get_protocol_id(acc))
+		) {
+			continue;
+		}
+
+		prpl = purple_connection_get_prpl(acc->gc);
+		if(!prpl) {
+			continue;
+		}
+
+		prpl_info = PURPLE_PLUGIN_PROTOCOL_INFO(prpl);
+		if(!prpl_info || !prpl_info->get_info) {
+			continue;
+		}
+
+		if(!buddy->name) {
+			continue;
+		}
+
+		current_scanned_buddy = buddy;
+		prpl_info->get_info(acc->gc, buddy->name);
+
 		purple_debug_info(PLUGIN_STATIC_NAME,
 			/* Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name. */
 			_("Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"),
@@ -129,14 +120,16 @@ static gboolean scan_next_buddy(gpointer data) {
 			purple_account_get_username(current_scanned_buddy->account),
 			purple_account_get_protocol_name(current_scanned_buddy->account)
 		);
-	} else {
-		purple_debug_info(PLUGIN_STATIC_NAME, _("No more buddies to scan.\n"));
-		scan_buddies_timeout_handle = purple_timeout_add_seconds(
-			SCAN_BUDDIES_TIMEOUT_SECONDS, scan_next_buddy, NULL
-		);
+
+		return FALSE; /* Stop the timer */
 	}
 
-	return FALSE;
+	purple_debug_info(PLUGIN_STATIC_NAME, _("No more buddies to scan.\n"));
+	scan_buddies_timeout_handle = purple_timeout_add_seconds(
+		SCAN_BUDDIES_TIMEOUT_SECONDS, scan_next_buddy, NULL
+	);
+
+	return FALSE; /* Stop the timer */
 }
 
 static void displaying_userinfo_cb(
@@ -152,6 +145,9 @@ static void displaying_userinfo_cb(
 
 	GList *l;
 	GDate *date;
+	GDate today;
+	int today_julian;
+
 
 	if(!account || !who) {
 		return;
@@ -171,7 +167,9 @@ static void displaying_userinfo_cb(
 	}
 	node = (PurpleBlistNode *)buddy;
 
-	purple_blist_node_set_bool(node, "birthday_scanned", TRUE);
+	g_date_set_time_t(&today, time(NULL));
+	today_julian = g_date_get_julian(&today);
+	purple_blist_node_set_int(node, "birthday_last_scan", today_julian);
 
 	l=purple_notify_user_info_get_entries(user_info);
 	while(l) {
