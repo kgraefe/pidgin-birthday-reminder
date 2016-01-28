@@ -39,21 +39,18 @@ static void *(*notify_userinfo_ori)(
 );
 static PurpleBuddy *current_scanned_buddy;
 
-static const char *get_textdomain_by_protocol_id(const char *protocol_id) {
+static gboolean protocol_is_supported(const char *protocol_id) {
 	if(
 		purple_utf8_strcasecmp(protocol_id, "prpl-icq") == 0 ||
 		purple_utf8_strcasecmp(protocol_id, "prpl-aim") == 0 ||
 		purple_utf8_strcasecmp(protocol_id, "prpl-msn") == 0 ||
-		purple_utf8_strcasecmp(protocol_id, "prpl-jabber") == 0
+		purple_utf8_strcasecmp(protocol_id, "prpl-jabber") == 0 ||
+		purple_utf8_strcasecmp(protocol_id, "prpl-skypeweb") == 0
 	) {
-		return "pidgin";
+		return TRUE;
 	}
 
-	if(purple_utf8_strcasecmp(protocol_id, "prpl-skypeweb") == 0) {
-		return "skype4pidgin";
-	}
-
-	return NULL;
+	return FALSE;
 }
 
 static void scan_buddy(PurpleBuddy *buddy) {
@@ -72,7 +69,7 @@ static void scan_buddy(PurpleBuddy *buddy) {
 		return;
 	}
 
-	if(!get_textdomain_by_protocol_id(purple_account_get_protocol_id(acc))) {
+	if(!protocol_is_supported(purple_account_get_protocol_id(acc))) {
 		return;
 	}
 
@@ -149,8 +146,8 @@ static void displaying_userinfo_cb(
 	PurpleNotifyUserInfoEntry *e;
 	PurpleBlistNode *node;
 	PurpleBuddy *buddy;
-	const char *textdomain;
-	const char *needle;
+	const char *needle, *needle_translated;
+	const char *label;
 
 	GList *l;
 	GDate *date;
@@ -161,15 +158,15 @@ static void displaying_userinfo_cb(
 
 	purple_debug_info(PLUGIN_STATIC_NAME, "Scanning %s...\n", who);
 
-	textdomain = get_textdomain_by_protocol_id(
-		purple_account_get_protocol_id(account)
-	);
-	if(!textdomain) {
+	if(!protocol_is_supported(purple_account_get_protocol_id(account))) {
 		purple_debug_info(PLUGIN_STATIC_NAME, "Aborting: protocol not supported!\n");
 		return;
 	}
-	needle = dgettext(textdomain, "Birthday");
+	needle = "Birthday";
 	purple_debug_info(PLUGIN_STATIC_NAME, "needle: **%s**\n", needle);
+
+	needle_translated = dgettext("pidgin", needle);
+	purple_debug_info(PLUGIN_STATIC_NAME, "needle_translated: **%s**\n", needle_translated);
 
 	buddy = purple_find_buddy(account, who);
 	if(!buddy) {
@@ -183,12 +180,14 @@ static void displaying_userinfo_cb(
 	l=purple_notify_user_info_get_entries(user_info);
 	while(l) {
 		e = l->data;
-		purple_debug_info(PLUGIN_STATIC_NAME, "hay: **%s**\n", purple_notify_user_info_entry_get_label(e));
 
-		if(purple_utf8_strcasecmp(
-			purple_notify_user_info_entry_get_label(e),
-			needle
-		) == 0) {
+		label = purple_notify_user_info_entry_get_label(e);
+		purple_debug_info(PLUGIN_STATIC_NAME, "hay: **%s**\n", label);
+
+		if(
+			purple_utf8_strcasecmp(label, needle_translated) == 0 ||
+			purple_utf8_strcasecmp(label, needle) == 0
+		) {
 			purple_debug_info(PLUGIN_STATIC_NAME,
 				"Birthday (string): %s\n",
 				purple_notify_user_info_entry_get_value(e)
@@ -278,7 +277,7 @@ static void protocol_option_helper(gpointer data, gpointer user_data) {
 		return;
 	}
 
-	if(!get_textdomain_by_protocol_id(prpl->info->id)) {
+	if(!protocol_is_supported(prpl->info->id)) {
 		return;
 	}
 
