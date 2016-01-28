@@ -44,13 +44,10 @@ static const char *get_textdomain_by_protocol_id(const char *protocol_id) {
 		purple_utf8_strcasecmp(protocol_id, "prpl-icq") == 0 ||
 		purple_utf8_strcasecmp(protocol_id, "prpl-aim") == 0 ||
 		purple_utf8_strcasecmp(protocol_id, "prpl-msn") == 0 ||
-		purple_utf8_strcasecmp(protocol_id, "prpl-jabber") == 0
+		purple_utf8_strcasecmp(protocol_id, "prpl-jabber") == 0 ||
+		purple_utf8_strcasecmp(protocol_id, "prpl-skypeweb") == 0
 	) {
 		return "pidgin";
-	}
-
-	if(purple_utf8_strcasecmp(protocol_id, "prpl-skypeweb") == 0) {
-		return "skype4pidgin";
 	}
 
 	return NULL;
@@ -151,6 +148,7 @@ static void displaying_userinfo_cb(
 	PurpleBuddy *buddy;
 	const char *textdomain;
 	const char *needle;
+	const char *label;
 
 	GList *l;
 	GDate *date;
@@ -179,10 +177,12 @@ static void displaying_userinfo_cb(
 	while(l) {
 		e = l->data;
 
-		if(purple_utf8_strcasecmp(
-			purple_notify_user_info_entry_get_label(e),
-			needle
-		) == 0) {
+		label = purple_notify_user_info_entry_get_label(e);
+
+		if(
+			purple_utf8_strcasecmp(label, needle) == 0 ||
+			purple_utf8_strcasecmp(label, "Birthday") == 0
+		) {
 			date = g_date_new();
 			g_date_set_parse(date, purple_notify_user_info_entry_get_value(e));
 
