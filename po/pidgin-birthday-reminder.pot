@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-20 00:04+0100\n"
+"POT-Creation-Date: 2017-01-18 00:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "Days to birthday"
 msgstr ""
 
-#: ../src/birthday_list.c:260 ../src/scan.c:168
+#: ../src/birthday_list.c:260 ../src/scan.c:162
 msgid "Birthday"
 msgstr ""
 
@@ -255,22 +255,22 @@ msgid "Export to file"
 msgstr ""
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
-#: ../src/scan.c:130
+#: ../src/scan.c:118
 #, c-format
 msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
 msgstr ""
 
-#: ../src/scan.c:136
+#: ../src/scan.c:127
 msgid "No more buddies to scan.\n"
 msgstr ""
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name and %3$s for the protocol name.
-#: ../src/scan.c:222
+#: ../src/scan.c:220
 #, c-format
 msgid "Buddy %s (Account: %s (%s)) scanned.\n"
 msgstr ""
 
-#: ../src/scan.c:264
+#: ../src/scan.c:262
 msgid "Scan birthdays on this account"
 msgstr ""
 
