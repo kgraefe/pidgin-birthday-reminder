@@ -4,7 +4,7 @@ EXTRA_DIST = \
 	Makefile.mingw \
 	src/Makefile.mingw \
 	po/Makefile.mingw \
-	scripts/gen_mingw_config_h.sh \
+	scripts/gen-mingw-config_h.sh \
 	src/internal.h \
 	src/birthday_access.h \
 	src/birthday_list.h \
