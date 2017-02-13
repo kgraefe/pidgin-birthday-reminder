@@ -1,21 +1,14 @@
 #! /bin/sh
+
 set +x
+set -e
 
-test -f VERSION || exit
-test -f configure.ac.in || exit
-test -f COPYING || exit
+test -f VERSION
+test -f COPYING
 
-languages=""
-for f in po/*.po
-do test -f $f && languages="$languages $(basename $f .po)"
-done
-
-sed \
-    -e "s/@@VERSION@@/$(./scripts/gen-version.sh)/" \
-    -e "s/@@LANGUAGES@@/$(echo $languages)/" \
-configure.ac.in >configure.ac || exit
+./scripts/gen-configure_ac.sh
 
 mkdir -p m4
-intltoolize --force --copy --automake || exit 1
-autoreconf --force --install --verbose || exit 1
+intltoolize --force --copy --automake
+autoreconf --force --install --verbose
 
