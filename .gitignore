@@ -17,6 +17,7 @@
 /src/.libs
 /m4/
 /win32-install-dir
+/.stamp*
 
 
 Makefile

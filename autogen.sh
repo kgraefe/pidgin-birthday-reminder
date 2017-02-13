@@ -11,7 +11,7 @@ do test -f $f && languages="$languages $(basename $f .po)"
 done
 
 sed \
-    -e "s/@@VERSION@@/$(cat VERSION)/" \
+    -e "s/@@VERSION@@/$(./scripts/gen-version.sh)/" \
     -e "s/@@LANGUAGES@@/$(echo $languages)/" \
 configure.ac.in >configure.ac || exit
 

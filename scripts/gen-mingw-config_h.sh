@@ -11,7 +11,7 @@ PLUGIN_AUTHOR=$(grep 'PLUGIN_AUTHOR' $CONFIGURE_AC | cut -d\" -f2)
 PLUGIN_ID=$(grep 'PLUGIN_ID' $CONFIGURE_AC | cut -d\" -f2)
 PLUGIN_STATIC_NAME=$(grep 'PLUGIN_STATIC_NAME' $CONFIGURE_AC | cut -d\" -f2)
 PLUGIN_WEBSITE=$(grep 'PLUGIN_WEBSITE' $CONFIGURE_AC | cut -d\" -f2)
-PLUGIN_VERSION=$(cat VERSION)
+PLUGIN_VERSION=$(./scripts/gen-version.sh)
 
 
 cat << EOF
