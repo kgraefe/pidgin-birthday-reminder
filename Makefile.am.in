@@ -1,0 +1,13 @@
+EXTRA_DIST = \
+	@@HEADERFILES@@ \
+	CHANGES.md \
+	VERSION \
+	scripts/gen-mingw-config_h.sh \
+	scripts/gen-version.sh \
+	src/Makefile.mingw \
+	po/Makefile.mingw \
+	Makefile.mingw
+
+SUBDIRS = src po share
+
+ACLOCAL_AMFLAGS=-I m4
