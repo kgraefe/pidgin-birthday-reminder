@@ -1,5 +1,5 @@
 EXTRA_DIST = \
-	ChangeLog \
+	CHANGES.md \
 	VERSION \
 	Makefile.mingw \
 	src/Makefile.mingw \
