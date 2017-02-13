@@ -51,5 +51,3 @@ We love patches. :heart: Please fork the project, do your changes and make a pul
 
 ### Translations
 Help translating this project on [Transifex](https://www.transifex.com/projects/p/pidgin-birthday-reminder/).
-
-![Transifex Statistics](https://www.transifex.com/projects/p/pidgin-birthday-reminder/resource/base/chart/image_png)
