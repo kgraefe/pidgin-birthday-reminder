@@ -69,5 +69,5 @@ clean:
 	rm -f config.h
 	rm -rf win32-install-dir
 	rm -f $(PLUGIN_WIN32_ZIP)
-	test -f configure.ac.in && rm -f configure.ac
+	test -f configure.ac.in && rm -f configure.ac || true
 
