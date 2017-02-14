@@ -1,6 +1,6 @@
 # Pidgin Birthday Reminder Changes
 
-## Version 1.10 (2016-02-14)
+## Version 1.10 (2017-02-14)
 - Add Lithuanian language file
 
 ## Version 1.9 (2016-02-01)
