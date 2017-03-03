@@ -98,6 +98,7 @@ void notify(gint days_to_birthday, PurpleBuddy *birthday_buddy) {
 	const gchar *alias;
 	gint age;
 	GDate date;
+	gchar *strAge = NULL;
 
 	if(purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/reminder/sound/play")) {
 		play_sound_before_days = purple_prefs_get_int(
@@ -146,12 +147,30 @@ void notify(gint days_to_birthday, PurpleBuddy *birthday_buddy) {
 			days_to_birthday = get_days_to_birthday_from_node(node);
 	
 			get_birthday_from_node(node, &date);
+
+			if(days_to_birthday > 0) {
+				age += 1;
+			}
+			strAge = g_strdup_printf(
+				/* Translators: This creates the age of a buddy which is
+				 *              used in several strings that may contain
+				 *              another number. I will refer to this string
+				 *              as {age} in the comments. Hopefully that
+				 *              works for all languages. Please come back to
+				 *              me if not.
+				 */
+				ngettext("%d year", "%d years", age),
+				age
+			);
 	
 			if(days_to_birthday == 0) {
 				if(g_date_get_year(&date) > 1900) {
 					msg = g_strdup_printf(
-						_("%s will be %d years old today! Hooray!"),
-						alias, age
+						/* Translators: The first string is the buddies alias
+						 *              name. The second string is his {age}.
+						 */
+						_("%s will be %s old today! Hooray!"),
+						alias, strAge
 					);
 				} else {
 					msg = g_strdup_printf(
@@ -162,8 +181,11 @@ void notify(gint days_to_birthday, PurpleBuddy *birthday_buddy) {
 			} else if(days_to_birthday == 1) {
 				if(g_date_get_year(&date) > 1900) {
 					msg = g_strdup_printf(
-						_("%s will be %d years old tomorrow!"),
-						alias, age + 1
+						/* Translators: The first string is the buddies alias
+						 *              name. The second string is his {age}.
+						 */
+						_("%s will be %s old tomorrow!"),
+						alias, strAge
 					);
 				} else {
 					msg = g_strdup_printf(
@@ -174,12 +196,24 @@ void notify(gint days_to_birthday, PurpleBuddy *birthday_buddy) {
 			} else {
 				if(g_date_get_year(&date) > 1900) {
 					msg = g_strdup_printf(
-						_("%s will be %d years old in %d days!"),
-						alias, age + 1, days_to_birthday
+						ngettext(
+							/* Translators: The first string is the buddies
+							 *              alias name. The second string is his
+							 *              {age}.
+							 */
+							"%s will be %s old in %d day!",
+							"%s will be %s old in %d days!",
+							days_to_birthday
+						),
+						alias, strAge, days_to_birthday
 					);
 				} else {
 					msg = g_strdup_printf(
-						_("%s's birthday is in %d days!"),
+						ngettext(
+							"%s's birthday is in %d day!",
+							"%s's birthday is in %d days!",
+							days_to_birthday
+						),
 						alias, days_to_birthday
 					);
 				}
@@ -243,6 +277,9 @@ void notify(gint days_to_birthday, PurpleBuddy *birthday_buddy) {
 		purple_blist_set_visible(TRUE);
 	}
 
+	if(strAge) {
+		g_free(strAge);
+	}
 	if(msg) {
 		g_free(msg);
 	}

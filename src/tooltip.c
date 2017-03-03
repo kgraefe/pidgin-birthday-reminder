@@ -31,6 +31,7 @@ extern PurplePlugin *plugin;
 static void drawing_tooltip_cb(PurpleBlistNode *node, GString *str, gboolean full, void *data) {
 	GDate date;
 	gint days_to_birthday;
+	gint age;
 
 	get_birthday_from_node(node, &date);
 	if(g_date_valid(&date)) {
@@ -64,7 +65,11 @@ static void drawing_tooltip_cb(PurpleBlistNode *node, GString *str, gboolean ful
 					g_string_append_printf(str, _(" (<b>Tomorrow!</b>)"));
 				} else {
 					g_string_append_printf(str,
-						_(" (in %d days)"),
+						ngettext(
+							" (in %d day)",
+							" (in %d days)",
+							days_to_birthday
+						),
 						days_to_birthday
 					);
 				}
@@ -73,9 +78,14 @@ static void drawing_tooltip_cb(PurpleBlistNode *node, GString *str, gboolean ful
 
 		if(purple_prefs_get_bool(PLUGIN_PREFS_PREFIX "/tooltip/show_age")) {
 			if(g_date_get_year(&date) > 1900) {
+				age = get_age_from_node(node);
 				g_string_append_printf(str,
-					_("\n<b>Age</b>: %d years"),
-					get_age_from_node(node)
+					ngettext(
+						"\n<b>Age</b>: %d year",
+						"\n<b>Age</b>: %d years",
+						age
+					),
+					age
 				);
 			}
 		}
