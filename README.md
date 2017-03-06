@@ -1,5 +1,6 @@
 # Pidgin Birthday Reminder
 
+[![License](https://img.shields.io/badge/License-GPLv2-blue.svg?style=flat)](COPYING)
 [![Download](https://img.shields.io/badge/Download-Latest_Release-brightgreen.svg?style=flat)](https://github.com/kgraefe/pidgin-birthday-reminder/releases/latest)
 
 [![Screenshot 1](https://cloud.githubusercontent.com/assets/3797324/11967672/16ac8a7c-a905-11e5-9e58-7b3bc856330a.png)](https://cloud.githubusercontent.com/assets/3797324/11967670/16aaf504-a905-11e5-9fca-3764fed95c39.png)
