@@ -3,104 +3,104 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Moo, 2016-2017
+# Piotr Drąg <piotrdrag@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Pidgin Birthday Reminder\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-03 21:58+0100\n"
-"PO-Revision-Date: 2017-03-03 22:23+0000\n"
-"Last-Translator: Moo\n"
-"Language-Team: Lithuanian (http://www.transifex.com/kgraefe/pidgin-birthday-reminder/language/lt/)\n"
+"PO-Revision-Date: 2017-03-04 06:34+0000\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
+"Language-Team: Polish (http://www.transifex.com/kgraefe/pidgin-birthday-reminder/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lt\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>=14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #. Translators: This is in the birthday list. Use %2$02d for day, %1$02d for
 #. month and %3$04d for year.
 #: ../src/birthday_list.c:177
 #, c-format
 msgid "%02d/%02d/%04d"
-msgstr "%02d/%02d/%04d"
+msgstr "%02d.%02d.%04d"
 
 #. Translators: This is in the birthday list. Use %2$02d for day and %1$02d
 #. for month.
 #: ../src/birthday_list.c:185
 #, c-format
 msgid "%02d/%02d"
-msgstr "%02d/%02d"
+msgstr "%02d.%02d"
 
 #: ../src/birthday_list.c:218
 msgid "Buddy"
-msgstr "Bičiulis"
+msgstr "Znajomy"
 
 #: ../src/birthday_list.c:241
 msgid "Days to birthday"
-msgstr "Dienų iki gimtadienio"
+msgstr "Dni do urodzin"
 
 #: ../src/birthday_list.c:260 ../src/scan.c:162
 msgid "Birthday"
-msgstr "Gimtadienis"
+msgstr "Urodziny"
 
 #: ../src/birthday_list.c:279
 msgid "Age"
-msgstr "Amžius"
+msgstr "Wiek"
 
 #: ../src/birthday_list.c:308 ../src/notification.c:256
 #: ../src/notification.c:267
 msgid "Close"
-msgstr "Užverti"
+msgstr "Zamknij"
 
 #: ../src/birthday_list.c:319 ../src/notification.c:257
 msgid "Write IM"
-msgstr "Rašyti žinutę"
+msgstr "Napisz wiadomość"
 
 #: ../src/birthday_list.c:331
 #, c-format
 msgid "Birthday List (%d)"
-msgstr "Gimtadienių sąrašas (%d)"
+msgstr "Lista urodzin (%d)"
 
 #: ../src/birthday_reminder.c:148 ../src/input.c:111 ../src/notification.c:233
 #: ../src/notification.c:242 ../src/notification.c:254
 #: ../src/notification.c:265
 msgid "Birthday Reminder"
-msgstr "Gimtadienių priminimai"
+msgstr "Przypomnienia o urodzinach"
 
 #: ../src/birthday_reminder.c:149
 msgid "Reminds you of the birthday of your buddies. :o)"
-msgstr "Primena jums apie jūsų bičiulių gimtadienius. :o)"
+msgstr "Przypomina o urodzinach znajomych. :o)"
 
 #: ../src/birthday_reminder.c:150
 msgid ""
 "This Plugin shall keep track and remind you of your buddies' birthdays."
-msgstr "Šis papildinys turėtų sekti ir priminti jums apie jūsų bičiulių gimtadienius."
+msgstr "Ta wtyczka przypomina o urodzinach znajomych."
 
 #: ../src/emblems.c:201
 msgid "Could not load icons!\n"
-msgstr "Nepavyko įkelti piktogramų!\n"
+msgstr "Nie można wczytać ikon.\n"
 
 #. Translators: this is how the birthday appears in an external calendar
 #. application (summary). Please display the name in front if possible.
 #: ../src/icsexport.c:219
 #, c-format
 msgid "%s's birthday"
-msgstr "Bičiulio %s gimtadienis"
+msgstr "%s ma urodziny"
 
 #. Translators: this is how the birthday appears in an external calendar
 #. application (description with year of birth)
 #: ../src/icsexport.c:226
 #, c-format
 msgid "Birthday of %s, born in %04i"
-msgstr "Bičiulio %s, gimusio(-ios) %04i, gimtadienis"
+msgstr "%s ma urodziny (rok urodzenia: %04i)"
 
 #. Translators: this is how the birthday appears in an external calendar
 #. application (description without year of birth)
 #: ../src/icsexport.c:234
 #, c-format
 msgid "Birthday of %s"
-msgstr "Bičiulio %s gimtadienis"
+msgstr "%s ma urodziny"
 
 #: ../src/input.c:99
 #, c-format
@@ -108,28 +108,28 @@ msgid ""
 "Use the following format: %s .\n"
 "Blank out the input field to clear the BDay.\n"
 "Use a year before 1900 if you do not know."
-msgstr "Naudokite šį formatą: %s .\nIštrinkite įvesties lauką, kad išvalytumėte gimtadienį.\nJeigu nežinote, naudokite metus iki 1900-ųjų."
+msgstr "Należy użyć formatu: %s .\nUsunięcie pola wyczyści urodziny.\nNależy wpisać rok wcześniejszy niż 1900, jeśli nie jest znany."
 
 #: ../src/input.c:112
 msgid "Set Birthday:"
-msgstr "Nustatykite gimtadienį:"
+msgstr "Ustawienie urodzin:"
 
 #: ../src/input.c:116
 msgid "OK"
-msgstr "Gerai"
+msgstr "OK"
 
 #: ../src/input.c:117
 msgid "Cancel"
-msgstr "Atsisakyti"
+msgstr "Anuluj"
 
 #: ../src/input.c:138
 msgid "Set Birthday"
-msgstr "Nustatyti gimtadienį"
+msgstr "Ustaw urodziny"
 
 #: ../src/notification.c:84
 #, c-format
 msgid "Sound file (%s) does not exist.\n"
-msgstr "Garso failo (%s) nėra.\n"
+msgstr "Plik dźwięku (%s) nie istnieje.\n"
 
 #. Translators: This creates the age of a buddy which is
 #.              used in several strings that may contain
@@ -141,33 +141,34 @@ msgstr "Garso failo (%s) nėra.\n"
 #, c-format
 msgid "%d year"
 msgid_plural "%d years"
-msgstr[0] "%d metai"
-msgstr[1] "%d metai"
-msgstr[2] "%d metų"
+msgstr[0] "%d rok"
+msgstr[1] "%d lata"
+msgstr[2] "%d lat"
+msgstr[3] "%d lat"
 
 #. Translators: The first string is the buddies alias
 #.              name. The second string is his {age}.
 #: ../src/notification.c:172
 #, c-format
 msgid "%s will be %s old today! Hooray!"
-msgstr "%s šiandien sukaks %s! Valio!"
+msgstr "%s będzie dzisiaj mieć %s! Hurra!"
 
 #: ../src/notification.c:177
 #, c-format
 msgid "It's %s's birthday today! Hooray!"
-msgstr "Šiandien bičiulio %s gimtadienis! Valio!"
+msgstr "%s ma dzisiaj urodziny! Hurra!"
 
 #. Translators: The first string is the buddies alias
 #.              name. The second string is his {age}.
 #: ../src/notification.c:187
 #, c-format
 msgid "%s will be %s old tomorrow!"
-msgstr "%s rytoj sukaks %s!"
+msgstr "%s będzie jutro mieć %s!"
 
 #: ../src/notification.c:192
 #, c-format
 msgid "%s's birthday is tomorrow!"
-msgstr "Rytoj bičiulio %s gimtadienis!"
+msgstr "%s ma jutro urodziny!"
 
 #. Translators: The first string is the buddies
 #.              alias name. The second string is his
@@ -176,139 +177,141 @@ msgstr "Rytoj bičiulio %s gimtadienis!"
 #, c-format
 msgid "%s will be %s old in %d day!"
 msgid_plural "%s will be %s old in %d days!"
-msgstr[0] "%s po %d dienos sukaks %s!"
-msgstr[1] "%s po %d dienų sukaks %s!"
-msgstr[2] "%s po %d dienų sukaks %s!"
+msgstr[0] "%s będzie mieć %s za %d dzień!"
+msgstr[1] "%s będzie mieć %s za %d dni!"
+msgstr[2] "%s będzie mieć %s za %d dni!"
+msgstr[3] "%s będzie mieć %s za %d dni!"
 
 #: ../src/notification.c:213
 #, c-format
 msgid "%s's birthday is in %d day!"
 msgid_plural "%s's birthday is in %d days!"
-msgstr[0] "Po %d dienos bus %s gimtadienis!"
-msgstr[1] "Po %d dienų bus %s gimtadienis!"
-msgstr[2] "Po %d dienų bus %s gimtadienis!"
+msgstr[0] "%s ma urodziny za %d dzień!"
+msgstr[1] "%s ma urodziny za %d dni!"
+msgstr[2] "%s ma urodziny za %d dni!"
+msgstr[3] "%s ma urodziny za %d dni!"
 
 #: ../src/notification.c:222
 msgid "There are birthdays in the next days! Hooray!"
-msgstr "Artimiausiomis dienomis bus gimtadienių! Valio!"
+msgstr "Niedługo są czyjeś urodziny! Hurra!"
 
 #: ../src/notification.c:234
 msgid "Write IM?"
-msgstr "Rašyti žinutę?"
+msgstr "Napisać wiadomość?"
 
 #: ../src/notification.c:237 ../src/notification.c:245
 msgid "Yes"
-msgstr "Taip"
+msgstr "Tak"
 
 #: ../src/notification.c:238 ../src/notification.c:246
 msgid "No"
-msgstr "Ne"
+msgstr "Nie"
 
 #: ../src/notification.c:243
 msgid "Show overview?"
-msgstr "Rodyti apžvalgą?"
+msgstr "Wyświetlić przegląd?"
 
 #: ../src/notification.c:268
 msgid "Overview"
-msgstr "Apžvalga"
+msgstr "Przegląd"
 
 #: ../src/plugin_actions.c:49 ../src/prefs.c:121
 msgid "Save birthday list as..."
-msgstr "Įrašyti gimtadienių sąrašą kaip..."
+msgstr "Zapisz listę urodzin jako…"
 
 #: ../src/plugin_actions.c:63 ../src/prefs.c:135
 msgid "iCalendar files"
-msgstr "iCalendar failai"
+msgstr "Pliki iCalendar"
 
 #: ../src/plugin_actions.c:91
 msgid "Check Birthdays"
-msgstr "Tikrinti gimtadienius"
+msgstr "Sprawdź urodziny"
 
 #: ../src/plugin_actions.c:97
 msgid "Show birthday list"
-msgstr "Rodyti gimtadienių sąrašą"
+msgstr "Wyświetl listę urodzin"
 
 #: ../src/plugin_actions.c:103
 msgid "Export birthday list"
-msgstr "Eksportuoti gimtadienių sąrašą"
+msgstr "Wyeksportuj listę urodzin"
 
 #: ../src/prefs.c:182
 msgid "Reminder"
-msgstr "Priminimai"
+msgstr "Przypomnienie"
 
 #: ../src/prefs.c:190
 msgid "Remind just once a day"
-msgstr "Priminti tik kartą per dieną"
+msgstr "Przypominanie tylko raz dziennie"
 
 #: ../src/prefs.c:202
 msgid "Show birthday icons in the buddy list"
-msgstr "Rodyti bičiulių sąraše gimtadienio piktogramas"
+msgstr "Ikony urodzin na liście znajomych"
 
 #: ../src/prefs.c:241 ../src/prefs.c:284 ../src/prefs.c:328 ../src/prefs.c:371
 msgid "days before birthday"
-msgstr "dienas prieš gimtadienį"
+msgstr "dni przed urodzinami"
 
 #: ../src/prefs.c:245
 msgid "Show mini dialog in the buddy list"
-msgstr "Rodyti mažą dialogą bičiulių sąraše"
+msgstr "Małe okno na liście znajomych"
 
 #: ../src/prefs.c:287
 msgid "Show notification"
-msgstr "Rodyti pranešimą"
+msgstr "Powiadomienie"
 
 #: ../src/prefs.c:331
 msgid "Play sound"
-msgstr "Groti garsą"
+msgstr "Dźwięk"
 
 #: ../src/prefs.c:375
 msgid "You have muted sounds in Pidgin!"
-msgstr "Jūs esate nutildę garsus programoje Pidgin!"
+msgstr "Wyciszono dźwięki programu Pidgin."
 
 #: ../src/prefs.c:403
 msgid "Tooltip"
-msgstr "Paaiškinimai"
+msgstr "Wskazówka"
 
 #: ../src/prefs.c:409
 msgid "Show Birthday"
-msgstr "Rodyti gimtadienį"
+msgstr "Urodziny"
 
 #: ../src/prefs.c:429
 msgid "Show days to birthday"
-msgstr "Rodyti kiek dienų liko iki gimtadienio"
+msgstr "Dni do urodzin"
 
 #: ../src/prefs.c:450
 msgid "Show Age"
-msgstr "Rodyti amžių"
+msgstr "Wiek"
 
 #: ../src/prefs.c:466
 msgid "iCalendar Export"
-msgstr "iCalendar eksportavimas"
+msgstr "Eksport do pliku iCalendar"
 
 #: ../src/prefs.c:472
 msgid "Export to file"
-msgstr "Eksportuoti į failą"
+msgstr "Wyeksportuj do pliku"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name
 #. and %3$s for the protocol name.
 #: ../src/scan.c:118
 #, c-format
 msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
-msgstr "Peržiūrimas bičiulis %s (Paskyra: %s (%s)). Laukiama atsakymo...\n"
+msgstr "Skanowanie znajomego „%s” (konto: %s (%s)). Oczekiwanie na odpowiedź…\n"
 
 #: ../src/scan.c:127
 msgid "No more buddies to scan.\n"
-msgstr "Daugiau nėra bičiulių, kuriuos peržiūrėti.\n"
+msgstr "Nie ma więcej znajomych do skanowania.\n"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name
 #. and %3$s for the protocol name.
 #: ../src/scan.c:220
 #, c-format
 msgid "Buddy %s (Account: %s (%s)) scanned.\n"
-msgstr "Bičiulis %s (Paskyra: %s (%s)) peržiūrėtas.\n"
+msgstr "Przeskanowano znajomego „%s” (konto: %s (%s)).\n"
 
 #: ../src/scan.c:262
 msgid "Scan birthdays on this account"
-msgstr "Peržiūrėti gimtadienius šioje paskyroje"
+msgstr "Skanuj urodziny na tym koncie"
 
 #. Translators: to use an other order of the arguments use %2$02d for day,
 #. %1$02d for month and %3$04d for year
@@ -317,7 +320,7 @@ msgstr "Peržiūrėti gimtadienius šioje paskyroje"
 msgid ""
 "\n"
 "<b>Birthday</b>: %02d/%02d/%04d"
-msgstr "\n<b>Gimtadienis</b>: %02d/%02d/%04d"
+msgstr "\n<b>Urodziny</b>: %02d.%02d.%04d"
 
 #. Translators: use %2$02d for day and %1$02d for month
 #: ../src/tooltip.c:52
@@ -325,25 +328,26 @@ msgstr "\n<b>Gimtadienis</b>: %02d/%02d/%04d"
 msgid ""
 "\n"
 "<b>Birthday</b>: %02d/%02d"
-msgstr "\n<b>Gimtadienis</b>: %02d/%02d"
+msgstr "\n<b>Urodziny</b>: %02d.%02d"
 
 #: ../src/tooltip.c:63
 #, c-format
 msgid " (<b>Today!</b>)"
-msgstr " (<b>Šiandien!</b>)"
+msgstr " (<b>Dzisiaj!</b>)"
 
 #: ../src/tooltip.c:65
 #, c-format
 msgid " (<b>Tomorrow!</b>)"
-msgstr " (<b>Rytoj!</b>)"
+msgstr " (<b>Jutro!</b>)"
 
 #: ../src/tooltip.c:69
 #, c-format
 msgid " (in %d day)"
 msgid_plural " (in %d days)"
-msgstr[0] " (po %d dienos)"
-msgstr[1] " (po %d dienų)"
-msgstr[2] " (po %d dienų)"
+msgstr[0] "(za %d dzień)"
+msgstr[1] "(za %d dni)"
+msgstr[2] "(za %d dni)"
+msgstr[3] "(za %d dni)"
 
 #: ../src/tooltip.c:84
 #, c-format
@@ -353,18 +357,19 @@ msgid ""
 msgid_plural ""
 "\n"
 "<b>Age</b>: %d years"
-msgstr[0] "\n<b>Amžius</b>: %d metai"
-msgstr[1] "\n<b>Amžius</b>: %d metai"
-msgstr[2] "\n<b>Amžius</b>: %d metų"
+msgstr[0] "\n<b>Wiek</b>: %d rok"
+msgstr[1] "\n<b>Wiek</b>: %d lata"
+msgstr[2] "\n<b>Wiek</b>: %d lat"
+msgstr[3] "\n<b>Wiek</b>: %d lat"
 
 #. ex: set noexpandtab:
 #: ../share/appdata/pidgin-birthday-reminder.metainfo.xml.in.h:1
 msgid "Pidgin Birthday Reminder"
-msgstr "Pidgin gimtadienių priminimai"
+msgstr "Przypomnienia o urodzinach w programie Pidgin"
 
 #: ../share/appdata/pidgin-birthday-reminder.metainfo.xml.in.h:2
 msgid ""
 "Pidgin Birthday Reminder reminds you of your buddies birthdays. Birthdays "
 "can be set by hand or be automatically filled-in for ICQ, MSN and XMPP "
 "protocols."
-msgstr "Pidgin gimtadienių priminimai primena jums apie jūsų bičiulių gimtadienius. Gimtadieniai gali būti nustatyti rankiniu būdu arba, ICQ, MSN bei XMPP protokolams, užpildyti automatiškai."
+msgstr "Ta wtyczka powiadamia o urodzinach znajomych. Można je ustawiać ręcznie lub automatycznie wypełniać za pomocą protokołów ICQ, MSN i XMPP."

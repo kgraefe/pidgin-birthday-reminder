@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Konrad Gräfe <freakazoid@teamblind.de>, 2008
-# Konrad Gräfe <konradgraefe@aol.com>, 2015-2016
+# Konrad Gräfe <konradgraefe@aol.com>, 2015-2017
 # Mario Siegmann <mario_siegmann@web.de>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Pidgin Birthday Reminder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-20 00:04+0100\n"
-"PO-Revision-Date: 2016-01-25 13:19+0000\n"
+"POT-Creation-Date: 2017-03-03 21:58+0100\n"
+"PO-Revision-Date: 2017-03-07 07:19+0000\n"
 "Last-Translator: Konrad Gräfe <konradgraefe@aol.com>\n"
 "Language-Team: German (http://www.transifex.com/kgraefe/pidgin-birthday-reminder/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr "Buddy"
 msgid "Days to birthday"
 msgstr "Tage bis zum Geburtstag"
 
-#: ../src/birthday_list.c:260 ../src/scan.c:168
+#: ../src/birthday_list.c:260 ../src/scan.c:162
 msgid "Birthday"
 msgstr "Geburtstag"
 
@@ -50,12 +50,12 @@ msgstr "Geburtstag"
 msgid "Age"
 msgstr "Alter"
 
-#: ../src/birthday_list.c:308 ../src/notification.c:222
-#: ../src/notification.c:233
+#: ../src/birthday_list.c:308 ../src/notification.c:256
+#: ../src/notification.c:267
 msgid "Close"
 msgstr "Schließen"
 
-#: ../src/birthday_list.c:319 ../src/notification.c:223
+#: ../src/birthday_list.c:319 ../src/notification.c:257
 msgid "Write IM"
 msgstr "Anschreiben"
 
@@ -64,9 +64,9 @@ msgstr "Anschreiben"
 msgid "Birthday List (%d)"
 msgstr "Geburtstags-Liste (%d)"
 
-#: ../src/birthday_reminder.c:148 ../src/input.c:111 ../src/notification.c:199
-#: ../src/notification.c:208 ../src/notification.c:220
-#: ../src/notification.c:231
+#: ../src/birthday_reminder.c:148 ../src/input.c:111 ../src/notification.c:233
+#: ../src/notification.c:242 ../src/notification.c:254
+#: ../src/notification.c:265
 msgid "Birthday Reminder"
 msgstr "Geburtstags-Erinnerung"
 
@@ -133,57 +133,81 @@ msgstr "Geburtstag setzen"
 msgid "Sound file (%s) does not exist.\n"
 msgstr "Sound-Datei (%s) existiert nicht.\n"
 
-#: ../src/notification.c:153
+#. Translators: This creates the age of a buddy which is
+#.              used in several strings that may contain
+#.              another number. I will refer to this string
+#.              as {age} in the comments. Hopefully that
+#.              works for all languages. Please come back to
+#.              me if not.
+#: ../src/notification.c:162
 #, c-format
-msgid "%s will be %d years old today! Hooray!"
-msgstr "%s wird heute %d Jahre alt! Hurra!"
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d Jahr"
+msgstr[1] "%d Jahre"
 
-#: ../src/notification.c:158
+#. Translators: The first string is the buddies alias
+#.              name. The second string is his {age}.
+#: ../src/notification.c:172
+#, c-format
+msgid "%s will be %s old today! Hooray!"
+msgstr "%s wird heute %s alt! Hurra!"
+
+#: ../src/notification.c:177
 #, c-format
 msgid "It's %s's birthday today! Hooray!"
 msgstr "%s hat heute Geburtstag! Hurra!"
 
-#: ../src/notification.c:165
+#. Translators: The first string is the buddies alias
+#.              name. The second string is his {age}.
+#: ../src/notification.c:187
 #, c-format
-msgid "%s will be %d years old tomorrow!"
-msgstr "%s wird morgen %d Jahre alt!"
+msgid "%s will be %s old tomorrow!"
+msgstr "%s wird morgen %s alt!"
 
-#: ../src/notification.c:170
+#: ../src/notification.c:192
 #, c-format
 msgid "%s's birthday is tomorrow!"
 msgstr "%s hat morgen Geburtstag!"
 
-#: ../src/notification.c:177
+#. Translators: The first string is the buddies
+#.              alias name. The second string is his
+#.              {age}.
+#: ../src/notification.c:204
 #, c-format
-msgid "%s will be %d years old in %d days!"
-msgstr "%1$s wird in %3$d Tagen %2$d Jahre alt!"
+msgid "%s will be %s old in %d day!"
+msgid_plural "%s will be %s old in %d days!"
+msgstr[0] "%1$s wird in %3$d Tag %2$s alt!"
+msgstr[1] "%1$s wird in %3$d Tagen %2$s alt!"
 
-#: ../src/notification.c:182
+#: ../src/notification.c:213
 #, c-format
-msgid "%s's birthday is in %d days!"
-msgstr "%s hat in %d Tagen Geburtstag!"
+msgid "%s's birthday is in %d day!"
+msgid_plural "%s's birthday is in %d days!"
+msgstr[0] "%s hat in %d Tag Geburtstag!"
+msgstr[1] "%s hat in %d Tagen Geburtstag!"
 
-#: ../src/notification.c:188
+#: ../src/notification.c:222
 msgid "There are birthdays in the next days! Hooray!"
 msgstr "Es stehen Geburtstage an! Hurra!"
 
-#: ../src/notification.c:200
+#: ../src/notification.c:234
 msgid "Write IM?"
 msgstr "Anschreiben?"
 
-#: ../src/notification.c:203 ../src/notification.c:211
+#: ../src/notification.c:237 ../src/notification.c:245
 msgid "Yes"
 msgstr "Ja"
 
-#: ../src/notification.c:204 ../src/notification.c:212
+#: ../src/notification.c:238 ../src/notification.c:246
 msgid "No"
 msgstr "Nein"
 
-#: ../src/notification.c:209
+#: ../src/notification.c:243
 msgid "Show overview?"
 msgstr "Übersicht anzeigen?"
 
-#: ../src/notification.c:234
+#: ../src/notification.c:268
 msgid "Overview"
 msgstr "Übersicht"
 
@@ -265,29 +289,29 @@ msgstr "Als Datei exportieren"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name
 #. and %3$s for the protocol name.
-#: ../src/scan.c:130
+#: ../src/scan.c:118
 #, c-format
 msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
 msgstr "Frage Buddy %s (Konto: %s (%s)) ab. Warte auf Antwort...\n"
 
-#: ../src/scan.c:136
+#: ../src/scan.c:127
 msgid "No more buddies to scan.\n"
 msgstr "Keine weiteren Buddies abzufragen.\n"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name
 #. and %3$s for the protocol name.
-#: ../src/scan.c:222
+#: ../src/scan.c:220
 #, c-format
 msgid "Buddy %s (Account: %s (%s)) scanned.\n"
 msgstr "Buddy %s (Konto: %s (%s)) wurde abgefragt.\n"
 
-#: ../src/scan.c:264
+#: ../src/scan.c:262
 msgid "Scan birthdays on this account"
 msgstr "Geburtstage mit diesem Account scannen"
 
 #. Translators: to use an other order of the arguments use %2$02d for day,
 #. %1$02d for month and %3$04d for year
-#: ../src/tooltip.c:43
+#: ../src/tooltip.c:44
 #, c-format
 msgid ""
 "\n"
@@ -295,34 +319,40 @@ msgid ""
 msgstr "\n<b>Geburtstag</b>: %2$02d.%1$02d.%3$04d"
 
 #. Translators: use %2$02d for day and %1$02d for month
-#: ../src/tooltip.c:51
+#: ../src/tooltip.c:52
 #, c-format
 msgid ""
 "\n"
 "<b>Birthday</b>: %02d/%02d"
 msgstr "\n<b>Geburtstag</b>: %2$02d.%1$02d."
 
-#: ../src/tooltip.c:62
+#: ../src/tooltip.c:63
 #, c-format
 msgid " (<b>Today!</b>)"
 msgstr " (<b>Heute!</b>)"
 
-#: ../src/tooltip.c:64
+#: ../src/tooltip.c:65
 #, c-format
 msgid " (<b>Tomorrow!</b>)"
 msgstr " (<b>Morgen!</b>)"
 
-#: ../src/tooltip.c:67
+#: ../src/tooltip.c:69
 #, c-format
-msgid " (in %d days)"
-msgstr " (in %d Tagen)"
+msgid " (in %d day)"
+msgid_plural " (in %d days)"
+msgstr[0] " (in %d Tag)"
+msgstr[1] " (in %d Tagen)"
 
-#: ../src/tooltip.c:77
+#: ../src/tooltip.c:84
 #, c-format
 msgid ""
 "\n"
+"<b>Age</b>: %d year"
+msgid_plural ""
+"\n"
 "<b>Age</b>: %d years"
-msgstr "\n<b>Alter</b>: %d Jahre"
+msgstr[0] "\n<b>Alter</b>: %d Jahr"
+msgstr[1] "\n<b>Alter</b>: %d Jahre"
 
 #. ex: set noexpandtab:
 #: ../share/appdata/pidgin-birthday-reminder.metainfo.xml.in.h:1

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pidgin Birthday Reminder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-20 00:04+0100\n"
-"PO-Revision-Date: 2016-01-19 23:18+0000\n"
+"POT-Creation-Date: 2017-03-03 21:58+0100\n"
+"PO-Revision-Date: 2017-03-03 20:58+0000\n"
 "Last-Translator: Konrad Gräfe <konradgraefe@aol.com>\n"
 "Language-Team: Greek (http://www.transifex.com/kgraefe/pidgin-birthday-reminder/language/el/)\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr "Φίλος"
 msgid "Days to birthday"
 msgstr "Ημέρες για τα γενέθλια"
 
-#: ../src/birthday_list.c:260 ../src/scan.c:168
+#: ../src/birthday_list.c:260 ../src/scan.c:162
 msgid "Birthday"
 msgstr "Γενέθλια"
 
@@ -50,12 +50,12 @@ msgstr "Γενέθλια"
 msgid "Age"
 msgstr "Ηλικία"
 
-#: ../src/birthday_list.c:308 ../src/notification.c:222
-#: ../src/notification.c:233
+#: ../src/birthday_list.c:308 ../src/notification.c:256
+#: ../src/notification.c:267
 msgid "Close"
 msgstr "Κλείσιμο"
 
-#: ../src/birthday_list.c:319 ../src/notification.c:223
+#: ../src/birthday_list.c:319 ../src/notification.c:257
 msgid "Write IM"
 msgstr "Συγγραφή άμεσου μηνύματος"
 
@@ -64,9 +64,9 @@ msgstr "Συγγραφή άμεσου μηνύματος"
 msgid "Birthday List (%d)"
 msgstr "Λίστα γενεθλίων (%d)"
 
-#: ../src/birthday_reminder.c:148 ../src/input.c:111 ../src/notification.c:199
-#: ../src/notification.c:208 ../src/notification.c:220
-#: ../src/notification.c:231
+#: ../src/birthday_reminder.c:148 ../src/input.c:111 ../src/notification.c:233
+#: ../src/notification.c:242 ../src/notification.c:254
+#: ../src/notification.c:265
 msgid "Birthday Reminder"
 msgstr "Υπενθύμιση γενεθλίων"
 
@@ -133,57 +133,81 @@ msgstr "Ορισμός γενεθλίων"
 msgid "Sound file (%s) does not exist.\n"
 msgstr "Το αρχείο ήχου (%s) δεν υπάρχει.\n"
 
-#: ../src/notification.c:153
+#. Translators: This creates the age of a buddy which is
+#.              used in several strings that may contain
+#.              another number. I will refer to this string
+#.              as {age} in the comments. Hopefully that
+#.              works for all languages. Please come back to
+#.              me if not.
+#: ../src/notification.c:162
 #, c-format
-msgid "%s will be %d years old today! Hooray!"
-msgstr "%s θα γίνει %d χρονών σήμερα! Ζήτω!"
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/notification.c:158
+#. Translators: The first string is the buddies alias
+#.              name. The second string is his {age}.
+#: ../src/notification.c:172
+#, c-format
+msgid "%s will be %s old today! Hooray!"
+msgstr ""
+
+#: ../src/notification.c:177
 #, c-format
 msgid "It's %s's birthday today! Hooray!"
 msgstr "%s έχει γενέθλια σήμερα! Ζήτω!"
 
-#: ../src/notification.c:165
+#. Translators: The first string is the buddies alias
+#.              name. The second string is his {age}.
+#: ../src/notification.c:187
 #, c-format
-msgid "%s will be %d years old tomorrow!"
-msgstr "%s θα γίνει %d χρονών αύριο!"
+msgid "%s will be %s old tomorrow!"
+msgstr ""
 
-#: ../src/notification.c:170
+#: ../src/notification.c:192
 #, c-format
 msgid "%s's birthday is tomorrow!"
 msgstr "%s έχει γενέθλια αύριο!"
 
-#: ../src/notification.c:177
+#. Translators: The first string is the buddies
+#.              alias name. The second string is his
+#.              {age}.
+#: ../src/notification.c:204
 #, c-format
-msgid "%s will be %d years old in %d days!"
-msgstr "%s θα γίνει %d χρονών σε %d μέρες!"
+msgid "%s will be %s old in %d day!"
+msgid_plural "%s will be %s old in %d days!"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/notification.c:182
+#: ../src/notification.c:213
 #, c-format
-msgid "%s's birthday is in %d days!"
-msgstr "%s έχει γενέθλια σε %d μέρες!"
+msgid "%s's birthday is in %d day!"
+msgid_plural "%s's birthday is in %d days!"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/notification.c:188
+#: ../src/notification.c:222
 msgid "There are birthdays in the next days! Hooray!"
 msgstr "Δεν έχει κανείς γενέθλια τις επόμενες μέρες! Ζήτω!"
 
-#: ../src/notification.c:200
+#: ../src/notification.c:234
 msgid "Write IM?"
 msgstr "Άμεσο μήνυμα;"
 
-#: ../src/notification.c:203 ../src/notification.c:211
+#: ../src/notification.c:237 ../src/notification.c:245
 msgid "Yes"
 msgstr "Ναι"
 
-#: ../src/notification.c:204 ../src/notification.c:212
+#: ../src/notification.c:238 ../src/notification.c:246
 msgid "No"
 msgstr "Όχι"
 
-#: ../src/notification.c:209
+#: ../src/notification.c:243
 msgid "Show overview?"
 msgstr "Εμφάνιση επισκόπησης;"
 
-#: ../src/notification.c:234
+#: ../src/notification.c:268
 msgid "Overview"
 msgstr "Επισκόπηση"
 
@@ -265,29 +289,29 @@ msgstr "Εξαγωγή σε αρχείο"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name
 #. and %3$s for the protocol name.
-#: ../src/scan.c:130
+#: ../src/scan.c:118
 #, c-format
 msgid "Scanning buddy %s (Account: %s (%s)). Waiting for response...\n"
 msgstr "Σάρωση φίλου %s (λογαριασμός: %s (%s)). Αναμονή ανταπόκρισης...\n"
 
-#: ../src/scan.c:136
+#: ../src/scan.c:127
 msgid "No more buddies to scan.\n"
 msgstr "Δεν υπάρχουν άλλοι φίλοι για σάρωση.\n"
 
 #. Translators: use %1$s for the buddy's nickname, %2$s for the account name
 #. and %3$s for the protocol name.
-#: ../src/scan.c:222
+#: ../src/scan.c:220
 #, c-format
 msgid "Buddy %s (Account: %s (%s)) scanned.\n"
 msgstr "Ο φίλος %s (λογαριασμός: %s (%s)) σαρώθηκε.\n"
 
-#: ../src/scan.c:264
+#: ../src/scan.c:262
 msgid "Scan birthdays on this account"
 msgstr "Σάρωση γενεθλίων σε αυτό το λογαριασμό"
 
 #. Translators: to use an other order of the arguments use %2$02d for day,
 #. %1$02d for month and %3$04d for year
-#: ../src/tooltip.c:43
+#: ../src/tooltip.c:44
 #, c-format
 msgid ""
 "\n"
@@ -295,34 +319,40 @@ msgid ""
 msgstr "\n<b>Γενέθλια</b>: %02d/%02d/%04d"
 
 #. Translators: use %2$02d for day and %1$02d for month
-#: ../src/tooltip.c:51
+#: ../src/tooltip.c:52
 #, c-format
 msgid ""
 "\n"
 "<b>Birthday</b>: %02d/%02d"
 msgstr "\n<b>Γενέθλια</b>: %02d/%02d"
 
-#: ../src/tooltip.c:62
+#: ../src/tooltip.c:63
 #, c-format
 msgid " (<b>Today!</b>)"
 msgstr " (<b>Σήμερα!</b>)"
 
-#: ../src/tooltip.c:64
+#: ../src/tooltip.c:65
 #, c-format
 msgid " (<b>Tomorrow!</b>)"
 msgstr " (<b>Αύριο!</b>)"
 
-#: ../src/tooltip.c:67
+#: ../src/tooltip.c:69
 #, c-format
-msgid " (in %d days)"
-msgstr " (σε %d μέρες)"
+msgid " (in %d day)"
+msgid_plural " (in %d days)"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/tooltip.c:77
+#: ../src/tooltip.c:84
 #, c-format
 msgid ""
 "\n"
+"<b>Age</b>: %d year"
+msgid_plural ""
+"\n"
 "<b>Age</b>: %d years"
-msgstr "\n<b>Ηλικία</b>: %d years"
+msgstr[0] ""
+msgstr[1] ""
 
 #. ex: set noexpandtab:
 #: ../share/appdata/pidgin-birthday-reminder.metainfo.xml.in.h:1
