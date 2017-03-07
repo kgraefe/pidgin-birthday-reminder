@@ -1,5 +1,8 @@
 # Pidgin Birthday Reminder Changes
 
+## Versoin 1.11 (in development)
+- Add Polish language file
+
 ## Version 1.10 (2017-02-14)
 - Add Lithuanian language file
 
