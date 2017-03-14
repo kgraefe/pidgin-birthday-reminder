@@ -1,6 +1,7 @@
 # Pidgin Birthday Reminder Changes
 
 ## Version 1.11 (in development)
+- Improve plural forms in translations
 - Add Polish language file
 
 ## Version 1.10 (2017-02-14)
