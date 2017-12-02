@@ -159,7 +159,7 @@ void notify(gint days_to_birthday, PurpleBuddy *birthday_buddy) {
 				 *              works for all languages. Please come back to
 				 *              me if not.
 				 */
-				ngettext("%d year", "%d years", age),
+				dngettext(GETTEXT_PACKAGE, "%d year", "%d years", age),
 				age
 			);
 	
@@ -196,7 +196,8 @@ void notify(gint days_to_birthday, PurpleBuddy *birthday_buddy) {
 			} else {
 				if(g_date_get_year(&date) > 1900) {
 					msg = g_strdup_printf(
-						ngettext(
+						dngettext(
+							GETTEXT_PACKAGE,
 							/* Translators: The first string is the buddies
 							 *              alias name. The second string is his
 							 *              {age}.
@@ -209,7 +210,8 @@ void notify(gint days_to_birthday, PurpleBuddy *birthday_buddy) {
 					);
 				} else {
 					msg = g_strdup_printf(
-						ngettext(
+						dngettext(
+							GETTEXT_PACKAGE,
 							"%s's birthday is in %d day!",
 							"%s's birthday is in %d days!",
 							days_to_birthday

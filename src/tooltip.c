@@ -65,7 +65,8 @@ static void drawing_tooltip_cb(PurpleBlistNode *node, GString *str, gboolean ful
 					g_string_append_printf(str, _(" (<b>Tomorrow!</b>)"));
 				} else {
 					g_string_append_printf(str,
-						ngettext(
+						dngettext(
+							GETTEXT_PACKAGE,
 							" (in %d day)",
 							" (in %d days)",
 							days_to_birthday
@@ -80,7 +81,8 @@ static void drawing_tooltip_cb(PurpleBlistNode *node, GString *str, gboolean ful
 			if(g_date_get_year(&date) > 1900) {
 				age = get_age_from_node(node);
 				g_string_append_printf(str,
-					ngettext(
+					dngettext(
+						GETTEXT_PACKAGE,
 						"\n<b>Age</b>: %d year",
 						"\n<b>Age</b>: %d years",
 						age

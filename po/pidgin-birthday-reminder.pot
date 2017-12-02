@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-03 21:58+0100\n"
+"POT-Creation-Date: 2017-12-03 00:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,12 +46,12 @@ msgstr ""
 msgid "Age"
 msgstr ""
 
-#: ../src/birthday_list.c:308 ../src/notification.c:256
-#: ../src/notification.c:267
+#: ../src/birthday_list.c:308 ../src/notification.c:258
+#: ../src/notification.c:269
 msgid "Close"
 msgstr ""
 
-#: ../src/birthday_list.c:319 ../src/notification.c:257
+#: ../src/birthday_list.c:319 ../src/notification.c:259
 msgid "Write IM"
 msgstr ""
 
@@ -60,9 +60,9 @@ msgstr ""
 msgid "Birthday List (%d)"
 msgstr ""
 
-#: ../src/birthday_reminder.c:148 ../src/input.c:111 ../src/notification.c:233
-#: ../src/notification.c:242 ../src/notification.c:254
-#: ../src/notification.c:265
+#: ../src/birthday_reminder.c:148 ../src/input.c:111 ../src/notification.c:235
+#: ../src/notification.c:244 ../src/notification.c:256
+#: ../src/notification.c:267
 msgid "Birthday Reminder"
 msgstr ""
 
@@ -165,41 +165,41 @@ msgstr ""
 #. Translators: The first string is the buddies
 #.              alias name. The second string is his
 #.              {age}.
-#: ../src/notification.c:204
+#: ../src/notification.c:205
 #, c-format
 msgid "%s will be %s old in %d day!"
 msgid_plural "%s will be %s old in %d days!"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/notification.c:213
+#: ../src/notification.c:215
 #, c-format
 msgid "%s's birthday is in %d day!"
 msgid_plural "%s's birthday is in %d days!"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/notification.c:222
+#: ../src/notification.c:224
 msgid "There are birthdays in the next days! Hooray!"
 msgstr ""
 
-#: ../src/notification.c:234
+#: ../src/notification.c:236
 msgid "Write IM?"
 msgstr ""
 
-#: ../src/notification.c:237 ../src/notification.c:245
+#: ../src/notification.c:239 ../src/notification.c:247
 msgid "Yes"
 msgstr ""
 
-#: ../src/notification.c:238 ../src/notification.c:246
+#: ../src/notification.c:240 ../src/notification.c:248
 msgid "No"
 msgstr ""
 
-#: ../src/notification.c:243
+#: ../src/notification.c:245
 msgid "Show overview?"
 msgstr ""
 
-#: ../src/notification.c:268
+#: ../src/notification.c:270
 msgid "Overview"
 msgstr ""
 
@@ -325,14 +325,14 @@ msgstr ""
 msgid " (<b>Tomorrow!</b>)"
 msgstr ""
 
-#: ../src/tooltip.c:69
+#: ../src/tooltip.c:70
 #, c-format
 msgid " (in %d day)"
 msgid_plural " (in %d days)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/tooltip.c:84
+#: ../src/tooltip.c:86
 #, c-format
 msgid ""
 "\n"
