@@ -1,5 +1,8 @@
 # Pidgin Birthday Reminder Changes
 
+## Version 1.12 (in development)
+- Fix translations with plural forms (Github #7)
+
 ## Version 1.11 (2017-03-14)
 - Improve plural forms in translations
 - Add Polish language file
@@ -8,8 +11,8 @@
 - Add Lithuanian language file
 
 ## Version 1.9 (2016-02-01)
-- Ship AppStream metainfo file (Bug #3)
-- Fix Skypeweb support for non-English languages (Bug #5)
+- Ship AppStream metainfo file (Github #3)
+- Fix Skypeweb support for non-English languages (Github #5)
 - Re-scan buddies after three months
 
 ## Version 1.8 (2015-12-30)
@@ -19,7 +22,7 @@
 - Fix: Remove protocol option when plugin is unloaded
 
 ## Version 1.7 (2010-09-20)
-- Do not longer expect ICS file to be well-formed (Bug #614244)
+- Do not longer expect ICS file to be well-formed (Launchpad #614244)
 - Added Brazilian Portuguese, Czech, Dutch, Slovak and Tamil language files
 
 ## Version 1.6 (2010-05-08)
@@ -38,7 +41,7 @@
 
 ## Version 1.3 (2009-12-14)
 - Fixed IM to wrong contact when using notifications
-- Fixed dealing with February 29 (#2909655)
+- Fixed dealing with February 29 (Launchpad #2909655)
 
 ## Version 1.2.1 (2009-08-17)
 - The plugin did not refresh the buddy list icons on midnight
