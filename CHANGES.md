@@ -1,6 +1,6 @@
 # Pidgin Birthday Reminder Changes
 
-## Version 1.12 (in development)
+## Version 1.12 (2017-12-23)
 - Fix translations with plural forms (Github #7)
 
 ## Version 1.11 (2017-03-14)
