@@ -1,22 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Piotr Drąg <piotrdrag@gmail.com>, 2017
+# Konrad Gräfe <konradgraefe@aol.com>, 2020
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Pidgin Birthday Reminder\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-03 21:58+0100\n"
-"PO-Revision-Date: 2017-03-04 06:34+0000\n"
-"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish (http://www.transifex.com/kgraefe/pidgin-birthday-reminder/language/pl/)\n"
+"POT-Creation-Date: 2017-12-03 00:12+0100\n"
+"PO-Revision-Date: 2020-03-12 15:22+0000\n"
+"Last-Translator: Konrad Gräfe <konradgraefe@aol.com>, 2020\n"
+"Language-Team: Polish (https://www.transifex.com/kgraefe/teams/58292/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>=14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #. Translators: This is in the birthday list. Use %2$02d for day, %1$02d for
 #. month and %3$04d for year.
@@ -48,12 +51,12 @@ msgstr "Urodziny"
 msgid "Age"
 msgstr "Wiek"
 
-#: ../src/birthday_list.c:308 ../src/notification.c:256
-#: ../src/notification.c:267
+#: ../src/birthday_list.c:308 ../src/notification.c:258
+#: ../src/notification.c:269
 msgid "Close"
 msgstr "Zamknij"
 
-#: ../src/birthday_list.c:319 ../src/notification.c:257
+#: ../src/birthday_list.c:319 ../src/notification.c:259
 msgid "Write IM"
 msgstr "Napisz wiadomość"
 
@@ -62,9 +65,9 @@ msgstr "Napisz wiadomość"
 msgid "Birthday List (%d)"
 msgstr "Lista urodzin (%d)"
 
-#: ../src/birthday_reminder.c:148 ../src/input.c:111 ../src/notification.c:233
-#: ../src/notification.c:242 ../src/notification.c:254
-#: ../src/notification.c:265
+#: ../src/birthday_reminder.c:148 ../src/input.c:111 ../src/notification.c:235
+#: ../src/notification.c:244 ../src/notification.c:256
+#: ../src/notification.c:267
 msgid "Birthday Reminder"
 msgstr "Przypomnienia o urodzinach"
 
@@ -108,7 +111,10 @@ msgid ""
 "Use the following format: %s .\n"
 "Blank out the input field to clear the BDay.\n"
 "Use a year before 1900 if you do not know."
-msgstr "Należy użyć formatu: %s .\nUsunięcie pola wyczyści urodziny.\nNależy wpisać rok wcześniejszy niż 1900, jeśli nie jest znany."
+msgstr ""
+"Należy użyć formatu: %s .\n"
+"Usunięcie pola wyczyści urodziny.\n"
+"Należy wpisać rok wcześniejszy niż 1900, jeśli nie jest znany."
 
 #: ../src/input.c:112
 msgid "Set Birthday:"
@@ -173,7 +179,7 @@ msgstr "%s ma jutro urodziny!"
 #. Translators: The first string is the buddies
 #.              alias name. The second string is his
 #.              {age}.
-#: ../src/notification.c:204
+#: ../src/notification.c:205
 #, c-format
 msgid "%s will be %s old in %d day!"
 msgid_plural "%s will be %s old in %d days!"
@@ -182,7 +188,7 @@ msgstr[1] "%s będzie mieć %s za %d dni!"
 msgstr[2] "%s będzie mieć %s za %d dni!"
 msgstr[3] "%s będzie mieć %s za %d dni!"
 
-#: ../src/notification.c:213
+#: ../src/notification.c:215
 #, c-format
 msgid "%s's birthday is in %d day!"
 msgid_plural "%s's birthday is in %d days!"
@@ -191,27 +197,27 @@ msgstr[1] "%s ma urodziny za %d dni!"
 msgstr[2] "%s ma urodziny za %d dni!"
 msgstr[3] "%s ma urodziny za %d dni!"
 
-#: ../src/notification.c:222
+#: ../src/notification.c:224
 msgid "There are birthdays in the next days! Hooray!"
 msgstr "Niedługo są czyjeś urodziny! Hurra!"
 
-#: ../src/notification.c:234
+#: ../src/notification.c:236
 msgid "Write IM?"
 msgstr "Napisać wiadomość?"
 
-#: ../src/notification.c:237 ../src/notification.c:245
+#: ../src/notification.c:239 ../src/notification.c:247
 msgid "Yes"
 msgstr "Tak"
 
-#: ../src/notification.c:238 ../src/notification.c:246
+#: ../src/notification.c:240 ../src/notification.c:248
 msgid "No"
 msgstr "Nie"
 
-#: ../src/notification.c:243
+#: ../src/notification.c:245
 msgid "Show overview?"
 msgstr "Wyświetlić przegląd?"
 
-#: ../src/notification.c:268
+#: ../src/notification.c:270
 msgid "Overview"
 msgstr "Przegląd"
 
@@ -320,7 +326,9 @@ msgstr "Skanuj urodziny na tym koncie"
 msgid ""
 "\n"
 "<b>Birthday</b>: %02d/%02d/%04d"
-msgstr "\n<b>Urodziny</b>: %02d.%02d.%04d"
+msgstr ""
+"\n"
+"<b>Urodziny</b>: %02d.%02d.%04d"
 
 #. Translators: use %2$02d for day and %1$02d for month
 #: ../src/tooltip.c:52
@@ -328,7 +336,9 @@ msgstr "\n<b>Urodziny</b>: %02d.%02d.%04d"
 msgid ""
 "\n"
 "<b>Birthday</b>: %02d/%02d"
-msgstr "\n<b>Urodziny</b>: %02d.%02d"
+msgstr ""
+"\n"
+"<b>Urodziny</b>: %02d.%02d"
 
 #: ../src/tooltip.c:63
 #, c-format
@@ -340,7 +350,7 @@ msgstr " (<b>Dzisiaj!</b>)"
 msgid " (<b>Tomorrow!</b>)"
 msgstr " (<b>Jutro!</b>)"
 
-#: ../src/tooltip.c:69
+#: ../src/tooltip.c:70
 #, c-format
 msgid " (in %d day)"
 msgid_plural " (in %d days)"
@@ -349,7 +359,7 @@ msgstr[1] "(za %d dni)"
 msgstr[2] "(za %d dni)"
 msgstr[3] "(za %d dni)"
 
-#: ../src/tooltip.c:84
+#: ../src/tooltip.c:86
 #, c-format
 msgid ""
 "\n"
@@ -357,10 +367,18 @@ msgid ""
 msgid_plural ""
 "\n"
 "<b>Age</b>: %d years"
-msgstr[0] "\n<b>Wiek</b>: %d rok"
-msgstr[1] "\n<b>Wiek</b>: %d lata"
-msgstr[2] "\n<b>Wiek</b>: %d lat"
-msgstr[3] "\n<b>Wiek</b>: %d lat"
+msgstr[0] ""
+"\n"
+"<b>Wiek</b>: %d rok"
+msgstr[1] ""
+"\n"
+"<b>Wiek</b>: %d lata"
+msgstr[2] ""
+"\n"
+"<b>Wiek</b>: %d lat"
+msgstr[3] ""
+"\n"
+"<b>Wiek</b>: %d lat"
 
 #. ex: set noexpandtab:
 #: ../share/appdata/pidgin-birthday-reminder.metainfo.xml.in.h:1
@@ -372,4 +390,6 @@ msgid ""
 "Pidgin Birthday Reminder reminds you of your buddies birthdays. Birthdays "
 "can be set by hand or be automatically filled-in for ICQ, MSN and XMPP "
 "protocols."
-msgstr "Ta wtyczka powiadamia o urodzinach znajomych. Można je ustawiać ręcznie lub automatycznie wypełniać za pomocą protokołów ICQ, MSN i XMPP."
+msgstr ""
+"Ta wtyczka powiadamia o urodzinach znajomych. Można je ustawiać ręcznie lub "
+"automatycznie wypełniać za pomocą protokołów ICQ, MSN i XMPP."
