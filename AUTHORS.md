@@ -1,7 +1,7 @@
 # Pidgin Birthday Reminder Authors
 
 ## Developers
-- Konrad Gräfe <konradgraefe@aol.com>
+- Konrad Gräfe <kgraefe@paktolos.net>
 
 ## Icons
 - Alexey L.
@@ -14,7 +14,7 @@
 - Ivo, https://launchpad.net/~van-hoi, 2010
 
 ### German (de)
-- Konrad Gräfe <konradgraefe@aol.com>, 2020
+- Konrad Gräfe <kgraefe@paktolos.net>, 2020
 - Mario Siegmann <mario_siegmann@web.de>, 2016
 
 ### Greek (el)
