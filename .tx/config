@@ -1,9 +1,0 @@
-[main]
-host = https://www.transifex.com
-
-[pidgin-birthday-reminder.base]
-file_filter = po/<lang>.po
-source_file = po/pidgin-birthday-reminder.pot
-source_lang = en
-type = PO
-
