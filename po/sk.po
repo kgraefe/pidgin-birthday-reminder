@@ -1,24 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# DAG Software, https://launchpad.net/~dagsoftware, 2010
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2010
-# Konrad Gräfe <konradgraefe@aol.com>, 2015
+# Konrad Gräfe <konradgraefe@aol.com>, 2020
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Pidgin Birthday Reminder\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-03 21:58+0100\n"
-"PO-Revision-Date: 2017-03-03 20:58+0000\n"
-"Last-Translator: Konrad Gräfe <konradgraefe@aol.com>\n"
-"Language-Team: Slovak (http://www.transifex.com/kgraefe/pidgin-birthday-reminder/language/sk/)\n"
+"POT-Creation-Date: 2017-12-03 00:12+0100\n"
+"PO-Revision-Date: 2020-03-12 15:22+0000\n"
+"Last-Translator: Konrad Gräfe <konradgraefe@aol.com>, 2020\n"
+"Language-Team: Slovak (https://www.transifex.com/kgraefe/teams/58292/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sk\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);\n"
 
 #. Translators: This is in the birthday list. Use %2$02d for day, %1$02d for
 #. month and %3$04d for year.
@@ -50,12 +51,12 @@ msgstr "Narodeniny"
 msgid "Age"
 msgstr "Vek"
 
-#: ../src/birthday_list.c:308 ../src/notification.c:256
-#: ../src/notification.c:267
+#: ../src/birthday_list.c:308 ../src/notification.c:258
+#: ../src/notification.c:269
 msgid "Close"
 msgstr "Zatvoriť"
 
-#: ../src/birthday_list.c:319 ../src/notification.c:257
+#: ../src/birthday_list.c:319 ../src/notification.c:259
 msgid "Write IM"
 msgstr "Napísať správu"
 
@@ -64,9 +65,9 @@ msgstr "Napísať správu"
 msgid "Birthday List (%d)"
 msgstr "Zoznam narodenín (%d)"
 
-#: ../src/birthday_reminder.c:148 ../src/input.c:111 ../src/notification.c:233
-#: ../src/notification.c:242 ../src/notification.c:254
-#: ../src/notification.c:265
+#: ../src/birthday_reminder.c:148 ../src/input.c:111 ../src/notification.c:235
+#: ../src/notification.c:244 ../src/notification.c:256
+#: ../src/notification.c:267
 msgid "Birthday Reminder"
 msgstr "Pripomínač narodenín"
 
@@ -77,7 +78,8 @@ msgstr "Pripomenie Vám narodeniny vašich priateľov."
 #: ../src/birthday_reminder.c:150
 msgid ""
 "This Plugin shall keep track and remind you of your buddies' birthdays."
-msgstr "Tento plugin Vás má sledovať a pripomenúť Vám narodeniny vašich priateľov."
+msgstr ""
+"Tento plugin Vás má sledovať a pripomenúť Vám narodeniny vašich priateľov."
 
 #: ../src/emblems.c:201
 msgid "Could not load icons!\n"
@@ -110,7 +112,10 @@ msgid ""
 "Use the following format: %s .\n"
 "Blank out the input field to clear the BDay.\n"
 "Use a year before 1900 if you do not know."
-msgstr "Použi tento formát: %s .\nNechaj prázdne políčko na vymazanie narodenín.\nPouži rok pred 1900 ak nevieš."
+msgstr ""
+"Použi tento formát: %s .\n"
+"Nechaj prázdne políčko na vymazanie narodenín.\n"
+"Použi rok pred 1900 ak nevieš."
 
 #: ../src/input.c:112
 msgid "Set Birthday:"
@@ -143,16 +148,17 @@ msgstr "zvukový súbor (%s) neexistuje.\n"
 #, c-format
 msgid "%d year"
 msgid_plural "%d years"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%d rok"
+msgstr[1] "%d roky"
+msgstr[2] "%d rokov"
+msgstr[3] "%d rokov"
 
 #. Translators: The first string is the buddies alias
 #.              name. The second string is his {age}.
 #: ../src/notification.c:172
 #, c-format
 msgid "%s will be %s old today! Hooray!"
-msgstr ""
+msgstr "%s má dnes %s! Hurá!"
 
 #: ../src/notification.c:177
 #, c-format
@@ -164,7 +170,7 @@ msgstr "Dnes má %s narodeniny! Hurá!"
 #: ../src/notification.c:187
 #, c-format
 msgid "%s will be %s old tomorrow!"
-msgstr ""
+msgstr "%s bude mať zajtra %s!"
 
 #: ../src/notification.c:192
 #, c-format
@@ -174,43 +180,45 @@ msgstr "Zajtra bude mať %s narodeniny!"
 #. Translators: The first string is the buddies
 #.              alias name. The second string is his
 #.              {age}.
-#: ../src/notification.c:204
+#: ../src/notification.c:205
 #, c-format
 msgid "%s will be %s old in %d day!"
 msgid_plural "%s will be %s old in %d days!"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%s bude mať %s za %d deň!"
+msgstr[1] "%s bude mať %s za %d dni!"
+msgstr[2] "%s bude mať %s za %d dní!"
+msgstr[3] "%s bude mať  %s za %d dní!"
 
-#: ../src/notification.c:213
+#: ../src/notification.c:215
 #, c-format
 msgid "%s's birthday is in %d day!"
 msgid_plural "%s's birthday is in %d days!"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%s bude mať za %d deň narodeniny!"
+msgstr[1] "%s bude mať za %d dni narodeniny!"
+msgstr[2] "%s bude mať za %d dní narodeniny!"
+msgstr[3] "%s bude mať za %d dní narodeniny!"
 
-#: ../src/notification.c:222
+#: ../src/notification.c:224
 msgid "There are birthdays in the next days! Hooray!"
 msgstr "V nasledujúcich dňoch budú narodeniny! Hurá!"
 
-#: ../src/notification.c:234
+#: ../src/notification.c:236
 msgid "Write IM?"
 msgstr "Napísať správu?"
 
-#: ../src/notification.c:237 ../src/notification.c:245
+#: ../src/notification.c:239 ../src/notification.c:247
 msgid "Yes"
 msgstr "Áno"
 
-#: ../src/notification.c:238 ../src/notification.c:246
+#: ../src/notification.c:240 ../src/notification.c:248
 msgid "No"
 msgstr "Nie"
 
-#: ../src/notification.c:243
+#: ../src/notification.c:245
 msgid "Show overview?"
 msgstr "Ukázať prehľad?"
 
-#: ../src/notification.c:268
+#: ../src/notification.c:270
 msgid "Overview"
 msgstr "Prehľad"
 
@@ -319,7 +327,9 @@ msgstr "Oskenovať narodeniny v tomto účte"
 msgid ""
 "\n"
 "<b>Birthday</b>: %02d/%02d/%04d"
-msgstr "\n<b>Narodeniny</b>: %2$02d. %1$02d. %3$04d"
+msgstr ""
+"\n"
+"<b>Narodeniny</b>: %2$02d. %1$02d. %3$04d"
 
 #. Translators: use %2$02d for day and %1$02d for month
 #: ../src/tooltip.c:52
@@ -327,7 +337,9 @@ msgstr "\n<b>Narodeniny</b>: %2$02d. %1$02d. %3$04d"
 msgid ""
 "\n"
 "<b>Birthday</b>: %02d/%02d"
-msgstr "\n<b>Narodeniny</b>: %2$02d. %1$02d."
+msgstr ""
+"\n"
+"<b>Narodeniny</b>: %2$02d. %1$02d."
 
 #: ../src/tooltip.c:63
 #, c-format
@@ -339,15 +351,16 @@ msgstr " (<b>Dnes!</b>)"
 msgid " (<b>Tomorrow!</b>)"
 msgstr " (<b>Zajtra!</b>)"
 
-#: ../src/tooltip.c:69
+#: ../src/tooltip.c:70
 #, c-format
 msgid " (in %d day)"
 msgid_plural " (in %d days)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] " (za %d deň)"
+msgstr[1] " (za %d dni)"
+msgstr[2] " (za %d dní)"
+msgstr[3] " (za %d dní)"
 
-#: ../src/tooltip.c:84
+#: ../src/tooltip.c:86
 #, c-format
 msgid ""
 "\n"
@@ -356,13 +369,22 @@ msgid_plural ""
 "\n"
 "<b>Age</b>: %d years"
 msgstr[0] ""
+"\n"
+"<b>Vek</b>: %d rok"
 msgstr[1] ""
+"\n"
+"<b>Vek</b>: %d roky"
 msgstr[2] ""
+"\n"
+"<b>Vek</b>: %d rokov"
+msgstr[3] ""
+"\n"
+"<b>Vek</b>: %d rokov"
 
 #. ex: set noexpandtab:
 #: ../share/appdata/pidgin-birthday-reminder.metainfo.xml.in.h:1
 msgid "Pidgin Birthday Reminder"
-msgstr ""
+msgstr "Pripomínač narodenín pre Pidgin"
 
 #: ../share/appdata/pidgin-birthday-reminder.metainfo.xml.in.h:2
 msgid ""
@@ -370,3 +392,6 @@ msgid ""
 "can be set by hand or be automatically filled-in for ICQ, MSN and XMPP "
 "protocols."
 msgstr ""
+"Pripomínač narodenín pre Pidgin Vám pripomenie narodeniny vašich priateľov. "
+"Narodeniny môže byť nastavené ručne, alebo vyplnené automaticky z protokolov"
+" ICQ, MSN a XMPP."
