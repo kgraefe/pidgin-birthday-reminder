@@ -1,5 +1,8 @@
 # Pidgin Birthday Reminder Changes
 
+## Version 1.13 (in development)
+- Update Slovak language
+
 ## Version 1.12 (2017-12-23)
 - Fix translations with plural forms (Github #7)
 
