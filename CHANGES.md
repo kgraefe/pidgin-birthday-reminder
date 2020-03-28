@@ -1,6 +1,6 @@
 # Pidgin Birthday Reminder Changes
 
-## Version 1.13 (in development)
+## Version 1.13 (2020-03-28)
 - Update Slovak language
 
 ## Version 1.12 (2017-12-23)
