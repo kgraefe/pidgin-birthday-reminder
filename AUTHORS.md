@@ -53,7 +53,6 @@
 - DiegoJ <diegojromerolopez@gmail.com>, 2010
 
 ### Slovak (sk)
-- DAG Software, https://launchpad.net/~dagsoftware, 2010
 - Ján Ďanovský <dagsoftware@yahoo.com>, 2020
 
 ### Tamil (ta)
